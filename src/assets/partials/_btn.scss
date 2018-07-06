@@ -1,0 +1,21 @@
+$btn-back: #1a535c;
+$btn-fore: #f1f1f1;
+$btn-border: #84a98c;
+$btn-active: #297682;
+
+
+%btn-style {
+  background-color: $btn-back;
+  border: 1px solid $btn-border;
+  color: $btn-fore;
+  margin-bottom: 1.3em;
+  padding: 0.9em 1.8em;
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: inline-block;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15),0 5px 15px 0 rgba(0,0,0,0.25);
+  &:hover {background-color: $btn-active;}
+  &:focus { background-color: $btn-back; outline: none;}
+}
+

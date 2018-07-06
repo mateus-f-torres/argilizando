@@ -12,9 +12,13 @@ import './index.scss';
 
 const store = createStore(rootReducer);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('root')
-);
+
+if (typeof window !== 'undefined') {
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <App />
+    </Provider>,
+    document.getElementById('root')
+  );
+};
+

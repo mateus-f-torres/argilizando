@@ -1,23 +1,24 @@
-let nextTodoId = 0;
+// action vai criar keys com os nomes dos params
+export const incrementScore = (ability) => ({
+  type: 'INCREMENT_SCORE',
+  ability
+})
 
-export const addTodo = (text) => ({
-  type: 'ADD_TODO',
-  id: nextTodoId++,
-  text
-});
+export const decrementScore = (ability) => ({
+  type: 'DECREMENT_SCORE',
+  ability
+})
 
-export const setVisibilityFilter = (filter) => ({
-  type: 'SET_VISIBILITY_FILTER',
-  filter
-});
+export const toggleDescription = (ability) => ({
+  type: 'TOGGLE_DESCRIPTION',
+  ability
+})
 
-export const toggleTodo = (id) => ({
-  type: 'TOGGLE_TODO',
-  id
-});
+export const displayRace = (race) => ({
+  type: 'DISPLAY_RACE',
+  race
+})
 
-export const VisibilityFilters = {
-  SHOW_ALL: 'SHOW_ALL',
-  SHOW_COMPLETED: 'SHOW_COMPLETED',
-  SHOW_ACTIVE: 'SHOW_ACTIVE'
-};
+export const showRaceSelection = () => ({
+  type: 'SHOW_RACE_SELECTION'
+})

@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import todos from './todos';
-import visibilityFilter from './visibilityFilter';
+import score from './score.js';
+import race from './races.js';
 
 export default combineReducers({
-  todos,
-  visibilityFilter
+  score,
+  race
 });

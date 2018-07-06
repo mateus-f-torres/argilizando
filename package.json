@@ -1,7 +1,7 @@
 {
-  "name": "react_redux_template",
+  "name": "boneco-de-argila",
   "version": "0.1.0",
-  "description": "react_redux_app template",
+  "description": "helper for my homebrew dnd 5e games",
   "author": "mateus-f-torres",
   "license": "MIT",
   "private": true,
@@ -26,6 +26,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0"
   },
   "devDependencies": {

@@ -1,0 +1,29 @@
+@import '../partials/_variables';
+@import '../partials/_btn';
+/* Ability Score Section style */
+
+#SCORE {
+  h2 { margin-bottom: 0.2em;}
+  h3 { margin-bottom: 1.5em;
+    span { margin-right: 0.3em; }
+  }
+  ul {
+    margin-top: 0;
+    li {
+      min-width: 251px;
+      h4 { margin: 0;}
+      h5 {
+        .score { margin: 0 0.9em 0 0.7em;}
+        .mod {padding-right: 1em;}
+        .cost { margin: 0 0 0 0.5em;}
+      }
+      .score-btn { @extend %btn-style;}
+      p {
+        margin: 0.3em 1em 1em 1em;
+      }
+      input[type=number] { display: none; }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px) {}
