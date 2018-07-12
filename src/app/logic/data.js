@@ -23,245 +23,444 @@ let __abilities = [
 let ABILITIES = deepFreeze(__abilities);
 
 let __races = [
-  {
-    name: "Kenku",
-    id: "kenku",
-    pitch: 'TODO',
-    age: [12,60],
-    size: "Medium",
-    height: 5,
-    weight: 105,
-    speed: 30,
-    lang: ["Common", "Auran"],
-    special: [
-      [
-        "Expert Forgery",
-        "You can duplicate other creatures's handwritting and craftwork. You have advantage on all checks made to produce forgeries or duplicates of existing objects."
-      ],
-      [
-        "Mimicry",
-        "You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations with a successful Wisdom(Insight) check VS your Charisma(Deception) check."
+  [
+    {
+      name: "Human",
+      id: "human",
+      lore: "TODO",
+      age: [20, 80],
+      size: "Medium",
+      height: 6,
+      weight: 180,
+      speed: 30,
+      lang: ["Common", "one extra language of your choice"],
+      special: [
+        [
+          "Bonus Skill",
+          "You gain proficiency in one additional skill from your class skill list."
+        ],
+        [
+          "Magical Affinity",
+          "Whenever you are 5ft from a magical item you can sense its magic through one of your senses. Once per short rest you can increase the range of this feature to 30ft for 1min, after that you lose this feature and must finish a short rest to regain its passive effect. Using this feature only tells you if something is magical or not, nothing more than that."
+        ],
+        [
+          "Grit",
+          "You can use your reaction to gain advantage on a saving throw against a spell. You must roll a 5 or 6 on a d6 to use this feature again."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Lizardfolk",
-    id: "lizardfolk",
-    pitch: 'TODO',
-    age: [14,60],
-    size: "Medium",
-    height: 6,
-    weight: 180,
-    speed: 30,
-    lang: ["Common", "Draconic"],
-    special: [
-      [
-        "Bite",
-        "You can use your fanged maw to make unarmed strikes. If you hit with it, you deal 1d6 + Strength modifier piercing damage."
-      ],
-      [
-        "Cunning Artisan",
-        "In your short rest you can try to harvest the bone and hide from a slain creature if size Small or larger to create one of the following items: a shield, a club, a javelin or 1d4 darts or blowgun needles. To use this trait, you need a blade or appropriate artisan's tools."
-      ],
-      [
-        "Hold Breath",
-        "You can hold your breath for up to 15 minutes"
-      ],
-      [
-        "Natural Armor",
-        "You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + Dexterity modifier."
-      ],
-      [
-        "Hungry Jaws",
-        "In battle, as a bonus action, you can make a special bite attack. If the attack hits, it deals normal damage and you gain temporary hit points equal to the damage dealt. To use this trait again you must roll a 5-6 on the d6 or take a short rest."
+    },
+    {
+      name: "Halfling",
+      id: "halfling",
+      lore: "TODO",
+      age: [20, 150],
+      size: "Medium",
+      height: 3,
+      weight: 40,
+      speed: 25,
+      lang: ["Common", "Halfling"],
+      special: [
+        [
+          "Lucky",
+          "When you roll a 1 on an attack roll, ability check or saving throw, you can reroll the die and must use the new roll. Once you use this feature you can't use it again until you finish a short rest."
+        ],
+        [
+          "Brave",
+          "You have advantage on saving throws against being frightened."
+        ],
+        [
+          "Second Chance",
+          "When a creature you can see hits you with an attack roll, you can use your reaction to force that creature to reroll. You can only use this feature once per combat."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Tabaxi",
-    id: "tabaxi",
-    pitch: "TODO",
-    age: [18, 70],
-    size: "Medium",
-    height: 6,
-    weight: 130,
-    speed: 30,
-    lang: ["Common", "X"],
-    special: [
-      [
-        "Feline Agility",
-        "With a burst of speed you move double you speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet in one of your turns or your get a 6 on a d6."
-      ],
-      [
-        "Cat's Grip",
-        "Because of your claws, you have a climbing speed of 20 feet on irregular surfaces."
-      ],
-      [
-        "Cat's Claws",
-        "You can use your claws to make unarmed strikes. If you hit, you deal 1d6 + Strength modifier slashing damage."
+    },
+    {
+      name: "Dwarf",
+      id: "dwarf",
+      lore: "TODO",
+      age: [50, 350],
+      size: "Medium",
+      height: 4,
+      weight: 150,
+      speed: 25,
+      lang: ["Common", "Dwarvish"],
+      special: [
+        [
+          "Dwarven Toughness",
+          "Your hit point maximum increases by 1, and it increases by 1 every time you gain a level."
+        ],
+        [
+          "Dwarven Fortitude",
+          "Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself. You must roll a 5 or 6 on d6 to use this feature again."
+        ],
+        [
+          "Steadfast",
+          "When an effect forces you to move, through a pull, push or a slide, you move 5ft less than the effect specifies. In addition, when a attack would knock you prone, you can immediately make a saving throw to avoid falling prone."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Bugbear",
-    id: "bugbear",
-    pitch: "TODO",
-    age: [16,80],
-    size: "Medium",
-    height: 7,
-    weight: 300,
-    speed: 30,
-    lang: ["Common", "Goblin"],
-    special: [
-      [
-        "Long-Limbed",
-        "You reach is 5 feet greater than normal with melee attacks."
-      ],
-      [
-        "Powerful Build",
-        "You count as one size larger when determining your carrying capacity and the weight you can push, drag or lift."
-      ],
-      [
-        "Surprise Attack",
-        "If you surprise a creature and hit it with an attack on you first turn in combat, the attack deals an extra 2d6 damage. You can use this trait once for combat."
+    },
+    {
+      name: "Elf",
+      id: "elf",
+      lore: "TODO",
+      age: [100, 750],
+      size: "Medium",
+      height: 6,
+      weight: 140,
+      speed: 35,
+      lang: ["Common", "Elvish"],
+      special: [
+        [
+          "Fey Ancestry",
+          "You have advantage on saving throws against being charmed."
+        ],
+        [
+          "Elven Accuracy",
+          "Whenever you have advantage on an attack roll, you can reroll one of the attack dice."
+        ],
+        [
+          "Elf Magic",
+          "You know one cantrip of your choice from the druid spell list. Wisdom is your spellcasting ability for this spell."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Goblin",
-    id: "goblin", 
-    pitch: "TODO",
-    age: [8,60],
-    size: "Small",
-    height: 3,
-    weight: 60,
-    speed: 35,
-    lang: ["Common", "Goblin"],
-    special: [
-      [
-        "Fury of the Small",
-        "When you damage a creature and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage equal to your lvl + 1d6. To use this trait again you must get 5-6 on the d6 or take a short rest."
-      ],
-      [
-        "Nimble Escape",
-        "You can take the Disengage or Hide action as a bonus action on each of your turns;"
+    },
+    {
+      name: "Aasimar",
+      id: "aasimar",
+      lore: "TODO",
+      age: [20, 160],
+      size: "Medium",
+      height: 6,
+      weight: 180,
+      speed: 30,
+      lang: ["Common", "Celestial"],
+      special: [
+        [
+          "False Appearance",
+          "While you aren't using any of your other race traits you are indistinguishable from a normal human. But when you do, your eyes glimmer with white light."
+        ],
+        [
+          "Healing Hands",
+          "As an action, you can touch a creature and cause it to regain hit points equal to your two times your lvl + Constitution modifier. Once you use this trait, you can't use it again until you finish a short rest."
+        ],
+        [
+          "Celestial Resistance",
+          "You have resistance to radiant damage."
+        ],
+        [
+          "Radiant Soul",
+          "Starting at 3rd lvl, you can use your action to unleash the divine energy within yourself, causing two luminous, incorporeal wings to sprout from your back. This transformation last for 1min or until you end it as a bonus action. During it, you have a flying speed of 30ft and once on each of your turns, you can deal extra radiant damage to one target. The extra damage is equal to 1d4 + your lvl. You can use this trait once per day."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Hobgoblin",
-    id: "hobgoblin",
-    pitch: "TODO",
-    age: [16, 70],
-    size: "Medium",
-    height: 6,
-    weight: 180,
-    speed: 30,
-    lang: ["Common", "Goblin"],
-    special: [
-      [
-        "Saving Face",
-        "If you miss an attack roll, fail an ability check or lose a saving throw, you gain a bonus to the roll equal to the number of allies that you can see within 30ft (max +5). You must take a short rest to use this trait again."
-      ],
-      [
-        "Martial Advantage",
-        "If an ally of yours, that isn't incapacitated, is within 5ft of the same enemy you are attacking, you can deal an extra 2d6 damage to the enemy. You can use this trait once per combat." 
+    },
+    {
+      name: "Tiefling",
+      id: "tiefling",
+      lore: "TODO",
+      age: [20, 160],
+      size: "Medium",
+      height: 6,
+      weight: 180,
+      speed: 30,
+      lang: ["Common", "Infernal"],
+      special: [
+        [
+          "False Appearance",
+          "While you aren't using any of your other race traits you are indistinguishable from a normal human. But when you do, your eyes turn into a black void."
+        ],
+        [
+          "Cursed Hands",
+          "As an action, you can touch a creature and drain from it hit points equal to three times your lvl + Constitution modifier. Once you use this trait, you can't use it again until you finish a short rest."
+        ],
+        [
+          "Hellish Resistance",
+          "You have resistance to fire damage."
+        ],
+        [
+          "Infernal Soul",
+          "Starting at 3rd lvl, you can use your action to unleash the infernal energy within yourself, causing two dark, leathery wings to sprout from your back. This transformation last for 1min or until you end it as a bonus action. During it, you have a flying speed of 30ft and once on each of your turns, you can deal extra fire damage to one target. The extra damage is equal to 1d4 + your lvl. You can use this trait once per day."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Kobold",
-    id: "kobold", 
-    pitch: "TODO",
-    age: [6, 120],
-    size: "Small",
-    height: 3,
-    weight: 30,
-    speed: 35,
-    lang: ["Common", "Draconic"],
-    special: [
-      [
-        "Grovel, Cower, and Beg",
-        "As an action you can cowet pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10ft of you that can see you. You can use this trait once per combat."
-      ],
-      [
-        "Pack Tactics",
-        "You have advantage on an attack roll against a creature if at least one of your allies is within 5 ft of it and the ally isn't incapacitated."
+    }
+  ],
+  [
+    {
+      name: "Dragonborn",
+      id: "dragonborn",
+      lore: "TODO",
+      age: [15, 80],
+      size: "Medium",
+      height: 7,
+      weight: 250,
+      speed: 30,
+      lang: ["Common", "Draconic"],
+      special: [
+        [
+          "Dragon Hide",
+          "Your natural scales are as hard as armor. When you aren't wearing armor, your AC is equal to 13 + Dexterity modifier."
+        ],
+        [
+          "Draconic Ancestry",
+          "Choose one type of dragon to be your ancestor. You have resistance to the damage type associated with your ancestor and your Breath Weapon deals that type of damage."
+        ],
+        [
+          "Breath Weapon",
+          "As a bonus action you can exhale destructive energy in a 15ft cone. Every creature inside the area takes 2d6 damage. Once you use this feature you can't use it again until you finish a short rest."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Orc",
-    id: "orc",
-    pitch: "TODO",
-    age: [12, 50],
-    size: "Medium",
-    height: 6,
-    weight: 250,
-    speed: 30,
-    lang: ["Common", "Orc"],
-    special: [
-      [
-        "Aggressive",
-        "As a bonus action, you can move up to your speed toward an enemy that you can see or hear. You must end this move closer to the enemy."
-      ],
-      [
-        "Powerful Build",
-        "You count as one size larger when determinig your carrying capacity and the weight you can push, drag or lift."
+    },
+    {
+      name: "Goliath",
+      id: "goliath",
+      lore: "TODO",
+      age: [20, 70],
+      size: "Medium",
+      height: 8,
+      weight: 300,
+      speed: 30,
+      lang: ["Common", "Giant"],
+      special: [
+        [
+          "Stone's Endurance",
+          "When you take damage, you can use your reaction to roll a d12 + Constitution modifier and reduce the damage by that total. After you use this trait, you can't use it again until you finish a short rest."
+        ],
+        [
+          "Mountain Born",
+          "You're acclimated to the high altitudes and cold climates of mountains. You have resistance to cold damage and are naturally adapted to cold climates."
+        ],
       ]
-    ]
-  },
-  {
-    name: "Yuan-ti Pureblood",
-    id: "yuanti",
-    pitch: "TODO",
-    age: [16, 70],
-    size: "Medium",
-    height: 5,
-    weight: 120,
-    speed: 30,
-    lang: ["Common", "Draconic"],
-    special: [
-      [
-        "Magic Resistance",
-        "You have advantage on saving throws agains spells and other magical effects."
-      ],
-      [
-        "Poison Immunity",
-        "You are immune to poison damage and the poisoned condition."
-      ],
-      [
-        "Snake Charmer",
-        "You know the poison spray cantrip. You can cast animal friendship an unlimited number of times but only on snakes. And starting at lvl 3 you can cast suggestion with this trait. Once you cast it you must take a long rest to do it again. Charisma is your spellcasting ability for these spells."
+    },
+    {
+      name: "Gnome",
+      id: "gnome",
+      lore: "TODO",
+      age: [40, 400],
+      size: "Small",
+      height: 3,
+      weight: 40,
+      speed: 25,
+      lang: ["Common", "Gnomish"],
+      special: [
+        [
+          "Fade Away",
+          "Immediately after you take damage, you can use a reaction to magically become invisible until the end of your next turn or until you attack, deal damage or force someone to make a saving throw. Once you use this feature you can't do so again until you finish a long rest."
+        ],
+        [
+          "Natural Illusionist",
+          "You know the minor illusion cantrip. Intelligence is your spellcasting ability for it."
+        ],
+        [
+          "Friends with Nature",
+          "Through sounds and gestures, you can communicate simple ideas to Small or smaller beasts. Gnome often keep squirrels, badgers, rabbits, moles, woodpeckers and other creatures as beloved pets."
+        ]
       ]
-    ]
-  },
-  {
-    name: "Githyanki",
-    id: "githyanki",
-    pitch: "TODO",
-    age: [16, 100],
-    size: "Medium",
-    height: 6,
-    weight: 120,
-    speed: 30,
-    lang: ["Common", "Gith"],
-    special: [
-      [
-        "Decadent Mastery",
-        "You learn one language of your choice, and you are proficient with one skill or tool of your choice."
-      ],
-      [
-        "Martial Prodigy",
-        "You are proficient with light and medium armor and with shortswords, longswords, and greatswords."
-      ],
-      [
-        "Githyanki Psionics",
-        "You know the mage hand cantrip, and the hand is invisible when you cast the cantrip with this trait. When you reach 3rd level, you can cast the jump spell once with this trait, and you regain the ability to do so when you fi nish a long rest. When you reach 5th level, you can cast the misty step spell once with this trait, and you regain the ability to do so when you finish a long rest. Intelligence is your spellcasting ability for these spells. When you cast them with this trait, they don't require components."
+    },
+    {
+      name: "Kenku",
+      id: "kenku",
+      lore: 'TODO',
+      age: [12,60],
+      size: "Medium",
+      height: 5,
+      weight: 105,
+      speed: 30,
+      lang: ["Mimic Common", "Auran"],
+      special: [
+        [
+          "Ambusher",
+          "You gain advantage on any attacks against opponent that have not acted yet."
+        ],
+        [
+          "Mimicry",
+          "You can mimic sounds you have heard, including voices. A creature that hears the sounds you make can tell they are imitations with a successful Wisdom (Insight) check VS your Charisma (Deception) check."
+        ]
       ]
-    ]
-  }
-]
+    },
+    {
+      name: "Lizardfolk",
+      id: "lizardfolk",
+      lore: 'TODO',
+      age: [14,60],
+      size: "Medium",
+      height: 6,
+      weight: 180,
+      speed: 30,
+      lang: ["Broken Common", "Draconic"],
+      special: [
+        [
+          "Hungry Jaws",
+          "As a bonus action you use your fanged maw to make a unarmed attack. If you hit with it, you deal 1d4 + Strength modifier piercing damage and gain temporary hit points equal to the damage dealt. To use this trait again you must get a 5 or 6 on the d6."
+        ],
+        [
+          "Hold Breath",
+          "You can hold your breath for up to 15 minutes"
+        ],
+        [
+          "Natural Armor",
+          "You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + Dexterity modifier."
+        ],
+      ]
+    },
+    {
+      name: "Tabaxi",
+      id: "tabaxi",
+      lore: "TODO",
+      age: [18, 70],
+      size: "Medium",
+      height: 6,
+      weight: 130,
+      speed: 30,
+      lang: ["Common", "one extra language of your choice"],
+      special: [
+        [
+          "Feline Agility",
+          "With a burst of speed you move double you speed until the end of the turn. Once you use this trait, you can't use it again until you move 0 feet in one of your turns."
+        ],
+        [
+          "Cat's Grip",
+          "Because of your claws, you have a climbing speed of 20 feet on irregular surfaces."
+        ],
+        [
+          "Cat's Claws",
+          "You can use your claws to make unarmed strikes. If you hit, you deal 1d6 + Strength modifier slashing damage."
+        ]
+      ]
+    }
+  ],
+  [
+    {
+      name: "Goblin",
+      id: "goblin", 
+      lore: "TODO",
+      age: [8,60],
+      size: "Small",
+      height: 3,
+      weight: 60,
+      speed: 30,
+      lang: ["Broken Common", "Goblin"],
+      special: [
+        [
+          "Fury of the Small",
+          "When you damage a creature and the creature's size is larger than yours, you can cause the attack or spell to deal extra damage equal to your lvl + 1d6. To use this trait again you must get 5 or 6 on the d6."
+        ],
+        [
+          "Redirect Attack",
+          "When a creature you can see targets you with an attack, you can use your reaction to chose an ally within 5ft to change places with you. Your chosen ally becomes the target of that attack. You can only use this trait once per combat."
+        ]
+      ]
+    },
+    {
+      name: "Orc",
+      id: "orc",
+      lore: "TODO",
+      age: [12, 50],
+      size: "Medium",
+      height: 6,
+      weight: 250,
+      speed: 30,
+      lang: ["Broken Common", "Orc"],
+      special: [
+        [
+          "Aggressive",
+          "As a bonus action, you can move up to your speed toward an enemy that you can see or hear. You must end this move closer to the enemy."
+        ],
+        [
+          "Relentless Endurance",
+          "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+        ]
+      ]
+    },
+    {
+      name: "Bugbear",
+      id: "bugbear",
+      lore: "TODO",
+      age: [16,80],
+      size: "Medium",
+      height: 7,
+      weight: 300,
+      speed: 30,
+      lang: ["Broken Common", "Goblin"],
+      special: [
+        [
+          "Long-Limbed",
+          "You reach is 5 feet greater than normal with melee attacks."
+        ],
+        [
+          "Surprise Attack",
+          "If you surprise a creature and hit it with an attack on you first turn in combat, the attack deals an extra 2d6 damage. You can use this trait once for combat."
+        ]
+      ]
+    },
+    {
+      name: "Hobgoblin",
+      id: "hobgoblin",
+      lore: "TODO",
+      age: [16, 70],
+      size: "Medium",
+      height: 6,
+      weight: 180,
+      speed: 30,
+      lang: ["Common", "Goblin"],
+      special: [
+        [
+          "Saving Face",
+          "If you miss an attack roll, fail an ability check or lose a saving throw, you gain a bonus to the roll equal to the number of allies that you can see within 30ft (max +5). You must take a short rest to use this trait again."
+        ],
+        [
+          "Martial Advantage",
+          "If an ally of yours, that isn't incapacitated, is within 5ft of the same enemy you are attacking, you can deal an extra 2d6 damage to the enemy. You can use this trait once per combat." 
+        ]
+      ]
+    },
+    {
+      name: "Kobold",
+      id: "kobold", 
+      lore: "TODO",
+      age: [6, 120],
+      size: "Small",
+      height: 3,
+      weight: 30,
+      speed: 35,
+      lang: ["Broken Common", "Draconic"],
+      special: [
+        [
+          "Grovel, Cower, and Beg",
+          "As an action you can cower pathetically to distract nearby foes. Until the end of your next turn, your allies gain advantage on attack rolls against enemies within 10ft of you that can see you. You can use this trait once per combat."
+        ],
+        [
+          "Pack Tactics",
+          "You have advantage on an attack roll against a creature if at least one of your allies is within 5 ft of it and the ally isn't incapacitated."
+        ]
+      ]
+    },
+    {
+      name: "Yuan-ti Pureblood",
+      id: "yuanti",
+      lore: "TODO",
+      age: [16, 70],
+      size: "Medium",
+      height: 5,
+      weight: 120,
+      speed: 30,
+      lang: ["Common", "Draconic"],
+      special: [
+        [
+          "Shapechanger",
+          "You can use your action to Wild Shape into a poisonous snake. This tranformation can last up to 1 hour. You can only use this trait once per day."
+        ],
+        [
+          "Poison Immunity",
+          "You are immune to poison damage and the poisoned condition."
+        ],
+        [
+          "Snake Charmer",
+          "You can cast animal friendship an unlimited number of times but only on snakes. Charisma is your spellcasting ability for these spells."
+        ]
+      ]
+    }
+  ]
+];
+
 const RACES = deepFreeze(__races);
 
 let __description = {

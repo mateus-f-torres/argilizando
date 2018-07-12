@@ -44,20 +44,42 @@ class PlayerRace extends React.Component {
 
           ? <Race hideRace={this.hideRace} lockRace={this.lockRace} {...this.props.race}/>
 
-          : <ul>
+          : <ul id="selection">
               {
-                RACES.map((race) => (
-                  <li key={race.id}>
-                    <button 
-                      className={btnClass} 
-                      name={race.id}
-                      onClick={this.showRace}
-                    >
-                      {race.id}
-                    </button>
-                    <input type="radio" name="race" value={race.id} />
-                  </li>
-                ))
+                RACES.map((category, i) => {
+                  let caption;
+                  switch(i) {
+                    case 0:
+                      caption = "Usual Races";
+                      break;
+                    case 1:
+                      caption = "Unusual Races";
+                      break;
+                    case 2:
+                      caption = "Monstrous Races";
+                      break;
+                  }
+                  return (
+                    <div key={i}>
+                      <h3 id={i == 0 ? "first" : ''} className="category">{caption}</h3>
+                      <hr />
+                      {
+                        category.map((race) => (
+                        <li key={race.id}>
+                          <button 
+                            className={btnClass} 
+                            name={race.id}
+                            onClick={this.showRace}
+                          >
+                            {race.id}
+                          </button>
+                          <input type="radio" name="race" value={race.id} />
+                        </li>
+                        ))
+                      }
+                    </div>
+                  )
+                })
               }
             </ul>
         }

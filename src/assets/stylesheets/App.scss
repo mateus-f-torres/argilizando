@@ -6,6 +6,26 @@ body {
   color: $text;
 }
 
+/* Header Style */
+
+header {
+  width: 100%;
+  height: 9.5vh;
+  background-color: $nav;
+  border-bottom: 1px solid rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  img {
+    width: 12.5vw;
+    text-align: center;
+    padding: 0.5em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
 /* Form & Starter Section style */
 
 form {

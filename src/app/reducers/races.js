@@ -8,12 +8,14 @@ const defaultPlayerRace = {
 const raceReducer = (state = defaultPlayerRace, action) => {
   switch(action.type) {
     case 'DISPLAY_RACE':
-      for(let item of RACES) {
-        if(item.id == action.race) {
-          return Object.assign({}, state, {
-            show: true,
-            chosen: item
-          })
+      for(let category of RACES) {
+        for(let race of category) {
+          if(race.id == action.race) {
+            return Object.assign({}, state, {
+              show: true,
+              chosen: race
+            })
+          }
         }
       }
       break;
