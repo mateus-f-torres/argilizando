@@ -1,0 +1,13 @@
+@import '../partials/_variables';
+@import '../partials/_btn';
+
+#MENU {
+  hr { margin-bottom: 0; }
+  .menu-btn {
+    @extend %btn-style;
+    width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+

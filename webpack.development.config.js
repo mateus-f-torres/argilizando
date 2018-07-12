@@ -21,7 +21,6 @@ const htmlPlugin =
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const cleanPlugin = 
   new CleanWebpackPlugin('lib', {});
- 
 
 module.exports = { 
   mode: 'development',
@@ -96,3 +95,4 @@ module.exports = {
     htmlPlugin
   ]
 };
+

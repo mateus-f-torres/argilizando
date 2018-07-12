@@ -6,11 +6,11 @@ type Props = {};
 const btnClass = "btn waves-effect waves-light";
 
 const Race = (props: Props) => (
-  <figure>
+  <figure className="card">
     <button className={btnClass} onClick={props.hideRace}>Back</button>
     <button className={btnClass} onClick={props.lockRace}>Lock</button>
     <h3>{props.name}</h3>
-    <h4>{props.pitch}</h4>
+    <h4>{props.lore}</h4>
     <p>Average height: {props.height}ft tall.</p>
     <p>Average weight: {props.weight} pounds.</p>
     <p>Average lifespan: from {props.age[0]} to {props.age[1]} years.</p>

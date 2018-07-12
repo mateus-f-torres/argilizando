@@ -4,11 +4,18 @@
 
 #RACE {
   hr { margin-bottom: 0; }
-  ul {
+  #selection {
     margin-top: 0.1em;
     margin-bottom: 0;
     display: block;
     width: 100%;
+    .category {
+      clear: left;
+      padding-top: 1em;
+    }
+    .category#first {
+      padding-top: 0;
+    }
     .race-btn {
       @extend %btn-style;
       display: inline;
@@ -18,7 +25,7 @@
     }
     input[type=radio] { display: none; }
   }
-  figure {
+  .card {
     width: 100%;
     .btn {
       @extend %btn-style;
@@ -35,6 +42,7 @@
     }
     ul {
       list-style: none;
+      display: block;
       p {
         width: 100%;
         text-align: center;

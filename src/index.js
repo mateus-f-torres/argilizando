@@ -5,20 +5,16 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import rootReducer from './app/reducers/index.js';
 
-import App from './app/components/App.jsx';
+import FullApp from './app/containers/FullApp.js';
 
 // 1st stylesheet called, resets here
 import './index.scss';
 
 const store = createStore(rootReducer);
 
-
-if (typeof window !== 'undefined') {
-  ReactDOM.hydrate(
-    <Provider store={store}>
-      <App />
-    </Provider>,
-    document.getElementById('root')
-  );
-};
-
+ReactDOM.render(
+  <Provider store={store}>
+    <FullApp />
+  </Provider>,
+  document.getElementById('root')
+);
