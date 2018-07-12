@@ -7,12 +7,58 @@ const btnClass = "menu-btn waves-effect waves-light";
 const Menu = (props) => (
   <form>
     <section id='MENU'>
-      <h1>Argilizando</h1>
+      <h2>Character Creator</h2>
       <hr />
-      <div>
-        <button className={btnClass} onClick={props.race}>Player Race</button>
-        <button className={btnClass} onClick={props.score}>Ability Scores</button>
-    </div>
+      <ul>
+        <button className={btnClass} onClick={props.race}>
+          1. Race 
+          <span className={
+            props.done.includes("race")
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btnClass} disabled>
+          2. Class
+          <span className={
+            props.done.includes("class")
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btnClass}  onClick={props.score}>
+          3. Ability Scores
+          <span className={
+            props.done.includes("score")
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btnClass} disabled>
+          4. Background
+          <span className={
+            props.done.includes("background")
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btnClass} disabled>
+          5. Equipment
+          <span className={
+            props.done.includes("equipment")
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btnClass} disabled>
+          6. Play!
+          <span className={
+            props.done.includes("play")
+              ? "play"
+              : ""
+          }></span>
+        </button>
+    </ul>
     </section>
   </form>
 );

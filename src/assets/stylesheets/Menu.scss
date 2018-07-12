@@ -3,10 +3,30 @@
 
 #MENU {
   hr { margin-bottom: 0; }
+  ul { margin: 0; }
   .menu-btn {
     @extend %btn-style;
     width: 100%;
     margin-bottom: 0;
+    text-transform: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:disabled {
+      background-color: grey;
+    }
+    span {
+      background-color: darkgrey;
+      width: 5vh;
+      height: 5vh;
+      border-radius: 50%;
+    }
+    .done{
+      background-color: $link-color;
+    }
+    .play {
+      background-color: red;
+    }
   }
 }
 

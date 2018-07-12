@@ -30,6 +30,7 @@ class PlayerRace extends React.Component {
 
   lockRace(e) {
     e.preventDefault();
+    this.props.lockRace();
   }
 
   render() {

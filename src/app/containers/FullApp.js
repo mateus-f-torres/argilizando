@@ -6,7 +6,8 @@ const mapStateToProps = (state) => {
   return {
     menu: state.menu.menu,
     race: state.menu.race,
-    score: state.menu.score
+    score: state.menu.score,
+    done: state.done
   };
 };
 

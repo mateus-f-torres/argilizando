@@ -6,7 +6,6 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "prepare": "nsp check",
     "predashboard": "NODE_ENV=development",
     "dashboard": "webpack-dashboard -- webpack-dev-server --config  webpack.development.config.js --hot --open",
     "predev": "NODE_ENV=development && yarn run babel dev_server.js -o server.js",
@@ -55,7 +54,6 @@
     "jest": "^23.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
-    "nsp": "^3.2.1",
     "optimize-css-assets-webpack-plugin": "^4.0.3",
     "postcss-loader": "^2.1.5",
     "redux-devtools": "^3.4.1",
