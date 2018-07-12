@@ -39,6 +39,7 @@ class App extends React.Component {
             this.props.menu
               ? ( 
                 <Menu 
+                  done={this.props.done}
                   race={this.raceScreen}
                   score={this.scoreScreen}
                 />

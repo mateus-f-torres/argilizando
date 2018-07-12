@@ -1,11 +1,11 @@
 import { RACES } from '../logic/data.js';
 
-const defaultPlayerRace = {
+const defaultRace = {
   show: false,
-  chosen: "human"
+  chosen: "none"
 };
 
-const raceReducer = (state = defaultPlayerRace, action) => {
+const raceReducer = (state = defaultRace, action) => {
   switch(action.type) {
     case 'DISPLAY_RACE':
       for(let category of RACES) {
@@ -19,11 +19,10 @@ const raceReducer = (state = defaultPlayerRace, action) => {
         }
       }
       break;
+
     case 'SHOW_RACE_SELECTION':
-      return Object.assign({}, state, {
-        show: false,
-        chosen: "human"
-      })
+      return Object.assign({}, state, defaultRace)
+
     default:
       return state;
   }

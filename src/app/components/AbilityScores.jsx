@@ -11,6 +11,8 @@ class AbilityScores extends React.Component {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.resetBtn = this.resetBtn.bind(this);
+    this.lockScore = this.lockScore.bind(this);
   }
 
   handleClick(e) {
@@ -31,11 +33,31 @@ class AbilityScores extends React.Component {
     }
   }
 
+  resetBtn(e) {
+    e.preventDefault();
+    this.props.resetBtn();
+  }
+
+  lockScore(e) {
+    e.preventDefault();
+    this.props.lockScore();
+  }
+
   render() {
+
+    const btnClass = "lock-btn waves-effect waves-light";
+
     return (
       <section id="SCORE">
         <h2>Ability Scores</h2>
-        <h3>{this.props.total} points left to spend</h3>
+        {
+          this.props.total !== 0
+            ? <h3>{this.props.total} points left to spend</h3>
+            : <div>
+                <button onClick={this.resetBtn} className={btnClass}>Reset</button>
+                <button onClick={this.lockScore} className={btnClass}>Lock</button>
+              </div>
+        }
         <hr />
         <ul>
           {

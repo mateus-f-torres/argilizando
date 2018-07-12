@@ -14,7 +14,7 @@ const DEFAULT_COST = 1;
 const DEFAULT_SHOW = false;
 
 // str: [8, -1, 1, false]
-const defaultAbilityScores = {
+const defaultScores = {
   total: DEFAULT_STARTER,
   str: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
   dex: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
@@ -24,7 +24,7 @@ const defaultAbilityScores = {
   cha: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW]
 };
 
-const scoreReducer = (state = defaultAbilityScores, action) => {
+const scoreReducer = (state = defaultScores, action) => {
 
   let ability = action.ability;
   let score, mod, cost, show;
@@ -95,6 +95,9 @@ const scoreReducer = (state = defaultAbilityScores, action) => {
       return Object.assign({}, state, {
         [ability]: [score, mod, cost, show]
       })
+
+    case 'RESET_SCORE':
+      return Object.assign({}, state, defaultScores) 
 
     default: 
       return state;

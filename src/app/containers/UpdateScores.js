@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import { incrementScore, decrementScore, toggleDescription } from '../actions';
+import { resetScore, incrementScore, decrementScore, toggleDescription } from '../actions';
+import { doneScore, showMenu } from '../actions';
 import AbilityScores from '../components/AbilityScores.jsx';
 
 const mapStateToProps = (state) => {
@@ -24,6 +25,13 @@ const mapDispatchToProps = (dispatch) => {
     },
     toggleText: (ability) => {
       dispatch(toggleDescription(ability))
+    },
+    resetBtn: () => {
+      dispatch(resetScore())
+    },
+    lockScore: () => {
+      dispatch(doneScore())
+      dispatch(showMenu())
     }
   }
 }

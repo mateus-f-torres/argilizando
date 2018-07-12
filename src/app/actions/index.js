@@ -1,3 +1,7 @@
+export const resetScore = () => ({
+  type: 'RESET_SCORE'
+}) 
+
 // action vai criar keys com os nomes dos params
 export const incrementScore = (ability) => ({
   type: 'INCREMENT_SCORE',
@@ -33,4 +37,12 @@ export const showRace = () => ({
 
 export const showScore = () => ({
   type: 'SHOW_SCORE_SCREEN'
+})
+
+export const doneRace = () => ({
+  type: 'DONE_RACE'
+})
+
+export const doneScore = () => ({
+  type: 'DONE_SCORE'
 })
