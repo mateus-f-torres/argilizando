@@ -27,13 +27,12 @@ let __races = [
     {
       name: "Human",
       id: "human",
-      lore: "TODO",
       age: [20, 80],
       size: "Medium",
       height: 6,
       weight: 180,
       speed: 30,
-      lang: ["Common", "one extra language of your choice"],
+      lang: ["Common", ".."],
       special: [
         [
           "Bonus Skill",
@@ -52,7 +51,6 @@ let __races = [
     {
       name: "Halfling",
       id: "halfling",
-      lore: "TODO",
       age: [20, 150],
       size: "Medium",
       height: 3,
@@ -77,7 +75,6 @@ let __races = [
     {
       name: "Dwarf",
       id: "dwarf",
-      lore: "TODO",
       age: [50, 350],
       size: "Medium",
       height: 4,
@@ -102,7 +99,6 @@ let __races = [
     {
       name: "Elf",
       id: "elf",
-      lore: "TODO",
       age: [100, 750],
       size: "Medium",
       height: 6,
@@ -127,7 +123,6 @@ let __races = [
     {
       name: "Aasimar",
       id: "aasimar",
-      lore: "TODO",
       age: [20, 160],
       size: "Medium",
       height: 6,
@@ -156,7 +151,6 @@ let __races = [
     {
       name: "Tiefling",
       id: "tiefling",
-      lore: "TODO",
       age: [20, 160],
       size: "Medium",
       height: 6,
@@ -187,7 +181,6 @@ let __races = [
     {
       name: "Dragonborn",
       id: "dragonborn",
-      lore: "TODO",
       age: [15, 80],
       size: "Medium",
       height: 7,
@@ -212,7 +205,6 @@ let __races = [
     {
       name: "Goliath",
       id: "goliath",
-      lore: "TODO",
       age: [20, 70],
       size: "Medium",
       height: 8,
@@ -233,7 +225,6 @@ let __races = [
     {
       name: "Gnome",
       id: "gnome",
-      lore: "TODO",
       age: [40, 400],
       size: "Small",
       height: 3,
@@ -258,13 +249,12 @@ let __races = [
     {
       name: "Kenku",
       id: "kenku",
-      lore: 'TODO',
       age: [12,60],
       size: "Medium",
       height: 5,
       weight: 105,
       speed: 30,
-      lang: ["Mimic Common", "Auran"],
+      lang: ["Common", "Auran"],
       special: [
         [
           "Ambusher",
@@ -279,13 +269,12 @@ let __races = [
     {
       name: "Lizardfolk",
       id: "lizardfolk",
-      lore: 'TODO',
       age: [14,60],
       size: "Medium",
       height: 6,
       weight: 180,
       speed: 30,
-      lang: ["Broken Common", "Draconic"],
+      lang: ["Common", "Draconic"],
       special: [
         [
           "Hungry Jaws",
@@ -304,13 +293,12 @@ let __races = [
     {
       name: "Tabaxi",
       id: "tabaxi",
-      lore: "TODO",
       age: [18, 70],
       size: "Medium",
       height: 6,
       weight: 130,
       speed: 30,
-      lang: ["Common", "one extra language of your choice"],
+      lang: ["Common", ".."],
       special: [
         [
           "Feline Agility",
@@ -331,13 +319,12 @@ let __races = [
     {
       name: "Goblin",
       id: "goblin", 
-      lore: "TODO",
       age: [8,60],
       size: "Small",
       height: 3,
       weight: 60,
       speed: 30,
-      lang: ["Broken Common", "Goblin"],
+      lang: ["Common", "Goblin"],
       special: [
         [
           "Fury of the Small",
@@ -352,13 +339,12 @@ let __races = [
     {
       name: "Orc",
       id: "orc",
-      lore: "TODO",
       age: [12, 50],
       size: "Medium",
       height: 6,
       weight: 250,
       speed: 30,
-      lang: ["Broken Common", "Orc"],
+      lang: ["Common", "Orc"],
       special: [
         [
           "Aggressive",
@@ -373,13 +359,12 @@ let __races = [
     {
       name: "Bugbear",
       id: "bugbear",
-      lore: "TODO",
       age: [16,80],
       size: "Medium",
       height: 7,
       weight: 300,
       speed: 30,
-      lang: ["Broken Common", "Goblin"],
+      lang: ["Common", "Goblin"],
       special: [
         [
           "Long-Limbed",
@@ -394,7 +379,6 @@ let __races = [
     {
       name: "Hobgoblin",
       id: "hobgoblin",
-      lore: "TODO",
       age: [16, 70],
       size: "Medium",
       height: 6,
@@ -415,13 +399,12 @@ let __races = [
     {
       name: "Kobold",
       id: "kobold", 
-      lore: "TODO",
       age: [6, 120],
       size: "Small",
       height: 3,
       weight: 30,
       speed: 35,
-      lang: ["Broken Common", "Draconic"],
+      lang: ["Common", "Draconic"],
       special: [
         [
           "Grovel, Cower, and Beg",
@@ -436,7 +419,6 @@ let __races = [
     {
       name: "Yuan-ti Pureblood",
       id: "yuanti",
-      lore: "TODO",
       age: [16, 70],
       size: "Medium",
       height: 5,

@@ -1,34 +1,84 @@
 //@flow
 import * as React from 'react';
 
+import human from "Images/human.png";
+import halfling from "Images/halfling.png";
+import dwarf from "Images/dwarf.png";
+import elf from "Images/elf.png";
+import aasimar from "Images/aasimar.png";
+import tiefling from "Images/tiefling.png";
+import dragonborn from "Images/dragonborn.png";
+import goliath from "Images/goliath.png";
+import gnome from "Images/gnome.png";
+import kenku from "Images/kenku.png";
+import lizardfolk from "Images/lizardfolk.png";
+import tabaxi from "Images/tabaxi.png";
+import goblin from "Images/goblin.png";
+import orc from "Images/orc.png";
+import bugbear from "Images/bugbear.png";
+import hobgoblin from "Images/hobgoblin.png";
+import kobold from "Images/kobold.png";
+import yuanti from "Images/yuanti.png";
+
 type Props = {};
 
-const btnClass = "btn waves-effect waves-light";
+const btn = "btn waves-effect waves-light";
 
-const Race = (props: Props) => (
+const Race = (props: Props) => {
+  let img;
+  switch(props.id) {
+    case "human": img = human; break;
+    case "halfling": img = halfling; break;
+    case "dwarf": img = dwarf; break;
+    case "elf": img = elf; break; 
+    case "aasimar": img = aasimar; break; 
+    case "tiefling": img = tiefling; break; 
+    case "dragonborn": img = dragonborn; break; 
+    case "goliath": img = goliath; break; 
+    case "gnome": img = gnome; break;
+    case "kenku": img = kenku; break;
+    case "lizardfolk": img = lizardfolk; break;
+    case "tabaxi": img = tabaxi; break;
+    case "goblin": img = goblin; break;
+    case "orc": img = orc; break;
+    case "bugbear": img = bugbear; break;
+    case "hobgoblin": img = hobgoblin; break;
+    case "kobold": img = kobold; break;
+    case "yuanti": img = yuanti; break;
+  }
+
+  return (
   <figure className="card">
-    <button className={btnClass} onClick={props.hideRace}>Back</button>
-    <button className={btnClass} onClick={props.lockRace}>Lock</button>
-    <h3>{props.name}</h3>
-    <h4>{props.lore}</h4>
-    <p>Average height: {props.height}ft tall.</p>
-    <p>Average weight: {props.weight} pounds.</p>
-    <p>Average lifespan: from {props.age[0]} to {props.age[1]} years.</p>
-    <p>Your player size is considered {props.size}.</p>
-    <p>Your player speed is {props.speed}ft.</p>
-    <p>You can speak {props.lang[0]} and {props.lang[1]}.</p>
+    <h2>{props.name}</h2>
+    <img src={img} />
+    <hr />
     <ul>
-      <h5>Special Traits</h5>
+      <h3>Race Traits</h3>
       {
         props.special.map((trait, i) => (
         <li key={i}>
-          <h6>{trait[0]}</h6>
+          <h5>{trait[0]} :</h5>
           <p>{trait[1]}</p>
         </li>
         ))
       }
     </ul>
+    <hr />
+    <ul>
+    <h3>Race Stats</h3>
+    <li><p><b>Height</b>: {props.height}ft.</p></li>
+    <li><p><b>Weight</b>: {props.weight} pounds.</p></li>
+    <li><p><b>Adulthood</b>: {props.age[0]} years.</p></li>
+    <li><p><b>Lifespan</b>: {props.age[1]} years.</p></li>
+    <li><p><b>Size</b>: {props.size}.</p></li>
+    <li><p><b>Speed</b>: {props.speed}ft.</p></li>
+    <li><p><b>Speaks</b>: {props.lang[0]} &amp; {props.lang[1]}.</p></li>
+    </ul>
+    <hr />
+    <button className={btn} onClick={props.hideRace}>Back</button>
+    <button className={btn} onClick={props.lockRace}>Lock</button>
   </figure>
-);
+  )
+};
 
 export default Race;

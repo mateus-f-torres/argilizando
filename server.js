@@ -11,10 +11,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var app = (0, _express2.default)();
 
 // serve the correct static files
-app.use(_express2.default.static(__dirname + '/dist'));
+app.use(_express2.default.static(__dirname + '/lib'));
 
 app.get('*', function (req, res) {
-  res.sendFile(__dirname + '/dist/index.html');
+  res.sendFile(__dirname + '/lib/index.html');
 });
 
-app.listen(process.env.PORT, process.env.IP);
+var listener = app.listen(process.env.PORT, process.env.IP, function () {
+  console.log('Server for C9 Running in DEVELOPMENT MODE ');
+});
+
+//app.listen(process.env.PORT, process.env.IP);

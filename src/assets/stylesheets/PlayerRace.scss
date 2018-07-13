@@ -27,33 +27,38 @@
   }
   .card {
     width: 100%;
+    margin: 0;
+    h2 { margin-bottom: 0; }
+    img {
+      width: 250px;
+      height: auto;
+      margin: 0 auto;
+    }
     .btn {
       @extend %btn-style;
       &:first-of-type {
         display: inline;
         float: left;
-        margin-left: 2em;
+        margin: 1em 0 1em 2em;
       }
       &:last-of-type {
         display: inline;
         float: right;
-        margin-right: 2em;
+        margin: 1em 2em 1em 0;
       }
     }
     ul {
       list-style: none;
       display: block;
-      p {
-        width: 100%;
-        text-align: center;
-        font-weight: bold;
-      }
       li {
+        h5 { 
+        text-align: start;  
+        margin: 1em; 
+        }
         p {
           width: 90%;
-          margin: 1em auto 2em auto;
-          text-align: center;
-          text-transform: justify;
+          margin: 1em auto ;
+          text-align: justify;
           font-weight: normal;
         }
       }

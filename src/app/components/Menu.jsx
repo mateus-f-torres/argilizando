@@ -2,65 +2,45 @@ import * as React from 'react';
 
 import 'Styles/Menu.scss';
 
-const btnClass = "menu-btn waves-effect waves-light";
+const btn = "menu-btn waves-effect waves-light";
+
+const labels = [
+  ["race", "1. Race"],
+  ["class", "2. Class", true],
+  ["score", "3. Ability Scores"],
+  ["background", "4. Background", true],
+  ["equipment", "5. Equipament", true]
+];
 
 const Menu = (props) => (
-  <form>
+  <main>
     <section id='MENU'>
       <h2>Character Creator</h2>
       <hr />
       <ul>
-        <button className={btnClass} onClick={props.race}>
-          1. Race 
-          <span className={
-            props.done.includes("race")
-              ? "done"
-              : ""
-          }></span>
-        </button>
-        <button className={btnClass} disabled>
-          2. Class
-          <span className={
-            props.done.includes("class")
-              ? "done"
-              : ""
-          }></span>
-        </button>
-        <button className={btnClass}  onClick={props.score}>
-          3. Ability Scores
-          <span className={
-            props.done.includes("score")
-              ? "done"
-              : ""
-          }></span>
-        </button>
-        <button className={btnClass} disabled>
-          4. Background
-          <span className={
-            props.done.includes("background")
-              ? "done"
-              : ""
-          }></span>
-        </button>
-        <button className={btnClass} disabled>
-          5. Equipment
-          <span className={
-            props.done.includes("equipment")
-              ? "done"
-              : ""
-          }></span>
-        </button>
-        <button className={btnClass} disabled>
+        {
+          labels.map((item) => (
+            <button key={item[0]} className={btn} onClick={props[item[0]]} disabled={item[2]}>
+              {item[1]}
+              <span className={
+                props.done.includes(item[0])
+                  ? "done"
+                  : ""
+              }></span>
+          </button>
+          ))
+        }
+        <button className={btn} onClick={props.play} disabled>
           6. Play!
           <span className={
-            props.done.includes("play")
+            props.done.includes("all")
               ? "play"
-              : ""
+              : "play"
           }></span>
         </button>
-    </ul>
+      </ul>
     </section>
-  </form>
+  </main>
 );
 
 export default Menu;
