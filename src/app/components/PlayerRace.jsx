@@ -7,7 +7,7 @@ import 'Styles/PlayerRace.scss';
 
 type Props = {};
 
-const btnClass = "race-btn waves-effect waves-light";
+const btn = "race-btn waves-effect waves-light";
 
 class PlayerRace extends React.Component {
   constructor(props: Props) {
@@ -36,16 +36,20 @@ class PlayerRace extends React.Component {
   render() {
     return (
       <section id="RACE">
-        <h2>Player Race</h2>
-        <hr />
         {
           // if race has been selected render it
           // else render race selection buttons list 
           this.props.selected == true
 
-          ? <Race hideRace={this.hideRace} lockRace={this.lockRace} {...this.props.race}/>
+            ? <Race 
+                hideRace={this.hideRace} 
+                lockRace={this.lockRace} 
+                {...this.props.race}
+              />
 
           : <ul id="selection">
+            <h2>Player Race</h2>
+            <hr />
               {
                 RACES.map((category, i) => {
                   let caption;
@@ -60,6 +64,7 @@ class PlayerRace extends React.Component {
                       caption = "Monstrous Races";
                       break;
                   }
+
                   return (
                     <div key={i}>
                       <h3 id={i == 0 ? "first" : ''} className="category">{caption}</h3>
@@ -68,13 +73,12 @@ class PlayerRace extends React.Component {
                         category.map((race) => (
                         <li key={race.id}>
                           <button 
-                            className={btnClass} 
+                            className={btn} 
                             name={race.id}
                             onClick={this.showRace}
                           >
                             {race.id}
                           </button>
-                          <input type="radio" name="race" value={race.id} />
                         </li>
                         ))
                       }

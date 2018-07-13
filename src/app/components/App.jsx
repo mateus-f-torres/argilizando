@@ -44,11 +44,10 @@ class App extends React.Component {
                   score={this.scoreScreen}
                 />
                 )
-              : (
-                  <form id="dnd-form" action="#" method="POST" name="character">
+              : ( <main>
                     {this.props.race && <UpdateRace />}
                     {this.props.score && <UpdateScores />}
-                  </form>
+                  </main>
               )  
           }
         </div>
