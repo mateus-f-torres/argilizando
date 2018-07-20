@@ -3,6 +3,7 @@ import * as React from 'react';
 import Menu from './Menu.jsx'
 import UpdateScores from '../containers/UpdateScores.js';
 import UpdateRace from '../containers/UpdateRace.js';
+import UpdateClass from '../containers/UpdateClass.js';
 
 import 'Styles/App.scss';  // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
@@ -13,6 +14,7 @@ class App extends React.Component {
     this.menuScreen = this.menuScreen.bind(this);
     this.raceScreen = this.raceScreen.bind(this);
     this.scoreScreen = this.scoreScreen.bind(this);
+    this.classScreen = this.classScreen.bind(this);
   }
 
   menuScreen() {
@@ -29,6 +31,11 @@ class App extends React.Component {
     this.props.showScore();
   }
 
+  classScreen(e) {
+    e.preventDefault();
+    this.props.showClass();
+  }
+
   render() {
     return (
         <div>
@@ -42,12 +49,15 @@ class App extends React.Component {
                   done={this.props.done}
                   race={this.raceScreen}
                   score={this.scoreScreen}
+                  gameClass={this.classScreen}
                 />
                 )
-              : ( <main>
-                    {this.props.race && <UpdateRace />}
-                    {this.props.score && <UpdateScores />}
-                  </main>
+              : ( 
+                <main>
+                  {this.props.race && <UpdateRace />}
+                  {this.props.score && <UpdateScores />}
+                  {this.props.gameClass && <UpdateClass />}
+                </main>
               )  
           }
         </div>

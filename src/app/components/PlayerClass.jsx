@@ -1,0 +1,91 @@
+//@flow
+import * as React from 'react';
+import GameClass from './GameClass.jsx';
+import Classes from '../data/classes.js';
+
+import 'Styles/PlayerClass.scss';
+
+type Props = {};
+
+const btn = "class-btn waves-effect waves-light";
+
+class PlayerClass extends React.Component {
+  constructor(props: Props) {
+    super(props);
+    this.getClass = this.getClass.bind(this);
+    this.hideClass = this.hideClass.bind(this);
+    this.lockClass = this.lockClass.bind(this);
+  }
+
+  getClass(e) {
+    e.preventDefault();
+    let choice = e.target.name;
+    this.props.getClass(choice);
+  }
+
+  hideClass(e) {
+    e.preventDefault();
+    this.props.noClass();
+  }
+
+  lockClass(e) {
+    e.preventDefault();
+    this.props.lockClass();
+  }
+
+  render() {
+    return (
+      <section id="CLASS">
+        {
+          this.props.selected == true
+
+            ? <GameClass 
+                hideClass={this.hideClass} 
+                lockClass={this.lockClass} 
+                {...this.props.chosen}
+              />
+
+          : <ul id="selection">
+            <h2>Player Class</h2>
+            <div className="horizontal-line" />
+              {
+                Classes.map((category, i) => {
+                 let [role, description, options] = [...category];
+
+                  return (
+                    <div key={i}>
+                      <h3 className="category">{role}</h3>
+                      <ul>
+                      {
+                        options.map((item) => (
+                        <li key={item.id}>
+                          <button 
+                            id={
+                              item.id === "wizard"
+                              || item.id === "paladin"
+                                ? "double-btn-size"
+                                : ""
+                            }
+                            className={btn} 
+                            name={item.id}
+                            onClick={this.getClass}
+                          >
+                            {item.id}
+                          </button>
+                        </li>
+                        ))
+                      }
+                      </ul>
+                    </div>
+                  )
+                })
+              }
+            </ul>
+        }
+      </section>
+    )
+  }
+};
+
+export default PlayerClass;
+

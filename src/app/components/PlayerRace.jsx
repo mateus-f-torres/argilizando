@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import Race from './Race.jsx';
-import { RACES } from '../logic/data.js';
+import RACES from '../data/races.js';
 
 import 'Styles/PlayerRace.scss';
 
@@ -49,7 +49,7 @@ class PlayerRace extends React.Component {
 
           : <ul id="selection">
             <h2>Player Race</h2>
-            <hr />
+            <div className="horizontal-line" />
               {
                 RACES.map((category, i) => {
                   let caption;
@@ -68,7 +68,7 @@ class PlayerRace extends React.Component {
                   return (
                     <div key={i}>
                       <h3 id={i == 0 ? "first" : ''} className="category">{caption}</h3>
-                      <hr />
+                      <div className="horizontal-line no-bottom" />
                       {
                         category.map((race) => (
                         <li key={race.id}>

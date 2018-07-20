@@ -1,13 +1,15 @@
 const defaultMenu = {
   menu: true,
   race: false,
-  score: false
+  score: false,
+  gameClass: false
 };
 
 const selectedMenu = {
   menu: false,
   race: false,
-  score: false
+  score: false,
+  gameClass: false
 };
 
 const menuReducer = (state = defaultMenu, action) => {
@@ -18,6 +20,8 @@ const menuReducer = (state = defaultMenu, action) => {
       return Object.assign({}, state, selectedMenu, { race: true })
     case 'SHOW_SCORE_SCREEN':  
       return Object.assign({}, state, selectedMenu, { score: true })
+    case 'SHOW_CLASS_SCREEN':
+      return Object.assign({}, state, selectedMenu, { gameClass: true })
     default:
       return state;
   }

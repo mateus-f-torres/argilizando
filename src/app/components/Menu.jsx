@@ -6,17 +6,17 @@ const btn = "menu-btn waves-effect waves-light";
 
 const labels = [
   ["race", "1. Race"],
-  ["class", "2. Class", true],
+  ["gameClass", "2. Class"],
   ["score", "3. Ability Scores"],
   ["background", "4. Background", true],
-  ["equipment", "5. Equipament", true]
+  ["create", "5. Create", true]
 ];
 
 const Menu = (props) => (
   <main>
     <section id='MENU'>
       <h2>Character Creator</h2>
-      <hr />
+      <div className="horizontal-line no-bottom" />
       <ul>
         {
           labels.map((item) => (

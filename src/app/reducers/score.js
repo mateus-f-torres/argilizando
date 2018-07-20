@@ -1,4 +1,4 @@
-import { DESCRIPTION } from '../logic/data.js';
+import DESCRIPTION from '../data/modifiers.js';
 
 // constants for ability score functions
 const MAX_TOTAL = 55;

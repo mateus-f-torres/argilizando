@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import Score from './Score.jsx';
-import { ABILITIES } from '../logic/data.js';
+import ABILITIES from '../data/scores.js';
 
 import 'Styles/AbilityScores.scss';
 
@@ -55,10 +55,10 @@ class AbilityScores extends React.Component {
             ? <h3>{this.props.total} points left to spend</h3>
             : <div>
                 <button onClick={this.resetBtn} className={btnClass}>Reset</button>
-                <button onClick={this.lockScore} className={btnClass}>Lock</button>
+                <button onClick={this.lockScore} className={btnClass}>Next</button>
               </div>
         }
-        <hr />
+        <div className="horizontal-line" />
         <ul>
           {
             // store unloads all six ABILITIES as props
