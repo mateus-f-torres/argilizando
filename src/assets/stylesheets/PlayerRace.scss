@@ -23,14 +23,13 @@
       float: left;
       margin-bottom: 0;
     }
-    input[type=radio] { display: none; }
   }
   .card {
     width: 100%;
     margin: 0;
     h2 { margin-bottom: 0; }
     img {
-      width: 250px;
+      width: 230px;
       height: auto;
       margin: 0 auto;
     }
@@ -61,6 +60,13 @@
           text-align: justify;
           font-weight: normal;
         }
+      }
+    }
+    .stats {
+      p {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
       }
     }
   }

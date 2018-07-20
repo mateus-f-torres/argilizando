@@ -27,6 +27,19 @@ export const showRaceSelection = () => ({
   type: 'SHOW_RACE_SELECTION'
 })
 
+export const displayClass = (choice) => ({
+  type: 'DISPLAY_CLASS',
+  choice
+})
+
+export const showClassSelection = () => ({
+  type: 'SHOW_CLASS_SELECTION'
+})
+
+export const doneClass = () => ({
+  type: 'DONE_CLASS'
+})
+
 export const showMenu = () => ({
   type: 'SHOW_MENU_SCREEN'
 })
@@ -37,6 +50,10 @@ export const showRace = () => ({
 
 export const showScore = () => ({
   type: 'SHOW_SCORE_SCREEN'
+})
+
+export const showClass = () => ({
+  type: 'SHOW_CLASS_SCREEN'
 })
 
 export const doneRace = () => ({

@@ -51,7 +51,18 @@ const Race = (props: Props) => {
   <figure className="card">
     <h2>{props.name}</h2>
     <img src={img} />
-    <hr />
+    <div className="horizontal-line" />
+    <ul className="stats">
+    <h3>Race Stats</h3>
+    <li><p><b>Height:</b>{props.height}.</p></li>
+    <li><p><b>Weight:</b>{props.weight}.</p></li>
+    <li><p><b>Adulthood:</b>{props.age[0]} years.</p></li>
+    <li><p><b>Lifespan:</b>{props.age[1]} years.</p></li>
+    <li><p><b>Size:</b>{props.size}.</p></li>
+    <li><p><b>Speed:</b>{props.speed}ft.</p></li>
+    <li><p><b>Speaks:</b>{props.lang[0]} &amp; {props.lang[1]}.</p></li>
+    </ul>
+    <div className="horizontal-line" />
     <ul>
       <h3>Race Traits</h3>
       {
@@ -63,20 +74,9 @@ const Race = (props: Props) => {
         ))
       }
     </ul>
-    <hr />
-    <ul>
-    <h3>Race Stats</h3>
-    <li><p><b>Height</b>: {props.height}ft.</p></li>
-    <li><p><b>Weight</b>: {props.weight} pounds.</p></li>
-    <li><p><b>Adulthood</b>: {props.age[0]} years.</p></li>
-    <li><p><b>Lifespan</b>: {props.age[1]} years.</p></li>
-    <li><p><b>Size</b>: {props.size}.</p></li>
-    <li><p><b>Speed</b>: {props.speed}ft.</p></li>
-    <li><p><b>Speaks</b>: {props.lang[0]} &amp; {props.lang[1]}.</p></li>
-    </ul>
-    <hr />
+    <div className="horizontal-line no-bottom" />
     <button className={btn} onClick={props.hideRace}>Back</button>
-    <button className={btn} onClick={props.lockRace}>Lock</button>
+    <button className={btn} onClick={props.lockRace}>Next</button>
   </figure>
   )
 };

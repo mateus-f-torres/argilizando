@@ -1,4 +1,4 @@
-import { RACES } from '../logic/data.js';
+import RACES from '../data/races.js';
 
 const defaultRace = {
   show: false,

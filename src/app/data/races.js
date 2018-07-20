@@ -1,36 +1,13 @@
-function deepFreeze(object) {
-  // Retrieve the property names defined on object
-  var propNames = Object.getOwnPropertyNames(object);
-  // Freeze properties before freezing self
-  for (let name of propNames) {
-    let value = object[name];
 
-    object[name] = value && typeof value === "object" ? 
-      deepFreeze(value) : value;
-  }
-  return Object.freeze(object);
-}
-
-let __abilities = [
-  ["str", "Strength"],
-  ["dex", "Dexterity"],
-  ["con", "Constitution"],
-  ["int", "Intelligence"],
-  ["wis", "Wisdom"],
-  ["cha", "Charisma"]
-];
-
-let ABILITIES = deepFreeze(__abilities);
-
-let __races = [
+export default [
   [
     {
       name: "Human",
       id: "human",
       age: [20, 80],
       size: "Medium",
-      height: 6,
-      weight: 180,
+      height: "6ft or 1,7m",
+      weight: "180lb or 80kg",
       speed: 30,
       lang: ["Common", ".."],
       special: [
@@ -53,8 +30,8 @@ let __races = [
       id: "halfling",
       age: [20, 150],
       size: "Medium",
-      height: 3,
-      weight: 40,
+      height: "3ft or 1m",
+      weight: "40lb or 20kg",
       speed: 25,
       lang: ["Common", "Halfling"],
       special: [
@@ -77,8 +54,8 @@ let __races = [
       id: "dwarf",
       age: [50, 350],
       size: "Medium",
-      height: 4,
-      weight: 150,
+      height: "4ft or 1,3m",
+      weight: "150lb or 70kg",
       speed: 25,
       lang: ["Common", "Dwarvish"],
       special: [
@@ -101,8 +78,8 @@ let __races = [
       id: "elf",
       age: [100, 750],
       size: "Medium",
-      height: 6,
-      weight: 140,
+      height: "6ft or 1,8m",
+      weight: "140lb or 65kg",
       speed: 35,
       lang: ["Common", "Elvish"],
       special: [
@@ -125,8 +102,8 @@ let __races = [
       id: "aasimar",
       age: [20, 160],
       size: "Medium",
-      height: 6,
-      weight: 180,
+      height: "6ft or 1,7m",
+      weight: "180lb or 80kg",
       speed: 30,
       lang: ["Common", "Celestial"],
       special: [
@@ -153,8 +130,8 @@ let __races = [
       id: "tiefling",
       age: [20, 160],
       size: "Medium",
-      height: 6,
-      weight: 180,
+      height: "6ft or 1,7m",
+      weight: "180lb or 80kg",
       speed: 30,
       lang: ["Common", "Infernal"],
       special: [
@@ -183,8 +160,8 @@ let __races = [
       id: "dragonborn",
       age: [15, 80],
       size: "Medium",
-      height: 7,
-      weight: 250,
+      height: "7ft or 2m",
+      weight: "250lb or 120kg",
       speed: 30,
       lang: ["Common", "Draconic"],
       special: [
@@ -207,8 +184,8 @@ let __races = [
       id: "goliath",
       age: [20, 70],
       size: "Medium",
-      height: 8,
-      weight: 300,
+      height: "8ft or 2,3m",
+      weight: "300lb or 140kg",
       speed: 30,
       lang: ["Common", "Giant"],
       special: [
@@ -227,8 +204,8 @@ let __races = [
       id: "gnome",
       age: [40, 400],
       size: "Small",
-      height: 3,
-      weight: 40,
+      height: "3ft or 0,7m",
+      weight: "40lb or 18kg",
       speed: 25,
       lang: ["Common", "Gnomish"],
       special: [
@@ -251,8 +228,8 @@ let __races = [
       id: "kenku",
       age: [12,60],
       size: "Medium",
-      height: 5,
-      weight: 105,
+      height: "5ft or 1,5m",
+      weight: "105lb or 50kg",
       speed: 30,
       lang: ["Common", "Auran"],
       special: [
@@ -271,8 +248,8 @@ let __races = [
       id: "lizardfolk",
       age: [14,60],
       size: "Medium",
-      height: 6,
-      weight: 180,
+      height: "6ft or 1,8m",
+      weight: "180lb or 90kg",
       speed: 30,
       lang: ["Common", "Draconic"],
       special: [
@@ -295,8 +272,8 @@ let __races = [
       id: "tabaxi",
       age: [18, 70],
       size: "Medium",
-      height: 6,
-      weight: 130,
+      height: "6ft or 1,8m",
+      weight: "130lb or 60kg",
       speed: 30,
       lang: ["Common", ".."],
       special: [
@@ -321,8 +298,8 @@ let __races = [
       id: "goblin", 
       age: [8,60],
       size: "Small",
-      height: 3,
-      weight: 60,
+      height: "3ft or 0,8m",
+      weight: "60lb or 30kg",
       speed: 30,
       lang: ["Common", "Goblin"],
       special: [
@@ -341,8 +318,8 @@ let __races = [
       id: "orc",
       age: [12, 50],
       size: "Medium",
-      height: 6,
-      weight: 250,
+      height: "6ft or 1,8m",
+      weight: "250lb or 120kg",
       speed: 30,
       lang: ["Common", "Orc"],
       special: [
@@ -361,8 +338,8 @@ let __races = [
       id: "bugbear",
       age: [16,80],
       size: "Medium",
-      height: 7,
-      weight: 300,
+      height: "7ft or 2m",
+      weight: "300lb or 140kg",
       speed: 30,
       lang: ["Common", "Goblin"],
       special: [
@@ -381,8 +358,8 @@ let __races = [
       id: "hobgoblin",
       age: [16, 70],
       size: "Medium",
-      height: 6,
-      weight: 180,
+      height: "6ft or 1,7m",
+      weight: "180lb or 80kg",
       speed: 30,
       lang: ["Common", "Goblin"],
       special: [
@@ -401,8 +378,8 @@ let __races = [
       id: "kobold", 
       age: [6, 120],
       size: "Small",
-      height: 3,
-      weight: 30,
+      height: "3ft or 0,7m",
+      weight: "30lb or 15kg",
       speed: 35,
       lang: ["Common", "Draconic"],
       special: [
@@ -421,8 +398,8 @@ let __races = [
       id: "yuanti",
       age: [16, 70],
       size: "Medium",
-      height: 5,
-      weight: 120,
+      height: "5ft or 1,6m",
+      weight: "120lb or 120kg",
       speed: 30,
       lang: ["Common", "Draconic"],
       special: [
@@ -443,97 +420,3 @@ let __races = [
   ]
 ];
 
-const RACES = deepFreeze(__races);
-
-let __description = {
-
-  str: [
-    [-5,"Morbidly weak, has significant trouble lifting own limbs"],
-    [-4,"Needs help to stand, can be knocked over by strong breezes"],
-    [-3,"Visibly weak. Might be knocked off balance by swinging something dense"],
-    [-2,"Difficulty pushing an object of their weight"],
-    [-1,"Has trouble lifting heavy objects for a longer time"],
-    [0,"Lifts heavy objects for a short time. Can perform simple physical labor for a few hours without break"],
-    [1,"Carries heavy objects and throws small objects for medium distances. Can perform physical labor for half a day without break"],
-    [2,"Visibly toned. Carries heavy objects with one arm for longer distances. Doesn't get too exhausted by physical labor"],
-    [3,"Muscular. Can break objects like wood with bare hands and raw strength. Can perform heavy physical labor for several hours without break"],
-    [4,"Heavily muscular. Able to out-wrestle a work animal or catch a falling person. Performs the work of multiple people in physical labor"],
-    [5,"Pinnacle of brawn, able to out-lift several people in combined effort."]
-  ],
-
-  dex: [
-    [-5,"Barely mobile, probably significantly paralyzed"],
-    [-4,"Incapable of moving without noticeable effort or pain"],
-    [-3,"Visible paralysis or physical difficulty"],
-    [-2,"Significant klutz or very slow to react"],
-    [-1,"Somewhat slow, occasionally trips over own feet"],
-    [0,"Capable of usually catching a small tossed object"],
-    [1,"Able to often hit large targets."],
-    [2,"Able to often hit small targets. Can catch or dodge a medium-speed surprise projectile"],
-    [3,"Light on feet, able to often hit small moving targets"],
-    [4,"Graceful, able to flow from one action into another easily. Capable of dodging a small number of thrown objects"],
-    [5,"Moves like water, reacting to all situations with almost no effort. Capable of dodging a large number of thrown objects"]
-  ],
-
-  con: [
-    [-5,"Minimal immune system, body reacts violently to anything foreign"],
-    [-4,"Frail, suffers frequent broken bones"],
-    [-3,"Bruises very easily, knocked out by a light punch"],
-    [-2,"Unusually prone to disease and infection"],
-    [-1,"Easily winded, incapable of a full day’s hard labor"],
-    [0,"Occasionally contracts mild sicknesses"],
-    [1,"Can take a few hits before being knocked unconscious"],
-    [2,"Easily shrugs off most illnesses. Able to labor for twelve hours most days"],
-    [3,"Able to stay awake for days on end"],
-    [4,"Very difficult to wear down, almost never feels fatigue"],
-    [5,"Tireless paragon of physical endurance. Almost never gets sick, even to the most virulent diseases"]
-  ],
-
-  int: [
-    [-5,"Animalistic, no longer capable of logic or reason. Behavior is reduced to simple reactions to immediate stimuli"],
-    [-4,"Rather animalistic. Acts on instinct but can still resort to simple planning and tactics"],
-    [-3,"Very limited speech and knowledge. Often resorts to charades to express thoughts"],
-    [-2,"Has trouble following trains of thought, forgets most unimportant things"],
-    [-1,"Misuses and mispronounces words. May be forgetful"],
-    [0,"Knows what they need to know to get by"],
-    [1,"Knows a bit more than is necessary, fairly logical"],
-    [2,"Fairly intelligent, able to understand new tasks quickly. Able to do math or solve logic puzzles mentally with reasonable accuracy"],
-    [3,"Very intelligent, may invent new processes or uses for knowledge"],
-    [4,"Highly knowledgeable, probably the smartest person many people know"],
-    [5,"Famous as a sage and genius. Able to make Holmesian leaps of logic"]
-  ],
-
-  wis: [
-    [-5,"Seemingly incapable of thought, barely aware"],
-    [-4,"Rarely notices important or prominent items, people, or occurrences"],
-    [-3,"Seemingly incapable of forethought"],
-    [-2,"Often fails to exert common sense"],
-    [-1,"Forgets or opts not to consider options before taking action"],
-    [0,"Makes reasoned decisions most of the time"],
-    [1,"Able to tell when a person is upset"],
-    [2,"Reads people and situations fairly well. Can get hunches about a situation that doesn’t feel right"],
-    [3,"Often used as a source of wisdom or decider of actions"],
-    [4,"Reads people and situations very well, almost unconsciously"],
-    [5,"Nearly prescient, able to reason far beyond logic"]
-  ],
-
-  cha: [
-    [-5,"Barely conscious, probably acts very alien. May have a presence which repels other people."],
-    [-4,"Minimal independent thought, relies heavily on others to think instead"],
-    [-3,"Has trouble thinking of others as people and how to interact with them"],
-    [-2,"Terribly reticent, uninteresting, or rude"],
-    [-1,"Something of a bore, makes people mildly uncomfortable or simply clumsy in conversation"],
-    [0,"Capable of polite conversation"],
-    [1,"Mildly interesting. Knows what to say to the right people"],
-    [2,"Often popular or infamous. Knows what to say to most people and is very confident in debate"],
-    [3,"Quickly likeable, respected or feared by many people. May be very eloquent. Good at getting their will when talking to people"],
-    [4,"Quickly likeable, respected or feared by almost everybody. Can entertain people easily or knows how to effectively convince them of their own beliefs and arguments"],
-    [5,"Renowned for wit, personality, and/or looks. May be a natural born leader"]
-  ]
-}
-const DESCRIPTION = deepFreeze(__description);
-
-
-export { RACES };
-export { DESCRIPTION };
-export { ABILITIES };
