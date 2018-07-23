@@ -56,7 +56,7 @@ class PlayerRace extends React.Component {
 
                   return (
                     <div key={i}>
-                      <h3 id={i == 0 ? "first" : ''} className="category">{type}</h3>
+                      <h3 className="category">{type}</h3>
                       <div className="horizontal-line no-bottom" />
                       <ul>
                       {

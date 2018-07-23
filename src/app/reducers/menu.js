@@ -25,7 +25,7 @@ const menuReducer = (state = defaultMenu, action) => {
     case 'SHOW_CLASS_SCREEN':
       return Object.assign({}, state, selectedMenu, { gameClass: true })
     case 'SHOW_BACKGROUND_SCREEN':
-      return Object.assign({}, state, selectedMenu, {background: true})
+      return Object.assign({}, state, selectedMenu, { background: true })
     default:
       return state;
   }
