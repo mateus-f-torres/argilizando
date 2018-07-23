@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import GameClass from './GameClass.jsx';
-import Classes from '../data/classes.js';
+import CLASSES from '../data/classes.js';
 
 import 'Styles/PlayerClass.scss';
 
@@ -49,12 +49,13 @@ class PlayerClass extends React.Component {
             <h2>Player Class</h2>
             <div className="horizontal-line" />
               {
-                Classes.map((category, i) => {
-                 let [role, description, options] = [...category];
+                CLASSES.map((category, i) => {
+                 let [type, options] = [...category];
 
                   return (
                     <div key={i}>
-                      <h3 className="category">{role}</h3>
+                      <h3 className="category">{type}</h3>
+                      <div className="horizontal-line no-bottom"/>
                       <ul>
                       {
                         options.map((item) => (

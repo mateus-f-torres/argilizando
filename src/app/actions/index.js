@@ -36,6 +36,15 @@ export const showClassSelection = () => ({
   type: 'SHOW_CLASS_SELECTION'
 })
 
+export const displayBackground = (choice) => ({
+  type: 'DISPLAY_BACKGROUND',
+  choice
+})
+
+export const showBackgroundSelection = () => ({
+  type: 'SHOW_BACKGROUND_SELECTION'
+})
+
 export const doneClass = () => ({
   type: 'DONE_CLASS'
 })
@@ -56,10 +65,18 @@ export const showClass = () => ({
   type: 'SHOW_CLASS_SCREEN'
 })
 
+export const showBackground = () => ({
+  type: 'SHOW_BACKGROUND_SCREEN'
+})
+
 export const doneRace = () => ({
   type: 'DONE_RACE'
 })
 
 export const doneScore = () => ({
   type: 'DONE_SCORE'
+})
+
+export const doneBackground = () => ({
+  type: 'DONE_BACKGROUND'
 })

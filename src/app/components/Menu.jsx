@@ -8,7 +8,7 @@ const labels = [
   ["race", "1. Race"],
   ["gameClass", "2. Class"],
   ["score", "3. Ability Scores"],
-  ["background", "4. Background", true],
+  ["background", "4. Background"],
   ["create", "5. Create", true]
 ];
 

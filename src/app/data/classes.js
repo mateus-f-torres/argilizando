@@ -1,7 +1,6 @@
 export default [
   [
     "Defenders",
-    "Defenders have the highest defenses in the game and good close-up offense. They are the party’s front-line combatants; wherever they’re standing, that’s where the action is. Defenders have abilities and powers that make it difficult for enemies to move past them or to ignore them in battle.",
     [
       {
         id: "barbarian",
@@ -121,7 +120,6 @@ export default [
   ],
   [
     "Leaders",
-    "Leaders inspire, heal, and aid the other characters in an adventuring group. Leaders have good defenses, but their strength lies in powers that protect their companions and target specific foes for the party to concentrate on.",
     [
       {
         id: "cleric",
@@ -204,7 +202,6 @@ export default [
   ],
   [
     "Strikers",
-    "Strikers specialize in dealing high amounts of damage to a single target at a time. They have the most concentrated offense of any character in the game. Strikers rely on superior mobility, trickery, or magic to move around tough foes and single out the enemy they want to attack.",
     [
       {
         id: "monk",
@@ -362,7 +359,6 @@ export default [
   ],
   [
     "Controllers",
-    "Controllers deal with large numbers of enemies at the same time. They favor offense over defense, using powers that deal damage to multiple foes at once, as well as subtler powers that weaken, confuse, or delay their foes.",
     [
       {
         id: "druid",

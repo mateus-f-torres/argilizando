@@ -52,36 +52,27 @@ class PlayerRace extends React.Component {
             <div className="horizontal-line" />
               {
                 RACES.map((category, i) => {
-                  let caption;
-                  switch(i) {
-                    case 0:
-                      caption = "Usual Races";
-                      break;
-                    case 1:
-                      caption = "Unusual Races";
-                      break;
-                    case 2:
-                      caption = "Monstrous Races";
-                      break;
-                  }
+                  let [type, options] = [...category];
 
                   return (
                     <div key={i}>
-                      <h3 id={i == 0 ? "first" : ''} className="category">{caption}</h3>
+                      <h3 id={i == 0 ? "first" : ''} className="category">{type}</h3>
                       <div className="horizontal-line no-bottom" />
+                      <ul>
                       {
-                        category.map((race) => (
-                        <li key={race.id}>
+                        options.map((item) => (
+                        <li key={item.id}>
                           <button 
                             className={btn} 
-                            name={race.id}
+                            name={item.id}
                             onClick={this.showRace}
                           >
-                            {race.id}
+                            {item.id}
                           </button>
                         </li>
                         ))
                       }
+                      </ul>
                     </div>
                   )
                 })

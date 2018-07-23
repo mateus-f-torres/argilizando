@@ -1,14 +1,14 @@
-import CLASSES from '../data/classes.js';
+import BACKGROUNDS from '../data/backgrounds.js';
 
-const defaultClass = {
+const defaultBack = {
   show: false,
   chosen: "none"
 };
 
-const classReducer = (state = defaultClass, action) => {
+const backgroundReducer = (state = defaultBack, action) => {
   switch(action.type) {
-    case 'DISPLAY_CLASS':
-      for(let category of CLASSES) {
+    case 'DISPLAY_BACKGROUND':
+      for(let category of BACKGROUNDS) {
         let options = category[1];
         for(let item of options) {
           if(item.id == action.choice) {
@@ -21,12 +21,12 @@ const classReducer = (state = defaultClass, action) => {
       }
       break;
 
-    case 'SHOW_CLASS_SELECTION':
-      return Object.assign({}, state, defaultClass)
+    case 'SHOW_BACKGROUND_SELECTION':
+      return Object.assign({}, state, defaultBack)
 
     default:
       return state;
   }
 }
 
-export default classReducer;
+export default backgroundReducer;
