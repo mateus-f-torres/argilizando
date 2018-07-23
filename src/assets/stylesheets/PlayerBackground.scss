@@ -1,0 +1,102 @@
+@import '../partials/_variables';
+@import '../partials/_btn';
+/* Character Race Section style */
+
+#BACK {
+  #selection {
+    margin-top: 0.1em;
+    margin-bottom: 0;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    li { 
+    margin: 0; 
+    width: 50%;
+      .background-btn {
+        @extend %btn-style;
+        width: 100%;
+        margin-bottom: 0;
+      }
+      #long {
+        padding-left: 1.1em;
+      }
+    }
+  }
+  .card {
+    width: 100%;
+    margin: 0;
+    h2 { text-transform: capitalize; }
+    img {
+      width: 100px;
+      height: auto;
+      margin: 0 auto;
+    }
+    p {
+      width: 90%;
+      margin: 1em auto;
+      text-align: justify;
+      font-weight: normal;
+    }
+    h4 {
+      margin-left: 5%;
+      margin-bottom: 0.5em;
+      text-align: start;
+    }
+    h5 {@extend h4;}
+    ul {
+      list-style: none;
+      display: block;
+    }
+    #skill-number {
+      margin-left: 5px;
+      font-weight: normal;
+    }
+    .stats p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .multi {
+      width: 90%;
+      max-height: 130px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-content: space-between;
+      align-items: baseline;
+      li { margin: 5px; }
+      h4 { margin-left: 0; }
+    }
+    .larger {
+      max-height: 180px;
+    }
+    .equip {
+      width: 90%;
+      margin: 0 auto 0 8.5%;
+      list-style: disc;
+      li { 
+        margin: 10px 0; 
+        text-align: start;
+      }
+    }
+    .lvl { margin: 0 0 0 5%; }
+    .lvl + p { margin-top: 0.2em; }
+    .btn {
+      @extend %btn-style;
+      &:first-of-type {
+        display: inline;
+        float: left;
+        margin: 1em 0 1em 2em;
+      }
+      &:last-of-type {
+        display: inline;
+        float: right;
+        margin: 1em 2em 1em 0;
+      }
+    }
+  }
+}
+
+

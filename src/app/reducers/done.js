@@ -6,6 +6,8 @@ const doneListReducer = (state = [], action) => {
       return [...state, "score"]
     case 'DONE_CLASS':
       return [...state, "gameClass"]
+    case 'DONE_BACKGROUND':
+      return [...state, "background"]
     default:
       return state
   }

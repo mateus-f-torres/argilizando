@@ -9,7 +9,8 @@ const raceReducer = (state = defaultRace, action) => {
   switch(action.type) {
     case 'DISPLAY_RACE':
       for(let category of RACES) {
-        for(let race of category) {
+        let options = category[1];
+        for(let race of options) {
           if(race.id == action.race) {
             return Object.assign({}, state, {
               show: true,

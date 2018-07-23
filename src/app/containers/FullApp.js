@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { showMenu, showRace, showScore, showClass } from '../actions';
+import { showMenu, showRace, showScore, showClass, showBackground } from '../actions';
 import App from '../components/App.jsx';
 
 const mapStateToProps = (state) => {
@@ -8,6 +8,7 @@ const mapStateToProps = (state) => {
     race: state.menu.race,
     score: state.menu.score,
     gameClass: state.menu.gameClass,
+    background: state.menu.background,
     done: state.done
   };
 };
@@ -25,6 +26,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     showClass: () => {
       dispatch(showClass())
+    },
+    showBackground: () => {
+      dispatch(showBackground())
     }
   };
 };
