@@ -65,7 +65,7 @@ export default [
     ]
   ],
   [
-    "Specialists",
+    "Worker",
     [
       {
         id: "charlatan",
@@ -118,11 +118,40 @@ export default [
           ["set of traveler's clothes"],
           ["belt pouch containing 15gp"]
         ]
-      }
+      },
+      {
+        id: "sailor",
+        name: "Sailor",
+        pitch: "You sailed on a seagoing vessel for years. In that time, you faced clown mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths.",
+        skill: ["Athletics", "Perception"],
+        tool: ["Navigator's tools", "Vehicles (water)"],
+        equip: [
+          ["belaying pin (club)"],
+          ["50ft (15m) of silk rope"],
+          ["lucky charm"],
+          ["set of common clothes"],
+          ["belt pouch containing 10gp"]
+        ]
+      },
+      {
+        id: "soldier",
+        name: "Soldier",
+        pitch: "War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield.",
+        skill: ["Athletics", "Intimidation"],
+        tool: ["One gaming set", "Vehicles (land)"],
+        equip: [
+          ["insignia of rank"],
+          ["trophy from a fallen enemy"],
+          ["set of bone dice", "or deck of cards"],
+          ["set of common clothes"],
+          ["belt pouch containing 10gp"]
+        ]
+      },
+
     ]
   ],
   [
-    "Loners",
+    "Stranger",
     [
       {
         id: "dead",
@@ -184,7 +213,7 @@ export default [
     ]
   ],
   [
-    "Others",
+    "Remarkable",
     [
       {
         id: "folk",
@@ -227,34 +256,6 @@ export default [
           ["set of common clothes"],
           ["set of bone dice", "or deck of cards"],
           ["purse containing 25gp"]
-        ]
-      },
-      {
-        id: "sailor",
-        name: "Sailor",
-        pitch: "You sailed on a seagoing vessel for years. In that time, you faced clown mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths.",
-        skill: ["Athletics", "Perception"],
-        tool: ["Navigator's tools", "Vehicles (water)"],
-        equip: [
-          ["belaying pin (club)"],
-          ["50ft (15m) of silk rope"],
-          ["lucky charm"],
-          ["set of common clothes"],
-          ["belt pouch containing 10gp"]
-        ]
-      },
-      {
-        id: "soldier",
-        name: "Soldier",
-        pitch: "War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield.",
-        skill: ["Athletics", "Intimidation"],
-        tool: ["One gaming set", "Vehicles (land)"],
-        equip: [
-          ["insignia of rank"],
-          ["trophy from a fallen enemy"],
-          ["set of bone dice", "or deck of cards"],
-          ["set of common clothes"],
-          ["belt pouch containing 10gp"]
         ]
       },
       {
