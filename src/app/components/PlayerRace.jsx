@@ -18,19 +18,16 @@ class PlayerRace extends React.Component {
   }
 
   showRace(e) {
-    e.preventDefault();
     let race = e.target.name;
     this.props.getRace(race);
   }
 
-  hideRace(e) {
-    e.preventDefault();
+  hideRace() {
     this.props.noRace();
   }
 
-  lockRace(e) {
-    e.preventDefault();
-    this.props.lockRace();
+  lockRace() {
+    this.props.lockRace(this.props.race.id);
   }
 
   render() {

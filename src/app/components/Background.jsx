@@ -10,7 +10,7 @@ const Background = (props: Props) => (
     <h2>{props.name}</h2>
     <p>{props.pitch}</p>
     <div className="horizontal-line" />
-    <h3>Background Traits</h3>
+    <h3>Background Features</h3>
     <h4>Skill Proficiency</h4>
     <ul className="multi small">
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
@@ -44,7 +44,7 @@ const Background = (props: Props) => (
     </ul>
     <div className="horizontal-line no-bottom" />
     <button className={btn} onClick={props.hideBack}>Back</button>
-    <button className={btn} onClick={props.lockBack}>Next</button>
+    <button className={btn} onClick={props.lockBack}>Lock</button>
   </figure>
 );
 

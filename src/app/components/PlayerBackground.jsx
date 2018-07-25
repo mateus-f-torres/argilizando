@@ -18,19 +18,16 @@ class PlayerBackground extends React.Component {
   }
 
   showBack(e) {
-    e.preventDefault();
     let background = e.target.name;
     this.props.getBack(background);
   }
 
-  hideBack(e) {
-    e.preventDefault();
+  hideBack() {
     this.props.noBack();
   }
 
-  lockBack(e) {
-    e.preventDefault();
-    this.props.lockBack();
+  lockBack() {
+    this.props.lockBack(this.props.chosen.id);
   }
 
   render() {

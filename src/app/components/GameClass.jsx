@@ -155,7 +155,7 @@ class GameClass extends React.Component {
 
       <div className="horizontal-line no-bottom" />
       <button className={btn} onClick={this.props.hideClass}>Back</button>
-      <button className={btn} onClick={this.props.lockClass}>Next</button>
+      <button className={btn} onClick={this.props.lockClass}>Lock</button>
     </figure>
     )
   }

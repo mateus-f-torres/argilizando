@@ -5,6 +5,7 @@ import UpdateScores from '../containers/UpdateScores.js';
 import UpdateRace from '../containers/UpdateRace.js';
 import UpdateClass from '../containers/UpdateClass.js';
 import UpdateBackground from '../containers/UpdateBackground.js';
+import UpdateCreate from '../containers/UpdateCreate.js';
 
 import 'Styles/App.scss';  // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
@@ -17,6 +18,7 @@ class App extends React.Component {
     this.scoreScreen = this.scoreScreen.bind(this);
     this.classScreen = this.classScreen.bind(this);
     this.backgroundScreen = this.backgroundScreen.bind(this);
+    this.createScreen = this.createScreen.bind(this);
   }
 
   menuScreen() {
@@ -43,6 +45,11 @@ class App extends React.Component {
     this.props.showBackground();
   }
 
+  createScreen(e) {
+    e.preventDefault();
+    this.props.showCreate();
+  }
+
   render() {
     return (
         <div>
@@ -58,6 +65,7 @@ class App extends React.Component {
                   score={this.scoreScreen}
                   gameClass={this.classScreen}
                   background={this.backgroundScreen}
+                  create={this.createScreen}
                 />
                 )
               : ( 
@@ -66,6 +74,7 @@ class App extends React.Component {
                   {this.props.score && <UpdateScores />}
                   {this.props.gameClass && <UpdateClass />}
                   {this.props.background && <UpdateBackground />}
+                  {this.props.create && <UpdateCreate />}
                 </main>
               )  
           }

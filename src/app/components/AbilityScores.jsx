@@ -16,7 +16,6 @@ class AbilityScores extends React.Component {
   }
 
   handleClick(e) {
-    e.preventDefault();
     let type = e.target.name; 
     let h5 = e.target.parentNode.childNodes[1];
     let ability = h5.attributes.name.value;
@@ -33,31 +32,30 @@ class AbilityScores extends React.Component {
     }
   }
 
-  resetBtn(e) {
-    e.preventDefault();
+  resetBtn() {
     this.props.resetBtn();
   }
 
-  lockScore(e) {
-    e.preventDefault();
-    this.props.lockScore();
+  lockScore() {
+    let score = {
+    str: [this.props.str[0], this.props.str[1]],
+    dex: [this.props.dex[0], this.props.dex[1]],
+    con: [this.props.con[0], this.props.con[1]],
+    int: [this.props.int[0], this.props.int[1]],
+    wis: [this.props.wis[0], this.props.wis[1]],
+    cha: [this.props.cha[0], this.props.cha[1]]
+    }
+    this.props.lockScore(score);
   }
 
   render() {
 
-    const btnClass = "lock-btn waves-effect waves-light";
+    const btn = "lock-btn waves-effect waves-light";
 
     return (
       <section id="SCORE">
         <h2>Ability Scores</h2>
-        {
-          this.props.total !== 0
-            ? <h3>{this.props.total} points left to spend</h3>
-            : <div>
-                <button onClick={this.resetBtn} className={btnClass}>Reset</button>
-                <button onClick={this.lockScore} className={btnClass}>Next</button>
-              </div>
-        }
+        <h3>{this.props.total} points left to spend</h3>
         <div className="horizontal-line" />
         <ul>
           {
@@ -83,6 +81,11 @@ class AbilityScores extends React.Component {
             })
           }
         </ul>
+        <div className="horizontal-line" />
+        <div>
+          <button onClick={this.resetBtn} className={btn}>Reset</button>
+          <button onClick={this.lockScore} className={btn}>Lock</button>
+        </div>
     </section>
     );
   }

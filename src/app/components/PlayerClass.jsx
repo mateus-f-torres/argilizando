@@ -18,19 +18,16 @@ class PlayerClass extends React.Component {
   }
 
   getClass(e) {
-    e.preventDefault();
     let choice = e.target.name;
     this.props.getClass(choice);
   }
 
-  hideClass(e) {
-    e.preventDefault();
+  hideClass() {
     this.props.noClass();
   }
 
-  lockClass(e) {
-    e.preventDefault();
-    this.props.lockClass();
+  lockClass() {
+    this.props.lockClass(this.props.chosen.id);
   }
 
   render() {

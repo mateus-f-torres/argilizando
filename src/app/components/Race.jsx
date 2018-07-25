@@ -76,7 +76,7 @@ const Race = (props: Props) => {
     </ul>
     <div className="horizontal-line no-bottom" />
     <button className={btn} onClick={props.hideRace}>Back</button>
-    <button className={btn} onClick={props.lockRace}>Next</button>
+    <button className={btn} onClick={props.lockRace}>Lock</button>
   </figure>
   )
 };
