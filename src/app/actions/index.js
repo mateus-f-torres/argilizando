@@ -6,6 +6,7 @@
 4. Ability Score actions
 5. Player Background actions
 6. Character Create actions
+7. Final Character screen actions
 
 */
 
@@ -31,8 +32,12 @@ export const showBackground = () => ({
   type: 'SHOW_BACKGROUND_SCREEN'
 })
 
-export const showCreate = () => ({
-  type: 'SHOW_CREATE_SCREEN'
+export const showCharacter = () => ({
+  type: 'SHOW_CHARACTER_SCREEN'
+})
+
+export const showFinal = () => ({
+  type: 'SHOW_FINAL_SCREEN'
 })
 
 // RACE
@@ -108,14 +113,29 @@ export const lockBackground = (lock) => ({
   type: 'LOCK_BACKGROUND',
   lock
 })
-// CREATE
+
+// CHARACTER
 
 export const getCharacter = (char) => ({
   type: 'DISPLAY_CHARACTER',
   char
 })
 
-export const lockCharacter = (char) => ({
+export const lockCharacter = (lock) => ({
   type: 'LOCK_CHARACTER',
-  char
+  lock
+})
+
+// FINAL
+
+export const showMain = () => ({
+  type: 'SHOW_MAIN_ELEMENTS'
+})
+
+export const showVisual = () => ({
+  type: 'SHOW_VISUAL_ELEMENTS'
+})
+
+export const showRP = () => ({
+  type: 'SHOW_RP_ELEMENTS'
 })

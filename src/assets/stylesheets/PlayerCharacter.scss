@@ -2,7 +2,10 @@
 @import '../partials/_btn';
 /* Create Section style */
 
-#CREATE {
+#CHARACTER {
+  .btn {
+    @extend %btn-style;
+  }
   table {
     display: table;
     table-layout: fixed;

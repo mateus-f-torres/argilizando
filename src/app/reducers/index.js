@@ -5,8 +5,9 @@ import race from './races.js';
 import gameClass from './classes.js';
 import score from './score.js';
 import background from './backgrounds.js';
-import create from './create.js';
+import character from './character.js';
 import done from './done.js';
+import final from './final.js';
 
 export default combineReducers({
   menu,
@@ -14,6 +15,7 @@ export default combineReducers({
   gameClass,
   score,
   background,
-  create,
-  done
+  character,
+  done,
+  final
 });

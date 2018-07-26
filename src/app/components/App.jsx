@@ -5,7 +5,8 @@ import UpdateScores from '../containers/UpdateScores.js';
 import UpdateRace from '../containers/UpdateRace.js';
 import UpdateClass from '../containers/UpdateClass.js';
 import UpdateBackground from '../containers/UpdateBackground.js';
-import UpdateCreate from '../containers/UpdateCreate.js';
+import UpdateCharacter from '../containers/UpdateCharacter.js';
+import UpdateFinalCharacter from '../containers/UpdateFinalCharacter.js';
 
 import 'Styles/App.scss';  // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
@@ -18,36 +19,36 @@ class App extends React.Component {
     this.scoreScreen = this.scoreScreen.bind(this);
     this.classScreen = this.classScreen.bind(this);
     this.backgroundScreen = this.backgroundScreen.bind(this);
-    this.createScreen = this.createScreen.bind(this);
+    this.characterScreen = this.characterScreen.bind(this);
+    this.finalScreen = this.finalScreen.bind(this);
   }
 
   menuScreen() {
     this.props.showMenu();
   }
 
-  raceScreen(e) {
-    e.preventDefault();
+  raceScreen() {
     this.props.showRace();
   }
 
-  scoreScreen(e) {
-    e.preventDefault();
+  scoreScreen() {
     this.props.showScore();
   }
 
-  classScreen(e) {
-    e.preventDefault();
+  classScreen() {
     this.props.showClass();
   }
 
-  backgroundScreen(e) {
-    e.preventDefault();
+  backgroundScreen() {
     this.props.showBackground();
   }
 
-  createScreen(e) {
-    e.preventDefault();
-    this.props.showCreate();
+  characterScreen() {
+    this.props.showCharacter();
+  }
+
+  finalScreen() {
+    this.props.showFinal();
   }
 
   render() {
@@ -57,7 +58,7 @@ class App extends React.Component {
             <img onClick={this.menuScreen} src={logo} />
           </header>  
           {
-            this.props.menu
+            this.props.menu.menu
               ? ( 
                 <Menu 
                   done={this.props.done}
@@ -65,16 +66,18 @@ class App extends React.Component {
                   score={this.scoreScreen}
                   gameClass={this.classScreen}
                   background={this.backgroundScreen}
-                  create={this.createScreen}
+                  character={this.characterScreen}
+                  final={this.finalScreen}
                 />
                 )
               : ( 
                 <main>
-                  {this.props.race && <UpdateRace />}
-                  {this.props.score && <UpdateScores />}
-                  {this.props.gameClass && <UpdateClass />}
-                  {this.props.background && <UpdateBackground />}
-                  {this.props.create && <UpdateCreate />}
+                  {this.props.menu.race && <UpdateRace />}
+                  {this.props.menu.score && <UpdateScores />}
+                  {this.props.menu.gameClass && <UpdateClass />}
+                  {this.props.menu.background && <UpdateBackground />}
+                  {this.props.menu.character && <UpdateCharacter />}
+                  {this.props.menu.final && <UpdateFinalCharacter />}
                 </main>
               )  
           }

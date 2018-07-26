@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import { getCharacter, lockCharacter } from '../actions';
-import CreateCharacter from '../components/CreateCharacter.jsx';
+import { showMenu } from '../actions';
+import PlayerCharacter from '../components/PlayerCharacter.jsx';
 
 const mapStateToProps = (state) => {
   return {
     race: state.done.race,
     gameClass: state.done.gameClass,
     score: state.done.score,
-    background: state.done.background
+    background: state.done.background,
+    char: state.character
   };
 };
 
@@ -18,13 +20,14 @@ const mapDispatchToProps = (dispatch) => {
     },
     lockCharacter: (character) => {
       dispatch(lockCharacter(character))
+      dispatch(showMenu())
     }
   }
 }
 
-const UpdateCreate = connect(
+const UpdateCharacter = connect(
   mapStateToProps,
   mapDispatchToProps
-)(CreateCharacter);
+)(PlayerCharacter);
 
-export default UpdateCreate;
+export default UpdateCharacter;

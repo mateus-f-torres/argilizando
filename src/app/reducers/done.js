@@ -2,7 +2,8 @@ const defaultDoneList = {
   race: false,
   gameClass: false,
   score: false,
-  background: false
+  background: false,
+  character: false
 }
 
 const doneListReducer = (state = defaultDoneList, action) => {
@@ -19,6 +20,9 @@ const doneListReducer = (state = defaultDoneList, action) => {
 
     case 'LOCK_BACKGROUND':
       return Object.assign({}, state, { background: action.lock })
+
+    case 'LOCK_CHARACTER':
+      return Object.assign({}, state, { character: action.lock })
 
     default:
       return state

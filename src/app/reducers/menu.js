@@ -7,7 +7,8 @@ const defaultMenu = {
   score: false,
   gameClass: false,
   background: false,
-  create: false
+  character: false,
+  final: false
 };
 
 // hide all screeens so you can then override selected screen key
@@ -18,7 +19,8 @@ const selectedMenu = {
   score: false,
   gameClass: false,
   background: false,
-  create: false
+  character: false,
+  final: false
 };
 
 const menuReducer = (state = defaultMenu, action) => {
@@ -39,8 +41,11 @@ const menuReducer = (state = defaultMenu, action) => {
     case 'SHOW_BACKGROUND_SCREEN':
       return Object.assign({}, state, selectedMenu, { background: true })
 
-    case 'SHOW_CREATE_SCREEN':
-      return Object.assign({}, state, selectedMenu, { create: true })
+    case 'SHOW_CHARACTER_SCREEN':
+      return Object.assign({}, state, selectedMenu, { character: true })
+
+    case 'SHOW_FINAL_SCREEN':
+      return Object.assign({}, state, selectedMenu, { final: true })
 
     default:
       return state;

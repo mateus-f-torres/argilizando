@@ -1,10 +1,12 @@
 import * as React from 'react';
 
-import 'Styles/CreateCharacter.scss';
+import 'Styles/PlayerCharacter.scss';
 
-class CreateCharacter extends React.Component {
+class PlayerCharacter extends React.Component {
   constructor(props) {
     super(props);
+    this.resetBtn = this.resetBtn.bind(this);
+    this.lockChar = this.lockChar.bind(this);
   }
 
   componentDidMount() {
@@ -17,12 +19,23 @@ class CreateCharacter extends React.Component {
     this.props.getCharacter(character);
   }
 
+  resetBtn(e) {
+    e.preventDefault();
+    console.log('reset pressed');
+  }
+
+  lockChar(e) {
+    e.preventDefault();
+    let char = this.props.char;
+    this.props.lockCharacter(char);
+  }
+
   render() {
   
     const btn = "btn waves-effect waves-light";
 
     return (
-      <section id="CREATE">
+      <section id="CHARACTER">
         <h2>Your Character</h2>
         <div className="horizontal-line" />
         <table>
@@ -38,23 +51,6 @@ class CreateCharacter extends React.Component {
               <td>{this.props.background}</td>
               <td>{this.props.race}</td>
               <td>{this.props.gameClass}</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Hit Points</th>
-              <th>Armor Class</th>
-              <th>Speed</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td></td>
-              <td></td>
-              <td></td>
             </tr>
           </tbody>
         </table>
@@ -136,6 +132,11 @@ class CreateCharacter extends React.Component {
             </tr>
           </tbody>
         </table>
+        <div className="horizontal-line" />
+        <div>
+          <button onClick={this.resetBtn} className={btn}>Reset</button>
+          <button onClick={this.lockChar} className={btn}>Lock</button>
+        </div>
 
       </section>
     )
@@ -143,4 +144,4 @@ class CreateCharacter extends React.Component {
 }
 
 
-export default CreateCharacter;
+export default PlayerCharacter;

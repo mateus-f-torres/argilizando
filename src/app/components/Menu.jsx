@@ -19,6 +19,8 @@ const Menu = (props) => {
     ? true
     : false;
 
+  let final = props.done.character ? true : false;
+
   return (
   <main>
     <section id='MENU'>
@@ -37,8 +39,16 @@ const Menu = (props) => {
           </button>
           ))
         }
-        <button className={btn} onClick={props.create} disabled={!all}>
-          5. Create!
+        <button className={btn} onClick={props.character} disabled={!all}>
+          5. Create
+          <span className={
+            props.done.character
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btn} onClick={props.final} disabled={!final}>
+          6. Play!
           <span></span>
         </button>
       </ul>
