@@ -7,8 +7,6 @@ import 'Styles/PlayerClass.scss';
 
 type Props = {};
 
-const btn = "class-btn waves-effect waves-light";
-
 class PlayerClass extends React.Component {
   constructor(props: Props) {
     super(props);
@@ -18,19 +16,16 @@ class PlayerClass extends React.Component {
   }
 
   getClass(e) {
-    e.preventDefault();
     let choice = e.target.name;
     this.props.getClass(choice);
   }
 
-  hideClass(e) {
-    e.preventDefault();
+  hideClass() {
     this.props.noClass();
   }
 
-  lockClass(e) {
-    e.preventDefault();
-    this.props.lockClass();
+  lockClass() {
+    this.props.lockClass(this.props.chosen.id);
   }
 
   render() {
@@ -45,7 +40,7 @@ class PlayerClass extends React.Component {
                 {...this.props.chosen}
               />
 
-          : <ul id="selection">
+          : <ul className="selection">
             <h2>Player Class</h2>
             <div className="horizontal-line" />
               {
@@ -54,20 +49,19 @@ class PlayerClass extends React.Component {
 
                   return (
                     <div key={i}>
-                      <h3 className="category">{type}</h3>
+                      <h3>{type}</h3>
                       <div className="horizontal-line no-bottom"/>
                       <ul>
                       {
                         options.map((item) => (
                         <li key={item.id}>
                           <button 
-                            id={
+                            className={
                               item.id === "wizard"
                               || item.id === "paladin"
-                                ? "double-btn-size"
+                                ? "double-size-btn"
                                 : ""
                             }
-                            className={btn} 
                             name={item.id}
                             onClick={this.getClass}
                           >

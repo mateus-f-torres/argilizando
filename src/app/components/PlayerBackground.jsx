@@ -7,8 +7,6 @@ import 'Styles/PlayerBackground.scss';
 
 type Props = {};
 
-const btn = "background-btn waves-effect waves-light";
-
 class PlayerBackground extends React.Component {
   constructor(props: Props) {
     super(props);
@@ -18,19 +16,16 @@ class PlayerBackground extends React.Component {
   }
 
   showBack(e) {
-    e.preventDefault();
     let background = e.target.name;
     this.props.getBack(background);
   }
 
-  hideBack(e) {
-    e.preventDefault();
+  hideBack() {
     this.props.noBack();
   }
 
-  lockBack(e) {
-    e.preventDefault();
-    this.props.lockBack();
+  lockBack() {
+    this.props.lockBack(this.props.chosen.id);
   }
 
   render() {
@@ -45,7 +40,7 @@ class PlayerBackground extends React.Component {
                 {...this.props.chosen}
               />
 
-          : <ul id="selection">
+          : <ul className="selection">
             <h2>Player Background</h2>
             <div className="horizontal-line no-bottom" />
               {
@@ -54,7 +49,7 @@ class PlayerBackground extends React.Component {
 
                   return (
                     <div key={i}>
-                      <h3 className="category">{type}</h3>
+                      <h3>{type}</h3>
                       <div className="horizontal-line no-bottom" />
                       <ul>
                         {
@@ -66,7 +61,6 @@ class PlayerBackground extends React.Component {
                                     ? "long"
                                     : ""
                                 }
-                                className={btn} 
                                 name={back.id}
                                 onClick={this.showBack}
                               >

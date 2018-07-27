@@ -1,4 +1,5 @@
 @import '../partials/_variables';
+@import '../partials/_btn';
 /*  ============ App ===============*/
 
 body {
@@ -50,6 +51,92 @@ main {
       flex-wrap: wrap;
       li {margin: 0 auto;}
     }
+  }
+}
+
+/* Main Classes */
+
+.selection {
+  margin-top: 0.1em;
+  margin-bottom: 0;
+  display: block;
+  width: 100%;
+  ul {
+    display: flex;
+    li {
+      margin: 0;
+      width: 50%;
+      button {
+        @extend %btn-style;
+        width: 100%;
+        margin-bottom: 0;
+      }
+      .double-size-btn {
+        width: 200%;
+      }
+    }
+  }
+}
+
+
+.card {
+  width: 100%;
+  margin: 0;
+  h2 {
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+  }
+  h3 {
+    margin-left: 5%;
+    margin-bottom: 0.5em;
+    text-align: start;
+  }
+  h4 { @extend h3 }
+  img {
+    height: auto;
+    margin: 0 auto;
+  }
+  .race-img { width: 230px; }
+  .class-img { width: 100px; }
+  ul {
+    list-style: none;
+    display: block;
+  }
+  p {
+    width: 90%;
+    margin: 0 auto 1em auto ;
+    text-align: justify;
+    font-weight: normal;
+  }
+  .stats {
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      span { text-transform: capitalize; }
+      .close { margin-right: 10%; }
+    }
+  }
+  .dotted-list {
+    width: 90%;
+    margin: 0 auto 0 8.5%;
+    list-style: disc;
+    li {
+      margin: 10px 0;
+      text-align: start;
+    }
+  }
+}
+
+
+
+.lock-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  button {
+    @extend %btn-style;
+    margin: 0.59em 0;
   }
 }
 

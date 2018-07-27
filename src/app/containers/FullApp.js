@@ -1,14 +1,10 @@
 import { connect } from 'react-redux';
-import { showMenu, showRace, showScore, showClass, showBackground } from '../actions';
+import { showMenu, showRace, showScore, showClass, showBackground, showCharacter, showFinal } from '../actions';
 import App from '../components/App.jsx';
 
 const mapStateToProps = (state) => {
   return {
-    menu: state.menu.menu,
-    race: state.menu.race,
-    score: state.menu.score,
-    gameClass: state.menu.gameClass,
-    background: state.menu.background,
+    menu: state.menu,
     done: state.done
   };
 };
@@ -29,6 +25,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     showBackground: () => {
       dispatch(showBackground())
+    },
+    showCharacter: () => {
+      dispatch(showCharacter())
+    },
+    showFinal: () => {
+      dispatch(showFinal())
     }
   };
 };

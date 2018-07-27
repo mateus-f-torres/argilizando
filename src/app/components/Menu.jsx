@@ -8,11 +8,20 @@ const labels = [
   ["race", "1. Race"],
   ["gameClass", "2. Class"],
   ["score", "3. Ability Scores"],
-  ["background", "4. Background"],
-  ["create", "5. Create", true]
+  ["background", "4. Background"]
 ];
 
-const Menu = (props) => (
+const Menu = (props) => {
+
+  let all =
+    props.done.race && props.done.gameClass
+    && props.done.score && props.done.background
+    ? true
+    : false;
+
+  let final = props.done.character ? true : false;
+
+  return (
   <main>
     <section id='MENU'>
       <h2>Character Creator</h2>
@@ -20,27 +29,36 @@ const Menu = (props) => (
       <ul>
         {
           labels.map((item) => (
-            <button key={item[0]} className={btn} onClick={props[item[0]]} disabled={item[2]}>
+            <button key={item[0]} className={btn} onClick={props[item[0]]}>
               {item[1]}
               <span className={
-                props.done.includes(item[0])
+                props.done[item[0]]
                   ? "done"
                   : ""
               }></span>
           </button>
           ))
         }
-        <button className={btn} onClick={props.play} disabled>
+        <button className={btn} onClick={props.character} disabled={!all}>
+          5. Create
+          <span className={
+            props.done.character
+              ? "done"
+              : ""
+          }></span>
+        </button>
+        <button className={btn} onClick={props.final} disabled={!final}>
           6. Play!
           <span className={
-            props.done.includes("all")
-              ? "play"
-              : "play"
+            props.done.character
+              ? "done"
+              : ""
           }></span>
         </button>
       </ul>
     </section>
   </main>
-);
+  )
+};
 
 export default Menu;

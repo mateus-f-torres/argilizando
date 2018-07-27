@@ -3,11 +3,7 @@ import * as React from 'react';
 import Race from './Race.jsx';
 import RACES from '../data/races.js';
 
-import 'Styles/PlayerRace.scss';
-
 type Props = {};
-
-const btn = "race-btn waves-effect waves-light";
 
 class PlayerRace extends React.Component {
   constructor(props: Props) {
@@ -18,19 +14,16 @@ class PlayerRace extends React.Component {
   }
 
   showRace(e) {
-    e.preventDefault();
     let race = e.target.name;
     this.props.getRace(race);
   }
 
-  hideRace(e) {
-    e.preventDefault();
+  hideRace() {
     this.props.noRace();
   }
 
-  lockRace(e) {
-    e.preventDefault();
-    this.props.lockRace();
+  lockRace() {
+    this.props.lockRace(this.props.race.id);
   }
 
   render() {
@@ -47,7 +40,7 @@ class PlayerRace extends React.Component {
                 {...this.props.race}
               />
 
-          : <ul id="selection">
+          : <ul className="selection">
             <h2>Player Race</h2>
             <div className="horizontal-line" />
               {
@@ -56,14 +49,13 @@ class PlayerRace extends React.Component {
 
                   return (
                     <div key={i}>
-                      <h3 className="category">{type}</h3>
+                      <h3>{type}</h3>
                       <div className="horizontal-line no-bottom" />
                       <ul>
                       {
                         options.map((item) => (
                         <li key={item.id}>
                           <button 
-                            className={btn} 
                             name={item.id}
                             onClick={this.showRace}
                           >

@@ -31,7 +31,7 @@ const scoreReducer = (state = defaultScores, action) => {
 
   switch(action.type) {
 
-    case 'INCREMENT_SCORE':
+    case 'INCREMENT_ABILITY_SCORE':
       [score, mod, cost, show] = state[ability];
       // overflow MAX_TOTAL control
       if(countPoints(score + 1, state.total) < 0) {
@@ -59,7 +59,7 @@ const scoreReducer = (state = defaultScores, action) => {
         })
       }
 
-    case 'DECREMENT_SCORE':
+    case 'DECREMENT_ABILITY_SCORE':
       [score, mod, cost, show] = state[ability];
       // overflow MAX_SOLD control
       if(soldOut(state, state.total, ability, score - 1)) {
@@ -86,7 +86,7 @@ const scoreReducer = (state = defaultScores, action) => {
         })
       }
 
-    case 'TOGGLE_DESCRIPTION':
+    case 'TOGGLE_ABILITY_SCORE_DESCRIPTION':
       [score, mod, cost, show] = state[ability];
       // will return modifier description string when called while false
       show = show == false
@@ -96,7 +96,7 @@ const scoreReducer = (state = defaultScores, action) => {
         [ability]: [score, mod, cost, show]
       })
 
-    case 'RESET_SCORE':
+    case 'RESET_ALL_ABILITY_SCORES':
       return Object.assign({}, state, defaultScores) 
 
     default: 

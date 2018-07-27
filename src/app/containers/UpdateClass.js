@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { displayClass, showClassSelection } from '../actions';
-import { doneClass, showMenu } from '../actions';
+import { displayClass, showClassSelection, lockClass } from '../actions';
+import { showMenu } from '../actions';
 import PlayerClass from '../components/PlayerClass.jsx';
 
 const mapStateToProps = (state) => {
@@ -18,8 +18,8 @@ const mapDispatchToProps = (dispatch) => {
     noClass: () => {
       dispatch(showClassSelection())
     },
-    lockClass: () => {
-      dispatch(doneClass())
+    lockClass: (gameClass) => {
+      dispatch(lockClass(gameClass))
       dispatch(showMenu())
     }
   }

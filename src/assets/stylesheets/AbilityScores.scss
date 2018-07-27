@@ -1,4 +1,3 @@
-@import '../partials/_variables';
 @import '../partials/_btn';
 /* Ability Score Section style */
 
@@ -6,15 +5,6 @@
   h2 { margin-bottom: 0.2em;}
   h3 { margin-bottom: 1.5em;
     span { margin-right: 0.3em; }
-  }
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    .lock-btn {
-      @extend %btn-style;
-      margin: 0.59em 0;
-    }
   }
   ul {
     margin-top: 0;
@@ -29,6 +19,7 @@
       .score-btn { @extend %btn-style;}
       p {
         margin: 0.3em 1em 1em 1em;
+        text-align: justify;
       }
     }
   }

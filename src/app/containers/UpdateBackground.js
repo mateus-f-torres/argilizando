@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { displayBackground, showBackgroundSelection } from '../actions';
-import { doneBackground, showMenu } from '../actions';
+import { displayBackground, showBackgroundSelection, lockBackground } from '../actions';
+import { showMenu } from '../actions';
 import PlayerBackground from '../components/PlayerBackground.jsx';
 
 const mapStateToProps = (state) => {
@@ -18,8 +18,8 @@ const mapDispatchToProps = (dispatch) => {
     noBack: () => {
       dispatch(showBackgroundSelection())
     },
-    lockBack: () => {
-      dispatch(doneBackground())
+    lockBack: (background) => {
+      dispatch(lockBackground(background))
       dispatch(showMenu())
     }
   }

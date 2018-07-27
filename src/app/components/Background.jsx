@@ -3,16 +3,14 @@ import * as React from 'react';
 
 type Props = {};
 
-const btn = "btn waves-effect waves-light";
-
 const Background = (props: Props) => (
   <figure className="card">
     <h2>{props.name}</h2>
     <p>{props.pitch}</p>
     <div className="horizontal-line" />
-    <h3>Background Traits</h3>
+    <h3>Background Features</h3>
     <h4>Skill Proficiency</h4>
-    <ul className="multi small">
+    <ul className="multi">
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
     </ul>
 
@@ -33,7 +31,7 @@ const Background = (props: Props) => (
     }
 
     <h4>Equipment</h4>
-    <ul className="equip">
+    <ul className="dotted-list">
       {
         props.equip.map((list, i) => (
           <li key={i}>
@@ -43,8 +41,10 @@ const Background = (props: Props) => (
       }
     </ul>
     <div className="horizontal-line no-bottom" />
-    <button className={btn} onClick={props.hideBack}>Back</button>
-    <button className={btn} onClick={props.lockBack}>Next</button>
+    <div className="lock-box">
+      <button onClick={props.hideBack}>Back</button>
+      <button onClick={props.lockBack}>Lock</button>
+    </div>
   </figure>
 );
 
