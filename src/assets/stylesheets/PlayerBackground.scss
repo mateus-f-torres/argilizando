@@ -83,19 +83,6 @@
     }
     .lvl { margin: 0 0 0 5%; }
     .lvl + p { margin-top: 0.2em; }
-    .btn {
-      @extend %btn-style;
-      &:first-of-type {
-        display: inline;
-        float: left;
-        margin: 1em 0 1em 2em;
-      }
-      &:last-of-type {
-        display: inline;
-        float: right;
-        margin: 1em 2em 1em 0;
-      }
-    }
   }
 }
 

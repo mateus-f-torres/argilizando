@@ -4,6 +4,7 @@ const CharacterPast = (props) => {
 
   return (
     <figure className="final-card">
+      <h3 className="final-header">Role Playing</h3>
       <ul className="stats">
         <li><p className="fake-heading"><b>Background:</b></p></li>
         <li><p className="detailed">{props.background}</p></li>

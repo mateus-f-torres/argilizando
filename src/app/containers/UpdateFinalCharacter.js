@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { showMain, showBody, showPast } from '../actions';
+import { showMain, showEquip, showSpell, showTrait, showBody, showPast } from '../actions';
 import FinalCharacter from '../components/FinalCharacter.jsx';
 
 const mapStateToProps = (state) => {
@@ -13,6 +13,15 @@ const mapDispatchToProps = (dispatch) => {
   return {
     showMain: () => {
       dispatch(showMain())
+    },
+    showEquip: () => {
+      dispatch(showEquip())
+    },
+    showSpell: () => {
+      dispatch(showSpell())
+    },
+    showTrait: () => {
+      dispatch(showTrait())
     },
     showBody: () => {
       dispatch(showBody())

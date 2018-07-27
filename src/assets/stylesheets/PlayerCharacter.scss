@@ -3,15 +3,6 @@
 /* Create Section style */
 
 #CHARACTER {
-  div {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    .btn {
-      @extend %btn-style;
-      margin: 0.8em 1em; 
-    }
-  }
   table {
     display: table;
     table-layout: fixed;

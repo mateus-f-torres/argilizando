@@ -33,19 +33,6 @@
       height: auto;
       margin: 0 auto;
     }
-    .btn {
-      @extend %btn-style;
-      &:first-of-type {
-        display: inline;
-        float: left;
-        margin: 1em 0 1em 2em;
-      }
-      &:last-of-type {
-        display: inline;
-        float: right;
-        margin: 1em 2em 1em 0;
-      }
-    }
     ul {
       list-style: none;
       display: block;

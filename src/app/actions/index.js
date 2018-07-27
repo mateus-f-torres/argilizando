@@ -132,10 +132,22 @@ export const showMain = () => ({
   type: 'SHOW_MAIN_ELEMENTS'
 })
 
+export const showEquip = () => ({
+  type: 'SHOW_EQUIP_ELEMENTS'
+})
+
+export const showSpell = () => ({
+  type: 'SHOW_SPELL_ELEMENTS'
+})
+
+export const showTrait = () => ({
+  type: 'SHOW_TRAIT_ELEMENTS'
+})
+
 export const showBody = () => ({
-  type: 'SHOW_VISUAL_ELEMENTS'
+  type: 'SHOW_BODY_ELEMENTS'
 })
 
 export const showPast = () => ({
-  type: 'SHOW_RP_ELEMENTS'
+  type: 'SHOW_PAST_ELEMENTS'
 })

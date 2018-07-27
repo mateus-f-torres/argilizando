@@ -17,8 +17,6 @@ import wizard from "Images/wizard.svg";
 
 type Props = {};
 
-const btn = "btn waves-effect waves-light";
-
 class GameClass extends React.Component {
   constructor(props: Props) {
     super(props);
@@ -154,8 +152,10 @@ class GameClass extends React.Component {
       </ul>
 
       <div className="horizontal-line no-bottom" />
-      <button className={btn} onClick={this.props.hideClass}>Back</button>
-      <button className={btn} onClick={this.props.lockClass}>Lock</button>
+      <div className="lock-box">
+        <button onClick={this.props.hideClass}>Back</button>
+        <button onClick={this.props.lockClass}>Lock</button>
+      </div>
     </figure>
     )
   }

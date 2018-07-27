@@ -32,8 +32,6 @@ class PlayerCharacter extends React.Component {
 
   render() {
   
-    const btn = "btn waves-effect waves-light";
-
     return (
       <section id="CHARACTER">
         <h2>Your Character</h2>
@@ -55,7 +53,6 @@ class PlayerCharacter extends React.Component {
           </tbody>
         </table>
 
-        <h4>Ability Scores</h4>
         <table>
           <thead>
             <tr>
@@ -132,10 +129,10 @@ class PlayerCharacter extends React.Component {
             </tr>
           </tbody>
         </table>
-        <div className="horizontal-line" />
-        <div>
-          <button onClick={this.backBtn} className={btn}>Back</button>
-          <button onClick={this.lockChar} className={btn}>Lock</button>
+        <div className="horizontal-line no-bottom" />
+        <div className="lock-box">
+          <button onClick={this.backBtn}>Back</button>
+          <button onClick={this.lockChar}>Lock</button>
         </div>
 
       </section>

@@ -1,4 +1,5 @@
 @import '../partials/_variables';
+@import '../partials/_btn';
 /*  ============ App ===============*/
 
 body {
@@ -53,6 +54,8 @@ main {
   }
 }
 
+/* Main Classes */
+
 .horizontal-line {
   width: 99%;
   height: 1px;
@@ -61,6 +64,16 @@ main {
   box-shadow: 0 0.4px 8px rgba(0,0,0,0.10),
               0 0.8px 2px  rgba(0,0,0,0.23);
   &.no-bottom { margin-bottom: 0; }
+}
+
+.lock-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  button {
+    @extend %btn-style;
+    margin: 0.59em 0;
+  }
 }
 
 /* for-phone-only */

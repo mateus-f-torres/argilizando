@@ -4,15 +4,12 @@
 
 #FINAL {
   #change-view {
-    width: 100%;
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
     margin: 0;
     .btn {
-      width: 33%;
       @extend %btn-style;
+      width: 50%;
       margin: 0; 
+      &:focus { background-color: $link-active; }
     }
   }
   .final-card {

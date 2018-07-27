@@ -4,6 +4,7 @@ const CharacterBody = (props) => {
 
   return (
     <figure className="final-card">
+      <h3 className="final-header">Appearance</h3>
       <ul className="stats">
         <li><p><b>Race:</b><span>{props.race}</span></p></li>
         <li><p><b>Gender:</b><span>{props.gender}</span></p></li>

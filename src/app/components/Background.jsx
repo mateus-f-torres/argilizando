@@ -3,8 +3,6 @@ import * as React from 'react';
 
 type Props = {};
 
-const btn = "btn waves-effect waves-light";
-
 const Background = (props: Props) => (
   <figure className="card">
     <h2>{props.name}</h2>
@@ -43,8 +41,10 @@ const Background = (props: Props) => (
       }
     </ul>
     <div className="horizontal-line no-bottom" />
-    <button className={btn} onClick={props.hideBack}>Back</button>
-    <button className={btn} onClick={props.lockBack}>Lock</button>
+    <div className="lock-box">
+      <button onClick={props.hideBack}>Back</button>
+      <button onClick={props.lockBack}>Lock</button>
+    </div>
   </figure>
 );
 

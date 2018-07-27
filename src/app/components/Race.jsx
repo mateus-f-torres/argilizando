@@ -22,8 +22,6 @@ import yuanti from "Images/yuanti.png";
 
 type Props = {};
 
-const btn = "btn waves-effect waves-light";
-
 const Race = (props: Props) => {
   let img;
   switch(props.id) {
@@ -75,8 +73,10 @@ const Race = (props: Props) => {
       }
     </ul>
     <div className="horizontal-line no-bottom" />
-    <button className={btn} onClick={props.hideRace}>Back</button>
-    <button className={btn} onClick={props.lockRace}>Lock</button>
+    <div className="lock-box">
+      <button onClick={props.hideRace}>Back</button>
+      <button onClick={props.lockRace}>Lock</button>
+    </div>
   </figure>
   )
 };

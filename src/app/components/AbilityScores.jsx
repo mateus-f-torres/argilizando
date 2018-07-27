@@ -50,8 +50,6 @@ class AbilityScores extends React.Component {
 
   render() {
 
-    const btn = "lock-btn waves-effect waves-light";
-
     return (
       <section id="SCORE">
         <h2>Ability Scores</h2>
@@ -81,10 +79,10 @@ class AbilityScores extends React.Component {
             })
           }
         </ul>
-        <div className="horizontal-line" />
-        <div>
-          <button onClick={this.resetBtn} className={btn}>Reset</button>
-          <button onClick={this.lockScore} className={btn}>Lock</button>
+        <div className="horizontal-line no-bottom" />
+        <div className="lock-box">
+          <button onClick={this.resetBtn}>Reset</button>
+          <button onClick={this.lockScore}>Lock</button>
         </div>
     </section>
     );
