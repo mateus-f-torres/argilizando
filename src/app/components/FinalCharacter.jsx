@@ -1,28 +1,28 @@
 import * as React from 'react';
-import FinalMain from './FinalMain.jsx';
-import FinalVisual from './FinalVisual.jsx';
-import FinalRP from './FinalRP.jsx';
+import CharacterMain from './CharacterMain.jsx';
+import CharacterBody from './CharacterBody.jsx';
+import CharacterPast from './CharacterPast.jsx';
 
-import 'Styles/PlayerCharacter.scss';
+import 'Styles/FinalCharacter.scss';
 
 class FinalCharacter extends React.Component {
   constructor(props) {
     super(props);
     this.showMain = this.showMain.bind(this);
-    this.showVisual = this.showVisual.bind(this);
-    this.showRP = this.showRP.bind(this);
+    this.showBody = this.showBody.bind(this);
+    this.showPast = this.showPast.bind(this);
   }
 
   showMain() {
     this.props.showMain();
   }
 
-  showVisual() {
-    this.props.showVisual();
+  showBody() {
+    this.props.showBody();
   }
 
-  showRP() {
-    this.props.showRP();
+  showPast() {
+    this.props.showPast();
   }
 
   render () {
@@ -30,18 +30,18 @@ class FinalCharacter extends React.Component {
     const btn = "btn waves-effect waves-light";
 
     return (
-      <section id="CHARACTER">
+      <section id="FINAL">
         <h2>{this.props.char.name}</h2>
-        <ul id="selection">
-          <button onClick={this.showMain} className={btn}>main</button>
-          <button onClick={this.showVisual} className={btn}>visual</button>
-          <button onClick={this.showRP} className={btn}>rp</button>
+        <ul id="change-view">
+          <button onClick={this.showMain} className={btn}>X</button>
+          <button onClick={this.showBody} className={btn}>Y</button>
+          <button onClick={this.showPast} className={btn}>Z</button>
         </ul>
         <div className="horizontal-line" />
 
-        {this.props.show.main && <FinalMain {...this.props.char.main}/>}
-        {this.props.show.visual && <FinalVisual {...this.props.char.body}/>}
-        {this.props.show.rp && <FinalRP {...this.props.char.past}/>}
+        {this.props.show.main && <CharacterMain {...this.props.char.main}/>}
+        {this.props.show.body && <CharacterBody {...this.props.char.body}/>}
+        {this.props.show.past && <CharacterPast {...this.props.char.past}/>}
 
       </section>
     )

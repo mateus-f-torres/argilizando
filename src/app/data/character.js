@@ -1,24 +1,22 @@
 export default {
   name: "Aila Lightingroar",
   body: {
-    gender: "female",
     race: "dwarf",
+    gender: "female",
     age: 173,
     height: "1,2m",
     weight: "83kg",
-    eyes: "dark yellow",
-    skin: "white",
-    hair: "shoulder height messy grey hair",
-    extra: ["claw scar on left eye from an encouter with a orc", "tatoo of a lighting on right biceps"]
+    eyes: "Strong dark yellow eyes.",
+    skin: "Fair white skin.",
+    hair: "Shoulder height messy grey hair.",
+    extra: ["Claw scar on left eye from an encouter with a orc.", "Tatoo of a lighting on right biceps."]
   },
   past: {
-    background: "legendary",
-    langs: ["Common", "Dwarvish", "Orc"],
-    tools: ["vehicles (land)"],
-    personality: ["I boast about how I will put my ancestors' deeds to shame."],
-    ideals: ["I am not my family's name.", "I will make my own legend."],
-    bonds: ["I wield the same weapon my ancestor used."],
-    flaws: ["If you speak ill of my ancestors, I will punch you in the face."],
+    background: "Legendary Lineage",
+    personality: "I boast about how I will put my ancestors' deeds to shame.",
+    ideals: "I am not my family's name. I will make my own legend.",
+    bonds: "I wield the same weapon my ancestor used.",
+    flaws: "If you speak ill of my ancestors, I will punch you in the face.",
     extra: ["I dont really know who I am..."]
   },
   main: {
@@ -26,6 +24,7 @@ export default {
     hp: [12, "1d8"], // maxHp/1stlvlHp = hit dice max value + Con mod + trait (if any) || hit dice
     ac: [18, "chain mail", "medium shield"],
     sp: 25,
+    init: 0,
     prof: 2, // 1st lvl proficiency bonus
     score: {
       str: [13, 1],
@@ -64,14 +63,16 @@ export default {
       ["Survival", 1]
     ],
     pp: 11,  // passive perception === 10 + perception mod
+    langs: ["Common", "Dwarvish", "Orc"],
+    tools: ["vehicles (land)"],
     equip: {
       weapons: [
         ["warhammer", "1d8", "bludgeoning", ["versatile(1d10)"]],
         ["dagger", "1d4", "piercing", ["finesse", "light", "thrown(20/60)"]]
       ],
       armor: [
-        ["chain mail", 16, "55lb", ["impeding(stealth)", "str(13)"]],
-        ["medium shield", 2, "6lb", ["-"]]
+        ["chain mail", 16, ["impeding(stealth)", "str(13)"]],
+        ["medium shield", 2, ["-"]]
       ],
       pack: [
         "backpack",
@@ -96,7 +97,7 @@ export default {
       }
     },
     spell: {
-      spellClass: ["1st", "cleric"],
+      spellClass: "cleric",
       ability: "wis",
       save: 12, // 8 + 2 (lvl 1 proficiency bonus) + spellcasting ability mod
       toHit: 4, // 2 (lvl 1 proficiency bonus) + spellcasting ability mod

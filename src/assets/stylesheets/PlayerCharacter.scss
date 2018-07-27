@@ -3,8 +3,14 @@
 /* Create Section style */
 
 #CHARACTER {
-  .btn {
-    @extend %btn-style;
+  div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .btn {
+      @extend %btn-style;
+      margin: 0.8em 1em; 
+    }
   }
   table {
     display: table;
@@ -27,44 +33,6 @@
     text-align: start;
   }
   h5 {@extend h4;}
-  ul {
-    list-style: none;
-    display: block;
-  }
-  #skill-number {
-    margin-left: 5px;
-    font-weight: normal;
-  }
-  .stats p {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .multi {
-    width: 90%;
-    max-height: 130px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: space-between;
-    align-items: baseline;
-    li { margin: 5px; }
-  }
-  .larger {
-    max-height: 180px;
-  }
-  .equip {
-    width: 90%;
-    margin: 0 auto 0 8.5%;
-    list-style: disc;
-    li { 
-      margin: 10px 0; 
-      text-align: start;
-    }
-  }
-  .lvl { margin: 0 0 0 5%; }
-  .lvl + p { margin-top: 0.2em; }
 }
 
 

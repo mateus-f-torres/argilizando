@@ -132,10 +132,10 @@ export const showMain = () => ({
   type: 'SHOW_MAIN_ELEMENTS'
 })
 
-export const showVisual = () => ({
+export const showBody = () => ({
   type: 'SHOW_VISUAL_ELEMENTS'
 })
 
-export const showRP = () => ({
+export const showPast = () => ({
   type: 'SHOW_RP_ELEMENTS'
 })

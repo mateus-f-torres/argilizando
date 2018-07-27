@@ -5,7 +5,7 @@ import 'Styles/PlayerCharacter.scss';
 class PlayerCharacter extends React.Component {
   constructor(props) {
     super(props);
-    this.resetBtn = this.resetBtn.bind(this);
+    this.backBtn = this.backBtn.bind(this);
     this.lockChar = this.lockChar.bind(this);
   }
 
@@ -19,9 +19,9 @@ class PlayerCharacter extends React.Component {
     this.props.getCharacter(character);
   }
 
-  resetBtn(e) {
+  backBtn(e) {
     e.preventDefault();
-    console.log('reset pressed');
+    this.props.backBtn();
   }
 
   lockChar(e) {
@@ -134,7 +134,7 @@ class PlayerCharacter extends React.Component {
         </table>
         <div className="horizontal-line" />
         <div>
-          <button onClick={this.resetBtn} className={btn}>Reset</button>
+          <button onClick={this.backBtn} className={btn}>Back</button>
           <button onClick={this.lockChar} className={btn}>Lock</button>
         </div>
 

@@ -18,6 +18,9 @@ const mapDispatchToProps = (dispatch) => {
     getCharacter: (character) => {
       dispatch(getCharacter(character))
     },
+    backBtn: () => {
+      dispatch(showMenu())
+    },
     lockCharacter: (character) => {
       dispatch(lockCharacter(character))
       dispatch(showMenu())
