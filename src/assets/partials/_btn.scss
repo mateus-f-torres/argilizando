@@ -13,9 +13,25 @@ $btn-active: #297682;
   text-align: center;
   text-decoration: none;
   text-transform: capitalize;
-  display: inline-block;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15),0 5px 15px 0 rgba(0,0,0,0.25);
   &:hover {background-color: $btn-active;}
   &:focus { background-color: $btn-back; outline: none;}
+
+  /*!
+   * Waves v0.6.0
+   * http://fian.my.id/Waves
+   *
+   * Copyright 2014 Alfiana E. Sibuea and other contributors
+   * Released under the MIT license
+   * https://github.com/fians/Waves/blob/master/LICENSE
+   */
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 1;
+  transition: .3s ease-out;
 }
 

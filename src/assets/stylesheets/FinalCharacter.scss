@@ -3,85 +3,41 @@
 /* Create Section style */
 
 #FINAL {
-  #change-view {
-    margin: 0;
-    .btn {
-      @extend %btn-style;
-      width: 50%;
-      margin: 0; 
-      &:focus { background-color: $link-active; }
+   table {
+    display: table;
+    table-layout: fixed;
+    width: 95%;
+    margin: 1em auto;
+  }
+  .weapon {
+    margin-top: 0.3em;
+    margin-bottom: 0;
+    display: inline-block;
+    .weapon-bonus {
+      margin: 0 1em;
     }
   }
-  .final-card {
-    width: 100%;
-    margin: 0;
-    ul {
-      list-style: none;
-      display: block;
-    }
-    table {
-      display: table;
-      table-layout: fixed;
-      width: 95%;
-      margin: 1em auto;
-    }
-    .stats {
-      p {
-        width: 90%;
-        margin: 1em auto ;
-        text-align: justify;
-        font-weight: normal;
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        span { text-transform: capitalize; }
-        .close { margin-right: 10%; }
-      }
-      .fake-heading { margin-bottom: 0; }
-      .detailed { 
-        width: 85%;
-        margin: 0.3em 0.3em 0 1.3em; 
-      }
-      .extra {
-        list-style: initial;
-        margin-left: 2em;
-        p { margin: 0.3em 0.3em 0.2em 0; }
-      }
-      .weapon {
-        margin-top: 0.3em;
-        margin-bottom: 0;
-        display: inline-block;
-        .weapon-bonus {
-          margin: 0 1em;
-        }
-      }
-    }
-    .final-header {
-      text-align: start;
-      margin: 5%;
-    }
-    .prof-item {
-      width: 90%;
-      margin: 1em auto;
+  .prof-item {
+    width: 90%;
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-between;
+    .prof-blob {
+      width: 35%;
       display: flex;
       justify-content: space-between;
-      .prof-blob {
-        width: 35%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .prof {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          background-color: #222;
-        }
-        .not-prof {
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          border: 1px solid #222;
-        }
+      align-items: center;
+      .prof {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #222;
+      }
+      .not-prof {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #222;
       }
     }
   }

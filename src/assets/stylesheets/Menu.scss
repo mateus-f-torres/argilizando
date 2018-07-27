@@ -2,7 +2,6 @@
 @import '../partials/_btn';
 
 #MENU {
-  hr { margin-bottom: 0; }
   ul { margin: 0; }
   .menu-btn {
     @extend %btn-style;
@@ -23,9 +22,6 @@
     }
     .done{
       background-color: $link-color;
-    }
-    .play {
-      background-color: darkred;
     }
   }
 }

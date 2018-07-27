@@ -3,8 +3,8 @@ import * as React from 'react';
 const CharacterSpell = (props) => {
 
   return (
-    <figure className="final-card">
-      <h3 className="final-header">Spellcasting</h3>
+    <figure className="card">
+      <h3>Spellcasting</h3>
       <ul className="stats">
         <li><p><b>Spellcasting Class:</b>
           <span className="close">{props.spellClass}</span>

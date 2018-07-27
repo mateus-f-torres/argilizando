@@ -49,7 +49,11 @@ const Menu = (props) => {
         </button>
         <button className={btn} onClick={props.final} disabled={!final}>
           6. Play!
-          <span></span>
+          <span className={
+            props.done.character
+              ? "done"
+              : ""
+          }></span>
         </button>
       </ul>
     </section>

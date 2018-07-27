@@ -72,7 +72,7 @@ class GameClass extends React.Component {
     return (
     <figure className="card">
       <h2>{this.props.id}</h2>
-      <img src={img} />
+      <img className="class-img" src={img} />
 
       <h3>Class Stats</h3>
       <ul className="stats">
@@ -95,9 +95,7 @@ class GameClass extends React.Component {
       <ul>
 
         <h4>Primary Ability</h4>
-        <ul className="multi">
-          <li>{this.props.primary}</li>
-        </ul>
+        <p>{this.props.primary}</p>
 
         <h4>Saving Throws</h4>
         <ul className="multi">
@@ -126,7 +124,7 @@ class GameClass extends React.Component {
         </ul>
 
         <h4>Starting Equipment</h4>
-        <ul className="equip">
+        <ul className="dotted-list">
           {
             this.props.equip.map((list, i) => (
               <li key={i}>
@@ -143,7 +141,7 @@ class GameClass extends React.Component {
         {
           this.props.special.map((trait, i) => (
             <li key={i}>
-              <h5>{trait[0]}:</h5>
+              <h4>{trait[0]}:</h4>
               <p className="lvl">{trait[1]}.</p>
               <p>{trait[2]}</p>
             </li>

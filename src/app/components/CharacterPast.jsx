@@ -3,28 +3,28 @@ import * as React from 'react';
 const CharacterPast = (props) => {
 
   return (
-    <figure className="final-card">
-      <h3 className="final-header">Role Playing</h3>
-      <ul className="stats">
-        <li><p className="fake-heading"><b>Background:</b></p></li>
-        <li><p className="detailed">{props.background}</p></li>
-        <li><p className="fake-heading"><b>Personality:</b></p></li>
-        <li><p className="detailed">{props.personality}</p></li>
-        <li><p className="fake-heading"><b>Ideals:</b></p></li>
-        <li><p className="detailed">{props.ideals}</p></li>
-        <li><p className="fake-heading"><b>Bonds:</b></p></li>
-        <li><p className="detailed">{props.bonds}</p></li>
-        <li><p className="fake-heading"><b>Flaws:</b></p></li>
-        <li><p className="detailed">{props.flaws}</p></li>
-      </ul>
+    <figure className="card">
+      <h3>Role Playing</h3>
+      <h4>Background:</h4>
+      <p>{props.background}</p>
+      <h4>Personality:</h4>
+      <p>{props.personality}</p>
+      <h4>Ideals:</h4>
+      <p>{props.ideals}</p>
+      <h4>Bonds:</h4>
+      <p>{props.bonds}</p>
+      <h4>Flaws:</h4>
+      <p>{props.flaws}</p>
         { props.extra &&
-          <ul className="stats">
-            <li><p className="fake-heading"><b>Extra Details:</b></p></li>
-                {
-                  props.extra.map((desc, i) => (
-                    <li key={i} className="extra"><p>{desc}</p></li>))
-                }
-          </ul>
+            <div>
+              <h4>Extra Details:</h4>
+              <ul className="dotted-list">
+                    {
+                      props.extra.map((desc, i) => (
+                        <li key={i}>{desc}</li>))
+                    }
+              </ul>
+            </div>
         }
     </figure>
   )

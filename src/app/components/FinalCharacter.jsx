@@ -45,18 +45,30 @@ class FinalCharacter extends React.Component {
 
   render () {
 
-    const btn = "btn waves-effect waves-light";
-
     return (
       <section id="FINAL">
         <h2>{this.props.char.name}</h2>
-        <ul id="change-view">
-          <button onClick={this.showMain} className={btn}>Main</button>
-          <button onClick={this.showEquip} className={btn}>Equips</button>
-          <button onClick={this.showSpell} className={btn}>Spells</button>
-          <button onClick={this.showTrait} className={btn}>Traits</button>
-          <button onClick={this.showBody} className={btn}>Visual</button>
-          <button onClick={this.showPast} className={btn}>Behavior</button>
+        <ul className="selection">
+          <ul>
+          <li>
+            <button onClick={this.showMain}>Main</button>
+          </li>
+          <li>
+            <button onClick={this.showEquip}>Equips</button>
+          </li>
+          <li>
+            <button onClick={this.showSpell}>Spells</button>
+          </li>
+          <li>
+            <button onClick={this.showTrait}>Traits</button>
+          </li>
+          <li>
+            <button onClick={this.showBody}>Visual</button>
+          </li>
+          <li>
+            <button onClick={this.showPast}>Behavior</button>
+          </li>
+          </ul>
         </ul>
         <div className="horizontal-line no-bottom" />
 

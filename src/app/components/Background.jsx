@@ -10,7 +10,7 @@ const Background = (props: Props) => (
     <div className="horizontal-line" />
     <h3>Background Features</h3>
     <h4>Skill Proficiency</h4>
-    <ul className="multi small">
+    <ul className="multi">
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
     </ul>
 
@@ -31,7 +31,7 @@ const Background = (props: Props) => (
     }
 
     <h4>Equipment</h4>
-    <ul className="equip">
+    <ul className="dotted-list">
       {
         props.equip.map((list, i) => (
           <li key={i}>

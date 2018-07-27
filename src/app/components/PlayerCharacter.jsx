@@ -91,6 +91,8 @@ class PlayerCharacter extends React.Component {
               <td>{this.props.score.con[0]}</td>
             </tr>
           </tbody>
+        </table>
+        <table>
           <thead>
             <tr>
               <th>Int</th>

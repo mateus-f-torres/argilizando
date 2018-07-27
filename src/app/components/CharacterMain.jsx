@@ -3,7 +3,7 @@ import * as React from 'react';
 const CharacterMain = (props) => {
 
   return (
-    <figure className="final-card">
+    <figure className="card">
 
       <table>
         <thead>
@@ -37,7 +37,7 @@ const CharacterMain = (props) => {
         </ul>
 
       <div className="horizontal-line"/>
-      <h3 className="final-header">Ability Scores</h3>
+      <h3>Ability Scores</h3>
       <table>
         <thead>
           <tr>
@@ -118,8 +118,8 @@ const CharacterMain = (props) => {
       </table>
 
       <div className="horizontal-line" />
-      <h3 className="final-header">Saving Throws</h3>
-      <ul className="prof-list">
+      <h3>Saving Throws</h3>
+      <ul>
         {
           props.saves.map((item, i) => (
             <li key={i} className="prof-item">
@@ -129,15 +129,15 @@ const CharacterMain = (props) => {
                   {item[1] >= 0 ? "+" + item[1] : item[1]}
                 </span>
               </span>
-              <span className="prof-skill">{item[0]}</span>
+              <span>{item[0]}</span>
             </li>
           ))
         }
       </ul>
       
       <div className="horizontal-line" />
-      <h3 className="final-header">Skills</h3>
-      <ul className="prof-list">
+      <h3>Skills</h3>
+      <ul>
         {
           props.skills.map((item, i) => (
             <li key={i} className="prof-item">
@@ -147,7 +147,7 @@ const CharacterMain = (props) => {
                   {item[1] >= 0 ? "+" + item[1] : item[1]}
                 </span>
               </span>
-              <span className="prof-skill">{item[0]}</span>
+              <span>{item[0]}</span>
             </li>
           ))
         }
@@ -159,15 +159,15 @@ const CharacterMain = (props) => {
       </ul>
 
       <div className="horizontal-line" />
-      <h3 className="final-header">Other Proficencies &amp; Languages</h3>
-      <ul className="stats">
+      <h3>Other Proficencies &amp; Languages</h3>
+      <ul className="dotted-list">
         {
           props.langs.map((item, i) => (
-            <li key={i} className="extra"><p>{item}</p></li>))
+            <li key={i}>{item}</li>))
         }
         {
           props.tools.map((item, i) => (
-            <li key={i} className="extra"><p>{item}</p></li>))
+            <li key={i}>{item}</li>))
         }
       </ul>
     </figure>
