@@ -1,4 +1,103 @@
-export default {
+
+/*
+
+blankCharacter, for final character render
+protoCharacter, for UI testing
+
+*/
+
+export const blankCharacter = {
+  name: "blank",
+  body: {
+    race: "",
+    gender: "",
+    age: 0,
+    height: "",
+    weight: "",
+    eyes: "",
+    skin: "",
+    hair: ""
+  },
+  past: {
+    background: "",
+    personality: "",
+    ideals: "",
+    bonds: "",
+    flaws: ""
+  },
+  main: {
+    gameClass: "",
+    hitPoints: 0,
+    hitDice: "",
+    armorClass: 0,
+    speed: 0,
+    init: 0,
+    prof: 2, // 1st lvl proficiency bonus
+    score: {
+      str: [0, 0],
+      dex: [0, 0],
+      con: [0, 0],
+      int: [0, 0],
+      wis: [0, 0],
+      cha: [0, 0]
+    },
+    saves: [
+      ["Strength", 0],
+      ["Dexterity", 0],
+      ["Constitution", 0],
+      ["Intelligence", 0],
+      ["Wisdom", 0],
+      ["Charisma", 0]
+    ],
+    skills: [
+      ["Acrobatics", 0],
+      ["Animal Handling", 0],
+      ["Arcana", 0],
+      ["Athletics", 0],
+      ["Deception", 0],
+      ["History", 0],
+      ["Insight", 0],
+      ["Intimidation", 0],
+      ["Investigation", 0],
+      ["Medicine", 0],
+      ["Nature", 0],
+      ["Perception", 0],
+      ["Performance", 0],
+      ["Persuasion", 0],
+      ["Religion", 0],
+      ["Sleight of Hand", 0],
+      ["Stealth", 0],
+      ["Survival", 0]
+    ],
+    pp: 0,
+    langs: [],
+    tools: [],
+  },
+  equip: {
+    weapons: [],
+    armor: [],
+    pack: [],
+    money: {
+      cp: 0,
+      sp: 0,
+      gp: 0,
+      pp: 0
+    }
+  },
+  spell: {
+    spellClass: "",
+    ability: "",
+    save: 0, // 8 + 2 (lvl 1 proficiency bonus) + spellcasting ability mod
+    toHit: 0, // 2 (lvl 1 proficiency bonus) + spellcasting ability mod
+    cantrips: 0,
+    known: 0,
+    prepared: 0, // spellcasting ability modifier + lvl
+    slots: 0
+  },
+  traits: []
+};
+
+export const protoCharacter = {
   name: "Aila Lightingroar",
   body: {
     race: "dwarf",
@@ -106,7 +205,7 @@ export default {
     cantrips: 3,
     known: 0,
     prepared: 3, // spellcasting ability modifier + lvl
-    slots: [[2, "1st"]]
+    slots: 2
   },
   traits: [
     [
@@ -131,3 +230,4 @@ export default {
     ]
   ]
 };
+

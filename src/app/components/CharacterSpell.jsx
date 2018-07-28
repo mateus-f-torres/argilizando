@@ -27,8 +27,8 @@ const CharacterSpell = (props) => {
         <li><p><b>Spells Prepared:</b>
           <span className="close">{props.prepared}</span>
         </p></li>
-        <li><p><b>Spells Slots:</b>
-          <span className="close">{props.slots[0][0]}</span>
+        <li><p><b>1st lvl Spells Slots:</b>
+          <span className="close">{props.slots}</span>
         </p></li>
       </ul>
     </figure>
