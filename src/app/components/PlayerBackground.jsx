@@ -25,7 +25,7 @@ class PlayerBackground extends React.Component {
   }
 
   lockBack() {
-    this.props.lockBack(this.props.chosen.id);
+    this.props.lockBack(this.props.chosen);
   }
 
   render() {

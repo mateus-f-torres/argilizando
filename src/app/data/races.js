@@ -259,7 +259,7 @@ export default [
         special: [
           [
             "Hungry Jaws",
-            "As a bonus action you use your fanged maw to make a unarmed attack. If you hit with it, you deal 1d4 + Strength modifier piercing damage and gain temporary hit points equal to the damage dealt. To use this trait again you must get a 5 or 6 on the d6."
+            "As an action you use your fanged maw to make a unarmed attack. If you hit with it, you deal 1d4 + Strength modifier piercing damage and gain temporary hit points equal to the damage dealt. To use this trait again you must get a 5 or 6 on the d6."
           ],
           [
             "Hold Breath",
@@ -267,7 +267,7 @@ export default [
           ],
           [
             "Natural Armor",
-            "You have tough, scaly skin. When you aren't wearing armor, your AC is 13 + Dexterity modifier."
+            "You have tough, scaly skin. When you aren't wearing armor, your AC is 12 + Dexterity modifier."
           ],
         ]
       },

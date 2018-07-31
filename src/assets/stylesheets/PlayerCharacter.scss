@@ -10,6 +10,34 @@
     margin: 0 0 5% 0;
     .main { text-transform: capitalize; }
   }
+  form {
+    display: block;
+    width: 100%;
+    margin: 0;
+    label {
+      display: inline-block;
+      width: 90%;
+      text-align: start;
+      text-transform: capitalize;
+    }
+    input {
+      display: block;
+      color: $link-active;
+      width: 90%;
+      margin: 0 auto 0.7em auto;
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid $link-active;
+      outline: none;
+      height: 2em;
+      box-shadow: none;
+      &:focus {
+        border-bottom: 1px solid $link-color;
+        box-shadow: 0 1px 0 $link-color;
+      }
+      transition: 0.2s ease;
+    }
+  }
 
   h2 { text-transform: capitalize; }
   p {
@@ -18,12 +46,13 @@
     text-align: justify;
     font-weight: normal;
   }
-  h4 {
+  h3 {
+    align-self: flex-start;
     margin-left: 5%;
     margin-bottom: 0.5em;
     text-align: start;
   }
-  h5 {@extend h4;}
+  h4 {@extend h3;}
 }
 
 

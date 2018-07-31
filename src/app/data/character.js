@@ -1,4 +1,73 @@
-export default {
+
+export const blankCharacter = {
+  name: "blank",
+  body: {},
+  past: {},
+  main: {
+    _class: "",
+    level: 1, // 1st lvl character blank template
+    hitPoints: 0,
+    hitDice: "",
+    armorClass: 0,
+    speed: 0,
+    init: 0,
+    prof: 2, // 1st lvl proficiency bonus
+    score: {
+      str: [0, 0],
+      dex: [0, 0],
+      con: [0, 0],
+      int: [0, 0],
+      wis: [0, 0],
+      cha: [0, 0]
+    },
+    saves: [
+      ["str", "Strength", 0],
+      ["dex", "Dexterity", 0],
+      ["con", "Constitution", 0],
+      ["int", "Intelligence", 0],
+      ["wis" ,"Wisdom", 0],
+      ["cha" ,"Charisma", 0]
+    ],
+    skills: [
+      ["Acrobatics", 0],
+      ["Animal Handling", 0],
+      ["Arcana", 0],
+      ["Athletics", 0],
+      ["Deception", 0],
+      ["History", 0],
+      ["Insight", 0],
+      ["Intimidation", 0],
+      ["Investigation", 0],
+      ["Medicine", 0],
+      ["Nature", 0],
+      ["Perception", 0],
+      ["Performance", 0],
+      ["Persuasion", 0],
+      ["Religion", 0],
+      ["Sleight of Hand", 0],
+      ["Stealth", 0],
+      ["Survival", 0]
+    ],
+    pp: 0,
+    langs: [],
+    tools: [],
+  },
+  equip: {
+    weapons: [],
+    armor: [],
+    pack: [],
+    money: {
+      cp: 0,
+      sp: 0,
+      gp: 0,
+      pp: 0
+    }
+  },
+  spell: {},
+  traits: []
+};
+
+export const protoCharacter = {
   name: "Aila Lightingroar",
   body: {
     race: "dwarf",
@@ -98,36 +167,215 @@ export default {
       pp: 0
     }
   },
-  spell: {
-    spellClass: "cleric",
-    ability: "wis",
-    save: 12, // 8 + 2 (lvl 1 proficiency bonus) + spellcasting ability mod
-    toHit: 4, // 2 (lvl 1 proficiency bonus) + spellcasting ability mod
-    cantrips: 3,
-    known: 0,
-    prepared: 3, // spellcasting ability modifier + lvl
-    slots: [[2, "1st"]]
-  },
-  traits: [
-    [
-      "Dwarven Toughness",
-      "Your hit point maximun increases by 1, and it increases b1 every time you gain a level."
-    ],
-    [
-      "Dwarven Fortitude",
-      "Whenever you take the Dodge action in combat, you can spend one Hit Die to heal yourself. You must roll a 5 or 6 on d6 to use this feature again."
-    ],
-    [
-      "Steadfast",
-      "When an effect forces you to move, through a pull, push or a slide, you move 5ft less than the effect specifies. In addition, when a attack would knock you prone, you can immediately make a saving throw to avoid falling prone."
-    ],
-    [
-      "Divine Domain",
-      "Choose one domain related to your deity and gain a trait related to that domain. Knowledge, Life, Light, Nature, Tempest, Trickery, War, Forge and Grave are the available domains."
-    ],
-    [
-      "Domain Spells",
-      "Each domain has a list of spells, its domain spells, that you gain at the cleric levels noted in the domain description. Once you gain a domain spell, you always have it prepared, and it doesn't count against the number of spells you can prepare each day."
-    ]
-  ]
 };
+
+
+const getCharMain = ({race, _class, score, back}) => {
+  let main = {
+    _class: _class.id,
+    level: 1, // 1st lvl character template
+    speed: race.speed,
+    init: score.dex[1],
+    prof: 2, // 1st lvl proficiency bonus
+    score: {...score},
+    saves: [],
+    skills: [
+      ["Acrobatics", 0],
+      ["Animal Handling", 0],
+      ["Arcana", 0],
+      ["Athletics", 0],
+      ["Deception", 0],
+      ["History", 0],
+      ["Insight", 0],
+      ["Intimidation", 0],
+      ["Investigation", 0],
+      ["Medicine", 0],
+      ["Nature", 0],
+      ["Perception", 0],
+      ["Performance", 0],
+      ["Persuasion", 0],
+      ["Religion", 0],
+      ["Sleight of Hand", 0],
+      ["Stealth", 0],
+      ["Survival", 0]
+    ],
+    pp: 0,
+    langs: [],
+    tools: [],
+  };
+
+  // Character Hit Points and Hit Dice
+  {
+    // Hit Points are a mix of _class.hp lvl + constitution modifier
+    // Hit Dice are based on _class.hp lvl
+
+    switch(_class.hp) {
+      case 1: // no player class
+        main.hitPoints = 4;
+        main.hitDice = "1d4";
+        break;
+      case 2: // sorcerer and wizard
+        main.hitPoints = 6;
+        main.hitDice = "1d6";
+        break;
+      case 3: // bard, cleric, druid, monk, rogue and warlock
+        main.hitPoints = 8;
+        main.hitDice = "1d8";
+        break;
+      case 4: // fighter, paladin and ranger
+        main.hitPoints = 10;
+        main.hitDice = "1d10";
+        break;
+      case 5: // barbarian
+        main.hitPoints = 12;
+        main.hitDice = "1d12";
+        break;
+      default:
+        break;
+    }
+    // add con modifier to Hit Points
+    main.hitPoints += score.con[1]; 
+
+    // dwarf's racial trait === +1 Hit Points per lvl
+    if(race.id === "dwarf") main.hitPoints += main.level;
+  }
+
+  // Character Saving Throws
+  {
+    let defaultSaves = [
+      ["str", "Strength", 0],
+      ["dex", "Dexterity", 0],
+      ["con", "Constitution", 0],
+      ["int", "Intelligence", 0],
+      ["wis" ,"Wisdom", 0],
+      ["cha" ,"Charisma", 0]
+    ];
+
+    let _saves = defaultSaves.map(item => {
+      let [mod, name, value] = [...item];
+
+      // get each saving throw bonus, based on correct ability modifier
+      value = score[mod][1];
+
+      // find thoses saves in which _class is proficient
+      return _class.save.includes(name)
+        ? [mod, name, value + main.prof, true] // add proficiency bonus
+        : [mod, name, value]
+    })
+
+    main.saves = _saves;
+  }
+
+  return main;
+}
+
+
+/*
+  return complete spellcasting list
+  e.g.
+  {
+    _class,   // spellcasting class
+    ability,  // spellcasting ability
+    save,     // spell save DC, when your spell triggers a saving throw 
+    toHit,    // spell attack bonus, for spell attack rolls VS armor class
+    cantrips, // number of cantrips known at 1st lvl
+    known,    // number of 1st lvl spells known at 1st lvl
+    prepared, // number of 1st lvl spells that can be prepared at 1st lvl
+    slots,    // number of 1st lvl spell slots at 1st lvl
+    ritual,   // if said spellcasting class has access to ritual casting
+    focus,    // if said spellcasting class can use a spellcasting focus
+    *notYet,  // only in Paladin and Ranger, access to magic at 2nd lvl
+  }
+
+  abiliy, cantrips, known, slots, ritual, focus and notYet
+    are already defined inside each class
+*/
+const getCharSpell = ({_class, score}, prof) => {
+  // classes without default access to magic, dont bother
+  if(_class.spell === false) return false;
+
+  // shallow copy
+  let spell = {..._class.spell};
+
+  // DRY
+  spell._class = _class.id;
+
+  // 8 + proficiency + spellcasting ability modifier
+  spell.save = 8 + prof + score[spell.ability][1];
+
+  // proficiency + spellcasting ability modifier
+  spell.toHit = prof + score[spell.ability][1];
+
+  switch(_class.id) {
+      // this classes have a dynamic prepared property
+    case 'cleric':
+    case 'druid':
+    case 'paladin': 
+    case 'wizard':
+      spell.prepared = score[spell.ability][1] + 1;
+      break;
+
+    default:
+      // all others dont need prepared property
+      // since all known spell are prepared by default
+      spell.prepared = 0;
+      break;
+  }
+
+  return spell;
+}
+
+
+// collect important traits that 1st lvl player should know
+const getCharTraits = ({race, _class}) => {
+  let traits = [];
+  // each trait in race   === ["name", "description"]
+  // each trait in _class === ["name", "lvl", "description"]
+
+  // all traits from race
+  for(const item of race.special) traits.push([item[0], item[1]]);
+
+  // only traits from _class that are active at 1st lvl
+  for(const item of _class.special) {
+    if(item[1].match(/1st/)) traits.push([item[0], item[2]]);
+  }
+
+  return traits;
+}
+
+const getCharBody = ({race}) => {
+  return {
+    race: race.id,
+    size: race.size,
+    gender: "",
+    age: "",
+    height: "",
+    weight: "",
+    eyes: "",
+    skin: "",
+    hair: "",
+  };
+}
+
+const getCharPast = ({back}) => {
+  return {
+    background: back.name,
+    personality: "",
+    ideals: "",
+    bonds: "",
+    flaws: ""
+  };
+};
+
+export const getChar = (char) => {
+  return Object.assign(
+    {},
+    { body: getCharBody(char) },
+    { past: getCharPast(char) },
+    { main: getCharMain(char) },
+    { spell: getCharSpell(char, 2) }, // 2 === 1st lvl proficiency bonus
+    { traits : getCharTraits(char) }
+  );
+}
+
+

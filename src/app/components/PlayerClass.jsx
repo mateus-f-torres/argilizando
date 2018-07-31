@@ -25,7 +25,7 @@ class PlayerClass extends React.Component {
   }
 
   lockClass() {
-    this.props.lockClass(this.props.chosen.id);
+    this.props.lockClass(this.props.chosen);
   }
 
   render() {

@@ -8,7 +8,8 @@ const CharacterBody = (props) => {
       <ul className="stats">
         <li><p><b>Race:</b><span>{props.race}</span></p></li>
         <li><p><b>Gender:</b><span>{props.gender}</span></p></li>
-        <li><p><b>Age:</b>{props.age} years</p></li>
+        <li><p><b>Size:</b><span>{props.size}</span></p></li>
+        <li><p><b>Age:</b>{props.age}</p></li>
         <li><p><b>Height:</b>{props.height}</p></li>
         <li><p><b>Weight:</b>{props.weight}</p></li>
       </ul>
