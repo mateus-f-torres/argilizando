@@ -16,6 +16,7 @@ class AbilityScores extends React.Component {
   }
 
   handleClick(e) {
+    e.preventDefault();
     let type = e.target.name; 
     let h5 = e.target.parentNode.childNodes[1];
     let ability = h5.attributes.name.value;

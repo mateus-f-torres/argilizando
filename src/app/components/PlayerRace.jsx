@@ -23,7 +23,7 @@ class PlayerRace extends React.Component {
   }
 
   lockRace() {
-    this.props.lockRace(this.props.race.id);
+    this.props.lockRace(this.props.race);
   }
 
   render() {

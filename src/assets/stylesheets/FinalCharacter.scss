@@ -41,6 +41,19 @@
       }
     }
   }
+  .sidenotes {
+    li {
+      margin-left: 5%;
+      text-align: start;
+      font-size: small;
+      width: 80%;
+      .note { 
+        font-style: italic;
+        padding-left: 10%; 
+      }
+    }
+  }
+  button:disabled { background-color: grey; }
 }
 
 

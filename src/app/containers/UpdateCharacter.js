@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getCharacter, lockCharacter } from '../actions';
+import { getCharacter, changeBody, changePast, lockCharacter } from '../actions';
 import { showMenu } from '../actions';
 import PlayerCharacter from '../components/PlayerCharacter.jsx';
 
@@ -17,6 +17,12 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCharacter: (character) => {
       dispatch(getCharacter(character))
+    },
+    changeBody: (pair) => {
+      dispatch(changeBody(pair))
+    },
+    changePast: (pair) => {
+      dispatch(changePast(pair))
     },
     backBtn: () => {
       dispatch(showMenu())

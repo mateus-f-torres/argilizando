@@ -1,10 +1,14 @@
 import * as React from 'react';
+import OptionBody from './OptionBody.jsx';
+import OptionPast from './OptionPast.jsx';
 
 import 'Styles/PlayerCharacter.scss';
 
 class PlayerCharacter extends React.Component {
   constructor(props) {
     super(props);
+    this.handleChange_Body = this.handleChange_Body.bind(this);
+    this.handleChange_Past = this.handleChange_Past.bind(this);
     this.backBtn = this.backBtn.bind(this);
     this.lockChar = this.lockChar.bind(this);
   }
@@ -12,11 +16,21 @@ class PlayerCharacter extends React.Component {
   componentDidMount() {
     let character = {
       race: this.props.race,
-      gameClass: this.props.gameClass,
+      _class: this.props.gameClass,
       score: this.props.score,
-      background: this.props.background
+      back: this.props.background
     }
     this.props.getCharacter(character);
+  }
+
+  handleChange_Body(e) {
+    e.preventDefault();
+    this.props.changeBody([e.target.name, e.target.value])
+  }
+
+  handleChange_Past(e) {
+    e.preventDefault();
+    this.props.changePast([e.target.name, e.target.value])
   }
 
   backBtn(e) {
@@ -26,8 +40,7 @@ class PlayerCharacter extends React.Component {
 
   lockChar(e) {
     e.preventDefault();
-    let char = this.props.char;
-    this.props.lockCharacter(char);
+    this.props.lockCharacter(this.props.char);
   }
 
   render() {
@@ -46,9 +59,9 @@ class PlayerCharacter extends React.Component {
           </thead>
           <tbody>
             <tr className="main">
-              <td>{this.props.background}</td>
-              <td>{this.props.race}</td>
-              <td>{this.props.gameClass}</td>
+              <td>{this.props.background.id}</td>
+              <td>{this.props.race.id}</td>
+              <td>{this.props.gameClass.id}</td>
             </tr>
           </tbody>
         </table>
@@ -131,7 +144,22 @@ class PlayerCharacter extends React.Component {
             </tr>
           </tbody>
         </table>
+
         <div className="horizontal-line no-bottom" />
+        <form onSubmit={this.lockChar}>
+          <h3>Appearance</h3>
+          <OptionBody 
+            body={this.props.char.body} 
+            race={this.props.race}
+            change={this.handleChange_Body}/>
+          
+          <h3>Role Playing</h3>
+           <OptionPast 
+            past={this.props.char.past} 
+            change={this.handleChange_Past}/>
+
+          <div className="horizontal-line no-bottom" />
+        </form>
         <div className="lock-box">
           <button onClick={this.backBtn}>Back</button>
           <button onClick={this.lockChar}>Lock</button>

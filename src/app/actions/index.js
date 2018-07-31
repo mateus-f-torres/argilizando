@@ -121,6 +121,16 @@ export const getCharacter = (char) => ({
   char
 })
 
+export const changeBody = (pair) => ({
+  type: 'CHANGE_CHARACTER_BODY',
+  pair
+})
+
+export const changePast = (pair) => ({
+  type: 'CHANGE_CHARACTER_PAST',
+  pair
+})
+
 export const lockCharacter = (lock) => ({
   type: 'LOCK_CHARACTER',
   lock

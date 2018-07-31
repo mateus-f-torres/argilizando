@@ -16,6 +16,7 @@ export default [
           ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
         ],
         tool: ["None"],
+        spell: false,
         equip: [
           ["greataxe", "or 1 martial weapon"],
           ["2 handaxes", "or 1 simple weapon"],
@@ -54,6 +55,7 @@ export default [
           ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"]
         ],
         tool: ["None"],
+        spell: false,
         equip: [
           ["chain mail or", "leather, longbow + 20 arrows"],
           ["martial weapon + medium shield", "or martial weapon + mini-shield", "or 2 martial weapons"],
@@ -92,6 +94,15 @@ export default [
           ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
         ],
         tool: ["None"],
+        spell: {
+          ability: "cha",
+          cantrips: 0,
+          known: 0,
+          slots: 2,
+          ritual: false,
+          focus: "holy symbol",
+          notYet: true // acess to magic on lvl 2
+        },
         equip: [
           ["martial weapon + medium shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
@@ -135,6 +146,14 @@ export default [
           ["History", "Insight", "Medicine", "Persuasion", "Religion"]
         ],
         tool: ["None"],
+        spell: {
+          ability: "wis",
+          cantrips: 3,
+          known: 0,
+          slots: 2,
+          ritual: true,
+          focus: "holy symbol"
+        },
         equip: [
           ["mace", "or warhammer"],
           ["scale mail", "or leather armor", "or chain mail"],
@@ -174,6 +193,14 @@ export default [
           ["Any"]
         ],
         tool: ["Three musical instruments"],
+        spell: {
+          ability: "cha",
+          cantrips: 2,
+          known: 4,
+          slots: 2,
+          ritual: true,
+          focus: "instrument"
+        },
         equip: [
           ["rapier", "or longsword", "or 1 simple weapon"],
           ["diplomat's pack", "or entertainer's pack"],
@@ -217,6 +244,7 @@ export default [
           ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
         ],
         tool: ["Artisan's Tools"],
+        spell: false,
         equip: [
           ["2 simple weapons + 10 darts"],
           ["dungeoneer's pack", "or explorer's pack"],
@@ -253,6 +281,15 @@ export default [
           ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
         ],
         tool: ["None"],
+        spell: {
+          ability: "wis",
+          cantrips: 0,
+          known: 2,
+          slots: 2,
+          ritual: false,
+          focus: false,
+          notYet: true // acess to magic on lvl 2
+        },
         equip: [
           ["scale mail", "or leather armor"],
           ["2 shortswords", "or 2 simple weapons"],
@@ -291,6 +328,7 @@ export default [
           ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"]
         ],
         tool: ["Thieves' tools"],
+        spell: false,
         equip: [
           ["rapier", "or shortsword"],
           ["shortbow + 20 arrows", "or shortsword"],
@@ -330,6 +368,14 @@ export default [
           ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
         ],
         tool: ["None"],
+        spell: {
+          ability: "cha",
+          cantrips: 2,
+          known: 2,
+          slots: 1,
+          ritual: false,
+          focus: "arcane focus"
+        },
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
@@ -374,6 +420,14 @@ export default [
           ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]
         ],
         tool: ["Herbalism kit"],
+        spell: {
+          ability: "wis",
+          cantrips: 2,
+          known: 0,
+          slots: 2,
+          ritual: true,
+          focus: "druidic focus"
+        },
         equip: [
           ["wooden mini-shield", "or 1 simple weapon"],
           ["scimitar", "or 1 simple weapon"],
@@ -412,6 +466,14 @@ export default [
           ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
         ],
         tool: ["None"],
+        spell: {
+          ability: "cha",
+          cantrips: 4,
+          known: 2,
+          slots: 2,
+          ritual: false,
+          focus: "arcane focus"
+        },
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
@@ -450,6 +512,14 @@ export default [
           ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
         ],
         tool: ["None"],
+        spell: {
+          ability: "int",
+          cantrips: 3,
+          known: 6,
+          slots: 2,
+          ritual: true,
+          focus: "arcane focus"
+        },
         equip: [
           ["quarterstaff", "or 1 dagger"],
           ["component pouch", "or arcane focus"],

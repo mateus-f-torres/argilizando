@@ -124,12 +124,12 @@ const CharacterMain = (props) => {
           props.saves.map((item, i) => (
             <li key={i} className="prof-item">
               <span className="prof-blob">
-                <span className={item[2] ? "prof" : "not-prof" }/>
+                <span className={item[3] ? "prof" : "not-prof" }/>
                 <span className="prof-mod">
-                  {item[1] >= 0 ? "+" + item[1] : item[1]}
+                  {item[2] >= 0 ? "+" + item[2] : item[2]}
                 </span>
               </span>
-              <span>{item[0]}</span>
+              <span>{item[1]}</span>
             </li>
           ))
         }
