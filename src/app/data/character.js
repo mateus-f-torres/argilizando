@@ -12,45 +12,12 @@ export const blankCharacter = {
     speed: 0,
     init: 0,
     prof: 2, // 1st lvl proficiency bonus
-    score: {
-      str: [0, 0],
-      dex: [0, 0],
-      con: [0, 0],
-      int: [0, 0],
-      wis: [0, 0],
-      cha: [0, 0]
-    },
-    saves: [
-      ["str", "Strength", 0],
-      ["dex", "Dexterity", 0],
-      ["con", "Constitution", 0],
-      ["int", "Intelligence", 0],
-      ["wis" ,"Wisdom", 0],
-      ["cha" ,"Charisma", 0]
-    ],
-    skills: [
-      ["Acrobatics", 0],
-      ["Animal Handling", 0],
-      ["Arcana", 0],
-      ["Athletics", 0],
-      ["Deception", 0],
-      ["History", 0],
-      ["Insight", 0],
-      ["Intimidation", 0],
-      ["Investigation", 0],
-      ["Medicine", 0],
-      ["Nature", 0],
-      ["Perception", 0],
-      ["Performance", 0],
-      ["Persuasion", 0],
-      ["Religion", 0],
-      ["Sleight of Hand", 0],
-      ["Stealth", 0],
-      ["Survival", 0]
-    ],
+    score: {},
+    saves: [],
+    skills: [],
     pp: 0,
     langs: [],
-    tools: [],
+    tools: []
   },
   equip: {
     weapons: [],
@@ -179,29 +146,10 @@ const getCharMain = ({race, _class, score, back}) => {
     prof: 2, // 1st lvl proficiency bonus
     score: {...score},
     saves: [],
-    skills: [
-      ["Acrobatics", 0],
-      ["Animal Handling", 0],
-      ["Arcana", 0],
-      ["Athletics", 0],
-      ["Deception", 0],
-      ["History", 0],
-      ["Insight", 0],
-      ["Intimidation", 0],
-      ["Investigation", 0],
-      ["Medicine", 0],
-      ["Nature", 0],
-      ["Perception", 0],
-      ["Performance", 0],
-      ["Persuasion", 0],
-      ["Religion", 0],
-      ["Sleight of Hand", 0],
-      ["Stealth", 0],
-      ["Survival", 0]
-    ],
+    skills: [],
     pp: 0,
     langs: [],
-    tools: [],
+    tools: []
   };
 
   // Character Hit Points and Hit Dice
@@ -251,19 +199,58 @@ const getCharMain = ({race, _class, score, back}) => {
       ["cha" ,"Charisma", 0]
     ];
 
-    let _saves = defaultSaves.map(item => {
-      let [mod, name, value] = [...item];
+    main.saves = defaultSaves.map(item => {
+      let [ability, save, mod] = [...item];
 
       // get each saving throw bonus, based on correct ability modifier
-      value = score[mod][1];
+      mod = score[ability][1];
 
       // find thoses saves in which _class is proficient
-      return _class.save.includes(name)
-        ? [mod, name, value + main.prof, true] // add proficiency bonus
-        : [mod, name, value]
+      return _class.save.includes(save)
+        ? [ability, save, mod + main.prof, true] // add proficiency bonus
+        : [ability, save, mod]
+    })
+  }
+  
+  // Character Skills
+  {
+    let defaultSkills = [
+      ["dex", "Acrobatics", 0],
+      ["wis", "Animal Handling", 0],
+      ["int", "Arcana", 0],
+      ["str", "Athletics", 0],
+      ["cha", "Deception", 0],
+      ["int", "History", 0],
+      ["wis", "Insight", 0],
+      ["cha", "Intimidation", 0],
+      ["int", "Investigation", 0],
+      ["wis", "Medicine", 0],
+      ["int", "Nature", 0],
+      ["wis", "Perception", 0],
+      ["cha", "Performance", 0],
+      ["cha", "Persuasion", 0],
+      ["int", "Religion", 0],
+      ["dex", "Sleight of Hand", 0],
+      ["dex", "Stealth", 0],
+      ["wis", "Survival", 0]
+    ];
+
+    main.skills = defaultSkills.map(item => {
+      let [ability, skill, mod] = [...item];
+
+      // get each skill bonus, based on correct ability modifier
+      mod = score[ability][1];
+
+      // find thoses skills in which background is already proficient
+      return back.skill.includes(skill)
+        ? [ability, skill, mod + main.prof, true] // add proficiency bonus
+        : [ability, skill, mod]
     })
 
-    main.saves = _saves;
+    // get Passive Perception based on Perception Skill bonus + 10
+    for(const item of main.skills) {
+      if(item[1] === "Perception") main.pp = 10 + item[2];
+    }
   }
 
   return main;

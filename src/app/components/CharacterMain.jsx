@@ -121,17 +121,21 @@ const CharacterMain = (props) => {
       <h3>Saving Throws</h3>
       <ul>
         {
-          props.saves.map((item, i) => (
+          props.saves.map((item, i) => {
+            let [ability, save, mod, prof] = [...item];
+
+            return (
             <li key={i} className="prof-item">
               <span className="prof-blob">
-                <span className={item[3] ? "prof" : "not-prof" }/>
+                <span className={prof ? "prof" : "not-prof" }/>
                 <span className="prof-mod">
-                  {item[2] >= 0 ? "+" + item[2] : item[2]}
+                  {mod >= 0 ? "+" + mod : mod}
                 </span>
               </span>
-              <span>{item[1]}</span>
+              <span>{save}</span>
             </li>
-          ))
+            )
+          })
         }
       </ul>
       
@@ -139,17 +143,21 @@ const CharacterMain = (props) => {
       <h3>Skills</h3>
       <ul>
         {
-          props.skills.map((item, i) => (
+          props.skills.map((item, i) => {
+            let [ability, skill, mod, prof] = [...item];
+
+            return (
             <li key={i} className="prof-item">
               <span className="prof-blob">
-                <span className={item[2] ? "prof" : "not-prof" }/>
+                <span className={prof ? "prof" : "not-prof" }/>
                 <span className="prof-mod">
-                  {item[1] >= 0 ? "+" + item[1] : item[1]}
+                  {mod >= 0 ? "+" + mod : mod}
                 </span>
               </span>
-              <span>{item[0]}</span>
+              <span>{skill}</span>
             </li>
-          ))
+            )
+          })
         }
       </ul>
       <ul className="stats">
@@ -159,7 +167,7 @@ const CharacterMain = (props) => {
       </ul>
 
       <div className="horizontal-line" />
-      <h3>Other Proficencies &amp; Languages</h3>
+      <h3>Other Proficiencies &amp; Languages</h3>
       <ul className="dotted-list">
         {
           props.langs.map((item, i) => (

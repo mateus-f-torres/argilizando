@@ -1,4 +1,5 @@
 import * as React from 'react';
+import OptionProf from './OptionProf.jsx';
 import OptionBody from './OptionBody.jsx';
 import OptionPast from './OptionPast.jsx';
 
@@ -7,6 +8,7 @@ import 'Styles/PlayerCharacter.scss';
 class PlayerCharacter extends React.Component {
   constructor(props) {
     super(props);
+    this.handleChange_Skill = this.handleChange_Skill.bind(this);
     this.handleChange_Body = this.handleChange_Body.bind(this);
     this.handleChange_Past = this.handleChange_Past.bind(this);
     this.backBtn = this.backBtn.bind(this);
@@ -33,6 +35,12 @@ class PlayerCharacter extends React.Component {
     this.props.changePast([e.target.name, e.target.value])
   }
 
+  handleChange_Skill(e){
+    let max = this.props.gameClass.skill[0];
+    if(this.props.race.id === "human") max++;
+    this.props.changeSkill([e.target.name, max])
+  }
+
   backBtn(e) {
     e.preventDefault();
     this.props.backBtn();
@@ -44,6 +52,10 @@ class PlayerCharacter extends React.Component {
   }
 
   render() {
+
+    let maxSkills = this.props.race.id === "human"
+      ? this.props.gameClass.skill[0] + 1 + 2
+      : this.props.gameClass.skill[0] + 2
   
     return (
       <section id="CHARACTER">
@@ -147,14 +159,19 @@ class PlayerCharacter extends React.Component {
 
         <div className="horizontal-line no-bottom" />
         <form onSubmit={this.lockChar}>
-          <h3>Appearance</h3>
+          <OptionProf 
+            max={maxSkills}
+            skills={this.props.char.main.skills} 
+            _class={this.props.gameClass}
+            back={this.props.background}
+            toggleSkill={this.handleChange_Skill}/>
+
           <OptionBody 
             body={this.props.char.body} 
             race={this.props.race}
             change={this.handleChange_Body}/>
           
-          <h3>Role Playing</h3>
-           <OptionPast 
+          <OptionPast 
             past={this.props.char.past} 
             change={this.handleChange_Past}/>
 

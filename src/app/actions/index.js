@@ -131,6 +131,11 @@ export const changePast = (pair) => ({
   pair
 })
 
+export const changeSkill = (pair) => ({
+  type: 'CHANGE_CHARACTER_SKILL',
+  pair
+})
+
 export const lockCharacter = (lock) => ({
   type: 'LOCK_CHARACTER',
   lock

@@ -14,7 +14,7 @@ export default [
           ["5 sticks of incense"],
           ["vestments"],
           ["set of common clothes"],
-          ["belt pouch containing 15g"]
+          ["belt pouch containing 15gp"]
         ]
       },
       {

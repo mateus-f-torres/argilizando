@@ -14,6 +14,7 @@ const OptionBody = (props) => {
 
   return (
   <div>
+    <h3>Appearance</h3>
     {
       Object.entries(props.body).map((item, i) => {
         if(item[0] === "race" || item[0] === "size") return;
@@ -21,7 +22,7 @@ const OptionBody = (props) => {
         if(item[0] === "age") {
           const [ageMin, ageMax] = [...labels.age];
           return (
-            <label key={i}>Age:
+            <label className="text-label" key={i}>Age:
               <input
                 id={item[0]}
                 type="number"
@@ -43,7 +44,7 @@ const OptionBody = (props) => {
         }
         
         return (
-        <label key={i}>{item[0]}:
+        <label className="text-label" key={i}>{item[0]}:
           <input
             id={item[0]}
             name={item[0]}
