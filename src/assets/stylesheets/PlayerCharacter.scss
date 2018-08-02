@@ -14,29 +14,7 @@
     display: block;
     width: 100%;
     margin: 0;
-    .text-label {
-      display: inline-block;
-      width: 90%;
-      text-align: start;
-      text-transform: capitalize;
-      input {
-        display: block;
-        color: $link-active;
-        width: 90%;
-        margin: 0 auto 0.7em auto;
-        background-color: transparent;
-        border: none;
-        border-bottom: 1px solid $link-active;
-        outline: none;
-        height: 2em;
-        box-shadow: none;
-        &:focus {
-          border-bottom: 1px solid $link-color;
-          box-shadow: 0 1px 0 $link-color;
-        }
-        transition: 0.2s ease;
-      }
-    }
+    
     #skill-number {
       margin-left: 10px;
       font-weight: normal;
@@ -57,7 +35,29 @@
       }
     }
   }
-
+  .text-label {
+    display: inline-block;
+    width: 90%;
+    text-align: start;
+    text-transform: capitalize;
+  }
+  .text-input {
+    display: block;
+    color: $link-active;
+    width: 90%;
+    margin: 0 auto 0.7em auto;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $link-active;
+    outline: none;
+    height: 2em;
+    box-shadow: none;
+    &:focus {
+      border-bottom: 1px solid $link-color;
+      box-shadow: 0 1px 0 $link-color;
+    }
+    transition: 0.2s ease;
+  }
   h2 { text-transform: capitalize; }
   p {
     width: 90%;

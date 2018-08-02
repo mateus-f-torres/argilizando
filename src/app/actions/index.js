@@ -136,6 +136,16 @@ export const changeSkill = (pair) => ({
   pair
 })
 
+export const changeLang = (pair) => ({
+  type: 'CHANGE_CHARACTER_LANG',
+  pair
+})
+
+export const changeName = (name) => ({
+  type: 'CHANGE_CHARACTER_NAME',
+  name
+})
+
 export const lockCharacter = (lock) => ({
   type: 'LOCK_CHARACTER',
   lock

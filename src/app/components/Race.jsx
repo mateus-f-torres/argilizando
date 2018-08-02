@@ -58,7 +58,13 @@ const Race = (props: Props) => {
     <li><p><b>Lifespan:</b>{props.age[1]} years.</p></li>
     <li><p><b>Size:</b>{props.size}.</p></li>
     <li><p><b>Speed:</b>{props.speed}ft.</p></li>
-    <li><p><b>Speaks:</b>{props.lang[0]} &amp; {props.lang[1]}.</p></li>
+    <li><p><b>Speaks:</b>{props.lang[0]}
+        {
+          props.lang[1]
+            ? ` & ${props.lang[1]}.`
+            : "."
+        }
+    </p></li>
     </ul>
     <div className="horizontal-line" />
     <ul>

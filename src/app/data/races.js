@@ -1,6 +1,6 @@
 export default [
   [
-    "Usual Races",
+    "Common Races",
     [
       {
         name: "Human",
@@ -157,7 +157,7 @@ export default [
     ]
   ],
   [
-    "Unusual Races",
+    "Uncommon Races",
     [
       {
         name: "Dragonborn",
@@ -167,7 +167,7 @@ export default [
         height: "7ft or 2m",
         weight: "250lb or 120kg",
         speed: 30,
-        lang: ["Common", "Draconic"],
+        lang: ["Draconic", "Common"],
         special: [
           [
             "Dragon Hide",
@@ -191,7 +191,7 @@ export default [
         height: "8ft or 2,3m",
         weight: "300lb or 140kg",
         speed: 30,
-        lang: ["Common", "Giant"],
+        lang: ["Giant", "Common"],
         special: [
           [
             "Stone's Endurance",
@@ -211,7 +211,7 @@ export default [
         height: "3ft or 0,7m",
         weight: "40lb or 18kg",
         speed: 25,
-        lang: ["Common", "Gnomish"],
+        lang: ["Gnomish", "Common"],
         special: [
           [
             "Fade Away",
@@ -235,7 +235,7 @@ export default [
         height: "5ft or 1,5m",
         weight: "105lb or 50kg",
         speed: 30,
-        lang: ["Common", "Auran"],
+        lang: ["Common"],
         special: [
           [
             "Ambusher",
@@ -255,7 +255,7 @@ export default [
         height: "6ft or 1,8m",
         weight: "180lb or 90kg",
         speed: 30,
-        lang: ["Common", "Draconic"],
+        lang: ["Draconic", "Common"],
         special: [
           [
             "Hungry Jaws",
@@ -308,7 +308,7 @@ export default [
         height: "3ft or 0,8m",
         weight: "60lb or 30kg",
         speed: 30,
-        lang: ["Common", "Goblin"],
+        lang: ["Goblin", "Common"],
         special: [
           [
             "Fury of the Small",
@@ -328,7 +328,7 @@ export default [
         height: "6ft or 1,8m",
         weight: "250lb or 120kg",
         speed: 30,
-        lang: ["Common", "Orc"],
+        lang: ["Orc", "Common"],
         special: [
           [
             "Aggressive",
@@ -348,7 +348,7 @@ export default [
         height: "7ft or 2m",
         weight: "300lb or 140kg",
         speed: 30,
-        lang: ["Common", "Goblin"],
+        lang: ["Goblin", "Common"],
         special: [
           [
             "Long-Limbed",
@@ -368,7 +368,7 @@ export default [
         height: "6ft or 1,7m",
         weight: "180lb or 80kg",
         speed: 30,
-        lang: ["Common", "Goblin"],
+        lang: ["Goblin", "Common"],
         special: [
           [
             "Saving Face",
@@ -388,7 +388,7 @@ export default [
         height: "3ft or 0,7m",
         weight: "30lb or 15kg",
         speed: 35,
-        lang: ["Common", "Draconic"],
+        lang: ["Draconic", "Common"],
         special: [
           [
             "Grovel, Cower, and Beg",
@@ -408,7 +408,7 @@ export default [
         height: "5ft or 1,6m",
         weight: "120lb or 120kg",
         speed: 30,
-        lang: ["Common", "Draconic"],
+        lang: ["Draconic", "Common"],
         special: [
           [
             "Shapechanger",

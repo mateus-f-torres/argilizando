@@ -16,7 +16,6 @@ export default [
           ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
         ],
         tool: ["None"],
-        spell: false,
         equip: [
           ["greataxe", "or 1 martial weapon"],
           ["2 handaxes", "or 1 simple weapon"],
@@ -39,7 +38,8 @@ export default [
             "2nd lvl",
             "Throw aside all concern for defense and attack with fierce desperation to gain advantage on Strength based melee attack, but attack rolls against you also have advantage during that round."
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "fighter",
@@ -55,7 +55,6 @@ export default [
           ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"]
         ],
         tool: ["None"],
-        spell: false,
         equip: [
           ["chain mail or", "leather, longbow + 20 arrows"],
           ["martial weapon + medium shield", "or martial weapon + mini-shield", "or 2 martial weapons"],
@@ -78,7 +77,8 @@ export default [
             "2nd lvl",
             "Push yourself beyond your normal limit and gain an extra action."
           ]
-        ]
+        ],
+        _spell: false,
       },
       {
         id: "paladin",
@@ -94,15 +94,6 @@ export default [
           ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
         ],
         tool: ["None"],
-        spell: {
-          ability: "cha",
-          cantrips: 0,
-          known: 0,
-          slots: 2,
-          ritual: false,
-          focus: "holy symbol",
-          notYet: true // acess to magic on lvl 2
-        },
         equip: [
           ["martial weapon + medium shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
@@ -125,7 +116,16 @@ export default [
             "6th lvl",
             "Your mere presence around your allies is enough to give bonuses and advantage on saving throws or certain conditions. With each oath providing more types of auras."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 0,
+          known: 0,
+          slots: 2,
+          ritual: false,
+          focus: "holy symbol",
+          notYet: true // acess to magic on lvl 2
+        }
       }
     ]
   ],
@@ -146,14 +146,6 @@ export default [
           ["History", "Insight", "Medicine", "Persuasion", "Religion"]
         ],
         tool: ["None"],
-        spell: {
-          ability: "wis",
-          cantrips: 3,
-          known: 0,
-          slots: 2,
-          ritual: true,
-          focus: "holy symbol"
-        },
         equip: [
           ["mace", "or warhammer"],
           ["scale mail", "or leather armor", "or chain mail"],
@@ -177,7 +169,15 @@ export default [
             "2nd lvl",
             "Serve as a lighting rod for your deity on this plane and gain acess to unique magical powers for a brief amount of time."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "wis",
+          cantrips: 3,
+          known: 0,
+          slots: 2,
+          ritual: true,
+          focus: "holy symbol"
+        }
       },
       {
         id: "bard",
@@ -193,14 +193,6 @@ export default [
           ["Any"]
         ],
         tool: ["Three musical instruments"],
-        spell: {
-          ability: "cha",
-          cantrips: 2,
-          known: 4,
-          slots: 2,
-          ritual: true,
-          focus: "instrument"
-        },
         equip: [
           ["rapier", "or longsword", "or 1 simple weapon"],
           ["diplomat's pack", "or entertainer's pack"],
@@ -223,7 +215,15 @@ export default [
             "2nd lvl",
             "Help wounded allies recover during a short rest by giving +1d6 hp to them."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 2,
+          known: 4,
+          slots: 2,
+          ritual: true,
+          focus: "instrument"
+        }
       }
     ]
   ],
@@ -244,7 +244,6 @@ export default [
           ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
         ],
         tool: ["Artisan's Tools"],
-        spell: false,
         equip: [
           ["2 simple weapons + 10 darts"],
           ["dungeoneer's pack", "or explorer's pack"],
@@ -265,7 +264,8 @@ export default [
             "2nd lvl",
             "Harness the mystic energy of ki and gain acess to special actions like Flurry of Blows, Patient Defense and Step of the Wind."
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "ranger",
@@ -281,15 +281,6 @@ export default [
           ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
         ],
         tool: ["None"],
-        spell: {
-          ability: "wis",
-          cantrips: 0,
-          known: 2,
-          slots: 2,
-          ritual: false,
-          focus: false,
-          notYet: true // acess to magic on lvl 2
-        },
         equip: [
           ["scale mail", "or leather armor"],
           ["2 shortswords", "or 2 simple weapons"],
@@ -312,7 +303,16 @@ export default [
             "3rd lvl",
             "Expend spell slots to magically sense if a certain type of creature is near you and your group even if the creature is hidden by magic."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "wis",
+          cantrips: 0,
+          known: 2,
+          slots: 2,
+          ritual: false,
+          focus: false,
+          notYet: true // acess to magic on lvl 2
+        }
       },
       {
         id: "rogue",
@@ -328,7 +328,6 @@ export default [
           ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"]
         ],
         tool: ["Thieves' tools"],
-        spell: false,
         equip: [
           ["rapier", "or shortsword"],
           ["shortbow + 20 arrows", "or shortsword"],
@@ -352,7 +351,8 @@ export default [
             "5th lvl",
             "Use your reaction to halve an enemy attack's damage against you"
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "warlock",
@@ -368,14 +368,6 @@ export default [
           ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
         ],
         tool: ["None"],
-        spell: {
-          ability: "cha",
-          cantrips: 2,
-          known: 2,
-          slots: 1,
-          ritual: false,
-          focus: "arcane focus"
-        },
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
@@ -399,7 +391,15 @@ export default [
             "2nd lvl",
             "In your study of occult lore, you have unearthed fragments of forbidden knowledge and gained access to special magical traits."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 2,
+          known: 2,
+          slots: 1,
+          ritual: false,
+          focus: "arcane focus"
+        }
       }
     ]
   ],
@@ -420,14 +420,6 @@ export default [
           ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]
         ],
         tool: ["Herbalism kit"],
-        spell: {
-          ability: "wis",
-          cantrips: 2,
-          known: 0,
-          slots: 2,
-          ritual: true,
-          focus: "druidic focus"
-        },
         equip: [
           ["wooden mini-shield", "or 1 simple weapon"],
           ["scimitar", "or 1 simple weapon"],
@@ -450,7 +442,15 @@ export default [
             "2nd lvl",
             "Identify with a circle of druids like, for example, the Circle of the Land, the Circle of the Moon, the Circle of Dreams and the Circle of the Shepherd are among them."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "wis",
+          cantrips: 2,
+          known: 0,
+          slots: 2,
+          ritual: true,
+          focus: "druidic focus"
+        }
       },
       {
         id: "sorcerer",
@@ -466,14 +466,6 @@ export default [
           ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
         ],
         tool: ["None"],
-        spell: {
-          ability: "cha",
-          cantrips: 4,
-          known: 2,
-          slots: 2,
-          ritual: false,
-          focus: "arcane focus"
-        },
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
@@ -496,7 +488,15 @@ export default [
             "3rd lvl",
             "You gain the ability to twist and change your spells to suit your needs."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 4,
+          known: 2,
+          slots: 2,
+          ritual: false,
+          focus: "arcane focus"
+        }
       },
       {
         id: "wizard",
@@ -512,14 +512,6 @@ export default [
           ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
         ],
         tool: ["None"],
-        spell: {
-          ability: "int",
-          cantrips: 3,
-          known: 6,
-          slots: 2,
-          ritual: true,
-          focus: "arcane focus"
-        },
         equip: [
           ["quarterstaff", "or 1 dagger"],
           ["component pouch", "or arcane focus"],
@@ -542,7 +534,15 @@ export default [
             "2nd lvl",
             "Choose an arcane tradition, shaping your practice of magic through one of the eight schools of magic: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion and Necromancy."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "int",
+          cantrips: 3,
+          known: 6,
+          slots: 2,
+          ritual: true,
+          focus: "arcane focus"
+        }
       }
     ]
   ]

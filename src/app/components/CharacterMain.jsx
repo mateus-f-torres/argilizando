@@ -170,8 +170,11 @@ const CharacterMain = (props) => {
       <h3>Other Proficiencies &amp; Languages</h3>
       <ul className="dotted-list">
         {
-          props.langs.map((item, i) => (
-            <li key={i}>{item}</li>))
+          props.langs.map((item, i) => {
+            return item[2]
+              ? <li key={i}>{item[1]}</li>
+              : null
+          })
         }
         {
           props.tools.map((item, i) => (

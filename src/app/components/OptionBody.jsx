@@ -24,7 +24,7 @@ const OptionBody = (props) => {
           return (
             <label className="text-label" key={i}>Age:
               <input
-                id={item[0]}
+                className="text-input"
                 type="number"
                 min={ageMin}
                 max={ageMax}
@@ -46,7 +46,7 @@ const OptionBody = (props) => {
         return (
         <label className="text-label" key={i}>{item[0]}:
           <input
-            id={item[0]}
+            className="text-input"
             name={item[0]}
             value={item[1]}
             placeholder={info}

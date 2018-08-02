@@ -1,6 +1,6 @@
 
 export const blankCharacter = {
-  name: "blank",
+  name: "",
   body: {},
   past: {},
   main: {
@@ -145,10 +145,6 @@ const getCharMain = ({race, _class, score, back}) => {
     init: score.dex[1],
     prof: 2, // 1st lvl proficiency bonus
     score: {...score},
-    saves: [],
-    skills: [],
-    pp: 0,
-    langs: [],
     tools: []
   };
 
@@ -253,6 +249,53 @@ const getCharMain = ({race, _class, score, back}) => {
     }
   }
 
+  // Character Spoken Languages
+  {
+    let defaultLangs = [
+      // standard langs, open to the player
+      [true, "Common", false],
+      [true, "Dwarvish", false],
+      [true, "Elvish", false],
+      [true, "Giant", false],
+      [true, "Gnomish", false],
+      [true, "Goblin", false],
+      [true, "Halfling", false],
+      [true, "Orc", false],
+      // exotic langs, locked away by default
+      [false, "Abyssal", false],
+      [false, "Celestial", false],
+      [false, "Draconic", false],
+      [false, "Deep Speech", false],
+      [false, "Infernal", false],
+      [false, "Auran", false],
+      [false, "Aquan", false],
+      [false, "Ignan", false],
+      [false, "Terran", false],
+      [false, "Sylvan", false],
+      [false, "Undercommon", false],
+      [false, "Thieves' Cant", false, false],
+      [false, "Druidic", false, false]
+    ];
+
+    main.langs = defaultLangs.map(item => {
+
+      // control for druids
+      if(item[1] === "Druidic" && _class.id === "druid") {
+        return [item[0], item[1], true, true];
+      }
+      // control for rogues
+      else if(item[1] === "Thieves' Cant" && _class.id === "rogue") {
+        return [item[0], item[1], true, true];
+      }
+      else {
+        // find thoses languages already spoken by race
+        return race.lang.includes(item[1])
+          ? [item[0], item[1], true]
+          : [...item]
+      }
+    })
+  }
+
   return main;
 }
 
@@ -279,10 +322,10 @@ const getCharMain = ({race, _class, score, back}) => {
 */
 const getCharSpell = ({_class, score}, prof) => {
   // classes without default access to magic, dont bother
-  if(_class.spell === false) return false;
+  if(_class._spell === false) return false;
 
   // shallow copy
-  let spell = {..._class.spell};
+  let spell = {..._class._spell};
 
   // DRY
   spell._class = _class.id;

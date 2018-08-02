@@ -7,7 +7,7 @@ export default [
         name: "Acolyte",
         pitch: "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine.",
         skill: ["Insight", "Religion"],
-        lang: ["Two of your choice"],
+        lang: [2, "Two of your choice"],
         equip: [
           ["holy symbol"],
           ["prayer book", "or prayer wheel"],
@@ -22,7 +22,7 @@ export default [
         name: "Heretic",
         pitch: "You believe in a doctrine outlawed by your faith, taught to you in secret by other heretics.",
         skill: ["Deception", "Religion"],
-        lang: ["Two of your choice"],
+        lang: [2, "Two of your choice"],
         equip: [
           ["modified holy symbol"],
           ["prayer book", "or prayer wheel"],
@@ -39,7 +39,7 @@ export default [
         pitch: "You understand wealth, power, and privilege. You carry a noble title, and your family owns land, collects taxes, and wields significant political influence.",
         skill: ["History", "Persuasion"],
         tool: ["One gaming set"],
-        lang: ["One of your choice"],
+        lang: [1, "One of your choice"],
         equip: [
           ["set of fine clothes"],
           ["signet ring"],
@@ -52,7 +52,7 @@ export default [
         name: "Sage",
         pitch: "You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.",
         skill: ["Arcana", "History"],
-        lang: ["Two of your choice"],
+        lang: [2, "Two of your choice"],
         equip: [
           ["bottle of black ink"],
           ["quill"],
@@ -111,7 +111,7 @@ export default [
         pitch: "You are a member of an artisan's guild, skilled in a particular field and closely associated with other artisans. You are a well-established part of the mercantile world, freed by talent and wealth from the constraints of a feudal social order.",
         skill: ["Insight", "Persuasion"],
         tool: ["One artisan's tools"],
-        lang: ["One of your choice"],
+        lang: [1, "One of your choice"],
         equip: [
           ["set of artisan's tools"],
           ["letter of introduction from your guild"],
@@ -158,7 +158,7 @@ export default [
         name: "Dead",
         pitch: "You died and came back.",
         skill: ["History", "Intimidation"],
-        lang: ["Two of your choice"],
+        lang: [2, "Two of your choice"],
         equip: [
           ["50ft (15m) of rope"],
           ["dirt from your grave in a vial"],
@@ -172,7 +172,7 @@ export default [
         name: "Polymorphed",
         pitch: "You were transformed into an animal or monster and lived that way for years.",
         skill: ["Survival", "Animal Handling"],
-        lang: ["Two of your choice"],
+        lang: [2, "Two of your choice"],
         equip: [
           ["bag of caltrops"],
           ["realistic ink drawing of your polymorphed form"],
@@ -186,7 +186,7 @@ export default [
         pitch: "You lived in seclusion—either in a sheltered community such as a monastery, or entirely alone—for a formative part of your life.",
         skill: ["Medicine", "Religion"],
         tool: ["Herbalism kit"],
-        lang: ["One of your choice"],
+        lang: [1, "One of your choice"],
         equip: [
           ["scroll case stuffed full of notes from you studies or prayers"],
           ["winter blanket"],
@@ -201,7 +201,7 @@ export default [
         pitch: "You grew up in the wilds, far from civilization and the comforts of town and technology. You've witnessed the migration of herds larger than forests, survived weather more extreme than any city-dweller could comprehend, and enjoyed the solitude of being the only thinking creature for miles in any direction.",
         skill: ["Athletics", "Survival"],
         tool: ["One musical instrument"],
-        lang: ["One of your choice"],
+        lang: [1, "One of your choice"],
         equip: [
           ["staff"],
           ["hunting trap"],
@@ -235,7 +235,7 @@ export default [
         pitch: "You have heroes in your family background and the story of your ancestors is known far and wide.",
         skill: ["Athletics", "History"],
         tool: ["Vehicles (land)"],
-        lang: ["One of your choice"],
+        lang: [1, "One of your choice"],
         equip: [
           ["set of traveler's clothes"],
           ["wood figure of an ancestor"],
@@ -250,7 +250,7 @@ export default [
         pitch: "You have lived a life of adventure already and retired to something quieter. You thought you were done and to that end may have given away all your old gear and spent all your treasure. Little did you know something would pull you back into your old life.",
         skill: ["History", "Insight"],
         tool: ["One gaming set"],
-        lang: ["One of your choice"],
+        lang: [1, "One of your choice"],
         equip: [
           ["old map to a secret dungeon you never got around to visiting"],
           ["set of common clothes"],

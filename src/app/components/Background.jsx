@@ -26,7 +26,7 @@ const Background = (props: Props) => (
       props.lang &&
         <ul className="multi">
           <h4>Languages</h4>
-          {props.lang.map((item, i) => <li key={i}>{item}</li>)}
+          <li>{props.lang[1]}</li>
         </ul>
     }
 

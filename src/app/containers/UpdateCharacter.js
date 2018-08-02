@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getCharacter, changeSkill, changeBody, changePast, lockCharacter } from '../actions';
+import { getCharacter, changeName, changeSkill, changeLang, changeBody, changePast, lockCharacter } from '../actions';
 import { showMenu } from '../actions';
 import PlayerCharacter from '../components/PlayerCharacter.jsx';
 
@@ -26,6 +26,12 @@ const mapDispatchToProps = (dispatch) => {
     },
     changeSkill: (pair) => {
       dispatch(changeSkill(pair))
+    },
+    changeLang: (pair) => {
+      dispatch(changeLang(pair))
+    },
+    changeName: (name) => {
+      dispatch(changeName(name))
     },
     backBtn: () => {
       dispatch(showMenu())

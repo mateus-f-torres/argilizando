@@ -2,16 +2,13 @@ import { blankCharacter } from '../data/character.js';
 import { getChar } from '../data/character.js';
 
 const characterReducer = (state = blankCharacter, action) => {
-  let key, value, char;
+  let key, value;
+  let change, max;
 
   switch(action.type) {
 
     case 'DISPLAY_CHARACTER':
-      char = action.char;
-      return Object.assign({},
-        state,
-        getChar(char)
-      );
+      return Object.assign({}, state, getChar(action.char));
 
     case 'CHANGE_CHARACTER_BODY':
       [key, value] = [...action.pair];
@@ -28,11 +25,21 @@ const characterReducer = (state = blankCharacter, action) => {
       );
 
     case 'CHANGE_CHARACTER_SKILL':
-      let [skill, max] = [...action.pair];
+      [change, max] = [...action.pair];
       return Object.assign({},
         state,
-        { main: toggleSkill(state.main, skill, max) }
+        { main: toggleSkill(state.main, change, max) }
       );
+
+    case 'CHANGE_CHARACTER_LANG':
+      [change, max] = [...action.pair];
+      return Object.assign({},
+        state,
+        { main: toggleLang(state.main, change, max) }
+      );
+
+    case 'CHANGE_CHARACTER_NAME':
+      return Object.assign({}, state, { name: action.name });
 
     default:
       return state;
@@ -87,6 +94,42 @@ const toggleSkill = (main, change, max) => {
 
   return main;
 }
+
+const toggleLang = (main, change, max) => {
+  // control for overflowing max known languages count
+  let num = 0;
+  for(const item of main.langs) {
+    // control for special druidic and thieves's cant languages
+    if(item[3] !== undefined) continue;
+    item[2] && num++;
+  }
+
+  main.langs = main.langs.map(item => {
+
+    let [selectable, lang, known] = [...item];
+
+    // no selectable or different languages from the one clicked
+    // e.g [true, "Elvish", true] 
+    if(selectable === false || lang !== change) return item;
+
+    return known
+
+      // if language was known (was checked), just uncheck it
+      ? [selectable, lang, false]
+
+      // else check if we reached max number of checked languages
+      : num >= max
+
+        // if we reached max number return unmodified item
+        ? item
+
+        // else check lang
+        : [selectable, lang, true]
+  })
+
+  return main;
+}
+
 
 export default characterReducer;
 

@@ -12,7 +12,7 @@ const OptionPast = (props) => {
         return (
         <label className="text-label" key={i}>{item[0]}:
           <input
-            id={item[0]}
+            className="text-input"
             name={item[0]}
             value={item[1]}
             onChange={props.change} />
