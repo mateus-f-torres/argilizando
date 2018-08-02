@@ -115,14 +115,19 @@ class GameClass extends React.Component {
               (<li key={i}>{sk}</li>))
           }
         </ul>
+        {
+          this.props.tool &&
+            <div>
+              <h4>Tools Proficiency</h4>
+              <ul className="multi">
+              {
+                this.props.tool.map((t, i) => <li key={i}>{t}</li>)
+              }
+              </ul>
+            </div>
 
-        <h4>Tools Proficiency</h4>
-        <ul className="multi">
-          {
-            this.props.tool.map((t, i) => <li key={i}>{t}</li>)
-          }
-        </ul>
-
+        }
+        
         <h4>Starting Equipment</h4>
         <ul className="dotted-list">
           {

@@ -19,7 +19,7 @@ const Menu = (props) => {
     ? true
     : false;
 
-  let final = props.done.character ? true : false;
+  let final = props.done.character.name ? true : false;
 
   return (
   <main>
@@ -49,11 +49,7 @@ const Menu = (props) => {
         </button>
         <button className={btn} onClick={props.final} disabled={!final}>
           6. Play!
-          <span className={
-            props.done.character
-              ? "done"
-              : ""
-          }></span>
+          <span className={final?"done":""}></span>
         </button>
       </ul>
     </section>

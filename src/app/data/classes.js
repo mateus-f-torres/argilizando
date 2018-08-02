@@ -15,7 +15,6 @@ export default [
           2, 
           ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
         ],
-        tool: ["None"],
         equip: [
           ["greataxe", "or 1 martial weapon"],
           ["2 handaxes", "or 1 simple weapon"],
@@ -39,7 +38,8 @@ export default [
             "Throw aside all concern for defense and attack with fierce desperation to gain advantage on Strength based melee attack, but attack rolls against you also have advantage during that round."
           ]
         ],
-        _spell: false
+        _spell: false,
+        _pack: ["explorer"]
       },
       {
         id: "fighter",
@@ -54,7 +54,6 @@ export default [
           2,
           ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"]
         ],
-        tool: ["None"],
         equip: [
           ["chain mail or", "leather, longbow + 20 arrows"],
           ["martial weapon + medium shield", "or martial weapon + mini-shield", "or 2 martial weapons"],
@@ -79,6 +78,7 @@ export default [
           ]
         ],
         _spell: false,
+        _pack: ["dungeoneer", "explorer"]
       },
       {
         id: "paladin",
@@ -93,7 +93,6 @@ export default [
           2,
           ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["martial weapon + medium shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
@@ -125,7 +124,8 @@ export default [
           ritual: false,
           focus: "holy symbol",
           notYet: true // acess to magic on lvl 2
-        }
+        },
+        _pack: ["priest", "explorer"]
       }
     ]
   ],
@@ -145,7 +145,6 @@ export default [
           2,
           ["History", "Insight", "Medicine", "Persuasion", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["mace", "or warhammer"],
           ["scale mail", "or leather armor", "or chain mail"],
@@ -177,7 +176,8 @@ export default [
           slots: 2,
           ritual: true,
           focus: "holy symbol"
-        }
+        },
+        _pack: ["priest", "explorer"]
       },
       {
         id: "bard",
@@ -243,7 +243,7 @@ export default [
           2,
           ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
         ],
-        tool: ["Artisan's Tools"],
+        tool: ["One artisan's tools"],
         equip: [
           ["2 simple weapons + 10 darts"],
           ["dungeoneer's pack", "or explorer's pack"],
@@ -280,7 +280,6 @@ export default [
           3,
           ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
         ],
-        tool: ["None"],
         equip: [
           ["scale mail", "or leather armor"],
           ["2 shortswords", "or 2 simple weapons"],
@@ -367,7 +366,6 @@ export default [
           2,
           ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
@@ -465,7 +463,6 @@ export default [
           2,
           ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
@@ -511,7 +508,6 @@ export default [
           2,
           ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["quarterstaff", "or 1 dagger"],
           ["component pouch", "or arcane focus"],

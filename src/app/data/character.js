@@ -140,12 +140,12 @@ export const protoCharacter = {
 const getCharMain = ({race, _class, score, back}) => {
   let main = {
     _class: _class.id,
+    armorClass: 10 + score.dex[1],
     level: 1, // 1st lvl character template
     speed: race.speed,
     init: score.dex[1],
     prof: 2, // 1st lvl proficiency bonus
-    score: {...score},
-    tools: []
+    score: {...score}
   };
 
   // Character Hit Points and Hit Dice
@@ -296,7 +296,48 @@ const getCharMain = ({race, _class, score, back}) => {
     })
   }
 
+  // Character Tools Proficiency
+  {
+    /*
+    let defaultTools = {
+      artisan: [],
+      gaming: [],
+      musical: [],
+      unique: [
+        ["Disguise kit"],
+        ["Forgery kit"],
+        ["Herbalism kit"],
+        ["Navigator's tools"],
+        ["Poisoner's kit"],
+        ["Thieves' tools"]
+      ],
+      vehicle: [
+        ["Vehicles (land)"],
+        ["Vehicles (water)"]
+      ]
+    };
+    */
+
+    let tools = [];
+
+    // always just one
+    if(_class.tool) tools.push(_class.tool[0]);
+
+    if(back.tool) {
+      for(const item of back.tool) {
+        tools.includes(item)
+          ? null
+          : tools.push(item);
+      }
+    } 
+    main.tools = [...tools];
+  }
+
   return main;
+}
+
+const getCharEquip = ({race, _class, score, back}) => {
+
 }
 
 
