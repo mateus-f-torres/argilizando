@@ -1,5 +1,7 @@
 import * as React from 'react';
-import OptionProf from './OptionProf.jsx';
+import OptionSkill from './OptionSkill.jsx';
+import OptionLang from './OptionLang.jsx';
+import OptionTool from './OptionTool.jsx';
 import OptionBody from './OptionBody.jsx';
 import OptionPast from './OptionPast.jsx';
 
@@ -10,72 +12,80 @@ class PlayerCharacter extends React.Component {
     super(props);
     this.handleChange_Name = this.handleChange_Name.bind(this);
     this.handleChange_Skill = this.handleChange_Skill.bind(this);
-      this.handleChange_Lang = this.handleChange_Lang.bind(this);
-      this.handleChange_Body = this.handleChange_Body.bind(this);
-      this.handleChange_Past = this.handleChange_Past.bind(this);
-      this.backBtn = this.backBtn.bind(this);
-      this.lockChar = this.lockChar.bind(this);
+    this.handleChange_Lang = this.handleChange_Lang.bind(this);
+    this.handleChange_Body = this.handleChange_Body.bind(this);
+    this.handleChange_Past = this.handleChange_Past.bind(this);
+    this.backBtn = this.backBtn.bind(this);
+    this.lockChar = this.lockChar.bind(this);
+  }
+ 
+  componentDidMount() {
+    let character = {
+      race: this.props.race,
+      _class: this.props.gameClass,
+      score: this.props.score,
+      back: this.props.background
     }
+    this.props.getCharacter(character);
+  }
 
-    componentDidMount() {
-      let character = {
-        race: this.props.race,
-        _class: this.props.gameClass,
-        score: this.props.score,
-        back: this.props.background
-      }
-      this.props.getCharacter(character);
+  handleChange_Body(e) {
+    e.preventDefault();
+    this.props.changeBody([e.target.name, e.target.value])
+  }
+
+  handleChange_Past(e) {
+    e.preventDefault();
+    this.props.changePast([e.target.name, e.target.value])
+  }
+
+  handleChange_Skill(e){
+    let max = this.props.gameClass.skill[0];
+    if(this.props.race.id === "human") max++;
+    this.props.changeSkill([e.target.name, max])
+  }
+
+  handleChange_Lang(e){
+    let max = this.props.background.lang
+      ? this.props.background.lang[0]
+      : 0;
+    max += this.props.race.lang.length;
+    this.props.changeLang([e.target.name, max]);
+  }
+
+  handleChange_Name(e) {
+    e.preventDefault();
+    this.props.changeName(e.target.value);
+  }
+
+  backBtn(e) {
+    e.preventDefault();
+    this.props.backBtn();
+  }
+
+  lockChar(e) {
+    e.preventDefault();
+    this.props.lockCharacter(this.props.char);
+  }
+
+  render() {
+
+    // display correct number of Skills user can chose
+    // with extra 1 for human and adding 2 from background
+    let maxSkills = this.props.race.id === "human"
+      ? this.props.gameClass.skill[0] + 1 + 2
+      : this.props.gameClass.skill[0] + 2;
+
+    // display correct number of Languages user can chose
+    // from background, race and _class if rogue or druid
+    let maxLangs = this.props.background.lang
+      ? this.props.background.lang[0]
+      : 0;
+    maxLangs += this.props.race.lang.length;
+    if(this.props.gameClass.id === "rogue" 
+    || this.props.gameClass.id === "druid") {
+      maxLangs++;
     }
-
-    handleChange_Body(e) {
-      e.preventDefault();
-      this.props.changeBody([e.target.name, e.target.value])
-    }
-
-    handleChange_Past(e) {
-      e.preventDefault();
-      this.props.changePast([e.target.name, e.target.value])
-    }
-
-    handleChange_Skill(e){
-      let max = this.props.gameClass.skill[0];
-      if(this.props.race.id === "human") max++;
-      this.props.changeSkill([e.target.name, max])
-    }
-
-    handleChange_Lang(e){
-      let max = this.props.background.lang
-        ? this.props.background.lang[0]
-        : 0;
-      max += this.props.race.lang.length;
-      this.props.changeLang([e.target.name, max]);
-    }
-
-    handleChange_Name(e) {
-      e.preventDefault();
-      this.props.changeName(e.target.value);
-    }
-
-    backBtn(e) {
-      e.preventDefault();
-      this.props.backBtn();
-    }
-
-    lockChar(e) {
-      e.preventDefault();
-      this.props.lockCharacter(this.props.char);
-    }
-
-    render() {
-
-      let maxSkills = this.props.race.id === "human"
-        ? this.props.gameClass.skill[0] + 1 + 2
-        : this.props.gameClass.skill[0] + 2;
-
-      let maxLangs = this.props.background.lang
-        ? this.props.background.lang[0]
-        : 0;
-      maxLangs += this.props.race.lang.length;
 
 
   
@@ -191,16 +201,29 @@ class PlayerCharacter extends React.Component {
 
         <div className="horizontal-line no-bottom" />
         <form onSubmit={this.lockChar}>
-          <OptionProf 
-            maxSkills={maxSkills}
+
+          <OptionSkill 
+            max={maxSkills}
             skills={this.props.char.main.skills} 
             toggleSkill={this.handleChange_Skill}
-            maxLangs={maxLangs}
-            langs={this.props.char.main.langs}
+            classSkills={this.props.gameClass.skill[1]}
+            backSkills={this.props.background.skill}
+            classID={this.props.gameClass.id}/>
+
+          <OptionLang
+            max={maxLangs}
+            allLangs={this.props.char.main.langs}
             toggleLang={this.handleChange_Lang}
-            race={this.props.race}
-            _class={this.props.gameClass}
-            back={this.props.background} />
+            raceLangs={this.props.race.lang}/>
+
+          {
+            this.props.background._tools &&
+
+            <OptionTool
+              allTools={this.props.char.main.tools.all}
+              toggleLang={this.handleChange_Lang}
+              backTools={this.props.background._tools}/>
+          }
 
           <OptionBody 
             body={this.props.char.body} 

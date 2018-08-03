@@ -17,7 +17,10 @@ export const blankCharacter = {
     skills: [],
     pp: 0,
     langs: [],
-    tools: []
+    tools: {
+      prof: [],
+      all: {}
+    }
   },
   equip: {
     weapons: [],
@@ -298,39 +301,72 @@ const getCharMain = ({race, _class, score, back}) => {
 
   // Character Tools Proficiency
   {
-    /*
     let defaultTools = {
-      artisan: [],
-      gaming: [],
-      musical: [],
-      unique: [
-        ["Disguise kit"],
-        ["Forgery kit"],
-        ["Herbalism kit"],
-        ["Navigator's tools"],
-        ["Poisoner's kit"],
-        ["Thieves' tools"]
-      ],
-      vehicle: [
-        ["Vehicles (land)"],
-        ["Vehicles (water)"]
-      ]
+      prof: [],
+      all: {
+        artisan: [
+          ["Alchemist's supplies"],
+          ["Brewer's supplies"],
+          ["Calligrapher's supplies"],
+          ["Carpenter's tools"],
+          ["Cartographer's tools"],
+          ["Cobbler's tools"],
+          ["Cook's utensils"],
+          ["Glassblower's tools"],
+          ["Jeweler's tools"],
+          ["Leatherworker's tools"],
+          ["Mason's tools"],
+          ["Painter's supplies"],
+          ["Potter's tools"],
+          ["Smith's tools"],
+          ["Tinker's tools"],
+          ["Weaver's tools"],
+          ["Woodcarver's tools"],
+        ],
+        gaming: [
+          ["Dice set"],
+          ["Dragonchess set"],
+          ["Playing card set"],
+          ["Three-Dragon Ante set"]
+        ],
+        musical: [
+          ["Bagpipes"],
+          ["Drum"],
+          ["Dulcimer"],
+          ["Flute"],
+          ["Lute"],
+          ["Lyre"],
+          ["Horn"],
+          ["Pan flute"],
+          ["Shawm"],
+          ["Viol"]
+        ],
+        unique: [
+          ["Disguise kit"],
+          ["Forgery kit"],
+          ["Herbalism kit"],
+          ["Navigator's tools"],
+          ["Poisoner's kit"],
+          ["Thieves' tools"],
+          ["Vehicles (land)"],
+          ["Vehicles (water)"]
+        ]
+      }
     };
-    */
-
-    let tools = [];
 
     // always just one
-    if(_class.tool) tools.push(_class.tool[0]);
+    if(_class.tool) defaultTools.prof.push(_class.tool[0]);
 
-    if(back.tool) {
-      for(const item of back.tool) {
-        tools.includes(item)
+    // add all unique tools by default
+    if(back._tools && back._tools.unique) {
+      for(const item of back._tools.unique) {
+        // dont add a second Thieves' tools proficiency
+        defaultTools.prof.includes(item)
           ? null
-          : tools.push(item);
+          : defaultTools.prof.push(item);
       }
     } 
-    main.tools = [...tools];
+    main.tools = defaultTools;
   }
 
   return main;

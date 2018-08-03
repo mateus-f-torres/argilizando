@@ -45,7 +45,10 @@ export default [
           ["signet ring"],
           ["scroll of pedigree"],
           ["purse containing 25gp"]
-        ]
+        ],
+        _tools: {
+          gaming: true
+        }
       },
       {
         id: "sage",
@@ -78,7 +81,10 @@ export default [
           ["diguise kit"],
           ["10 bottles with colored liquid", "or set of weighted dice", "or deck of marked cards", "or ring of an imaginary duke"],
           ["belt pouch containing 15g"]
-        ]
+        ],
+        _tools: {
+          unique: ["Disguise kit", "Forgery kit"]
+        }
       },
       {
         id: "criminal",
@@ -90,7 +96,11 @@ export default [
           ["crowbar"],
           ["set of dark common clothes including a hood"],
           ["belt pouch containing 15gp"]
-        ]
+        ],
+        _tools: {
+          gaming: true,
+          unique: ["Thieves' tools"]
+        }
       },
       {
         id: "entertainer",
@@ -103,7 +113,11 @@ export default [
           ["favor of an admirer (love letter, lock of hair or trinket)"],
           ["costume"],
           ["belt pouch containing 15gp"]
-        ]
+        ],
+        _tools: {
+          musical: true,
+          unique: ["Disguise kit"]
+        }
       },
       {
         id: "guild",
@@ -117,7 +131,10 @@ export default [
           ["letter of introduction from your guild"],
           ["set of traveler's clothes"],
           ["belt pouch containing 15gp"]
-        ]
+        ],
+        _tools: {
+          artisan: true
+        }
       },
       {
         id: "sailor",
@@ -131,7 +148,10 @@ export default [
           ["lucky charm"],
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
-        ]
+        ],
+        _tools: {
+          unique: ["Navigator's tools", "Vehicles (water)"]
+        }
       },
       {
         id: "soldier",
@@ -145,9 +165,12 @@ export default [
           ["set of bone dice", "or deck of cards"],
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
-        ]
+        ],
+        _tools: {
+          gaming: true,
+          unique: ["Vehicles (land)"]
+        }
       },
-
     ]
   ],
   [
@@ -193,7 +216,10 @@ export default [
           ["set of common clothes"],
           ["herbalism kit"],
           ["5gp"]
-        ]
+        ],
+        _tools: {
+          unique: ["Herbalism kit"]
+        }
       },
       {
         id: "outlander",
@@ -208,7 +234,10 @@ export default [
           ["animal trophy"],
           ["set of traveler's clothes"],
           ["belt pouch containing 10gp"]
-        ]
+        ],
+        _tools: {
+          musical: true
+        }
       },
     ]
   ],
@@ -227,7 +256,11 @@ export default [
           ["iron pot"],
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
-        ]
+        ],
+        _tools: {
+          artisan: true,
+          unique: ["Vehicles (land)"]
+        }
       },
       {
         id: "legendary",
@@ -242,7 +275,10 @@ export default [
           ["signet ring"],
           ["one gaming set"],
           ["belt pouch containing 15gp"]
-        ]
+        ],
+        _tools: {
+          unique: ["Vehicles (land)"]
+        }
       },
       {
         id: "retired",
@@ -256,7 +292,10 @@ export default [
           ["set of common clothes"],
           ["set of bone dice", "or deck of cards"],
           ["purse containing 25gp"]
-        ]
+        ],
+        _tools: {
+          gaming: true
+        }
       },
       {
         id: "urchin",
@@ -271,7 +310,10 @@ export default [
           ["token to remember your parents"],
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
-        ]
+        ],
+        _tools: {
+          unique: ["Disguise kit", "Thieves' tools"]
+        }
       }
     ]
   ]

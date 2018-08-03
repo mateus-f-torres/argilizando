@@ -240,10 +240,9 @@ export default [
         versatile: 3,
         save: ["Strength", "Dexterity"],
         skill: [
-          2,
+          3,
           ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
         ],
-        tool: ["One artisan's tools"],
         equip: [
           ["2 simple weapons + 10 darts"],
           ["dungeoneer's pack", "or explorer's pack"],
