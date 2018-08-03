@@ -15,20 +15,22 @@ const OptionTool = (props) => {
         else if(props.backTools[type[0]] === undefined) return null;
 
         return (
-        <fieldset key={i}>
+        <fieldset className="tool-selection" key={i}>
           {
             type[1].map((item, j) => {
 
               // let locked = item === props.classTools
              
               return (
-                <label key={j}>{item}
+                <div>
+                  <label key={j}>{item[0]}</label>
                   <input
                     type="radio"
                     name={type[0]}
-                    value={item}
-                    onChange={props.toggleLang} />
-                </label>
+                    value={item[0]}
+                    selected={item[1] ? true : false}
+                    onChange={props.toggleTool} />
+                </div>
               )
             })
           }

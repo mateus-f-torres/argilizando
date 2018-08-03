@@ -13,6 +13,7 @@ class PlayerCharacter extends React.Component {
     this.handleChange_Name = this.handleChange_Name.bind(this);
     this.handleChange_Skill = this.handleChange_Skill.bind(this);
     this.handleChange_Lang = this.handleChange_Lang.bind(this);
+    this.handleChange_Tool = this.handleChange_Tool.bind(this);
     this.handleChange_Body = this.handleChange_Body.bind(this);
     this.handleChange_Past = this.handleChange_Past.bind(this);
     this.backBtn = this.backBtn.bind(this);
@@ -53,6 +54,10 @@ class PlayerCharacter extends React.Component {
     this.props.changeLang([e.target.name, max]);
   }
 
+  handleChange_Tool(e) {
+    this.props.changeTool([e.target.name, e.target.value]);
+  }
+
   handleChange_Name(e) {
     e.preventDefault();
     this.props.changeName(e.target.value);
@@ -87,8 +92,24 @@ class PlayerCharacter extends React.Component {
       maxLangs++;
     }
 
+    // only show language selection if char has choice
+    let langChoice = false;
+    if(this.props.background.lang 
+    || this.props.race.id === "human" 
+    || this.props.race.id === "tabaxi") {
+      langChoice = true;
+    }
 
-  
+    // only show tool selection if char has choice
+    let toolChoice = false;
+    if(this.props.background._tools) {
+      if(this.props.background._tools.artisan
+      || this.props.background._tools.musical
+      || this.props.background._tools.gaming) {
+        toolChoice = true;
+      }
+    }
+
     return (
       <section id="CHARACTER">
         <h2>
@@ -210,18 +231,20 @@ class PlayerCharacter extends React.Component {
             backSkills={this.props.background.skill}
             classID={this.props.gameClass.id}/>
 
-          <OptionLang
-            max={maxLangs}
-            allLangs={this.props.char.main.langs}
-            toggleLang={this.handleChange_Lang}
-            raceLangs={this.props.race.lang}/>
+          {
+            langChoice &&
+            <OptionLang
+              max={maxLangs}
+              allLangs={this.props.char.main.langs}
+              toggleLang={this.handleChange_Lang}
+              raceLangs={this.props.race.lang}/>
+          }
 
           {
-            this.props.background._tools &&
-
+            toolChoice &&
             <OptionTool
               allTools={this.props.char.main.tools.all}
-              toggleLang={this.handleChange_Lang}
+              toggleTool={this.handleChange_Tool}
               backTools={this.props.background._tools}/>
           }
 

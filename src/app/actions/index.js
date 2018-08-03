@@ -141,6 +141,11 @@ export const changeLang = (pair) => ({
   pair
 })
 
+export const changeTool = (pair) => ({
+  type: 'CHANGE_CHARACTER_TOOL',
+  pair
+})
+
 export const changeName = (name) => ({
   type: 'CHANGE_CHARACTER_NAME',
   name

@@ -38,6 +38,13 @@ const characterReducer = (state = blankCharacter, action) => {
         { main: toggleLang(state.main, change, max) }
       );
 
+    case 'CHANGE_CHARACTER_TOOL':
+      [key, value] = [...action.pair];
+      return Object.assign({},
+        state,
+        { main: toggleTool(state.main, key, value) }
+      );
+
     case 'CHANGE_CHARACTER_NAME':
       return Object.assign({}, state, { name: action.name });
 
@@ -126,6 +133,29 @@ const toggleLang = (main, change, max) => {
         // else check lang
         : [selectable, lang, true]
   })
+
+  return main;
+}
+
+const toggleTool = (main, key, value) => {
+
+  // 1st loop, check if something was selected
+  for(let item of main.tools.all[key]) {
+    // if yes, remove it from .prof and unselect
+    if(item[1]) {
+      main.tools.prof.pop();
+      item.pop();
+    }
+  }
+
+  // 2nd loop, find selected tool
+  for(let item of main.tools.all[key]) {
+    // add to .prof and add true for 1st loop control
+    if(item[0] === value) {
+      main.tools.prof.push(item[0]);
+      item.push(true);
+    }
+  }
 
   return main;
 }

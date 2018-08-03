@@ -177,7 +177,7 @@ const CharacterMain = (props) => {
           })
         }
         {
-          props.tools.map((item, i) => (
+          props.tools.prof.map((item, i) => (
             <li key={i}>{item}</li>))
         }
       </ul>

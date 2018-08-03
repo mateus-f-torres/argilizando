@@ -34,6 +34,19 @@
         justify-content: space-between;
       }
     }
+    .tool-selection {
+      border: none;
+      width: 90%;
+      margin: 0 auto;
+      padding: 0;
+      div {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1em;
+      }
+      
+    }
   }
   .text-label {
     display: inline-block;
@@ -67,8 +80,7 @@
   }
   h3 {
     align-self: flex-start;
-    margin-left: 5%;
-    margin-bottom: 0.5em;
+    margin: 0.8em 0 0.5em 5%;
     text-align: start;
   }
   h4 {@extend h3;}
