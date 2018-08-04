@@ -56,7 +56,7 @@ export default [
         ],
         equip: [
           ["chain mail or", "leather, longbow + 20 arrows"],
-          ["martial weapon + medium shield", "or martial weapon + mini-shield", "or 2 martial weapons"],
+          ["martial weapon + mini-shield", "or 2 martial weapons"],
           ["light crossbow + 20 bolts", "or 2 handaxes"],
           ["dungeoneer's pack", "or explorer's pack"]
         ],
@@ -223,7 +223,8 @@ export default [
           slots: 2,
           ritual: true,
           focus: "instrument"
-        }
+        },
+        _pack: ["diplomat", "entertainer"]
       }
     ]
   ],
@@ -264,7 +265,8 @@ export default [
             "Harness the mystic energy of ki and gain acess to special actions like Flurry of Blows, Patient Defense and Step of the Wind."
           ]
         ],
-        _spell: false
+        _spell: false,
+        _pack: ["dungeoneer", "explorer"]
       },
       {
         id: "ranger",
@@ -310,7 +312,8 @@ export default [
           ritual: false,
           focus: false,
           notYet: true // acess to magic on lvl 2
-        }
+        },
+        _pack: ["dungeoneer", "explorer"]
       },
       {
         id: "rogue",
@@ -350,7 +353,8 @@ export default [
             "Use your reaction to halve an enemy attack's damage against you"
           ]
         ],
-        _spell: false
+        _spell: false,
+        _pack: ["burglar", "dungeoneer", "explorer"]
       },
       {
         id: "warlock",
@@ -396,7 +400,8 @@ export default [
           slots: 1,
           ritual: false,
           focus: "arcane focus"
-        }
+        },
+        _pack: ["scholar", "dungeoneer"]
       }
     ]
   ],
@@ -447,7 +452,8 @@ export default [
           slots: 2,
           ritual: true,
           focus: "druidic focus"
-        }
+        },
+        _pack: ["explorer"]
       },
       {
         id: "sorcerer",
@@ -492,7 +498,8 @@ export default [
           slots: 2,
           ritual: false,
           focus: "arcane focus"
-        }
+        },
+        _pack: ["dungeoneer", "explorer"]
       },
       {
         id: "wizard",
@@ -537,7 +544,8 @@ export default [
           slots: 2,
           ritual: true,
           focus: "arcane focus"
-        }
+        },
+        _pack: ["scholar", "explorer"]
       }
     ]
   ]

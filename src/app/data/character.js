@@ -1,3 +1,4 @@
+import packs from './packs.js'
 
 export const blankCharacter = {
   name: "",
@@ -25,7 +26,10 @@ export const blankCharacter = {
   equip: {
     weapons: [],
     armor: [],
-    pack: [],
+    pack: {
+      fromClass: [],
+      fromBack: []
+    },
     money: {
       cp: 0,
       sp: 0,
@@ -372,8 +376,94 @@ const getCharMain = ({race, _class, score, back}) => {
   return main;
 }
 
-const getCharEquip = ({race, _class, score, back}) => {
+const getCharEquip = ({race, _class, score, back}, prof) => {
+  /*
+  weapons: [
+    ["warhammer", 3, "1d8", 2, "bludgeoning", ["versatile(1d10)"]],
+    ["dagger", 3, "1d4", 2,"piercing", ["finesse", "light", "thrown(20/60)"]]
+  ],
 
+  armor: [
+    ["chain mail", 16, ["impeding(stealth)", "str(13)"]],
+    ["medium shield", 2, ["-"]]
+  ],
+*/
+  let equip = {
+    weapons: [],
+    armor: [],
+    pack: {
+      fromClass: [...packs[_class._pack[0]]],
+      fromBack: [...back.equip]
+    },
+    money: {
+      cp: 0,
+      sp: 0,
+      gp: back._gold,
+      pp: 0,
+    }
+  };
+
+  // add default equip from class
+  switch(_class.id) {
+    case "barbarian":
+      equip.weapons.push(["javelins", prof + score.str[1], "1d6", score.str[1], "piercing", ["thrown(30/120)"]]);
+      equip.armor.push(["unarmored defense", 10 + score.dex[1] + score.con[1]]);
+      break;
+      
+    case "bard":
+      equip.weapons.push(["dagger", prof + score.str[1], "1d4", score.str[1], "piercing", ["finesse", "light", "thrown(20/60)"]]);
+      equip.armor.push(["leather armor", 11 + score.dex[1]]);
+      break;
+
+    case "cleric":
+      equip.armor.push(["medium shield", 2]);
+      break;
+
+    case "druid":
+      equip.armor.push(["leather armor", 11 + score.dex[1]]);
+      break;
+
+    case "monk":
+      equip.armor.push(["unarmored defense", 10 + score.dex[1] + score.wis[1]]);
+      break;
+
+    case "paladin":
+      equip.armor.push(["chain mail", 16]);
+      break;
+
+    case "ranger":
+      equip.weapons.push(["longbow", prof + score.dex[1], "1d10", score.dex[1], "piercing", ["ammunition(150/600)", "heavy", "two-handed"]]);
+      break;
+
+    case "rogue":
+      equip.weapons.push(["dagger", prof + score.str[1], "1d4", score.str[1], "piercing", ["finesse", "light", "thrown(20/60)"]]);
+      equip.armor.push(["leather armor", 11 + score.dex[1]]);
+      break;
+
+    case "sorcerer":
+      equip.weapons.push(["dagger", prof + score.str[1], "1d4", score.str[1], "piercing", ["finesse", "light", "thrown(20/60)"]]);
+      break;
+
+    case "warlock":
+      equip.weapons.push(["dagger", prof + score.str[1], "1d4", score.str[1], "piercing", ["finesse", "light", "thrown(20/60)"]]);
+      equip.armor.push(["leather armor", 11 + score.dex[1]]);
+      break;
+  }
+
+  // add racial traits that are like equips
+  switch(race.id) {
+    case "dragonborn":
+      equip.armor.push(["dragon hide", 13 + score.dex[1]]);
+      break;
+    case "lizardfolk":
+      equip.armor.push(["natural armor", 12 + score.dex[1]]);
+      break;
+    case "tabaxi":
+      equip.weapons.push(["claws", prof + score.str[1], "1d4", score.str[1], "slashing", ["finesse", "light", "thrown(20/60)"]]);
+      break;
+  }
+
+  return equip;
 }
 
 
@@ -480,6 +570,7 @@ export const getChar = (char) => {
     { body: getCharBody(char) },
     { past: getCharPast(char) },
     { main: getCharMain(char) },
+    { equip: getCharEquip(char, 2) }, // 2 === 1st lvl proficiency bonus
     { spell: getCharSpell(char, 2) }, // 2 === 1st lvl proficiency bonus
     { traits : getCharTraits(char) }
   );

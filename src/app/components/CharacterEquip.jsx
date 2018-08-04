@@ -8,20 +8,27 @@ const CharacterEquip = (props) => {
       <h4>Weapons:</h4>
       <ul className="stats">
         {
-          props.weapons.map((item, i) => (
+          props.weapons.map((item, i) => {
+            let [name, toHit, dmgDie, prof, dmgType] = [...item];
+            let extra = typeof item[5] === "object"
+              ? item[5]
+              : false;
+
+            return (
             <li key={i}>
               <p className="weapon">
-                <span>{item[0]}.</span>
+                <span>{name}.</span>
                 <br />
                 <span className="weapon-bonus">
-                  +{item[1]}
+                  +{toHit}
                 </span>
                 <span>
-                  {`${item[2]} + ${item[3]} ${item[4]}`}
+                  {`${dmgDie} + ${prof} ${dmgType}`}
                 </span>
               </p>
             </li>
-          ))
+            )
+          })
         }
       </ul>
       <h4>Armor:</h4>
@@ -31,7 +38,7 @@ const CharacterEquip = (props) => {
             <li key={i}>
               <p style={{marginTop: "0.3em", marginBottom: 0}}>
                 <span>{item[0]}</span>
-                <span className="close">+{item[1]}</span>
+                <span className="close">{item[1]}</span>
               </p>
             </li>
           ))
@@ -67,9 +74,19 @@ const CharacterEquip = (props) => {
       <h4>Miscellaneous</h4>
       <ul className="dotted-list">
         {
-          props.pack.map((item, i) => (
+          props.pack.fromClass.map((item, i) => (
             <li key={i}>{item}</li>
           ))
+        }
+        {
+          props.pack.fromBack.map((item, i) => {
+            return item.length === 1
+              ? <li key={i}>{item}</li>
+              : <li key={i}>
+                {
+                  item.map((sub, j) => <span key={j}>{sub}<br/></span>)
+                }</li>
+          })
         }
       </ul>
     </figure>

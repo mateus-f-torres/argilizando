@@ -1,3 +1,4 @@
+import packs from '../data/packs.js';
 import { blankCharacter } from '../data/character.js';
 import { getChar } from '../data/character.js';
 
@@ -43,6 +44,13 @@ const characterReducer = (state = blankCharacter, action) => {
       return Object.assign({},
         state,
         { main: toggleTool(state.main, key, value) }
+      );
+
+    case 'CHANGE_CHARACTER_PACK':
+      let pack = action.pack
+      return Object.assign({},
+        state,
+        { equip: changePack(state.equip, pack) }
       );
 
     case 'CHANGE_CHARACTER_NAME':
@@ -160,6 +168,10 @@ const toggleTool = (main, key, value) => {
   return main;
 }
 
+const changePack = (equip, name) => {
+  equip.pack.fromClass = [...packs[name]];
+  return equip;
+}
 
 export default characterReducer;
 

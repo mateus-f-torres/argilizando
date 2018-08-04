@@ -45,7 +45,13 @@
         justify-content: space-between;
         margin-bottom: 1em;
       }
-      
+    }
+    .pack-content {
+      display: block;
+      width: 90%;
+      margin: 0 auto 0 8.5%;
+      list-style: disc;
+      text-align: start;
     }
   }
   .text-label {

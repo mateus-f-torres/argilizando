@@ -146,6 +146,11 @@ export const changeTool = (pair) => ({
   pair
 })
 
+export const changePack = (pack) => ({
+  type: 'CHANGE_CHARACTER_PACK',
+  pack
+})
+
 export const changeName = (name) => ({
   type: 'CHANGE_CHARACTER_NAME',
   name

@@ -2,6 +2,7 @@ import * as React from 'react';
 import OptionSkill from './OptionSkill.jsx';
 import OptionLang from './OptionLang.jsx';
 import OptionTool from './OptionTool.jsx';
+import OptionEquip from './OptionEquip.jsx';
 import OptionBody from './OptionBody.jsx';
 import OptionPast from './OptionPast.jsx';
 
@@ -14,6 +15,7 @@ class PlayerCharacter extends React.Component {
     this.handleChange_Skill = this.handleChange_Skill.bind(this);
     this.handleChange_Lang = this.handleChange_Lang.bind(this);
     this.handleChange_Tool = this.handleChange_Tool.bind(this);
+    this.handleChange_Pack = this.handleChange_Pack.bind(this);
     this.handleChange_Body = this.handleChange_Body.bind(this);
     this.handleChange_Past = this.handleChange_Past.bind(this);
     this.backBtn = this.backBtn.bind(this);
@@ -56,6 +58,10 @@ class PlayerCharacter extends React.Component {
 
   handleChange_Tool(e) {
     this.props.changeTool([e.target.name, e.target.value]);
+  }
+
+  handleChange_Pack(e) {
+    this.props.changePack(e.target.value)
   }
 
   handleChange_Name(e) {
@@ -109,7 +115,7 @@ class PlayerCharacter extends React.Component {
         toolChoice = true;
       }
     }
-
+    
     return (
       <section id="CHARACTER">
         <h2>
@@ -230,6 +236,11 @@ class PlayerCharacter extends React.Component {
             classSkills={this.props.gameClass.skill[1]}
             backSkills={this.props.background.skill}
             classID={this.props.gameClass.id}/>
+
+          <OptionEquip
+            classPack={this.props.gameClass._pack}
+            showPack={this.props.char.equip.pack.fromClass}
+            togglePack={this.handleChange_Pack}/>
 
           {
             langChoice &&

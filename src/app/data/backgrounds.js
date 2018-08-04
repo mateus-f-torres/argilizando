@@ -15,7 +15,8 @@ export default [
           ["vestments"],
           ["set of common clothes"],
           ["belt pouch containing 15gp"]
-        ]
+        ],
+        _gold : 15
       },
       {
         id: "heretic",
@@ -31,7 +32,8 @@ export default [
           ["quill"],
           ["set of common clothes"],
           ["pouch containing 10gp"]
-        ]
+        ],
+        _gold: 10
       },
       {
         id: "noble",
@@ -46,6 +48,7 @@ export default [
           ["scroll of pedigree"],
           ["purse containing 25gp"]
         ],
+        _gold: 25,
         _tools: {
           gaming: true
         }
@@ -63,7 +66,8 @@ export default [
           ["letter from a dead colleague posing a question you have not yet been able to answer"],
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
-        ]
+        ],
+        _gold: 10
       }
     ]
   ],
@@ -82,6 +86,7 @@ export default [
           ["10 bottles with colored liquid", "or set of weighted dice", "or deck of marked cards", "or ring of an imaginary duke"],
           ["belt pouch containing 15g"]
         ],
+        _gold: 15,
         _tools: {
           unique: ["Disguise kit", "Forgery kit"]
         }
@@ -97,6 +102,7 @@ export default [
           ["set of dark common clothes including a hood"],
           ["belt pouch containing 15gp"]
         ],
+        _gold: 15,
         _tools: {
           gaming: true,
           unique: ["Thieves' tools"]
@@ -114,6 +120,7 @@ export default [
           ["costume"],
           ["belt pouch containing 15gp"]
         ],
+        _gold: 15,
         _tools: {
           musical: true,
           unique: ["Disguise kit"]
@@ -132,6 +139,7 @@ export default [
           ["set of traveler's clothes"],
           ["belt pouch containing 15gp"]
         ],
+        _gold: 15,
         _tools: {
           artisan: true
         }
@@ -149,6 +157,7 @@ export default [
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
         ],
+        _gold: 10,
         _tools: {
           unique: ["Navigator's tools", "Vehicles (water)"]
         }
@@ -166,6 +175,7 @@ export default [
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
         ],
+        _gold: 10,
         _tools: {
           gaming: true,
           unique: ["Vehicles (land)"]
@@ -188,7 +198,8 @@ export default [
           ["set of common clothes"],
           ["two rare coins with which you were buried"],
           ["belt pouch with 5gp"]
-        ]
+        ],
+        _gold: 5
       },
       {
         id: "polymorphed",
@@ -201,7 +212,8 @@ export default [
           ["realistic ink drawing of your polymorphed form"],
           ["set of common clothes"],
           ["belt pouch with 5gp"]
-        ]
+        ],
+        _gold: 5
       },
       {
         id: "hermit",
@@ -217,6 +229,7 @@ export default [
           ["herbalism kit"],
           ["5gp"]
         ],
+        _gold: 5,
         _tools: {
           unique: ["Herbalism kit"]
         }
@@ -235,6 +248,7 @@ export default [
           ["set of traveler's clothes"],
           ["belt pouch containing 10gp"]
         ],
+        _gold: 10,
         _tools: {
           musical: true
         }
@@ -257,6 +271,7 @@ export default [
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
         ],
+        _gold: 10,
         _tools: {
           artisan: true,
           unique: ["Vehicles (land)"]
@@ -276,6 +291,7 @@ export default [
           ["one gaming set"],
           ["belt pouch containing 15gp"]
         ],
+        _gold: 15,
         _tools: {
           unique: ["Vehicles (land)"]
         }
@@ -293,6 +309,7 @@ export default [
           ["set of bone dice", "or deck of cards"],
           ["purse containing 25gp"]
         ],
+        _gold: 25,
         _tools: {
           gaming: true
         }
@@ -311,6 +328,7 @@ export default [
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
         ],
+        _gold: 10,
         _tools: {
           unique: ["Disguise kit", "Thieves' tools"]
         }

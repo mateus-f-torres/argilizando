@@ -22,8 +22,8 @@ const OptionTool = (props) => {
               // let locked = item === props.classTools
              
               return (
-                <div>
-                  <label key={j}>{item[0]}</label>
+                <div key={j}>
+                  <label>{item[0]}</label>
                   <input
                     type="radio"
                     name={type[0]}
