@@ -16,7 +16,7 @@ export default [
           ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
         ],
         equip: [
-          ["greataxe", "or 1 martial weapon"],
+          ["greataxe", "or 1 martial melee weapon"],
           ["2 handaxes", "or 1 simple weapon"],
           ["4 javelins"],
           ["explorer's pack"]
@@ -96,8 +96,8 @@ export default [
         equip: [
           ["martial weapon + medium shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
+          ["chain mail + holy symbol"],
           ["priest's pack", "or explorer's pack"],
-          ["chain mail + holy symbol"]
         ],
         special: [
           [
@@ -149,8 +149,8 @@ export default [
           ["mace", "or warhammer"],
           ["scale mail", "or leather armor", "or chain mail"],
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
+          ["medium shield + holy symbol"],
           ["priest's pack", "or explorer's pack"],
-          ["medium shield + holy symbol"]
         ],
         special: [
           [
@@ -195,9 +195,9 @@ export default [
         tool: ["Three musical instruments"],
         equip: [
           ["rapier", "or longsword", "or 1 simple weapon"],
-          ["diplomat's pack", "or entertainer's pack"],
           ["lute or", "any other musical instrument"],
-          ["leather armor + dagger"]
+          ["leather armor + dagger"],
+          ["diplomat's pack", "or entertainer's pack"],
         ],
         special: [
           [
@@ -284,8 +284,8 @@ export default [
         equip: [
           ["scale mail", "or leather armor"],
           ["2 shortswords", "or 2 simple weapons"],
+          ["longbow + 20 arrows"],
           ["dungeoneer's pack", "or explorer's pack"],
-          ["longbow + 20 arrows"]
         ],
         special: [
           [
@@ -332,9 +332,9 @@ export default [
         equip: [
           ["rapier", "or shortsword"],
           ["shortbow + 20 arrows", "or shortsword"],
-          ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"],
           ["leather armor"],
-          ["2 daggers + thieves' tools"]
+          ["2 daggers + thieves' tools"],
+          ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"],
         ],
         special: [
           [
@@ -372,9 +372,9 @@ export default [
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
-          ["scholar's pack", "or dungeoneer's pack"],
           ["leather armor"],
-          ["1 simple weapon + 2 daggers"]
+          ["1 simple weapon + 2 daggers"],
+          ["scholar's pack", "or dungeoneer's pack"],
         ],
         special: [
           [
@@ -425,8 +425,8 @@ export default [
         equip: [
           ["wooden mini-shield", "or 1 simple weapon"],
           ["scimitar", "or 1 simple weapon"],
+          ["leather armor + druidic focus"],
           ["explorer's pack"],
-          ["leather armor + druidic focus"]
         ],
         special: [
           [
@@ -471,8 +471,8 @@ export default [
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
+          ["2 daggers"],
           ["dungeoneer's pack", "or explorer's pack"],
-          ["2 daggers"]
         ],
         special: [
           [
@@ -517,8 +517,8 @@ export default [
         equip: [
           ["quarterstaff", "or 1 dagger"],
           ["component pouch", "or arcane focus"],
+          ["spellbook"],
           ["scholar's pack", "or explorer's pack"],
-          ["spellbook"]
         ],
         special: [
           [

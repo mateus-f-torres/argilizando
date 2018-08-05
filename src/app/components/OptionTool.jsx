@@ -14,12 +14,16 @@ const OptionTool = (props) => {
         // dont render tools user cant select, from background
         else if(props.backTools[type[0]] === undefined) return null;
 
+
         return (
         <fieldset className="tool-selection" key={i}>
           {
             type[1].map((item, j) => {
 
-              // let locked = item === props.classTools
+              // dont render race tool proficiency
+              if(props.raceID === "gnome" && item[0] === "Tinker's tools") {
+                return null;
+              }
              
               return (
                 <div key={j}>

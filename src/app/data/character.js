@@ -358,6 +358,9 @@ const getCharMain = ({race, _class, score, back}) => {
       }
     };
 
+    // only for gnomes
+    if(race.id === "gnome") defaultTools.prof.push("Tinker's tools");
+
     // always just one
     if(_class.tool) defaultTools.prof.push(_class.tool[0]);
 
@@ -392,7 +395,7 @@ const getCharEquip = ({race, _class, score, back}, prof) => {
     weapons: [],
     armor: [],
     pack: {
-      fromClass: [...packs[_class._pack[0]]],
+      fromClass: [],
       fromBack: [...back.equip]
     },
     money: {
@@ -401,6 +404,11 @@ const getCharEquip = ({race, _class, score, back}, prof) => {
       gp: back._gold,
       pp: 0,
     }
+  };
+
+  // only for classes without choice of pack
+  if(_class._pack.length === 1) {
+    equip.pack.fromClass = [...packs[_class._pack[0]]];
   };
 
   // add default equip from class

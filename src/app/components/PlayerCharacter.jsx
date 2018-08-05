@@ -124,7 +124,7 @@ class PlayerCharacter extends React.Component {
               className="text-input"
               name="name" 
               value={this.props.char.name}
-              placeholder="Character Name"
+              placeholder={this.props.race._placeholder}
               onChange={this.handleChange_Name}>
             </input>
           </label>
@@ -238,6 +238,7 @@ class PlayerCharacter extends React.Component {
             classID={this.props.gameClass.id}/>
 
           <OptionEquip
+            classOptions={this.props.gameClass.equip}
             classPack={this.props.gameClass._pack}
             showPack={this.props.char.equip.pack.fromClass}
             togglePack={this.handleChange_Pack}/>
@@ -254,6 +255,7 @@ class PlayerCharacter extends React.Component {
           {
             toolChoice &&
             <OptionTool
+              raceID={this.props.race.id}
               allTools={this.props.char.main.tools.all}
               toggleTool={this.handleChange_Tool}
               backTools={this.props.background._tools}/>
@@ -265,6 +267,7 @@ class PlayerCharacter extends React.Component {
             change={this.handleChange_Body}/>
           
           <OptionPast 
+            back={this.props.background}
             past={this.props.char.past} 
             change={this.handleChange_Past}/>
 

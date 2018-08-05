@@ -7,9 +7,9 @@ const OptionBody = (props) => {
     age: [...props.race.age],
     height: props.race.height,
     weight: props.race.weight,
-    eyes: "",
-    skin: "",
-    hair: ""
+    eyes: props.race.eyes,
+    skin: props.race.skin,
+    hair: props.race.hair
   };
 
   return (

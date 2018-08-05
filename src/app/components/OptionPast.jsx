@@ -2,6 +2,13 @@ import * as React from 'react';
 
 const OptionPast = (props) => {
 
+  let labels = {
+    personality: props.back.personality,
+    ideals: props.back.ideals,
+    bonds: props.back.bonds,
+    flaws: props.back.flaws
+  };
+
   return (
   <div>
     <h3>Role Playing</h3>
@@ -15,6 +22,7 @@ const OptionPast = (props) => {
             className="text-input"
             name={item[0]}
             value={item[1]}
+            placeholder={labels[item[0]]}
             onChange={props.change} />
         </label>
         )
