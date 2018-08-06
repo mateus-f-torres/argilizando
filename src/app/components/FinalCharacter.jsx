@@ -54,21 +54,18 @@ class FinalCharacter extends React.Component {
             <button onClick={this.showMain}>Main</button>
           </li>
           <li>
+            <button onClick={this.showTrait}>Traits</button>
+          </li>
+          <li>
             <button onClick={this.showEquip}>Equips</button>
           </li>
           <li>
-            {
-              // only allow classes with magic to click
-            }
             <button
               disabled={!this.props.char.spell}
               onClick={this.showSpell}>Spells</button>
           </li>
           <li>
-            <button onClick={this.showTrait}>Traits</button>
-          </li>
-          <li>
-            <button onClick={this.showBody}>Visual</button>
+            <button id="long" onClick={this.showBody}>Appearance</button>
           </li>
           <li>
             <button onClick={this.showPast}>Behavior</button>

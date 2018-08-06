@@ -47,10 +47,15 @@ const characterReducer = (state = blankCharacter, action) => {
       );
 
     case 'CHANGE_CHARACTER_PACK':
-      let pack = action.pack
       return Object.assign({},
         state,
-        { equip: changePack(state.equip, pack) }
+        { equip: changePack(state.equip, action.pack) }
+      );
+
+    case 'CHANGE_CHARACTER_GEAR':
+      return Object.assign({},
+        state,
+        { equip: changeGear(state.equip, [...action.gear]) }
       );
 
     case 'CHANGE_CHARACTER_NAME':
@@ -169,7 +174,26 @@ const toggleTool = (main, key, value) => {
 }
 
 const changePack = (equip, name) => {
-  equip.pack.fromClass = [...packs[name]];
+  equip.pack.fromPack = [...packs[name]];
+  return equip;
+}
+
+const changeGear = (equip, choice) => {
+
+  let [num, name] = [...choice];
+
+  if(equip.gear[num]) {
+    equip.gear = equip.gear.map(item => {
+      return item[0] === num
+        ? [num, name]
+        : item;
+    });
+  }
+
+  else {
+    equip.gear[num] = [num, name];
+  }
+
   return equip;
 }
 

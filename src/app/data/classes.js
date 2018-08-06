@@ -21,6 +21,11 @@ export default [
           ["4 javelins"],
           ["explorer's pack"]
         ],
+        _equip: [
+          ["greateaxe", "1 martial melee weapon"],
+          ["2 handaxes", "1 simple weapon"]
+        ],
+        _pack: ["explorer"],
         special: [
           [
             "Rage",
@@ -38,8 +43,7 @@ export default [
             "Throw aside all concern for defense and attack with fierce desperation to gain advantage on Strength based melee attack, but attack rolls against you also have advantage during that round."
           ]
         ],
-        _spell: false,
-        _pack: ["explorer"]
+        _spell: false
       },
       {
         id: "fighter",
@@ -60,6 +64,12 @@ export default [
           ["light crossbow + 20 bolts", "or 2 handaxes"],
           ["dungeoneer's pack", "or explorer's pack"]
         ],
+        _equip: [
+          ["chain mail", "leather, longbow + 20 arrows"],
+          ["martial weapon + mini-shield", "2 martial weapons"],
+          ["light crossbow + 20 bolts", "2 handaxes"]
+        ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Fighting Style",
@@ -77,8 +87,7 @@ export default [
             "Push yourself beyond your normal limit and gain an extra action."
           ]
         ],
-        _spell: false,
-        _pack: ["dungeoneer", "explorer"]
+        _spell: false
       },
       {
         id: "paladin",
@@ -94,11 +103,16 @@ export default [
           ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
         ],
         equip: [
-          ["martial weapon + medium shield", "or 2 martial weapons"],
+          ["martial weapon + shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
           ["chain mail + holy symbol"],
           ["priest's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["martial weapon + shield", "2 martial weapons"],
+          ["5 javelins", "1 simple weapon"]
+        ],
+        _pack: ["priest", "explorer"],
         special: [
           [
             "Divine Smite",
@@ -124,8 +138,7 @@ export default [
           ritual: false,
           focus: "holy symbol",
           notYet: true // acess to magic on lvl 2
-        },
-        _pack: ["priest", "explorer"]
+        }
       }
     ]
   ],
@@ -152,6 +165,12 @@ export default [
           ["medium shield + holy symbol"],
           ["priest's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["mace", "warhammer"],
+          ["scale mail", "leather", "chain mail"],
+          ["light crossbow + 20 bolts", "1 simple weapon"]
+        ],
+        _pack: ["priest", "explorer"],
         special: [
           [
             "Divine Domain",
@@ -176,8 +195,7 @@ export default [
           slots: 2,
           ritual: true,
           focus: "holy symbol"
-        },
-        _pack: ["priest", "explorer"]
+        }
       },
       {
         id: "bard",
@@ -195,10 +213,14 @@ export default [
         tool: ["Three musical instruments"],
         equip: [
           ["rapier", "or longsword", "or 1 simple weapon"],
-          ["lute or", "any other musical instrument"],
+          ["1 musical instrument"],
           ["leather armor + dagger"],
           ["diplomat's pack", "or entertainer's pack"],
         ],
+        _equip: [
+          ["rapier", "longsword", "1 simple weapon"]
+        ],
+        _pack: ["diplomat", "entertainer"],
         special: [
           [
             "Bardic Inspiration",
@@ -223,8 +245,7 @@ export default [
           slots: 2,
           ritual: true,
           focus: "instrument"
-        },
-        _pack: ["diplomat", "entertainer"]
+        }
       }
     ]
   ],
@@ -248,6 +269,7 @@ export default [
           ["2 simple weapons + 10 darts"],
           ["dungeoneer's pack", "or explorer's pack"],
         ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Unarmored Defense",
@@ -265,8 +287,7 @@ export default [
             "Harness the mystic energy of ki and gain acess to special actions like Flurry of Blows, Patient Defense and Step of the Wind."
           ]
         ],
-        _spell: false,
-        _pack: ["dungeoneer", "explorer"]
+        _spell: false
       },
       {
         id: "ranger",
@@ -287,6 +308,11 @@ export default [
           ["longbow + 20 arrows"],
           ["dungeoneer's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["scale mail", "leather armor"],
+          ["2 shortswords", "2 simple weapons"]
+        ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Favored Enemy",
@@ -312,8 +338,7 @@ export default [
           ritual: false,
           focus: false,
           notYet: true // acess to magic on lvl 2
-        },
-        _pack: ["dungeoneer", "explorer"]
+        }
       },
       {
         id: "rogue",
@@ -336,6 +361,11 @@ export default [
           ["2 daggers + thieves' tools"],
           ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["rapier", "shortsword"],
+          ["shortbow + 20 arrows", "shortsword"]
+        ],
+        _pack: ["burglar", "dungeoneer", "explorer"],
         special: [
           [
             "Sneak Attack",
@@ -353,8 +383,7 @@ export default [
             "Use your reaction to halve an enemy attack's damage against you"
           ]
         ],
-        _spell: false,
-        _pack: ["burglar", "dungeoneer", "explorer"]
+        _spell: false
       },
       {
         id: "warlock",
@@ -376,6 +405,11 @@ export default [
           ["1 simple weapon + 2 daggers"],
           ["scholar's pack", "or dungeoneer's pack"],
         ],
+        _equip: [
+          ["light crossbow + 20 bolts", "1 simple weapon"],
+          ["component pouch", "arcane focus"]
+        ],
+        _pack: ["scholar", "dungeoneer"],
         special: [
           [
             "Otherworldly Patron",
@@ -400,8 +434,7 @@ export default [
           slots: 1,
           ritual: false,
           focus: "arcane focus"
-        },
-        _pack: ["scholar", "dungeoneer"]
+        }
       }
     ]
   ],
@@ -423,11 +456,16 @@ export default [
         ],
         tool: ["Herbalism kit"],
         equip: [
-          ["wooden mini-shield", "or 1 simple weapon"],
+          ["wooden shield", "or 1 simple weapon"],
           ["scimitar", "or 1 simple weapon"],
           ["leather armor + druidic focus"],
           ["explorer's pack"],
         ],
+        _equip: [
+          ["wooden shield", "1 simple weapon"],
+          ["scimitar", "1 simple weapon"]
+        ],
+        _pack: ["explorer"],
         special: [
           [
             "Wild Shape",
@@ -452,8 +490,7 @@ export default [
           slots: 2,
           ritual: true,
           focus: "druidic focus"
-        },
-        _pack: ["explorer"]
+        }
       },
       {
         id: "sorcerer",
@@ -474,6 +511,11 @@ export default [
           ["2 daggers"],
           ["dungeoneer's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["light crossbow + 20 bolts", "1 simple weapon"],
+          ["component pouch", "arcane focus"]
+        ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Sorcerous Origin",
@@ -498,8 +540,7 @@ export default [
           slots: 2,
           ritual: false,
           focus: "arcane focus"
-        },
-        _pack: ["dungeoneer", "explorer"]
+        }
       },
       {
         id: "wizard",
@@ -520,6 +561,11 @@ export default [
           ["spellbook"],
           ["scholar's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["quarterstaff", "1 dagger"],
+          ["component pouch", "arcane focus"]
+        ],
+        _pack: ["scholar", "explorer"],
         special: [
           [
             "Spellbook",
@@ -544,8 +590,7 @@ export default [
           slots: 2,
           ritual: true,
           focus: "arcane focus"
-        },
-        _pack: ["scholar", "explorer"]
+        }
       }
     ]
   ]

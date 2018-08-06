@@ -38,6 +38,8 @@ const CharacterSpell = (props) => {
           <span className="close">{props.focus ? props.focus : "No"}</span>
         </p></li>
       </ul>
+
+      <div className="horizontal-line no-bottom" />
       <ul className="sidenotes">
         <li>
           <cite>* Spell Save DC</cite>

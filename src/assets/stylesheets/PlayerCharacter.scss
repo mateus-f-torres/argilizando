@@ -28,7 +28,7 @@
       align-content: space-between;
       align-items: baseline;
       li {
-        width: 90%;
+        width: 100%;
         margin: 0 auto 1em auto;
         display: flex;
         justify-content: space-between;
@@ -37,12 +37,13 @@
     .tool-selection {
       border: none;
       width: 90%;
-      margin: 0 auto;
+      margin: 1em auto 0 auto;
       padding: 0;
       div {
-        width: 90%;
+        width: 100%;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         margin-bottom: 1em;
       }
     }

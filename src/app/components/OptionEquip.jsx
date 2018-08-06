@@ -6,13 +6,10 @@ const OptionEquip = (props) => {
   return (
   <div>
     <h3>Equipment</h3>
-    <h4>Weapons &amp; Armor</h4>
+    { props.classOptions && <h4>Weapons &amp; Armor</h4>}
     {
-      props.classOptions.map((group, i, full) => {
-        let last = full.length - 1;
-
-        // dont render defaults or packs (always last group)
-        if(group.length === 1 || i === last) return null;
+      props.classOptions &&
+      props.classOptions.map((group, i) => {
 
         return (
           <fieldset className="tool-selection" key={i}>
@@ -24,7 +21,7 @@ const OptionEquip = (props) => {
                     type="radio"
                     name={i}
                     value={item}
-                     />
+                    onChange={props.toggleGear} />
                 </div>
               ))
             }

@@ -16,6 +16,7 @@ class PlayerCharacter extends React.Component {
     this.handleChange_Lang = this.handleChange_Lang.bind(this);
     this.handleChange_Tool = this.handleChange_Tool.bind(this);
     this.handleChange_Pack = this.handleChange_Pack.bind(this);
+    this.handleChange_Gear = this.handleChange_Gear.bind(this);
     this.handleChange_Body = this.handleChange_Body.bind(this);
     this.handleChange_Past = this.handleChange_Past.bind(this);
     this.backBtn = this.backBtn.bind(this);
@@ -62,6 +63,10 @@ class PlayerCharacter extends React.Component {
 
   handleChange_Pack(e) {
     this.props.changePack(e.target.value)
+  }
+
+  handleChange_Gear(e) {
+    this.props.changeGear([e.target.name, e.target.value]);
   }
 
   handleChange_Name(e) {
@@ -238,9 +243,10 @@ class PlayerCharacter extends React.Component {
             classID={this.props.gameClass.id}/>
 
           <OptionEquip
-            classOptions={this.props.gameClass.equip}
+            classOptions={this.props.gameClass._equip}
+            toggleGear={this.handleChange_Gear}
             classPack={this.props.gameClass._pack}
-            showPack={this.props.char.equip.pack.fromClass}
+            showPack={this.props.char.equip.pack.fromPack}
             togglePack={this.handleChange_Pack}/>
 
           {

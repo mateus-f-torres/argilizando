@@ -151,6 +151,11 @@ export const changePack = (pack) => ({
   pack
 })
 
+export const changeGear = (gear) => ({
+  type: 'CHANGE_CHARACTER_GEAR',
+  gear
+})
+
 export const changeName = (name) => ({
   type: 'CHANGE_CHARACTER_NAME',
   name
