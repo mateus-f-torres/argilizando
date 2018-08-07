@@ -25,4 +25,25 @@
   }
 }
 
-@media only screen and (min-width: 600px) {}
+/* for-tablet-portrait-up */
+@media only screen and (min-width: 650px) {
+  #SCORE {
+    #score-list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+    }
+  }
+}
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+  #SCORE {
+    #score-list {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+}
+

@@ -56,7 +56,7 @@ class AbilityScores extends React.Component {
         <h2>Ability Scores</h2>
         <h3>{this.props.total} points left to spend</h3>
         <div className="horizontal-line" />
-        <ul>
+        <ul id="score-list">
           {
             // store unloads all six ABILITIES as props
             // e.g. props.str, props.dex, props.con

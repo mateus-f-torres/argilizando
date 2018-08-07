@@ -54,7 +54,18 @@
         h3 { display: none; }
         grid-area: stats 
       }
-      #class-features { grid-area: features }
+      #class-features { 
+        grid-area: features;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "title ." "ability save" "skills skills" "equip tools";
+        #ability { grid-area: ability; }
+        #save { grid-area: save; }
+        #skill { grid-area: skills; }
+        #tools { grid-area: tools; }
+        #equip { grid-area: equip; }
+      }
       #class-traits { grid-area: traits }
       .lock-box { grid-area: btns }
     }

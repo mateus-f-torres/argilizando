@@ -94,30 +94,36 @@ class GameClass extends React.Component {
       <ul id="class-features">
       <h3>Class Features</h3>
 
-        <h4>Primary Ability</h4>
-        <p>{this.props.primary}</p>
+        <div id="ability">
+          <h4>Primary Ability</h4>
+          <p>{this.props.primary}</p>
+        </div>
 
-        <h4>Saving Throws</h4>
-        <ul className="multi">
-          { 
-            this.props.save.map((ability, i) => 
-              (<li key={i}>{ability}</li>))
-          }
-        </ul>
+        <div id="save">
+          <h4>Saving Throws</h4>
+          <ul className="multi">
+            { 
+              this.props.save.map((ability, i) => 
+                (<li key={i}>{ability}</li>))
+            }
+          </ul>
+        </div>
 
-        <h4>Skill Proficiency 
-          <span id="skill-number">(max: {this.props.skill[0]})</span>
-        </h4>
-        <ul 
-          className={this.props.id==="rogue" ? "multi larger" : "multi"}>
-          {
-            this.props.skill[1].map((sk, i) => 
-              (<li key={i}>{sk}</li>))
-          }
-        </ul>
+        <div id="skill">
+          <h4>Skill Proficiency 
+            <span id="skill-number">(max: {this.props.skill[0]})</span>
+          </h4>
+          <ul 
+            className={this.props.id==="rogue" ? "multi larger" : "multi"}>
+            {
+              this.props.skill[1].map((sk, i) => 
+                (<li key={i}>{sk}</li>))
+            }
+          </ul>
+        </div>
         {
           this.props.tool &&
-            <div>
+            <div id="tools">
               <h4>Tools Proficiency</h4>
               <ul className="multi">
               {
@@ -128,16 +134,18 @@ class GameClass extends React.Component {
 
         }
         
-        <h4>Starting Equipment</h4>
-        <ul className="dotted-list">
-          {
-            this.props.equip.map((list, i) => (
-              <li key={i}>
-                {list.map((item, j) => <span key={j}>{item}<br/></span>)}
-              </li>
-            ))
-          }
-        </ul>
+        <div id="equip">
+          <h4>Starting Equipment</h4>
+          <ul className="dotted-list">
+            {
+              this.props.equip.map((list, i) => (
+                <li key={i}>
+                  {list.map((item, j) => <span key={j}>{item}<br/></span>)}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </ul>
       <div className="horizontal-line" />
 

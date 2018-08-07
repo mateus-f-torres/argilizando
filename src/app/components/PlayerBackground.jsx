@@ -41,8 +41,10 @@ class PlayerBackground extends React.Component {
               />
 
           : <ul className="selection">
-            <h2>Player Background</h2>
-            <div className="horizontal-line no-bottom" />
+            <div id="title-box">
+              <h2>Player Background</h2>
+              <div className="horizontal-line no-bottom" />
+            </div>
               {
                 BACKGROUNDS.map((category, i) => {
                   let [type, options] = [...category];

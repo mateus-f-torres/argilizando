@@ -210,7 +210,7 @@ export default [
           3,
           ["Any"]
         ],
-        tool: ["Three musical instruments"],
+        tool: ["3 musical instruments"],
         equip: [
           ["rapier", "or longsword", "or 1 simple weapon"],
           ["1 musical instrument"],

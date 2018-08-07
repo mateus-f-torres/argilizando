@@ -7,16 +7,16 @@ const Background = (props: Props) => (
   <figure className="card">
     <h2>{props.name}</h2>
     <p>{props.pitch}</p>
-    <div className="horizontal-line" />
+    <div id="hide" className="horizontal-line" />
     <h3>Background Features</h3>
-    <h4>Skill Proficiency</h4>
-    <ul className="multi">
+    <ul id="skills" className="multi">
+      <h4>Skill Proficiency</h4>
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
     </ul>
 
     { 
       props.tool &&
-        <ul className="multi">
+        <ul id="tools" className="multi">
           <h4>Tool Proficiency</h4>
           {props.tool.map((item, i) => <li key={i}>{item}</li>)}
         </ul>
@@ -24,14 +24,14 @@ const Background = (props: Props) => (
 
     { 
       props.lang &&
-        <ul className="multi">
+        <ul id="langs" className="multi">
           <h4>Languages</h4>
           <li>{props.lang[1]}</li>
         </ul>
     }
 
-    <h4>Equipment</h4>
-    <ul className="dotted-list">
+    <ul id="equip" className="dotted-list">
+      <h4>Equipment</h4>
       {
         props.equip.map((list, i) => (
           <li key={i}>
