@@ -1,0 +1,29 @@
+
+#RACE {}
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+  #RACE {
+    .selection {
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: auto auto;
+      grid-template-areas: "header header header" "secA secB secC";
+      #title-box { grid-area: header; }
+    }
+    .card {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "header header" "img stats" "traits traits" "rule rule" "btns btns";
+      h2 { grid-area: header; }
+      img { grid-area: img }
+      #race-stats { 
+        h3 { display: none; }
+        grid-area: stats 
+      }
+      #race-traits { grid-area: traits }
+      .lock-box { grid-area: btns }
+    }
+  }
+}
+
+

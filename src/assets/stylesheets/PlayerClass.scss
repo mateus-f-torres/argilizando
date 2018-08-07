@@ -24,3 +24,41 @@
 }
 
 
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+  #CLASS {
+    .selection {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "header header header header" "secA secB secC secD";
+      #title-box { grid-area: header; }
+      .odd-number {
+        li {
+          width: 50%;
+          .double-size-btn { width: 200%;}
+        }
+      }
+      #two-cell {
+        li { width: 100%; }
+      }
+      button { padding: 0.9em 1em; }
+    }
+
+    .card {
+      grid-template-columns: 1.5fr 2fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "header header" "img stats" "features traits" "rule rule" "btns btns";
+      h2 { grid-area: header; }
+      img { grid-area: img;  align-self: center;}
+      #class-stats { 
+        h3 { display: none; }
+        grid-area: stats 
+      }
+      #class-features { grid-area: features }
+      #class-traits { grid-area: traits }
+      .lock-box { grid-area: btns }
+    }
+  }
+}
+
+

@@ -474,7 +474,7 @@ export default [
         age: [16, 70],
         size: "Medium",
         height: "5ft (1,6m)",
-        weight: "120lb (120kg)",
+        weight: "120lb (55kg)",
         eyes: "Might have snake like eyes",
         skin: "Might have scaly skin",
         hair: "Tends to slick or straight hair",

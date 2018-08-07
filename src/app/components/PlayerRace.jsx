@@ -3,6 +3,8 @@ import * as React from 'react';
 import Race from './Race.jsx';
 import RACES from '../data/races.js';
 
+import 'Styles/PlayerRace.scss';
+
 type Props = {};
 
 class PlayerRace extends React.Component {
@@ -41,8 +43,10 @@ class PlayerRace extends React.Component {
               />
 
           : <ul className="selection">
-            <h2>Player Race</h2>
-            <div className="horizontal-line" />
+            <div id="title-box">
+              <h2>Player Race</h2>
+              <div className="horizontal-line no-bottom" />
+            </div>
               {
                 RACES.map((category, i) => {
                   let [type, options] = [...category];

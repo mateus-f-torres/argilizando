@@ -41,17 +41,22 @@ class PlayerClass extends React.Component {
               />
 
           : <ul className="selection">
-            <h2>Player Class</h2>
-            <div className="horizontal-line" />
+            <div id="title-box">
+              <h2>Player Class</h2>
+              <div className="horizontal-line no-bottom" />
+            </div>
               {
                 CLASSES.map((category, i) => {
-                 let [type, options] = [...category];
+                  let [type, options] = [...category];
+
+                  let odd = type === "Defenders" || type === "Controllers"
+                  let two = type === "Leaders";
 
                   return (
                     <div key={i}>
                       <h3>{type}</h3>
                       <div className="horizontal-line no-bottom"/>
-                      <ul>
+                      <ul id={two ? "two-cell" : null} className={odd ? "odd-number" : null}>
                       {
                         options.map((item) => (
                         <li key={item.id}>

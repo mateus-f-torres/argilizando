@@ -13,7 +13,7 @@ export default {
     "5 days of rations",
     "tinderbox",
     "waterskin",
-    "50ft (15m) of hempen rope strapped to the side"
+    "50ft (15m) of hempen rope"
   ],
   diplomat: [
     "chest",
@@ -37,7 +37,7 @@ export default {
     "tinderbox",
     "10 days of rations",
     "waterskin",
-    "50ft (15m) of hempen rope strapped to the side"
+    "50ft (15m) of hempen rope"
   ],
   entertainer: [
     "backpack",
@@ -56,7 +56,7 @@ export default {
     "10 torches",
     "10 days of rations",
     "waterskin",
-    "50ft (15m) of hempen rope strapped to the side"
+    "50ft (15m) of hempen rope"
   ],
   priest: [
     "backpack",

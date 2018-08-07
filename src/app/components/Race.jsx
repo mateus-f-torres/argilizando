@@ -50,7 +50,7 @@ const Race = (props: Props) => {
     <h2>{props.name}</h2>
     <img className="race-img" src={img} />
     <div className="horizontal-line" />
-    <ul className="stats">
+    <ul id="race-stats" className="stats">
     <h3>Race Stats</h3>
     <li><p><b>Height:</b>{props.height}.</p></li>
     <li><p><b>Weight:</b>{props.weight}.</p></li>
@@ -67,7 +67,7 @@ const Race = (props: Props) => {
     </p></li>
     </ul>
     <div className="horizontal-line" />
-    <ul>
+    <ul id="race-traits">
       <h3>Race Traits</h3>
       {
         props.special.map((trait, i) => (

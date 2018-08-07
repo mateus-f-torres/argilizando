@@ -74,8 +74,8 @@ class GameClass extends React.Component {
       <h2>{this.props.id}</h2>
       <img className="class-img" src={img} />
 
+      <ul id="class-stats" className="stats">
       <h3>Class Stats</h3>
-      <ul className="stats">
         {
           stats.map((stat, i) => (
             <li key={i}><p>
@@ -91,8 +91,8 @@ class GameClass extends React.Component {
       </ul>
       <div className="horizontal-line" />
 
+      <ul id="class-features">
       <h3>Class Features</h3>
-      <ul>
 
         <h4>Primary Ability</h4>
         <p>{this.props.primary}</p>
@@ -141,8 +141,8 @@ class GameClass extends React.Component {
       </ul>
       <div className="horizontal-line" />
 
+      <ul id="class-traits">
       <h3>Class Traits</h3>
-      <ul>
         {
           this.props.special.map((trait, i) => (
             <li key={i}>

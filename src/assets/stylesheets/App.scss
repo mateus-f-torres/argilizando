@@ -18,7 +18,7 @@ header {
   align-items: center;
   z-index: 2;
   img {
-    width: 12.5vw;
+    max-height: 8.9vh;
     text-align: center;
     padding: 0.5em;
     &:hover {
@@ -152,13 +152,32 @@ main {
 
 /* for-phone-only */
 @media (max-width: 320px) {}
-  /* default here, mobile 1st without grid */
+  /* default, mobile 1st without grid */
   
 /* for-tablet-portrait-up */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+  .selection {
+    .odd-number {
+      li {
+        width: 33.33%;
+        .double-size-btn { width: 100%; }
+      }
+    }
+  }
+}
 
 /* for-tablet-landscape-up */
-@media only screen and (min-width: 900px) {}
+@media only screen and (min-width: 900px) {
+  main {
+    section { max-width: 90vw; }
+  }
+  .selection {
+    display: grid;
+  }
+  .card {
+    display: grid;
+  }
+}
 
 /* for-desktop-up */
 @media only screen and (min-width: 1200px) {}

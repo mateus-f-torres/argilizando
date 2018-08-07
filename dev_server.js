@@ -1,5 +1,4 @@
 import express from 'express';
-// import helmet from 'helmet';
 
 const app = express();
 
@@ -14,4 +13,3 @@ let listener = app.listen(process.env.PORT, process.env.IP, () => {
   console.log('Server for C9 Running in DEVELOPMENT MODE ');
 });
 
-//app.listen(process.env.PORT, process.env.IP);
