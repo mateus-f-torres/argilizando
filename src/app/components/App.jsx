@@ -1,9 +1,13 @@
 import * as React from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import Menu from './Menu.jsx'
-import UpdateScores from '../containers/UpdateScores.js';
 import UpdateRace from '../containers/UpdateRace.js';
+import UpdateScores from '../containers/UpdateScores.js';
 import UpdateClass from '../containers/UpdateClass.js';
+import UpdateBackground from '../containers/UpdateBackground.js';
+import UpdateCharacter from '../containers/UpdateCharacter.js';
+import UpdateFinalCharacter from '../containers/UpdateFinalCharacter.js';
 
 import 'Styles/App.scss';  // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
@@ -11,55 +15,45 @@ import logo from 'Images/logo.svg'; // import using webpack resolve.alias
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.menuScreen = this.menuScreen.bind(this);
-    this.raceScreen = this.raceScreen.bind(this);
-    this.scoreScreen = this.scoreScreen.bind(this);
-    this.classScreen = this.classScreen.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  menuScreen() {
-    this.props.showMenu();
-  }
+  handleClick(e) {
+    switch(e.target.name) {
 
-  raceScreen(e) {
-    e.preventDefault();
-    this.props.showRace();
-  }
+      case "create":
+        if(this.props.done.race && this.props.done._class 
+        && this.props.done.score && this.props.done.back) return;
+        e.preventDefault();
+        break;
 
-  scoreScreen(e) {
-    e.preventDefault();
-    this.props.showScore();
-  }
-
-  classScreen(e) {
-    e.preventDefault();
-    this.props.showClass();
+      case "final":
+        if(this.props.done.char) return;
+        e.preventDefault();
+        break;
+    }
   }
 
   render() {
     return (
         <div>
           <header>
-            <img onClick={this.menuScreen} src={logo} />
+            <Link to="/">
+              <img src={logo} />
+              MENU
+            </Link>
           </header>  
-          {
-            this.props.menu
-              ? ( 
-                <Menu 
-                  done={this.props.done}
-                  race={this.raceScreen}
-                  score={this.scoreScreen}
-                  gameClass={this.classScreen}
-                />
-                )
-              : ( 
-                <main>
-                  {this.props.race && <UpdateRace />}
-                  {this.props.score && <UpdateScores />}
-                  {this.props.gameClass && <UpdateClass />}
-                </main>
-              )  
-          }
+          <main>
+          <Switch>
+            <Route exact path="/" render={()=><Menu done={this.props.done} handleClick={this.handleClick}/>}/>
+            <Route path="/race" component={UpdateRace} />
+            <Route path="/score" component={UpdateScores} />
+            <Route path="/class" component={UpdateClass} />
+            <Route path="/background" component={UpdateBackground} />
+            <Route path="/create" component={UpdateCharacter} />
+            <Route path="/play" component={UpdateFinalCharacter} />
+          </Switch>
+          </main>
         </div>
     )
   }

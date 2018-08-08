@@ -1,0 +1,62 @@
+@import '../partials/_variables';
+@import '../partials/_btn';
+/* Create Section style */
+
+#FINAL {
+  #long {
+    padding-left: 1.45em;
+  }
+   table {
+    display: table;
+    table-layout: fixed;
+    width: 95%;
+    margin: 1em auto;
+  }
+  .weapon {
+    margin-top: 0.3em;
+    margin-bottom: 0;
+    display: inline-block;
+    .weapon-bonus {
+      margin: 0 1em;
+    }
+  }
+  .prof-item {
+    width: 90%;
+    margin: 1em auto;
+    display: flex;
+    justify-content: space-between;
+    .prof-blob {
+      width: 35%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .prof {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #222;
+      }
+      .not-prof {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid #222;
+      }
+    }
+  }
+  .sidenotes {
+    li {
+      margin-left: 5%;
+      text-align: start;
+      font-size: small;
+      width: 80%;
+      .note { 
+        font-style: italic;
+        padding-left: 10%; 
+      }
+    }
+  }
+  button:disabled { background-color: grey; }
+}
+
+

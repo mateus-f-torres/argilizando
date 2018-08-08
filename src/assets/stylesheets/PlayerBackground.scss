@@ -1,0 +1,52 @@
+/* Character Race Section style */
+
+#BACK {
+  #long {
+    padding-left: 1.1em;
+  }
+  .multi {
+    width: 90%;
+    max-height: 130px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: baseline;
+    li { margin: 5px; }
+    h4 { margin-left: 0; }
+  }
+}
+
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+  #BACK {
+    .selection {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "header header header header" "secA secB secC secD";
+      #title-box { grid-area: header; }
+      button { padding: 0.9em 1em; }
+      #long { padding-left: 0.2em; }
+    }
+
+    .card {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto auto auto auto;
+      grid-template-areas: "header header skills equip" "pitch pitch tools equip" "pitch pitch langs equip" "rule rule rule rule" "btns btns btns btns";
+      h3 { display: none; }
+      #hide { display: none; }
+      h2 { grid-area: header; }
+      p { grid-area: pitch }
+      #skills { grid-area: skills; }
+      #langs { grid-area: langs; }
+      #tools { grid-area: tools; }
+      #equip { grid-area: equip; }
+      .no-bottom { grid-area: rule; }
+      .lock-box { grid-area: btns }
+    }
+  }
+}
+
+

@@ -1,0 +1,96 @@
+@import '../partials/_variables';
+@import '../partials/_btn';
+/* Create Section style */
+
+#CHARACTER {
+  table {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    margin: 0 0 5% 0;
+    .main { text-transform: capitalize; }
+  }
+  form {
+    display: block;
+    width: 100%;
+    margin: 0;
+    
+    #skill-number {
+      margin-left: 10px;
+      font-weight: normal;
+    }
+    .skill-selection {
+      width: 90%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-content: space-between;
+      align-items: baseline;
+      li {
+        width: 100%;
+        margin: 0 auto 1em auto;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .tool-selection {
+      border: none;
+      width: 90%;
+      margin: 1em auto 0 auto;
+      padding: 0;
+      div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1em;
+      }
+    }
+    .pack-content {
+      display: block;
+      width: 90%;
+      margin: 0 auto 0 8.5%;
+      list-style: disc;
+      text-align: start;
+    }
+  }
+  .text-label {
+    display: inline-block;
+    width: 90%;
+    text-align: start;
+    text-transform: capitalize;
+  }
+  .text-input {
+    display: block;
+    color: $link-active;
+    width: 90%;
+    margin: 0 auto 0.7em auto;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $link-active;
+    outline: none;
+    height: 2em;
+    box-shadow: none;
+    &:focus {
+      border-bottom: 1px solid $link-color;
+      box-shadow: 0 1px 0 $link-color;
+    }
+    transition: 0.2s ease;
+  }
+  h2 { text-transform: capitalize; }
+  p {
+    width: 90%;
+    margin: 1em auto;
+    text-align: justify;
+    font-weight: normal;
+  }
+  h3 {
+    align-self: flex-start;
+    margin: 0.8em 0 0.5em 5%;
+    text-align: start;
+  }
+  h4 {@extend h3;}
+}
+
+

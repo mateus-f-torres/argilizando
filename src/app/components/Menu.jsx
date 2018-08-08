@@ -1,46 +1,62 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import 'Styles/Menu.scss';
 
-const btn = "menu-btn waves-effect waves-light";
+const Menu = (props) => {
 
-const labels = [
-  ["race", "1. Race"],
-  ["gameClass", "2. Class"],
-  ["score", "3. Ability Scores"],
-  ["background", "4. Background", true],
-  ["create", "5. Create", true]
-];
+  let all =
+    props.done.race && props.done._class
+    && props.done.score && props.done.back
+    ? true
+    : false;
 
-const Menu = (props) => (
-  <main>
+  let final = props.done.char.name ? true : false;
+
+  return (
     <section id='MENU'>
       <h2>Character Creator</h2>
       <div className="horizontal-line no-bottom" />
       <ul>
-        {
-          labels.map((item) => (
-            <button key={item[0]} className={btn} onClick={props[item[0]]} disabled={item[2]}>
-              {item[1]}
-              <span className={
-                props.done.includes(item[0])
-                  ? "done"
-                  : ""
-              }></span>
+        <Link to="/race">
+          <button>
+            1. Race
+            <span className={props.done.race ? "done" : null} />
           </button>
-          ))
-        }
-        <button className={btn} onClick={props.play} disabled>
-          6. Play!
-          <span className={
-            props.done.includes("all")
-              ? "play"
-              : "play"
-          }></span>
-        </button>
+        </Link>
+        <Link to="/class">
+          <button>
+            2. Class
+            <span className={props.done._class ? "done" : null} />
+          </button>
+        </Link>
+        <Link to="/score">
+          <button>
+            3. Ability Scores
+            <span className={props.done.score ? "done" : null} />
+          </button>
+        </Link>
+        <Link to="/background">
+          <button>
+            4. Background
+            <span className={props.done.back ? "done" : null} />
+          </button>
+        </Link>
+        <Link to="/create" onClick={props.handleClick}>
+          <button name="create" className={!all ? "disabled" : null}>
+            5. Create
+            <span className={props.done.char ? "done" : null} />
+          </button>
+        </Link>
+        <Link to="/play" onClick={props.handleClick}>
+          <button name="final" className={!final ? "disabled" : null}>
+            6. Play!
+            <span className={final ? "done" : null} />
+          </button>
+        </Link>
       </ul>
     </section>
-  </main>
-);
+  )
+};
 
 export default Menu;

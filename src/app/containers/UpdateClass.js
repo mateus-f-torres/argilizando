@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { displayClass, showClassSelection } from '../actions';
-import { doneClass, showMenu } from '../actions';
+import { withRouter } from 'react-router-dom';
+import { displayClass, showClassSelection, lockClass } from '../actions';
 import PlayerClass from '../components/PlayerClass.jsx';
 
 const mapStateToProps = (state) => {
@@ -18,16 +18,15 @@ const mapDispatchToProps = (dispatch) => {
     noClass: () => {
       dispatch(showClassSelection())
     },
-    lockClass: () => {
-      dispatch(doneClass())
-      dispatch(showMenu())
+    lockClass: (gameClass) => {
+      dispatch(lockClass(gameClass))
     }
   }
 }
 
-const UpdateClass = connect(
+const UpdateClass = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerClass);
+)(PlayerClass));
 
 export default UpdateClass;

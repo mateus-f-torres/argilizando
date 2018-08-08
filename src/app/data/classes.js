@@ -1,7 +1,6 @@
 export default [
   [
     "Defenders",
-    "Defenders have the highest defenses in the game and good close-up offense. They are the party’s front-line combatants; wherever they’re standing, that’s where the action is. Defenders have abilities and powers that make it difficult for enemies to move past them or to ignore them in battle.",
     [
       {
         id: "barbarian",
@@ -16,13 +15,17 @@ export default [
           2, 
           ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
         ],
-        tool: ["None"],
         equip: [
-          ["greataxe", "or 1 martial weapon"],
+          ["greataxe", "or 1 martial melee weapon"],
           ["2 handaxes", "or 1 simple weapon"],
           ["4 javelins"],
           ["explorer's pack"]
         ],
+        _equip: [
+          ["greateaxe", "1 martial melee weapon"],
+          ["2 handaxes", "1 simple weapon"]
+        ],
+        _pack: ["explorer"],
         special: [
           [
             "Rage",
@@ -39,7 +42,8 @@ export default [
             "2nd lvl",
             "Throw aside all concern for defense and attack with fierce desperation to gain advantage on Strength based melee attack, but attack rolls against you also have advantage during that round."
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "fighter",
@@ -54,13 +58,18 @@ export default [
           2,
           ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"]
         ],
-        tool: ["None"],
         equip: [
           ["chain mail or", "leather, longbow + 20 arrows"],
-          ["martial weapon + medium shield", "or martial weapon + mini-shield", "or 2 martial weapons"],
+          ["martial weapon + mini-shield", "or 2 martial weapons"],
           ["light crossbow + 20 bolts", "or 2 handaxes"],
           ["dungeoneer's pack", "or explorer's pack"]
         ],
+        _equip: [
+          ["chain mail", "leather, longbow + 20 arrows"],
+          ["martial weapon + mini-shield", "2 martial weapons"],
+          ["light crossbow + 20 bolts", "2 handaxes"]
+        ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Fighting Style",
@@ -77,7 +86,8 @@ export default [
             "2nd lvl",
             "Push yourself beyond your normal limit and gain an extra action."
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "paladin",
@@ -92,13 +102,17 @@ export default [
           2,
           ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
         ],
-        tool: ["None"],
         equip: [
-          ["martial weapon + medium shield", "or 2 martial weapons"],
+          ["martial weapon + shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
+          ["chain mail + holy symbol"],
           ["priest's pack", "or explorer's pack"],
-          ["chain mail + holy symbol"]
         ],
+        _equip: [
+          ["martial weapon + shield", "2 martial weapons"],
+          ["5 javelins", "1 simple weapon"]
+        ],
+        _pack: ["priest", "explorer"],
         special: [
           [
             "Divine Smite",
@@ -115,13 +129,21 @@ export default [
             "6th lvl",
             "Your mere presence around your allies is enough to give bonuses and advantage on saving throws or certain conditions. With each oath providing more types of auras."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 0,
+          known: 0,
+          slots: 2,
+          ritual: false,
+          focus: "holy symbol",
+          notYet: true // acess to magic on lvl 2
+        }
       }
     ]
   ],
   [
     "Leaders",
-    "Leaders inspire, heal, and aid the other characters in an adventuring group. Leaders have good defenses, but their strength lies in powers that protect their companions and target specific foes for the party to concentrate on.",
     [
       {
         id: "cleric",
@@ -136,14 +158,19 @@ export default [
           2,
           ["History", "Insight", "Medicine", "Persuasion", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["mace", "or warhammer"],
           ["scale mail", "or leather armor", "or chain mail"],
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
+          ["medium shield + holy symbol"],
           ["priest's pack", "or explorer's pack"],
-          ["medium shield + holy symbol"]
         ],
+        _equip: [
+          ["mace", "warhammer"],
+          ["scale mail", "leather", "chain mail"],
+          ["light crossbow + 20 bolts", "1 simple weapon"]
+        ],
+        _pack: ["priest", "explorer"],
         special: [
           [
             "Divine Domain",
@@ -160,7 +187,15 @@ export default [
             "2nd lvl",
             "Serve as a lighting rod for your deity on this plane and gain acess to unique magical powers for a brief amount of time."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "wis",
+          cantrips: 3,
+          known: 0,
+          slots: 2,
+          ritual: true,
+          focus: "holy symbol"
+        }
       },
       {
         id: "bard",
@@ -175,13 +210,17 @@ export default [
           3,
           ["Any"]
         ],
-        tool: ["Three musical instruments"],
+        tool: ["3 musical instruments"],
         equip: [
           ["rapier", "or longsword", "or 1 simple weapon"],
+          ["1 musical instrument"],
+          ["leather armor + dagger"],
           ["diplomat's pack", "or entertainer's pack"],
-          ["lute or", "any other musical instrument"],
-          ["leather armor + dagger"]
         ],
+        _equip: [
+          ["rapier", "longsword", "1 simple weapon"]
+        ],
+        _pack: ["diplomat", "entertainer"],
         special: [
           [
             "Bardic Inspiration",
@@ -198,13 +237,20 @@ export default [
             "2nd lvl",
             "Help wounded allies recover during a short rest by giving +1d6 hp to them."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 2,
+          known: 4,
+          slots: 2,
+          ritual: true,
+          focus: "instrument"
+        }
       }
     ]
   ],
   [
     "Strikers",
-    "Strikers specialize in dealing high amounts of damage to a single target at a time. They have the most concentrated offense of any character in the game. Strikers rely on superior mobility, trickery, or magic to move around tough foes and single out the enemy they want to attack.",
     [
       {
         id: "monk",
@@ -216,14 +262,14 @@ export default [
         versatile: 3,
         save: ["Strength", "Dexterity"],
         skill: [
-          2,
+          3,
           ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
         ],
-        tool: ["Artisan's Tools"],
         equip: [
           ["2 simple weapons + 10 darts"],
           ["dungeoneer's pack", "or explorer's pack"],
         ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Unarmored Defense",
@@ -240,7 +286,8 @@ export default [
             "2nd lvl",
             "Harness the mystic energy of ki and gain acess to special actions like Flurry of Blows, Patient Defense and Step of the Wind."
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "ranger",
@@ -255,13 +302,17 @@ export default [
           3,
           ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
         ],
-        tool: ["None"],
         equip: [
           ["scale mail", "or leather armor"],
           ["2 shortswords", "or 2 simple weapons"],
+          ["longbow + 20 arrows"],
           ["dungeoneer's pack", "or explorer's pack"],
-          ["longbow + 20 arrows"]
         ],
+        _equip: [
+          ["scale mail", "leather armor"],
+          ["2 shortswords", "2 simple weapons"]
+        ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Favored Enemy",
@@ -278,7 +329,16 @@ export default [
             "3rd lvl",
             "Expend spell slots to magically sense if a certain type of creature is near you and your group even if the creature is hidden by magic."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "wis",
+          cantrips: 0,
+          known: 2,
+          slots: 2,
+          ritual: false,
+          focus: false,
+          notYet: true // acess to magic on lvl 2
+        }
       },
       {
         id: "rogue",
@@ -297,10 +357,15 @@ export default [
         equip: [
           ["rapier", "or shortsword"],
           ["shortbow + 20 arrows", "or shortsword"],
-          ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"],
           ["leather armor"],
-          ["2 daggers + thieves' tools"]
+          ["2 daggers + thieves' tools"],
+          ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"],
         ],
+        _equip: [
+          ["rapier", "shortsword"],
+          ["shortbow + 20 arrows", "shortsword"]
+        ],
+        _pack: ["burglar", "dungeoneer", "explorer"],
         special: [
           [
             "Sneak Attack",
@@ -317,7 +382,8 @@ export default [
             "5th lvl",
             "Use your reaction to halve an enemy attack's damage against you"
           ]
-        ]
+        ],
+        _spell: false
       },
       {
         id: "warlock",
@@ -332,14 +398,18 @@ export default [
           2,
           ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
-          ["scholar's pack", "or dungeoneer's pack"],
           ["leather armor"],
-          ["1 simple weapon + 2 daggers"]
+          ["1 simple weapon + 2 daggers"],
+          ["scholar's pack", "or dungeoneer's pack"],
         ],
+        _equip: [
+          ["light crossbow + 20 bolts", "1 simple weapon"],
+          ["component pouch", "arcane focus"]
+        ],
+        _pack: ["scholar", "dungeoneer"],
         special: [
           [
             "Otherworldly Patron",
@@ -356,13 +426,20 @@ export default [
             "2nd lvl",
             "In your study of occult lore, you have unearthed fragments of forbidden knowledge and gained access to special magical traits."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 2,
+          known: 2,
+          slots: 1,
+          ritual: false,
+          focus: "arcane focus"
+        }
       }
     ]
   ],
   [
     "Controllers",
-    "Controllers deal with large numbers of enemies at the same time. They favor offense over defense, using powers that deal damage to multiple foes at once, as well as subtler powers that weaken, confuse, or delay their foes.",
     [
       {
         id: "druid",
@@ -379,11 +456,16 @@ export default [
         ],
         tool: ["Herbalism kit"],
         equip: [
-          ["wooden mini-shield", "or 1 simple weapon"],
+          ["wooden shield", "or 1 simple weapon"],
           ["scimitar", "or 1 simple weapon"],
+          ["leather armor + druidic focus"],
           ["explorer's pack"],
-          ["leather armor + druidic focus"]
         ],
+        _equip: [
+          ["wooden shield", "1 simple weapon"],
+          ["scimitar", "1 simple weapon"]
+        ],
+        _pack: ["explorer"],
         special: [
           [
             "Wild Shape",
@@ -400,7 +482,15 @@ export default [
             "2nd lvl",
             "Identify with a circle of druids like, for example, the Circle of the Land, the Circle of the Moon, the Circle of Dreams and the Circle of the Shepherd are among them."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "wis",
+          cantrips: 2,
+          known: 0,
+          slots: 2,
+          ritual: true,
+          focus: "druidic focus"
+        }
       },
       {
         id: "sorcerer",
@@ -415,13 +505,17 @@ export default [
           2,
           ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
+          ["2 daggers"],
           ["dungeoneer's pack", "or explorer's pack"],
-          ["2 daggers"]
         ],
+        _equip: [
+          ["light crossbow + 20 bolts", "1 simple weapon"],
+          ["component pouch", "arcane focus"]
+        ],
+        _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Sorcerous Origin",
@@ -438,7 +532,15 @@ export default [
             "3rd lvl",
             "You gain the ability to twist and change your spells to suit your needs."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "cha",
+          cantrips: 4,
+          known: 2,
+          slots: 2,
+          ritual: false,
+          focus: "arcane focus"
+        }
       },
       {
         id: "wizard",
@@ -453,13 +555,17 @@ export default [
           2,
           ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
         ],
-        tool: ["None"],
         equip: [
           ["quarterstaff", "or 1 dagger"],
           ["component pouch", "or arcane focus"],
+          ["spellbook"],
           ["scholar's pack", "or explorer's pack"],
-          ["spellbook"]
         ],
+        _equip: [
+          ["quarterstaff", "1 dagger"],
+          ["component pouch", "arcane focus"]
+        ],
+        _pack: ["scholar", "explorer"],
         special: [
           [
             "Spellbook",
@@ -476,7 +582,15 @@ export default [
             "2nd lvl",
             "Choose an arcane tradition, shaping your practice of magic through one of the eight schools of magic: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion and Necromancy."
           ]
-        ]
+        ],
+        _spell: {
+          ability: "int",
+          cantrips: 3,
+          known: 6,
+          slots: 2,
+          ritual: true,
+          focus: "arcane focus"
+        }
       }
     ]
   ]

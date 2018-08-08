@@ -2,9 +2,9 @@
 @import '../partials/_btn';
 
 #MENU {
-  hr { margin-bottom: 0; }
   ul { margin: 0; }
-  .menu-btn {
+  a { width: 100%; text-decoration-line: none; }
+  button {
     @extend %btn-style;
     width: 100%;
     margin-bottom: 0;
@@ -21,13 +21,9 @@
       height: 5vh;
       border-radius: 50%;
     }
-    .done{
-      background-color: $link-color;
-    }
-    .play {
-      background-color: darkred;
-    }
+    .done { background-color: $link-color; }
   }
+  .disabled { background-color: #606060; }
 }
 
 

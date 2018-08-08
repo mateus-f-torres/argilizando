@@ -1,5 +1,6 @@
 //@flow
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { select } from 'd3-selection';
 
 import barbarian from "Images/barbarian.svg";
@@ -16,8 +17,6 @@ import warlock from "Images/warlock.svg";
 import wizard from "Images/wizard.svg";
 
 type Props = {};
-
-const btn = "btn waves-effect waves-light";
 
 class GameClass extends React.Component {
   constructor(props: Props) {
@@ -74,10 +73,10 @@ class GameClass extends React.Component {
     return (
     <figure className="card">
       <h2>{this.props.id}</h2>
-      <img src={img} />
+      <img className="class-img" src={img} />
 
+      <ul id="class-stats" className="stats">
       <h3>Class Stats</h3>
-      <ul className="stats">
         {
           stats.map((stat, i) => (
             <li key={i}><p>
@@ -93,59 +92,70 @@ class GameClass extends React.Component {
       </ul>
       <div className="horizontal-line" />
 
+      <ul id="class-features">
       <h3>Class Features</h3>
-      <ul>
 
-        <h4>Primary Ability</h4>
-        <ul className="multi">
-          <li>{this.props.primary}</li>
-        </ul>
+        <div id="ability">
+          <h4>Primary Ability</h4>
+          <p>{this.props.primary}</p>
+        </div>
 
-        <h4>Saving Throws</h4>
-        <ul className="multi">
-          { 
-            this.props.save.map((ability, i) => 
-              (<li key={i}>{ability}</li>))
-          }
-        </ul>
+        <div id="save">
+          <h4>Saving Throws</h4>
+          <ul className="multi">
+            { 
+              this.props.save.map((ability, i) => 
+                (<li key={i}>{ability}</li>))
+            }
+          </ul>
+        </div>
 
-        <h4>Skill Proficiency 
-          <span id="skill-number">(max: {this.props.skill[0]})</span>
-        </h4>
-        <ul 
-          className={this.props.id==="rogue" ? "multi larger" : "multi"}>
-          {
-            this.props.skill[1].map((sk, i) => 
-              (<li key={i}>{sk}</li>))
-          }
-        </ul>
+        <div id="skill">
+          <h4>Skill Proficiency 
+            <span id="skill-number">(max: {this.props.skill[0]})</span>
+          </h4>
+          <ul 
+            className={this.props.id==="rogue" ? "multi larger" : "multi"}>
+            {
+              this.props.skill[1].map((sk, i) => 
+                (<li key={i}>{sk}</li>))
+            }
+          </ul>
+        </div>
+        {
+          this.props.tool &&
+            <div id="tools">
+              <h4>Tools Proficiency</h4>
+              <ul className="multi">
+              {
+                this.props.tool.map((t, i) => <li key={i}>{t}</li>)
+              }
+              </ul>
+            </div>
 
-        <h4>Tools Proficiency</h4>
-        <ul className="multi">
-          {
-            this.props.tool.map((t, i) => <li key={i}>{t}</li>)
-          }
-        </ul>
-
-        <h4>Starting Equipment</h4>
-        <ul className="equip">
-          {
-            this.props.equip.map((list, i) => (
-              <li key={i}>
-                {list.map((item, j) => <span key={j}>{item}<br/></span>)}
-              </li>
-            ))
-          }
-        </ul>
+        }
+        
+        <div id="equip">
+          <h4>Starting Equipment</h4>
+          <ul className="dotted-list">
+            {
+              this.props.equip.map((list, i) => (
+                <li key={i}>
+                  {list.map((item, j) => <span key={j}>{item}<br/></span>)}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
       </ul>
       <div className="horizontal-line" />
 
+      <ul id="class-traits">
       <h3>Class Traits</h3>
-      <ul>
         {
           this.props.special.map((trait, i) => (
             <li key={i}>
-              <h5>{trait[0]}:</h5>
+              <h4>{trait[0]}:</h4>
               <p className="lvl">{trait[1]}.</p>
               <p>{trait[2]}</p>
             </li>
@@ -154,8 +164,12 @@ class GameClass extends React.Component {
       </ul>
 
       <div className="horizontal-line no-bottom" />
-      <button className={btn} onClick={this.props.hideClass}>Back</button>
-      <button className={btn} onClick={this.props.lockClass}>Next</button>
+      <div className="lock-box">
+        <button onClick={this.props.hideClass}>Back</button>
+        <Link to="/">
+          <button onClick={this.props.lockClass}>Lock</button>
+        </Link>
+      </div>
     </figure>
     )
   }

@@ -1,105 +1,73 @@
-@import '../partials/_variables';
-@import '../partials/_btn';
 /* Character Race Section style */
 
 #CLASS {
-  hr { margin-bottom: 0; }
-  #selection {
-    margin-top: 0.1em;
-    margin-bottom: 0;
-    display: block;
-    width: 100%;
-    .category {
-      padding-top: 0;
-    }
-    ul {
-      display: flex;
-      li { 
-      margin: 0; 
-      width: 50%;
-      .class-btn {
-        @extend %btn-style;
-        width: 100%;
-        margin-bottom: 0;
+  #skill-number {
+    margin-left: 10px;
+    font-weight: normal;
+  }
+  .multi {
+    width: 90%;
+    max-height: 130px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: baseline;
+    li { margin: 5px; }
+  }
+  .larger {
+    max-height: 180px;
+  }
+  .lvl { margin: 0 0 0 5%; }
+  .lvl + p { margin-top: 0.2em; }
+}
+
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+  #CLASS {
+    .selection {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      grid-template-areas: "header header header header" "secA secB secC secD";
+      #title-box { grid-area: header; }
+      .odd-number {
+        li {
+          width: 50%;
+          .double-size-btn { width: 200%;}
         }
       }
-      #double-btn-size {
-        width: 200%;
+      #two-cell {
+        li { width: 100%; }
       }
+      button { padding: 0.9em 1em; }
     }
-   
-  }
-  .card {
-    width: 100%;
-    margin: 0;
-    h2 { text-transform: capitalize; }
-    img {
-      width: 100px;
-      height: auto;
-      margin: 0 auto;
-    }
-    p {
-      width: 90%;
-      margin: 1em auto;
-      text-align: justify;
-      font-weight: normal;
-    }
-    h4 {
-      margin-left: 5%;
-      margin-bottom: 0.5em;
-      text-align: start;
-    }
-    h5 {@extend h4;}
-    ul {
-      list-style: none;
-      display: block;
-    }
-    #skill-number {
-      margin-left: 5px;
-      font-weight: normal;
-    }
-    .stats p {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .multi {
-      width: 90%;
-      max-height: 130px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-content: space-between;
-      align-items: baseline;
-      li { margin: 5px; }
-    }
-    .larger {
-      max-height: 180px;
-    }
-    .equip {
-      width: 90%;
-      margin: 0 auto 0 8.5%;
-      list-style: disc;
-      li { 
-        margin: 10px 0; 
-        text-align: start;
+
+    .card {
+      grid-template-columns: 1.5fr 2fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "header header" "img stats" "features traits" "rule rule" "btns btns";
+      h2 { grid-area: header; }
+      img { grid-area: img;  align-self: center;}
+      #class-stats { 
+        h3 { display: none; }
+        grid-area: stats 
       }
-    }
-    .lvl { margin: 0 0 0 5%; }
-    .lvl + p { margin-top: 0.2em; }
-    .btn {
-      @extend %btn-style;
-      &:first-of-type {
-        display: inline;
-        float: left;
-        margin: 1em 0 1em 2em;
+      #class-features { 
+        grid-area: features;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: "title ." "ability save" "skills skills" "equip tools";
+        #ability { grid-area: ability; }
+        #save { grid-area: save; }
+        #skill { grid-area: skills; }
+        #tools { grid-area: tools; }
+        #equip { grid-area: equip; }
       }
-      &:last-of-type {
-        display: inline;
-        float: right;
-        margin: 1em 2em 1em 0;
-      }
+      #class-traits { grid-area: traits }
+      .lock-box { grid-area: btns }
     }
   }
 }

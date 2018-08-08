@@ -1,73 +1,27 @@
-@import '../partials/_variables';
-@import '../partials/_btn';
-/* Character Race Section style */
 
-#RACE {
-  hr { margin-bottom: 0; }
-  #selection {
-    margin-top: 0.1em;
-    margin-bottom: 0;
-    display: block;
-    width: 100%;
-    .category {
-      clear: left;
-      padding-top: 1em;
+#RACE {}
+
+/* for-tablet-landscape-up */
+@media only screen and (min-width: 900px) {
+  #RACE {
+    .selection {
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: auto auto;
+      grid-template-areas: "header header header" "secA secB secC";
+      #title-box { grid-area: header; }
     }
-    .category#first {
-      padding-top: 0;
-    }
-    .race-btn {
-      @extend %btn-style;
-      display: inline;
-      width: 50%;
-      float: left;
-      margin-bottom: 0;
-    }
-  }
-  .card {
-    width: 100%;
-    margin: 0;
-    h2 { margin-bottom: 0; }
-    img {
-      width: 230px;
-      height: auto;
-      margin: 0 auto;
-    }
-    .btn {
-      @extend %btn-style;
-      &:first-of-type {
-        display: inline;
-        float: left;
-        margin: 1em 0 1em 2em;
+    .card {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: repeat(5, auto);
+      grid-template-areas: "header header" "img stats" "traits traits" "rule rule" "btns btns";
+      h2 { grid-area: header; }
+      img { grid-area: img }
+      #race-stats { 
+        h3 { display: none; }
+        grid-area: stats 
       }
-      &:last-of-type {
-        display: inline;
-        float: right;
-        margin: 1em 2em 1em 0;
-      }
-    }
-    ul {
-      list-style: none;
-      display: block;
-      li {
-        h5 { 
-        text-align: start;  
-        margin: 1em; 
-        }
-        p {
-          width: 90%;
-          margin: 1em auto ;
-          text-align: justify;
-          font-weight: normal;
-        }
-      }
-    }
-    .stats {
-      p {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-      }
+      #race-traits { grid-area: traits }
+      .lock-box { grid-area: btns }
     }
   }
 }

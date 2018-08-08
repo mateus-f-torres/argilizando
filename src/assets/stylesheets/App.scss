@@ -1,4 +1,5 @@
 @import '../partials/_variables';
+@import '../partials/_btn';
 /*  ============ App ===============*/
 
 body {
@@ -10,14 +11,23 @@ body {
 
 header {
   width: 100%;
-  height: 9.5vh;
+  height: 11vh;
   background-color: $nav;
   border-bottom: 1px solid rgba(0,0,0,0.75);
   display: flex;
-  align-items: center;
-  z-index: 2;
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration-line: none;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      color: blue;
+    }
+  }
   img {
-    width: 12.5vw;
+    height: 8.9vh;
     text-align: center;
     padding: 0.5em;
     &:hover {
@@ -53,8 +63,95 @@ main {
   }
 }
 
+/* Main Classes */
+
+.selection {
+  margin-top: 0.1em;
+  margin-bottom: 0;
+  display: block;
+  width: 100%;
+  ul {
+    display: flex;
+    li {
+      margin: 0;
+      width: 50%;
+      button {
+        @extend %btn-style;
+        width: 100%;
+        margin-bottom: 0;
+      }
+      .double-size-btn {
+        width: 200%;
+      }
+    }
+  }
+}
+
+
+.card {
+  width: 100%;
+  margin: 0;
+  h2 {
+    margin-bottom: 0.5em;
+    text-transform: capitalize;
+  }
+  h3 {
+    margin-left: 5%;
+    margin-bottom: 0.5em;
+    text-align: start;
+  }
+  h4 { @extend h3 }
+  img {
+    height: auto;
+    margin: 0 auto;
+  }
+  .race-img { width: 230px; }
+  .class-img { width: 100px; }
+  ul {
+    list-style: none;
+    display: block;
+  }
+  p {
+    width: 90%;
+    margin: 0 auto 1em auto ;
+    text-align: justify;
+    font-weight: normal;
+  }
+  .stats {
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      span { text-transform: capitalize; }
+      .close { margin-right: 10%; }
+    }
+  }
+  .dotted-list {
+    width: 90%;
+    margin: 0 auto 0 8.5%;
+    list-style: disc;
+    li {
+      margin: 10px 0;
+      text-align: start;
+    }
+  }
+}
+
+
+
+.lock-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  button {
+    @extend %btn-style;
+    margin: 0.59em 0;
+  }
+}
+
 .horizontal-line {
   width: 99%;
+  height: 1px;
   margin: 0 auto 1em auto;
   border: 0.2px solid rgba(0,0,0,0.19);
   box-shadow: 0 0.4px 8px rgba(0,0,0,0.10),
@@ -64,13 +161,32 @@ main {
 
 /* for-phone-only */
 @media (max-width: 320px) {}
-  /* default here, mobile 1st without grid */
+  /* default, mobile 1st without grid */
   
 /* for-tablet-portrait-up */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+  .selection {
+    .odd-number {
+      li {
+        width: 33.33%;
+        .double-size-btn { width: 100%; }
+      }
+    }
+  }
+}
 
 /* for-tablet-landscape-up */
-@media only screen and (min-width: 900px) {}
+@media only screen and (min-width: 900px) {
+  main {
+    section { max-width: 90vw; }
+  }
+  .selection {
+    display: grid;
+  }
+  .card {
+    display: grid;
+  }
+}
 
 /* for-desktop-up */
 @media only screen and (min-width: 1200px) {}

@@ -1,13 +1,11 @@
 //@flow
 import * as React from 'react';
 import GameClass from './GameClass.jsx';
-import Classes from '../data/classes.js';
+import CLASSES from '../data/classes.js';
 
 import 'Styles/PlayerClass.scss';
 
 type Props = {};
-
-const btn = "class-btn waves-effect waves-light";
 
 class PlayerClass extends React.Component {
   constructor(props: Props) {
@@ -18,19 +16,16 @@ class PlayerClass extends React.Component {
   }
 
   getClass(e) {
-    e.preventDefault();
     let choice = e.target.name;
     this.props.getClass(choice);
   }
 
-  hideClass(e) {
-    e.preventDefault();
+  hideClass() {
     this.props.noClass();
   }
 
-  lockClass(e) {
-    e.preventDefault();
-    this.props.lockClass();
+  lockClass() {
+    this.props.lockClass(this.props.chosen);
   }
 
   render() {
@@ -45,28 +40,33 @@ class PlayerClass extends React.Component {
                 {...this.props.chosen}
               />
 
-          : <ul id="selection">
-            <h2>Player Class</h2>
-            <div className="horizontal-line" />
+          : <ul className="selection">
+            <div id="title-box">
+              <h2>Player Class</h2>
+              <div className="horizontal-line no-bottom" />
+            </div>
               {
-                Classes.map((category, i) => {
-                 let [role, description, options] = [...category];
+                CLASSES.map((category, i) => {
+                  let [type, options] = [...category];
+
+                  let odd = type === "Defenders" || type === "Controllers"
+                  let two = type === "Leaders";
 
                   return (
                     <div key={i}>
-                      <h3 className="category">{role}</h3>
-                      <ul>
+                      <h3>{type}</h3>
+                      <div className="horizontal-line no-bottom"/>
+                      <ul id={two ? "two-cell" : null} className={odd ? "odd-number" : null}>
                       {
                         options.map((item) => (
                         <li key={item.id}>
                           <button 
-                            id={
+                            className={
                               item.id === "wizard"
                               || item.id === "paladin"
-                                ? "double-btn-size"
+                                ? "double-size-btn"
                                 : ""
                             }
-                            className={btn} 
                             name={item.id}
                             onClick={this.getClass}
                           >
