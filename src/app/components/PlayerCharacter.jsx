@@ -75,6 +75,11 @@ class PlayerCharacter extends React.Component {
   }
 
   lockChar(e) {
+    // char must at least have a name to play
+    if(!this.props.char.name.trim()) {
+      e.preventDefault();
+      return;
+    }
     this.props.lockCharacter(this.props.char);
   }
 

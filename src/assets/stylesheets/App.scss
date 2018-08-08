@@ -15,16 +15,23 @@ header {
   background-color: $nav;
   border-bottom: 1px solid rgba(0,0,0,0.75);
   display: flex;
+  justify-content: space-between;
   a {
     display: flex;
     align-items: center;
     text-decoration-line: none;
+    color: $link-color;
+    font-family: $nav-font;
     &:focus {
       outline: none;
     }
     &:active {
-      color: blue;
+      color: $link-active;
     }
+  }
+  #outside-links {
+    @extend a;
+    margin-right: 2px;
   }
   img {
     height: 8.9vh;

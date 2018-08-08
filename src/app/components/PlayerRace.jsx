@@ -1,8 +1,10 @@
 //@flow
 import * as React from 'react';
+import { Link, Route, Switch} from 'react-router-dom';
 import Race from './Race.jsx';
 import RACES from '../data/races.js';
 
+import human from "Images/human.png";
 import 'Styles/PlayerRace.scss';
 
 type Props = {};
@@ -11,17 +13,11 @@ class PlayerRace extends React.Component {
   constructor(props: Props) {
     super(props);
     this.showRace = this.showRace.bind(this);
-    this.hideRace = this.hideRace.bind(this);
     this.lockRace = this.lockRace.bind(this);
   }
 
   showRace(e) {
-    let race = e.target.name;
-    this.props.getRace(race);
-  }
-
-  hideRace() {
-    this.props.noRace();
+    this.props.getRace(e.target.name);
   }
 
   lockRace() {
@@ -31,50 +27,47 @@ class PlayerRace extends React.Component {
   render() {
     return (
       <section id="RACE">
-        {
-          // if race has been selected render it
-          // else render race selection buttons list 
-          this.props.selected == true
+        <Switch>
 
-            ? <Race 
-                hideRace={this.hideRace} 
-                lockRace={this.lockRace} 
-                {...this.props.race}
-              />
+          <Route exact path="/race" render={()=>
+            <ul className="selection">
+              <div id="title-box">
+                <h2>Player Race</h2>
+                <div className="horizontal-line no-bottom" />
+              </div>
+            {
+              RACES.map((category, i) => {
+                let [type, options] = [...category];
 
-          : <ul className="selection">
-            <div id="title-box">
-              <h2>Player Race</h2>
-              <div className="horizontal-line no-bottom" />
-            </div>
-              {
-                RACES.map((category, i) => {
-                  let [type, options] = [...category];
-
-                  return (
-                    <div key={i}>
-                      <h3>{type}</h3>
-                      <div className="horizontal-line no-bottom" />
-                      <ul>
-                      {
-                        options.map((item) => (
-                        <li key={item.id}>
-                          <button 
-                            name={item.id}
-                            onClick={this.showRace}
-                          >
+                return (
+                  <div key={i}>
+                    <h3>{type}</h3>
+                    <div className="horizontal-line no-bottom" />
+                    <ul>
+                    {
+                      options.map((item) => (
+                      <li key={item.id}>
+                        <Link to={this.props.match.url + "/" + item.id}>
+                          <button name={item.id} onClick={this.showRace}>
                             {item.id}
                           </button>
-                        </li>
-                        ))
-                      }
-                      </ul>
-                    </div>
-                  )
-                })
-              }
+                        </Link>
+                      </li>
+                      ))
+                    }
+                    </ul>
+                  </div>
+                )
+              })
+            }
             </ul>
-        }
+          }/>
+
+        <Route path={this.props.match.url + "/"} 
+          render={()=>
+            <Race lockRace={this.lockRace} {...this.props.race} />
+          }/>
+        </Switch>
       </section>
     )
   }

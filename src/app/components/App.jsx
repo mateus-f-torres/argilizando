@@ -11,6 +11,7 @@ import UpdateFinalCharacter from '../containers/UpdateFinalCharacter.js';
 
 import 'Styles/App.scss';  // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
+import developer from 'Images/mateus-f-torres.svg'; 
 
 class App extends React.Component {
   constructor(props) {
@@ -21,12 +22,14 @@ class App extends React.Component {
   handleClick(e) {
     switch(e.target.name) {
 
+      // control if user should be able view creator page  
       case "create":
         if(this.props.done.race && this.props.done._class 
         && this.props.done.score && this.props.done.back) return;
         e.preventDefault();
         break;
 
+      // control if user should be able to view complete char page
       case "final":
         if(this.props.done.char) return;
         e.preventDefault();
@@ -42,7 +45,13 @@ class App extends React.Component {
               <img src={logo} />
               MENU
             </Link>
-          </header>  
+            <div id="outside-links">
+              <a href="https://github.com/mateus-f-torres/boneco-de-argila" >SOURCE</a>
+              <a href="https://github.com/mateus-f-torres/boneco-de-argila">
+                <img src={developer} />
+              </a>
+          </div>
+          </header>
           <main>
           <Switch>
             <Route exact path="/" render={()=><Menu done={this.props.done} handleClick={this.handleClick}/>}/>

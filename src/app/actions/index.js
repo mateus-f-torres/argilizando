@@ -15,10 +15,6 @@ export const displayRace = (choice) => ({
   choice
 })
 
-export const showRaceSelection = () => ({
-  type: 'DISPLAY_RACE_OPTIONS'
-})
-
 export const lockRace = (lock) => ({
   type: 'LOCK_RACE',
   lock
@@ -29,10 +25,6 @@ export const lockRace = (lock) => ({
 export const displayClass = (choice) => ({
   type: 'DISPLAY_CHOSEN_CLASS',
   choice
-})
-
-export const showClassSelection = () => ({
-  type: 'DISPLAY_CLASS_OPTIONS'
 })
 
 export const lockClass = (lock) => ({
@@ -71,10 +63,6 @@ export const lockScore = (lock) => ({
 export const displayBackground = (choice) => ({
   type: 'DISPLAY_CHOSEN_BACKGROUND',
   choice
-})
-
-export const showBackgroundSelection = () => ({
-  type: 'DISPLAY_BACKGROUND_OPTIONS'
 })
 
 export const lockBackground = (lock) => ({

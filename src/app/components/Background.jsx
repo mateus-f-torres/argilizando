@@ -43,7 +43,9 @@ const Background = (props: Props) => (
     </ul>
     <div className="horizontal-line no-bottom" />
     <div className="lock-box">
-      <button onClick={props.hideBack}>Back</button>
+      <Link to="/background">
+        <button>Back</button>
+      </Link>
       <Link to="/">
         <button onClick={props.lockBack}>Lock</button>
       </Link>

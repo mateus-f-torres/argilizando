@@ -49,7 +49,7 @@ const Race = (props: Props) => {
   return (
   <figure className="card">
     <h2>{props.name}</h2>
-    <img className="race-img" src={img} />
+    <img className="race-img" src={`/${img}`} />
     <div className="horizontal-line" />
     <ul id="race-stats" className="stats">
     <h3>Race Stats</h3>
@@ -81,7 +81,9 @@ const Race = (props: Props) => {
     </ul>
     <div className="horizontal-line no-bottom" />
     <div className="lock-box">
-      <button onClick={props.hideRace}>Back</button>
+      <Link to="/race">
+        <button>Back</button>
+      </Link>
       <Link to="/">
         <button onClick={props.lockRace}>Lock</button>
       </Link>

@@ -1,17 +1,6 @@
 import CLASSES from '../data/classes.js';
 
-/*
-
-show key
-  switch for rendering either classes options or chosen class
-
-chosen key
-  key for accessing chosen class data
-
-*/
-
 const defaultClass = {
-  show: false,
   chosen: "none"
 };
 
@@ -36,17 +25,11 @@ const classReducer = (state = defaultClass, action) => {
             // return new copy of gameClass state
             // with the chosen class data
             
-            return Object.assign({}, state, {
-              show: true,
-              chosen: item
-            })
+            return Object.assign({}, state, { chosen: item })
           }
         }
       }
       break;
-
-    case 'DISPLAY_CLASS_OPTIONS':
-      return Object.assign({}, state, defaultClass)
 
     default:
       return state;

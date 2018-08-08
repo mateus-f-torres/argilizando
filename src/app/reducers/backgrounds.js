@@ -1,17 +1,6 @@
 import BACKGROUNDS from '../data/backgrounds.js';
 
-/*
-
-show key
-  switch for rendering either background options or chosen background
-
-chosen key
-  key for accessing chosen background data
-
-*/
-
 const defaultBack = {
-  show: false,
   chosen: "none"
 };
 
@@ -36,17 +25,11 @@ const backgroundReducer = (state = defaultBack, action) => {
             // return new copy of background state
             // with the chosen background data
 
-            return Object.assign({}, state, {
-              show: true,
-              chosen: item
-            })
+            return Object.assign({}, state, { chosen: item });
           }
         }
       }
       break;
-
-    case 'DISPLAY_BACKGROUND_OPTIONS':
-      return Object.assign({}, state, defaultBack)
 
     default:
       return state;

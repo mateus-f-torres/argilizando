@@ -1,17 +1,6 @@
 import RACES from '../data/races.js';
 
-/*
-
-show key
-  switch for rendering either races options or chosen race
-
-chosen key
-  key for accessing chosen race data
-
-*/
-
 const defaultRace = {
-  show: false,
   chosen: "none"
 };
 
@@ -36,17 +25,11 @@ const raceReducer = (state = defaultRace, action) => {
             // return new copy of race state
             // with the chosen race data
 
-            return Object.assign({}, state, {
-              show: true,
-              chosen: item
-            })
+            return Object.assign({}, state, { chosen: item });
           }
         }
       }
       break;
-
-    case 'DISPLAY_RACE_OPTIONS':
-      return Object.assign({}, state, defaultRace)
 
     default:
       return state;
