@@ -4,7 +4,6 @@ import { Link, Route, Switch} from 'react-router-dom';
 import Race from './Race.jsx';
 import RACES from '../data/races.js';
 
-import human from "Images/human.png";
 import 'Styles/PlayerRace.scss';
 
 type Props = {};
