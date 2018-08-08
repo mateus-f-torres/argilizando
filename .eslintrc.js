@@ -55,6 +55,9 @@ module.exports = {
         ],
         "spaced-comment": [
           "error", "always", { "exceptions": ["@flow"]}
-        ]
+        ],
+      "require-jsdoc": [
+        "off"
+      ]
     }
 }

@@ -2,14 +2,12 @@
 // __test__/FileName.test.js
 
 describe('Unit Tests', () => {
-  
   describe("Basic Assertions", () => {
-    
     test('#toBeNull, #not.toBeNull', () => {
       expect(null).toBeNull();
-      expect(1).not.toBeNull();   
+      expect(1).not.toBeNull();
     });
-    
+
     test('#toBeDefined, #toBeUndefined', () => {
       expect('hi').toBeDefined();
       expect(undefined).toBeUndefined();
@@ -19,9 +17,9 @@ describe('Unit Tests', () => {
       expect(false).toBeFalsy();
       expect(5).toBeTruthy();
       expect(0).toBeFalsy();
-    })
+    });
   });
-  
+
   describe("Equality", () => {
   // there is no == matcher
     test('#toEqual, deep equal each value', () => {
@@ -36,17 +34,15 @@ describe('Unit Tests', () => {
       expect({a: 5}).not.toBe({a: 5});
     });
     test('#toStrictEqual, all keys and object type itself', () => {
-      
+
     });
   });
   describe("Comparisons", () => {});
-  
-  describe("Strings", () => {});
-  
-  describe("Arrays", () => {});
-  
-  describe("Objects", () => {});
-  
-});
 
+  describe("Strings", () => {});
+
+  describe("Arrays", () => {});
+
+  describe("Objects", () => {});
+});
 describe("Functional Tests", () => {});

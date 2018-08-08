@@ -5,35 +5,32 @@ const defaultBack = {
 };
 
 const backgroundReducer = (state = defaultBack, action) => {
-  switch(action.type) {
+  switch (action.type) {
+  case 'DISPLAY_CHOSEN_BACKGROUND':
 
-    case 'DISPLAY_CHOSEN_BACKGROUND':
+    // loop through each category inside backgrounds data
 
-      // loop through each category inside backgrounds data
+    for (let category of BACKGROUNDS) {
+      let options = category[1];
 
-      for(let category of BACKGROUNDS) {
-        let options = category[1];
+      // loop through each item inside said category options
 
-        // loop through each item inside said category options
+      for (let item of options) {
+        // find the one that matches user choice
 
-        for(let item of options) {
+        if (item.id == action.choice) {
+          // return new copy of background state
+          // with the chosen background data
 
-          // find the one that matches user choice
-
-          if(item.id == action.choice) {
-
-            // return new copy of background state
-            // with the chosen background data
-
-            return Object.assign({}, state, { chosen: item });
-          }
+          return Object.assign({}, state, { chosen: item });
         }
       }
-      break;
+    }
+    break;
 
-    default:
-      return state;
+  default:
+    return state;
   }
-}
+};
 
 export default backgroundReducer;
