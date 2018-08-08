@@ -1,7 +1,7 @@
 {
   "name": "boneco-de-argila",
   "version": "0.9.11",
-  "description": "helper for my homebrew dnd 5e games",
+  "description": "React Redux SPA with React-Router for homebrew DnD 5e character creation",
   "author": "mateus-f-torres",
   "license": "MIT",
   "private": true,
