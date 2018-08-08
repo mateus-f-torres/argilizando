@@ -73,7 +73,7 @@ class GameClass extends React.Component {
     return (
     <figure className="card">
       <h2>{this.props.id}</h2>
-      <img className="class-img" src={img} />
+      <img className="class-img" src={`/${img}`} />
 
       <ul id="class-stats" className="stats">
       <h3>Class Stats</h3>
@@ -165,7 +165,9 @@ class GameClass extends React.Component {
 
       <div className="horizontal-line no-bottom" />
       <div className="lock-box">
-        <button onClick={this.props.hideClass}>Back</button>
+        <Link to="/class">
+          <button>Back</button>
+        </Link>
         <Link to="/">
           <button onClick={this.props.lockClass}>Lock</button>
         </Link>
