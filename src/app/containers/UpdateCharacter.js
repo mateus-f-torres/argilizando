@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { getCharacter, changeName, changeSkill, changeLang, changeTool, changePack, changeGear, changeBody, changePast, lockCharacter } from '../actions';
-import { showMenu } from '../actions';
 import PlayerCharacter from '../components/PlayerCharacter.jsx';
 
 const mapStateToProps = (state) => {
   return {
     race: state.done.race,
-    gameClass: state.done.gameClass,
+    _class: state.done._class,
     score: state.done.score,
-    background: state.done.background,
+    back: state.done.back,
     char: state.character
   };
 };
@@ -42,19 +42,15 @@ const mapDispatchToProps = (dispatch) => {
     changeName: (name) => {
       dispatch(changeName(name))
     },
-    backBtn: () => {
-      dispatch(showMenu())
-    },
     lockCharacter: (character) => {
       dispatch(lockCharacter(character))
-      dispatch(showMenu())
     }
   }
 }
 
-const UpdateCharacter = connect(
+const UpdateCharacter = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerCharacter);
+)(PlayerCharacter));
 
 export default UpdateCharacter;

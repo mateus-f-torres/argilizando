@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { showMain, showEquip, showSpell, showTrait, showBody, showPast } from '../actions';
 import FinalCharacter from '../components/FinalCharacter.jsx';
 
 const mapStateToProps = (state) => {
   return {
-    char: state.done.character,
+    char: state.done.char,
     show: state.final
   };
 };
@@ -32,9 +33,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const UpdateFinalCharacter = connect(
+const UpdateFinalCharacter = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(FinalCharacter);
+)(FinalCharacter));
 
 export default UpdateFinalCharacter;

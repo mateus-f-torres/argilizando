@@ -1,5 +1,6 @@
 //@flow
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import Score from './Score.jsx';
 import ABILITIES from '../data/scores.js';
 
@@ -83,7 +84,9 @@ class AbilityScores extends React.Component {
         <div className="horizontal-line no-bottom" />
         <div className="lock-box">
           <button onClick={this.resetBtn}>Reset</button>
-          <button onClick={this.lockScore}>Lock</button>
+          <Link to="/">
+            <button onClick={this.lockScore}>Lock</button>
+          </Link>
         </div>
     </section>
     );

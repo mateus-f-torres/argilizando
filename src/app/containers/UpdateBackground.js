@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { displayBackground, showBackgroundSelection, lockBackground } from '../actions';
-import { showMenu } from '../actions';
 import PlayerBackground from '../components/PlayerBackground.jsx';
 
 const mapStateToProps = (state) => {
@@ -20,14 +20,13 @@ const mapDispatchToProps = (dispatch) => {
     },
     lockBack: (background) => {
       dispatch(lockBackground(background))
-      dispatch(showMenu())
     }
   }
 }
 
-const UpdateBackground = connect(
+const UpdateBackground = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerBackground);
+)(PlayerBackground));
 
 export default UpdateBackground;

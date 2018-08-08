@@ -1,45 +1,13 @@
 /*
 
-1. Menu actions
-2. Player Race actions
-3. Player Class actions
-4. Ability Score actions
-5. Player Background actions
-6. Character Create actions
-7. Final Character screen actions
+1. Player Race actions
+2. Player Class actions
+3. Ability Score actions
+4. Player Background actions
+5. Character Create actions
+6. Final Character screen actions
 
 */
-
-// MENU
-
-export const showMenu = () => ({
-  type: 'SHOW_MENU_SCREEN'
-})
-
-export const showRace = () => ({
-  type: 'SHOW_RACE_SCREEN'
-})
-
-export const showScore = () => ({
-  type: 'SHOW_SCORE_SCREEN'
-})
-
-export const showClass = () => ({
-  type: 'SHOW_CLASS_SCREEN'
-})
-
-export const showBackground = () => ({
-  type: 'SHOW_BACKGROUND_SCREEN'
-})
-
-export const showCharacter = () => ({
-  type: 'SHOW_CHARACTER_SCREEN'
-})
-
-export const showFinal = () => ({
-  type: 'SHOW_FINAL_SCREEN'
-})
-
 // RACE
 
 export const displayRace = (choice) => ({

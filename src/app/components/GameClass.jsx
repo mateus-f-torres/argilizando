@@ -1,5 +1,6 @@
 //@flow
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { select } from 'd3-selection';
 
 import barbarian from "Images/barbarian.svg";
@@ -165,7 +166,9 @@ class GameClass extends React.Component {
       <div className="horizontal-line no-bottom" />
       <div className="lock-box">
         <button onClick={this.props.hideClass}>Back</button>
-        <button onClick={this.props.lockClass}>Lock</button>
+        <Link to="/">
+          <button onClick={this.props.lockClass}>Lock</button>
+        </Link>
       </div>
     </figure>
     )

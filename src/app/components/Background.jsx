@@ -1,5 +1,6 @@
 //@flow
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -43,7 +44,9 @@ const Background = (props: Props) => (
     <div className="horizontal-line no-bottom" />
     <div className="lock-box">
       <button onClick={props.hideBack}>Back</button>
-      <button onClick={props.lockBack}>Lock</button>
+      <Link to="/">
+        <button onClick={props.lockBack}>Lock</button>
+      </Link>
     </div>
   </figure>
 );

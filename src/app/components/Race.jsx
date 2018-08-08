@@ -1,5 +1,6 @@
 //@flow
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 import human from "Images/human.png";
 import halfling from "Images/halfling.png";
@@ -81,7 +82,9 @@ const Race = (props: Props) => {
     <div className="horizontal-line no-bottom" />
     <div className="lock-box">
       <button onClick={props.hideRace}>Back</button>
-      <button onClick={props.lockRace}>Lock</button>
+      <Link to="/">
+        <button onClick={props.lockRace}>Lock</button>
+      </Link>
     </div>
   </figure>
   )

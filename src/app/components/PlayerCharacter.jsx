@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import OptionSkill from './OptionSkill.jsx';
 import OptionLang from './OptionLang.jsx';
 import OptionTool from './OptionTool.jsx';
@@ -19,16 +20,15 @@ class PlayerCharacter extends React.Component {
     this.handleChange_Gear = this.handleChange_Gear.bind(this);
     this.handleChange_Body = this.handleChange_Body.bind(this);
     this.handleChange_Past = this.handleChange_Past.bind(this);
-    this.backBtn = this.backBtn.bind(this);
     this.lockChar = this.lockChar.bind(this);
   }
  
   componentDidMount() {
     let character = {
       race: this.props.race,
-      _class: this.props.gameClass,
+      _class: this.props._class,
       score: this.props.score,
-      back: this.props.background
+      back: this.props.back
     }
     this.props.getCharacter(character);
   }
@@ -44,14 +44,14 @@ class PlayerCharacter extends React.Component {
   }
 
   handleChange_Skill(e){
-    let max = this.props.gameClass.skill[0];
+    let max = this.props._class.skill[0];
     if(this.props.race.id === "human") max++;
     this.props.changeSkill([e.target.name, max])
   }
 
   handleChange_Lang(e){
-    let max = this.props.background.lang
-      ? this.props.background.lang[0]
+    let max = this.props.back.lang
+      ? this.props.back.lang[0]
       : 0;
     max += this.props.race.lang.length;
     this.props.changeLang([e.target.name, max]);
@@ -74,13 +74,7 @@ class PlayerCharacter extends React.Component {
     this.props.changeName(e.target.value);
   }
 
-  backBtn(e) {
-    e.preventDefault();
-    this.props.backBtn();
-  }
-
   lockChar(e) {
-    e.preventDefault();
     this.props.lockCharacter(this.props.char);
   }
 
@@ -89,23 +83,23 @@ class PlayerCharacter extends React.Component {
     // display correct number of Skills user can chose
     // with extra 1 for human and adding 2 from background
     let maxSkills = this.props.race.id === "human"
-      ? this.props.gameClass.skill[0] + 1 + 2
-      : this.props.gameClass.skill[0] + 2;
+      ? this.props._class.skill[0] + 1 + 2
+      : this.props._class.skill[0] + 2;
 
     // display correct number of Languages user can chose
     // from background, race and _class if rogue or druid
-    let maxLangs = this.props.background.lang
-      ? this.props.background.lang[0]
+    let maxLangs = this.props.back.lang
+      ? this.props.back.lang[0]
       : 0;
     maxLangs += this.props.race.lang.length;
-    if(this.props.gameClass.id === "rogue" 
-    || this.props.gameClass.id === "druid") {
+    if(this.props._class.id === "rogue" 
+    || this.props._class.id === "druid") {
       maxLangs++;
     }
 
     // only show language selection if char has choice
     let langChoice = false;
-    if(this.props.background.lang 
+    if(this.props.back.lang 
     || this.props.race.id === "human" 
     || this.props.race.id === "tabaxi") {
       langChoice = true;
@@ -113,10 +107,10 @@ class PlayerCharacter extends React.Component {
 
     // only show tool selection if char has choice
     let toolChoice = false;
-    if(this.props.background._tools) {
-      if(this.props.background._tools.artisan
-      || this.props.background._tools.musical
-      || this.props.background._tools.gaming) {
+    if(this.props.back._tools) {
+      if(this.props.back._tools.artisan
+      || this.props.back._tools.musical
+      || this.props.back._tools.gaming) {
         toolChoice = true;
       }
     }
@@ -145,9 +139,9 @@ class PlayerCharacter extends React.Component {
           </thead>
           <tbody>
             <tr className="main">
-              <td>{this.props.background.id}</td>
+              <td>{this.props.back.id}</td>
               <td>{this.props.race.id}</td>
-              <td>{this.props.gameClass.id}</td>
+              <td>{this.props._class.id}</td>
             </tr>
           </tbody>
         </table>
@@ -238,14 +232,14 @@ class PlayerCharacter extends React.Component {
             max={maxSkills}
             skills={this.props.char.main.skills} 
             toggleSkill={this.handleChange_Skill}
-            classSkills={this.props.gameClass.skill[1]}
-            backSkills={this.props.background.skill}
-            classID={this.props.gameClass.id}/>
+            classSkills={this.props._class.skill[1]}
+            backSkills={this.props.back.skill}
+            classID={this.props._class.id}/>
 
           <OptionEquip
-            classOptions={this.props.gameClass._equip}
+            classOptions={this.props._class._equip}
             toggleGear={this.handleChange_Gear}
-            classPack={this.props.gameClass._pack}
+            classPack={this.props._class._pack}
             showPack={this.props.char.equip.pack.fromPack}
             togglePack={this.handleChange_Pack}/>
 
@@ -264,7 +258,7 @@ class PlayerCharacter extends React.Component {
               raceID={this.props.race.id}
               allTools={this.props.char.main.tools.all}
               toggleTool={this.handleChange_Tool}
-              backTools={this.props.background._tools}/>
+              backTools={this.props.back._tools}/>
           }
 
           <OptionBody 
@@ -273,15 +267,19 @@ class PlayerCharacter extends React.Component {
             change={this.handleChange_Body}/>
           
           <OptionPast 
-            back={this.props.background}
+            back={this.props.back}
             past={this.props.char.past} 
             change={this.handleChange_Past}/>
 
           <div className="horizontal-line no-bottom" />
         </form>
         <div className="lock-box">
-          <button onClick={this.backBtn}>Back</button>
-          <button onClick={this.lockChar}>Lock</button>
+          <Link to="/">
+            <button>Back</button>
+          </Link>
+          <Link to="/">
+            <button onClick={this.lockChar}>Lock</button>
+          </Link>
         </div>
 
       </section>
