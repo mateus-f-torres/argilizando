@@ -1,14 +1,14 @@
 import packs from './packs.js';
 
 export const blankCharacter = {
-  name: "",
+  name: '',
   body: {},
   past: {},
   main: {
-    _class: "",
+    _class: '',
     level: 1, // 1st lvl character blank template
     hitPoints: 0,
-    hitDice: "",
+    hitDice: '',
     armorClass: 0,
     speed: 0,
     init: 0,
@@ -20,25 +20,25 @@ export const blankCharacter = {
     langs: [],
     tools: {
       prof: [],
-      all: {}
-    }
+      all: {},
+    },
   },
   equip: {
     gear: [],
     pack: {
       fromClass: [],
       fromPack: [],
-      fromBack: []
+      fromBack: [],
     },
     money: {
       cp: 0,
       sp: 0,
       gp: 0,
-      pp: 0
-    }
+      pp: 0,
+    },
   },
   spell: {},
-  traits: []
+  traits: [],
 };
 
 const getCharMain = ({race, _class, score, back}) => {
@@ -49,7 +49,7 @@ const getCharMain = ({race, _class, score, back}) => {
     speed: race.speed,
     init: score.dex[1],
     prof: 2, // 1st lvl proficiency bonus
-    score: {...score}
+    score: {...score},
   };
 
   // Character Hit Points and Hit Dice
@@ -60,23 +60,23 @@ const getCharMain = ({race, _class, score, back}) => {
     switch (_class.hp) {
     case 1: // no player class
       main.hitPoints = 4;
-      main.hitDice = "1d4";
+      main.hitDice = '1d4';
       break;
     case 2: // sorcerer and wizard
       main.hitPoints = 6;
-      main.hitDice = "1d6";
+      main.hitDice = '1d6';
       break;
     case 3: // bard, cleric, druid, monk, rogue and warlock
       main.hitPoints = 8;
-      main.hitDice = "1d8";
+      main.hitDice = '1d8';
       break;
     case 4: // fighter, paladin and ranger
       main.hitPoints = 10;
-      main.hitDice = "1d10";
+      main.hitDice = '1d10';
       break;
     case 5: // barbarian
       main.hitPoints = 12;
-      main.hitDice = "1d12";
+      main.hitDice = '1d12';
       break;
     default:
       break;
@@ -85,18 +85,18 @@ const getCharMain = ({race, _class, score, back}) => {
     main.hitPoints += score.con[1];
 
     // dwarf's racial trait === +1 Hit Points per lvl
-    if (race.id === "dwarf") main.hitPoints += main.level;
+    if (race.id === 'dwarf') main.hitPoints += main.level;
   }
 
   // Character Saving Throws
   {
     let defaultSaves = [
-      ["str", "Strength", 0],
-      ["dex", "Dexterity", 0],
-      ["con", "Constitution", 0],
-      ["int", "Intelligence", 0],
-      ["wis", "Wisdom", 0],
-      ["cha", "Charisma", 0]
+      ['str', 'Strength', 0],
+      ['dex', 'Dexterity', 0],
+      ['con', 'Constitution', 0],
+      ['int', 'Intelligence', 0],
+      ['wis', 'Wisdom', 0],
+      ['cha', 'Charisma', 0],
     ];
 
     main.saves = defaultSaves.map((item) => {
@@ -115,24 +115,24 @@ const getCharMain = ({race, _class, score, back}) => {
   // Character Skills
   {
     let defaultSkills = [
-      ["dex", "Acrobatics", 0],
-      ["wis", "Animal Handling", 0],
-      ["int", "Arcana", 0],
-      ["str", "Athletics", 0],
-      ["cha", "Deception", 0],
-      ["int", "History", 0],
-      ["wis", "Insight", 0],
-      ["cha", "Intimidation", 0],
-      ["int", "Investigation", 0],
-      ["wis", "Medicine", 0],
-      ["int", "Nature", 0],
-      ["wis", "Perception", 0],
-      ["cha", "Performance", 0],
-      ["cha", "Persuasion", 0],
-      ["int", "Religion", 0],
-      ["dex", "Sleight of Hand", 0],
-      ["dex", "Stealth", 0],
-      ["wis", "Survival", 0]
+      ['dex', 'Acrobatics', 0],
+      ['wis', 'Animal Handling', 0],
+      ['int', 'Arcana', 0],
+      ['str', 'Athletics', 0],
+      ['cha', 'Deception', 0],
+      ['int', 'History', 0],
+      ['wis', 'Insight', 0],
+      ['cha', 'Intimidation', 0],
+      ['int', 'Investigation', 0],
+      ['wis', 'Medicine', 0],
+      ['int', 'Nature', 0],
+      ['wis', 'Perception', 0],
+      ['cha', 'Performance', 0],
+      ['cha', 'Persuasion', 0],
+      ['int', 'Religion', 0],
+      ['dex', 'Sleight of Hand', 0],
+      ['dex', 'Stealth', 0],
+      ['wis', 'Survival', 0],
     ];
 
     main.skills = defaultSkills.map((item) => {
@@ -149,7 +149,7 @@ const getCharMain = ({race, _class, score, back}) => {
 
     // get Passive Perception based on Perception Skill bonus + 10
     for (const item of main.skills) {
-      if (item[1] === "Perception") main.pp = 10 + item[2];
+      if (item[1] === 'Perception') main.pp = 10 + item[2];
     }
   }
 
@@ -157,37 +157,37 @@ const getCharMain = ({race, _class, score, back}) => {
   {
     let defaultLangs = [
       // standard langs, open to the player
-      [true, "Common", false],
-      [true, "Dwarvish", false],
-      [true, "Elvish", false],
-      [true, "Giant", false],
-      [true, "Gnomish", false],
-      [true, "Goblin", false],
-      [true, "Halfling", false],
-      [true, "Orc", false],
+      [true, 'Common', false],
+      [true, 'Dwarvish', false],
+      [true, 'Elvish', false],
+      [true, 'Giant', false],
+      [true, 'Gnomish', false],
+      [true, 'Goblin', false],
+      [true, 'Halfling', false],
+      [true, 'Orc', false],
       // exotic langs, locked away by default
-      [false, "Abyssal", false],
-      [false, "Celestial", false],
-      [false, "Draconic", false],
-      [false, "Deep Speech", false],
-      [false, "Infernal", false],
-      [false, "Auran", false],
-      [false, "Aquan", false],
-      [false, "Ignan", false],
-      [false, "Terran", false],
-      [false, "Sylvan", false],
-      [false, "Undercommon", false],
-      [false, "Thieves' Cant", false, false],
-      [false, "Druidic", false, false]
+      [false, 'Abyssal', false],
+      [false, 'Celestial', false],
+      [false, 'Draconic', false],
+      [false, 'Deep Speech', false],
+      [false, 'Infernal', false],
+      [false, 'Auran', false],
+      [false, 'Aquan', false],
+      [false, 'Ignan', false],
+      [false, 'Terran', false],
+      [false, 'Sylvan', false],
+      [false, 'Undercommon', false],
+      [false, 'Thieves\' Cant', false, false],
+      [false, 'Druidic', false, false],
     ];
 
     main.langs = defaultLangs.map((item) => {
       // control for druids
-      if (item[1] === "Druidic" && _class.id === "druid") {
+      if (item[1] === 'Druidic' && _class.id === 'druid') {
         return [item[0], item[1], true, true];
 
         // control for rogues
-      } else if (item[1] === "Thieves' Cant" && _class.id === "rogue") {
+      } else if (item[1] === 'Thieves\' Cant' && _class.id === 'rogue') {
         return [item[0], item[1], true, true];
 
         // find thoses languages already spoken by race
@@ -205,57 +205,57 @@ const getCharMain = ({race, _class, score, back}) => {
       prof: [],
       all: {
         artisan: [
-          ["Alchemist's supplies"],
-          ["Brewer's supplies"],
-          ["Calligrapher's supplies"],
-          ["Carpenter's tools"],
-          ["Cartographer's tools"],
-          ["Cobbler's tools"],
-          ["Cook's utensils"],
-          ["Glassblower's tools"],
-          ["Jeweler's tools"],
-          ["Leatherworker's tools"],
-          ["Mason's tools"],
-          ["Painter's supplies"],
-          ["Potter's tools"],
-          ["Smith's tools"],
-          ["Tinker's tools"],
-          ["Weaver's tools"],
-          ["Woodcarver's tools"]
+          ['Alchemist\'s supplies'],
+          ['Brewer\'s supplies'],
+          ['Calligrapher\'s supplies'],
+          ['Carpenter\'s tools'],
+          ['Cartographer\'s tools'],
+          ['Cobbler\'s tools'],
+          ['Cook\'s utensils'],
+          ['Glassblower\'s tools'],
+          ['Jeweler\'s tools'],
+          ['Leatherworker\'s tools'],
+          ['Mason\'s tools'],
+          ['Painter\'s supplies'],
+          ['Potter\'s tools'],
+          ['Smith\'s tools'],
+          ['Tinker\'s tools'],
+          ['Weaver\'s tools'],
+          ['Woodcarver\'s tools'],
         ],
         gaming: [
-          ["Dice set"],
-          ["Dragonchess set"],
-          ["Playing card set"],
-          ["Three-Dragon Ante set"]
+          ['Dice set'],
+          ['Dragonchess set'],
+          ['Playing card set'],
+          ['Three-Dragon Ante set'],
         ],
         musical: [
-          ["Bagpipes"],
-          ["Drum"],
-          ["Dulcimer"],
-          ["Flute"],
-          ["Lute"],
-          ["Lyre"],
-          ["Horn"],
-          ["Pan flute"],
-          ["Shawm"],
-          ["Viol"]
+          ['Bagpipes'],
+          ['Drum'],
+          ['Dulcimer'],
+          ['Flute'],
+          ['Lute'],
+          ['Lyre'],
+          ['Horn'],
+          ['Pan flute'],
+          ['Shawm'],
+          ['Viol'],
         ],
         unique: [
-          ["Disguise kit"],
-          ["Forgery kit"],
-          ["Herbalism kit"],
-          ["Navigator's tools"],
-          ["Poisoner's kit"],
-          ["Thieves' tools"],
-          ["Vehicles (land)"],
-          ["Vehicles (water)"]
-        ]
-      }
+          ['Disguise kit'],
+          ['Forgery kit'],
+          ['Herbalism kit'],
+          ['Navigator\'s tools'],
+          ['Poisoner\'s kit'],
+          ['Thieves\' tools'],
+          ['Vehicles (land)'],
+          ['Vehicles (water)'],
+        ],
+      },
     };
 
     // only for gnomes
-    if (race.id === "gnome") defaultTools.prof.push("Tinker's tools");
+    if (race.id === 'gnome') defaultTools.prof.push('Tinker\'s tools');
 
     // always just one
     if (_class.tool) defaultTools.prof.push(_class.tool[0]);
@@ -281,20 +281,20 @@ const getCharEquip = ({race, _class, score, back}, prof) => {
     pack: {
       fromClass: [],
       fromPack: [],
-      fromBack: [...back.equip]
+      fromBack: [...back.equip],
     },
     money: {
       cp: 0,
       sp: 0,
       gp: back._gold,
-      pp: 0
-    }
+      pp: 0,
+    },
   };
 
   // only for classes without choice of pack
   if (_class._pack.length === 1) {
     equip.pack.fromPack = [...packs[_class._pack[0]]];
-  };
+  }
 
   // add default equip from class
   _class.equip.forEach((group, i, full) => {
@@ -386,35 +386,35 @@ const getCharBody = ({race}) => {
   return {
     race: race.id,
     size: race.size,
-    gender: "",
-    age: "",
-    height: "",
-    weight: "",
-    eyes: "",
-    skin: "",
-    hair: ""
+    gender: '',
+    age: '',
+    height: '',
+    weight: '',
+    eyes: '',
+    skin: '',
+    hair: '',
   };
 };
 
 const getCharPast = ({back}) => {
   return {
     background: back.name,
-    personality: "",
-    ideals: "",
-    bonds: "",
-    flaws: ""
+    personality: '',
+    ideals: '',
+    bonds: '',
+    flaws: '',
   };
 };
 
 export const getChar = (char) => {
   return Object.assign(
     {},
-    { body: getCharBody(char) },
-    { past: getCharPast(char) },
-    { main: getCharMain(char) },
-    { equip: getCharEquip(char, 2) }, // 2 === 1st lvl proficiency bonus
-    { spell: getCharSpell(char, 2) }, // 2 === 1st lvl proficiency bonus
-    { traits: getCharTraits(char) }
+    {body: getCharBody(char)},
+    {past: getCharPast(char)},
+    {main: getCharMain(char)},
+    {equip: getCharEquip(char, 2)}, // 2 === 1st lvl proficiency bonus
+    {spell: getCharSpell(char, 2)}, // 2 === 1st lvl proficiency bonus
+    {traits: getCharTraits(char)}
   );
 };
 

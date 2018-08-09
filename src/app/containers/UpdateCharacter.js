@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import {
   getCharacter, changeName, changeSkill,
   changeLang, changeTool, changePack,
   changeGear, changeBody, changePast,
-  lockCharacter
+  lockCharacter,
 } from '../actions';
 import PlayerCharacter from '../components/PlayerCharacter.jsx';
 
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
     _class: state.done._class,
     score: state.done.score,
     back: state.done.back,
-    char: state.character
+    char: state.character,
   };
 };
 
@@ -49,7 +49,7 @@ const mapDispatchToProps = (dispatch) => {
     },
     lockCharacter: (character) => {
       dispatch(lockCharacter(character));
-    }
+    },
   };
 };
 

@@ -41,14 +41,14 @@ const Menu = (props) => {
             <span className={props.done.back ? "done" : null} />
           </button>
         </Link>
-        <Link to="/create" onClick={props.handleClick}>
-          <button name="create" className={!all ? "disabled" : null}>
+        <Link to="/create" name="create" onClick={props.handleClick}>
+          <button className={!all ? "disabled" : null}>
             5. Create
             <span className={props.done.char ? "done" : null} />
           </button>
         </Link>
-        <Link to="/play" onClick={props.handleClick}>
-          <button name="final" className={!final ? "disabled" : null}>
+        <Link to="/play" name="final" onClick={props.handleClick}>
+          <button className={!final ? "disabled" : null}>
             6. Play!
             <span className={final ? "done" : null} />
           </button>

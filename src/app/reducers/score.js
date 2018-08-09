@@ -21,7 +21,7 @@ const defaultScores = {
   con: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
   int: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
   wis: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
-  cha: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW]
+  cha: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
 };
 
 const scoreReducer = (state = defaultScores, action) => {
@@ -54,9 +54,9 @@ const scoreReducer = (state = defaultScores, action) => {
         : false;
       let newTotal = countPoints(score, state.total);
       return Object.assign({}, state, {
-        [ability]: [score, mod, cost, show]
+        [ability]: [score, mod, cost, show],
       }, {
-        total: newTotal
+        total: newTotal,
       });
     }
 
@@ -83,9 +83,9 @@ const scoreReducer = (state = defaultScores, action) => {
         : false;
       let newTotal = countPoints(score, state.total, true);
       return Object.assign({}, state, {
-        [ability]: [score, mod, cost, show]
+        [ability]: [score, mod, cost, show],
       }, {
-        total: newTotal
+        total: newTotal,
       });
     }
 
@@ -96,7 +96,7 @@ const scoreReducer = (state = defaultScores, action) => {
       ? getDescription(ability, mod)
       : false;
     return Object.assign({}, state, {
-      [ability]: [score, mod, cost, show]
+      [ability]: [score, mod, cost, show],
     });
 
   case 'RESET_ALL_ABILITY_SCORES':

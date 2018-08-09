@@ -7,13 +7,13 @@ type Props = {
   score: number,
   mod: number,
   cost: number,
-  handleClick: (string) => number,
+  handleClick: () => void,
   show: string
 };
 
 const btn = "score-btn waves-effect waves-light";
 
-const Score = (props: Props) => (
+const CardScore = (props: Props) => (
   <li>
     <h4>{props.long}</h4>
     <h5 name={props.short}>
@@ -28,4 +28,4 @@ const Score = (props: Props) => (
   </li>
 );
 
-export default Score;
+export default CardScore;

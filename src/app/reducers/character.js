@@ -1,6 +1,6 @@
 import packs from '../data/packs.js';
-import { blankCharacter } from '../data/character.js';
-import { getChar } from '../data/character.js';
+import {blankCharacter} from '../data/character.js';
+import {getChar} from '../data/character.js';
 
 const characterReducer = (state = blankCharacter, action) => {
   let key; let value;
@@ -14,51 +14,51 @@ const characterReducer = (state = blankCharacter, action) => {
     [key, value] = [...action.pair];
     return Object.assign({},
       state,
-      { body: changeBody(state.body, key, value) }
+      {body: changeBody(state.body, key, value)}
     );
 
   case 'CHANGE_CHARACTER_PAST':
     [key, value] = [...action.pair];
     return Object.assign({},
       state,
-      { past: changePast(state.past, key, value) }
+      {past: changePast(state.past, key, value)}
     );
 
   case 'CHANGE_CHARACTER_SKILL':
     [change, max] = [...action.pair];
     return Object.assign({},
       state,
-      { main: toggleSkill(state.main, change, max) }
+      {main: toggleSkill(state.main, change, max)}
     );
 
   case 'CHANGE_CHARACTER_LANG':
     [change, max] = [...action.pair];
     return Object.assign({},
       state,
-      { main: toggleLang(state.main, change, max) }
+      {main: toggleLang(state.main, change, max)}
     );
 
   case 'CHANGE_CHARACTER_TOOL':
     [key, value] = [...action.pair];
     return Object.assign({},
       state,
-      { main: toggleTool(state.main, key, value) }
+      {main: toggleTool(state.main, key, value)}
     );
 
   case 'CHANGE_CHARACTER_PACK':
     return Object.assign({},
       state,
-      { equip: changePack(state.equip, action.pack) }
+      {equip: changePack(state.equip, action.pack)}
     );
 
   case 'CHANGE_CHARACTER_GEAR':
     return Object.assign({},
       state,
-      { equip: changeGear(state.equip, [...action.gear]) }
+      {equip: changeGear(state.equip, [...action.gear])}
     );
 
   case 'CHANGE_CHARACTER_NAME':
-    return Object.assign({}, state, { name: action.name });
+    return Object.assign({}, state, {name: action.name});
 
   default:
     return state;
@@ -105,9 +105,9 @@ const toggleSkill = (main, change, max) => {
   });
 
   // change Passive Perception if needed
-  if (change === "Perception") {
+  if (change === 'Perception') {
     for (const item of main.skills) {
-      if (item[1] === "Perception") main.pp = 10 + item[2];
+      if (item[1] === 'Perception') main.pp = 10 + item[2];
     }
   }
 

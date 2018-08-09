@@ -1,14 +1,34 @@
 //@flow
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import Score from './Score.jsx';
+import CardScore from './CardScore.jsx';
 import ABILITIES from '../data/scores.js';
 
 import 'Styles/AbilityScores.scss';
 
-type Props = {};
+type Props = {
+  total: number,
+  str: Array<mixed>,
+  dex: Array<mixed>,
+  con: Array<mixed>,
+  int: Array<mixed>,
+  wis: Array<mixed>,
+  cha: Array<mixed>,
+  scorePlus: (string) => void,
+  scoreMinus: (string) => void,
+  toggleText: (string) => void,
+  resetBtn: () => void,
+  lockScore: (score: {
+    str: Array<mixed>,
+    dex: Array<mixed>,
+    con: Array<mixed>,
+    int: Array<mixed>,
+    wis: Array<mixed>,
+    cha: Array<mixed>
+  }) => void
+};
 
-class AbilityScores extends React.Component {
+class PlayerScore extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -66,7 +86,7 @@ class AbilityScores extends React.Component {
               let arr = this.props[name[0]];
               let [score, mod, cost, show] = arr;
 
-              return (<Score
+              return (<CardScore
                 key={name[0]}
                 short={name[0]}
                 long={name[1]}
@@ -91,4 +111,4 @@ class AbilityScores extends React.Component {
   }
 };
 
-export default AbilityScores;
+export default PlayerScore;

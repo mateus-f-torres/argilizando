@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import { Link, Route, Switch} from 'react-router-dom';
-import Race from './Race.jsx';
+import CardRace from './CardRace.jsx';
 import RACES from '../data/races.js';
 
 import 'Styles/PlayerRace.scss';
@@ -64,7 +64,7 @@ class PlayerRace extends React.Component {
 
           <Route path={this.props.match.url + "/"}
             render={()=>
-              <Race lockRace={this.lockRace} {...this.props.race} />
+              <CardRace lockRace={this.lockRace} {...this.props.race} />
             }/>
         </Switch>
       </section>

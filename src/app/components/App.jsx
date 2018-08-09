@@ -1,3 +1,4 @@
+//@flow
 import * as React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 
@@ -13,14 +14,25 @@ import 'Styles/App.scss'; // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
 import developer from 'Images/mateus-f-torres.svg';
 
-class App extends React.Component {
-  constructor(props) {
+type Props = {
+  done: {
+    race: boolean | {},
+    _class: boolean | {},
+    score: boolean | {},
+    back: boolean | {},
+    char: boolean | {}
+  }
+};
+
+
+class App extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    (this:any).handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e) {
-    switch (e.target.name) {
+  handleClick(e : SyntheticEvent<HTMLButtonElement>) {
+    switch (e.currentTarget.name) {
     case "create":
       // control if user should be able view creator page
       if (this.props.done.race && this.props.done._class

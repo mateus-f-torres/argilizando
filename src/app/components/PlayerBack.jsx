@@ -1,14 +1,14 @@
 //@flow
 import * as React from 'react';
 import { Link, Route, Switch} from 'react-router-dom';
-import Background from './Background.jsx';
+import CardBack from './CardBack.jsx';
 import BACKGROUNDS from '../data/backgrounds.js';
 
 import 'Styles/PlayerBackground.scss';
 
 type Props = {};
 
-class PlayerBackground extends React.Component {
+class PlayerBack extends React.Component {
   constructor(props: Props) {
     super(props);
     this.showBack = this.showBack.bind(this);
@@ -69,7 +69,7 @@ class PlayerBackground extends React.Component {
 
           <Route path={this.props.match.url + "/"}
             render={()=>
-              <Background lockBack={this.lockBack} {...this.props.chosen}/>
+              <CardBack lockBack={this.lockBack} {...this.props.chosen}/>
             }/>
         </Switch>
       </section>
@@ -77,4 +77,4 @@ class PlayerBackground extends React.Component {
   }
 }
 
-export default PlayerBackground;
+export default PlayerBack;

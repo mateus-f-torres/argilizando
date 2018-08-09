@@ -2,7 +2,7 @@
 // __test__/FileName.test.js
 
 describe('Unit Tests', () => {
-  describe("Basic Assertions", () => {
+  describe('Basic Assertions', () => {
     test('#toBeNull, #not.toBeNull', () => {
       expect(null).toBeNull();
       expect(1).not.toBeNull();
@@ -20,29 +20,29 @@ describe('Unit Tests', () => {
     });
   });
 
-  describe("Equality", () => {
+  describe('Equality', () => {
   // there is no == matcher
     test('#toEqual, deep equal each value', () => {
       expect(2 + 3).toEqual(5);
-      expect("5").not.toEqual(5);
-      expect({a: 5, b: "name"}).toEqual({b: "name", a: 5});
+      expect('5').not.toEqual(5);
+      expect({a: 5, b: 'name'}).toEqual({b: 'name', a: 5});
     });
     test('#toBe, use Object.is to check reference', () => {
       expect(7 - 2).toBe(5);
-      expect(2 * "6").toBe(12);
-      expect(5 + "5").not.toBe(10);
+      expect(2 * '6').toBe(12);
+      expect(5 + '5').not.toBe(10);
       expect({a: 5}).not.toBe({a: 5});
     });
     test('#toStrictEqual, all keys and object type itself', () => {
 
     });
   });
-  describe("Comparisons", () => {});
+  describe('Comparisons', () => {});
 
-  describe("Strings", () => {});
+  describe('Strings', () => {});
 
-  describe("Arrays", () => {});
+  describe('Arrays', () => {});
 
-  describe("Objects", () => {});
+  describe('Objects', () => {});
 });
-describe("Functional Tests", () => {});
+describe('Functional Tests', () => {});

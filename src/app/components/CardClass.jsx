@@ -24,9 +24,10 @@ type Props = {
   tool?: Array<string>,
   equip: Array<Array<string>>,
   special: Array<Array<string>>,
+  lockClass: () => void
 };
 
-class GameClass extends React.Component<Props> {
+class CardClass extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.createBarChart = this.createBarChart.bind(this);
@@ -188,4 +189,4 @@ class GameClass extends React.Component<Props> {
   }
 };
 
-export default GameClass;
+export default CardClass;

@@ -26,14 +26,15 @@ type Props = {
   name: string,
   height: string,
   weight: string,
-  age: number[],
+  age: Array<number>,
   size: string,
   speed: number,
-  lang: string[],
-  special: Array<string[]>
+  lang: Array<string>,
+  special: Array<string[]>,
+  lockRace: () => void
 };
 
-const Race = (props: Props) => {
+const CardRace = (props: Props) => {
   let img = "";
   switch (props.id) {
   case "human": img = human; break;
@@ -102,4 +103,4 @@ const Race = (props: Props) => {
   );
 };
 
-export default Race;
+export default CardRace;

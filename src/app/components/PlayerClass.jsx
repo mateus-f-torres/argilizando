@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import { Link, Route, Switch} from 'react-router-dom';
-import GameClass from './GameClass.jsx';
+import CardClass from './CardClass.jsx';
 import CLASSES from '../data/classes.js';
 
 import 'Styles/PlayerClass.scss';
@@ -74,7 +74,7 @@ class PlayerClass extends React.Component {
 
           <Route path={this.props.match.url + "/"}
             render={()=>
-              <GameClass lockClass={this.lockClass} {...this.props.chosen}/>
+              <CardClass lockClass={this.lockClass} {...this.props.chosen}/>
             }/>
         </Switch>
       </section>

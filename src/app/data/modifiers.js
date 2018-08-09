@@ -29,7 +29,7 @@ export default {
       catch a falling person. 
       Performs the work of multiple people in physical labor`],
     [5,
-      `Pinnacle of brawn, able to out-lift several people in combined effort.`]
+      `Pinnacle of brawn, able to out-lift several people in combined effort.`],
   ],
 
   dex: [
@@ -57,7 +57,7 @@ export default {
       Capable of dodging a small number of thrown objects`],
     [5,
       `Moves like water, reacting to all situations with almost no effort. 
-      Capable of dodging a large number of thrown objects`]
+      Capable of dodging a large number of thrown objects`],
   ],
 
   con: [
@@ -84,7 +84,7 @@ export default {
       `Very difficult to wear down, almost never feels fatigue`],
     [5,
       `Tireless paragon of physical endurance. 
-      Almost never gets sick, even to the most virulent diseases`]
+      Almost never gets sick, even to the most virulent diseases`],
   ],
 
   int: [
@@ -115,7 +115,7 @@ export default {
     [4,
       `Highly knowledgeable, probably the smartest person many people know`],
     [5,
-      `Famous as a sage and genius. Able to make Holmesian leaps of logic`]
+      `Famous as a sage and genius. Able to make Holmesian leaps of logic`],
   ],
 
   wis: [
@@ -141,7 +141,7 @@ export default {
     [4,
       `Reads people and situations very well, almost unconsciously`],
     [5,
-      `Nearly prescient, able to reason far beyond logic`]
+      `Nearly prescient, able to reason far beyond logic`],
   ],
 
   cha: [
@@ -176,7 +176,7 @@ export default {
       convince them of their own beliefs and arguments`],
     [5,
       `Renowned for wit, personality, and/or looks. 
-      May be a natural born leader`]
-  ]
+      May be a natural born leader`],
+  ],
 };
 

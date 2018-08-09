@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import {
   incrementScore, decrementScore, toggleDescription,
-  resetScore, lockScore
+  resetScore, lockScore,
 } from '../actions';
-import AbilityScores from '../components/AbilityScores.jsx';
+import PlayerScore from '../components/PlayerScore.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
     con: state.score.con,
     int: state.score.int,
     wis: state.score.wis,
-    cha: state.score.cha
+    cha: state.score.cha,
   };
 };
 
@@ -34,13 +34,13 @@ const mapDispatchToProps = (dispatch) => {
     },
     lockScore: (chosen) => {
       dispatch(lockScore(chosen));
-    }
+    },
   };
 };
 
 const UpdateScores = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(AbilityScores));
+)(PlayerScore));
 
 export default UpdateScores;

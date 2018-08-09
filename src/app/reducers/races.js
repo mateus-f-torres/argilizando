@@ -1,7 +1,7 @@
 import RACES from '../data/races.js';
 
 const defaultRace = {
-  chosen: "none"
+  chosen: 'none',
 };
 
 const raceReducer = (state = defaultRace, action) => {
@@ -22,7 +22,7 @@ const raceReducer = (state = defaultRace, action) => {
           // return new copy of race state
           // with the chosen race data
 
-          return Object.assign({}, state, { chosen: item });
+          return Object.assign({}, state, {chosen: item});
         }
       }
     }

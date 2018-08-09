@@ -1,7 +1,7 @@
 import CLASSES from '../data/classes.js';
 
 const defaultClass = {
-  chosen: "none"
+  chosen: 'none',
 };
 
 const classReducer = (state = defaultClass, action) => {
@@ -22,7 +22,7 @@ const classReducer = (state = defaultClass, action) => {
           // return new copy of gameClass state
           // with the chosen class data
 
-          return Object.assign({}, state, { chosen: item });
+          return Object.assign({}, state, {chosen: item});
         }
       }
     }

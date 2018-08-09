@@ -4,9 +4,10 @@ module.exports = {
     "node": true,
     "commonjs": true,
     "es6": true,
-    "jquery": true
+    "jquery": true,
+    "jest": true
   },
-  "extends": ["google", "plugin:react/recommended"],
+  "extends": ["eslint:recommended","google", "plugin:react/recommended"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 8,
@@ -28,30 +29,14 @@ module.exports = {
       "warn"
     ],
     "indent": [
-      "warn",
+      "error",
       2
-    ],
-    "quotes": [
-      "off"
-    ],
-    "no-var": [
-      "warn"
-    ],
-    "semi": [
-      "warn",
-      "always"
     ],
     "react/jsx-uses-react": [
       "warn"
     ],
     "react/jsx-uses-vars": [
       "warn"
-    ],
-    "object-curly-spacing": [
-      "off"
-    ],
-    "comma-dangle": [
-      "error", "never"
     ],
     "spaced-comment": [
       "error", "always", { "exceptions": ["@flow"]}

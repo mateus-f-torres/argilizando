@@ -1,7 +1,7 @@
 import BACKGROUNDS from '../data/backgrounds.js';
 
 const defaultBack = {
-  chosen: "none"
+  chosen: 'none',
 };
 
 const backgroundReducer = (state = defaultBack, action) => {
@@ -22,7 +22,7 @@ const backgroundReducer = (state = defaultBack, action) => {
           // return new copy of background state
           // with the chosen background data
 
-          return Object.assign({}, state, { chosen: item });
+          return Object.assign({}, state, {chosen: item});
         }
       }
     }
