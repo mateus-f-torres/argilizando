@@ -4,7 +4,6 @@ import { Link, Route, Switch} from 'react-router-dom';
 import Race from './Race.jsx';
 import RACES from '../data/races.js';
 
-import human from "Images/human.png";
 import 'Styles/PlayerRace.scss';
 
 type Props = {};
@@ -35,41 +34,41 @@ class PlayerRace extends React.Component {
                 <h2>Player Race</h2>
                 <div className="horizontal-line no-bottom" />
               </div>
-            {
-              RACES.map((category, i) => {
-                let [type, options] = [...category];
+              {
+                RACES.map((category, i) => {
+                  let [type, options] = [...category];
 
-                return (
-                  <div key={i}>
-                    <h3>{type}</h3>
-                    <div className="horizontal-line no-bottom" />
-                    <ul>
-                    {
-                      options.map((item) => (
-                      <li key={item.id}>
-                        <Link to={this.props.match.url + "/" + item.id}>
-                          <button name={item.id} onClick={this.showRace}>
-                            {item.id}
-                          </button>
-                        </Link>
-                      </li>
-                      ))
-                    }
-                    </ul>
-                  </div>
-                )
-              })
-            }
+                  return (
+                    <div key={i}>
+                      <h3>{type}</h3>
+                      <div className="horizontal-line no-bottom" />
+                      <ul>
+                        {
+                          options.map((item) => (
+                            <li key={item.id}>
+                              <Link to={this.props.match.url + "/" + item.id}>
+                                <button name={item.id} onClick={this.showRace}>
+                                  {item.id}
+                                </button>
+                              </Link>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  );
+                })
+              }
             </ul>
           }/>
 
-        <Route path={this.props.match.url + "/"} 
-          render={()=>
-            <Race lockRace={this.lockRace} {...this.props.race} />
-          }/>
+          <Route path={this.props.match.url + "/"}
+            render={()=>
+              <Race lockRace={this.lockRace} {...this.props.race} />
+            }/>
         </Switch>
       </section>
-    )
+    );
   }
 }
 

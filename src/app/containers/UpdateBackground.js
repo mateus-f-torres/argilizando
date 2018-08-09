@@ -12,13 +12,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getBack: (background) => {
-      dispatch(displayBackground(background))
+      dispatch(displayBackground(background));
     },
     lockBack: (background) => {
-      dispatch(lockBackground(background))
+      dispatch(lockBackground(background));
     }
-  }
-}
+  };
+};
 
 const UpdateBackground = withRouter(connect(
   mapStateToProps,

@@ -1,7 +1,15 @@
 //@flow
 import * as React from 'react';
 
-type Props = {};
+type Props = {
+  long: string,
+  short: string,
+  score: number,
+  mod: number,
+  cost: number,
+  handleClick: (string) => number,
+  show: string
+};
 
 const btn = "score-btn waves-effect waves-light";
 
@@ -18,6 +26,6 @@ const Score = (props: Props) => (
     <button onClick={props.handleClick} className={btn} name="?">?</button>
     {props.show && <p>{props.show}</p>}
   </li>
-)
+);
 
 export default Score;

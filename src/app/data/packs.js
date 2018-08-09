@@ -78,5 +78,5 @@ export default {
     "10 sheets of parchment",
     "litte bag of sand",
     "small knife"
-  ],
-}
+  ]
+};

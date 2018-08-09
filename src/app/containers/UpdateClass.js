@@ -12,13 +12,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getClass: (choice) => {
-      dispatch(displayClass(choice))
+      dispatch(displayClass(choice));
     },
     lockClass: (gameClass) => {
-      dispatch(lockClass(gameClass))
+      dispatch(lockClass(gameClass));
     }
-  }
-}
+  };
+};
 
 const UpdateClass = withRouter(connect(
   mapStateToProps,

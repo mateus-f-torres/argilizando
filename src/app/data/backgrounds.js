@@ -5,7 +5,11 @@ export default [
       {
         id: "acolyte",
         name: "Acolyte",
-        pitch: "You have spent your life in the service of a temple to a specific god or pantheon of gods. You act as an intermediary between the realm of the holy and the mortal world, performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine.",
+        pitch: `You have spent your life in the service 
+        of a temple to a specific god or pantheon of gods. 
+        You act as an intermediary between the realm of the holy 
+        and the mortal world, performing sacred rites and offering sacrifices
+        in order to conduct worshipers into the presence of the divine.`,
         personality: "I quote sacred texts",
         ideals: "I always try to help those in need",
         bonds: "I will protect my faiths' temples",
@@ -20,12 +24,13 @@ export default [
           ["set of common clothes"],
           ["belt pouch containing 15gp"]
         ],
-        _gold : 15
+        _gold: 15
       },
       {
         id: "heretic",
         name: "Heretic",
-        pitch: "You believe in a doctrine outlawed by your faith, taught to you in secret by other heretics.",
+        pitch: `You believe in a doctrine outlawed by your faith,
+        taught to you in secret by other heretics.`,
         personality: "The end of the world is nigh",
         ideals: "I must teach others my forbidden doctrine",
         bonds: "I used to be friends with a cleric",
@@ -46,7 +51,9 @@ export default [
       {
         id: "noble",
         name: "Noble",
-        pitch: "You understand wealth, power, and privilege. You carry a noble title, and your family owns land, collects taxes, and wields significant political influence.",
+        pitch: `You understand wealth, power, and privilege. 
+        You carry a noble title, and your family owns land,
+        collects taxes, and wields significant political influence.`,
         personality: "My favor, once lost, is lost forever",
         ideals: "Blood runs thicker than water",
         bonds: "My loyalty to my familty is unwavering",
@@ -68,7 +75,10 @@ export default [
       {
         id: "sage",
         name: "Sage",
-        pitch: "You spent years learning the lore of the multiverse. You scoured manuscripts, studied scrolls, and listened to the greatest experts on the subjects that interest you. Your efforts have made you a master in your fields of study.",
+        pitch: `You spent years learning the lore of the multiverse. 
+        You scoured manuscripts, studied scrolls, and listened to 
+        the greatest experts on the subjects that interest you. 
+        Your efforts have made you a master in your fields of study.`,
         personality: "I'm horribly awkward in social situations",
         ideals: "Emotions must not cloud logic",
         bonds: "My duty is to protect my students",
@@ -79,7 +89,8 @@ export default [
           ["bottle of black ink"],
           ["quill"],
           ["small knife"],
-          ["letter from a dead colleague posing a question you have not yet been able to answer"],
+          [`letter from a dead colleague posing a question 
+            you have not yet been able to answer`],
           ["set of common clothes"],
           ["belt pouch containing 10gp"]
         ],
@@ -93,7 +104,11 @@ export default [
       {
         id: "charlatan",
         name: "Charlatan",
-        pitch: "You have always had a way with people. You know what makes them tick, you can tease out their hearts' desires after a few minutes of conversation, and with a few leading questions you can read them like they were children's books.",
+        pitch: `You have always had a way with people. 
+        You know what makes them tick, you can tease out 
+        their hearts' desires after a few minutes of conversation, 
+        and with a few leading questions you can read them 
+        like they were children's books.`,
         personality: "I pocket anything of value",
         ideals: "I never run the same con twice",
         bonds: "I have a child who doesn't know me",
@@ -103,7 +118,10 @@ export default [
         equip: [
           ["set of fine clothes"],
           ["diguise kit"],
-          ["10 bottles with colored liquid", "or set of weighted dice", "or deck of marked cards", "or ring of an imaginary duke"],
+          ["10 bottles with colored liquid",
+            "or set of weighted dice",
+            "or deck of marked cards",
+            "or ring of an imaginary duke"],
           ["belt pouch containing 15g"]
         ],
         _gold: 15,
@@ -114,7 +132,10 @@ export default [
       {
         id: "criminal",
         name: "Criminal",
-        pitch: "You are an experienced criminal with a history of breaking the law. You have spent a lot of time among other criminals and still have contacts within the criminal underworld.",
+        pitch: `You are an experienced criminal 
+        with a history of breaking the law. 
+        You have spent a lot of time among other criminals 
+        and still have contacts within the criminal underworld.`,
         personality: "I blow up quite easily",
         ideals: "Honour among thieves",
         bonds: "My gains go to support my family",
@@ -135,7 +156,9 @@ export default [
       {
         id: "entertainer",
         name: "Entertainer",
-        pitch: "You thrive in front of an audience. You know how to entrance them, entertain them, and even inspire them.",
+        pitch: `You thrive in front of an audience. 
+        You know how to entrance them, entertain them, 
+        and even inspire them.`,
         personality: "I know a story for every situation",
         ideals: "I'm only in it for the money and fame",
         bonds: "I want to be famous, whatever it takes",
@@ -157,7 +180,11 @@ export default [
       {
         id: "guild",
         name: "Guild Artisan",
-        pitch: "You are a member of an artisan's guild, skilled in a particular field and closely associated with other artisans. You are a well-established part of the mercantile world, freed by talent and wealth from the constraints of a feudal social order.",
+        pitch: `You are a member of an artisan's guild, 
+        skilled in a particular field and closely associated 
+        with other artisans. You are a well-established part of 
+        the mercantile world, freed by talent and wealth 
+        from the constraints of a feudal social order.`,
         personality: "I like to talk at length about my profession",
         ideals: "I work hard to be the best at my art",
         bonds: "One day I will prove my greatness to my guild",
@@ -179,7 +206,10 @@ export default [
       {
         id: "sailor",
         name: "Sailor",
-        pitch: "You sailed on a seagoing vessel for years. In that time, you faced clown mighty storms, monsters of the deep, and those who wanted to sink your craft to the bottomless depths.",
+        pitch: `You sailed on a seagoing vessel for years. 
+        In that time, you faced clown mighty storms, 
+        monsters of the deep, and those who wanted to sink 
+        your craft to the bottomless depths.`,
         personality: "My language is as foul as an otyugh nest",
         ideals: "We all do the work, we all share the rewards",
         bonds: "I'll always remember my first ship",
@@ -201,7 +231,10 @@ export default [
       {
         id: "soldier",
         name: "Soldier",
-        pitch: "War has been your life for as long as you care to remember. You trained as a youth, studied the use of weapons and armor, learned basic survival techniques, including how to stay alive on the battlefield.",
+        pitch: `War has been your life for as long as you care to remember. 
+        You trained as a youth, studied the use of weapons and armor, 
+        learned basic survival techniques, including how to stay alive 
+        on the battlefield.`,
         personality: "I can stare down a hell hound without flinching",
         ideals: "We lay down our lives in defense of others",
         bonds: "My honor is my life",
@@ -220,7 +253,7 @@ export default [
           gaming: true,
           unique: ["Vehicles (land)"]
         }
-      },
+      }
     ]
   ],
   [
@@ -248,7 +281,8 @@ export default [
       {
         id: "polymorphed",
         name: "Polymorphed",
-        pitch: "You were transformed into an animal or monster and lived that way for years.",
+        pitch: `You were transformed into an animal or monster 
+        and lived that way for years.`,
         personality: "I often speak in my head by accident",
         ideals: "To survive you must be the smartest or strongest",
         bonds: "I carry a piece of my old body",
@@ -266,7 +300,9 @@ export default [
       {
         id: "hermit",
         name: "Hermit",
-        pitch: "You lived in seclusion—either in a sheltered community such as a monastery, or entirely alone—for a formative part of your life.",
+        pitch: `You lived in seclusion either in a sheltered community 
+        such as a monastery, or entirely alone for a formative part 
+        of your life.`,
         personality: "I'm oblivious to etiquette or social expectations",
         ideals: "Inquiry and curiosity are pillars of progress",
         bonds: "I'm still seeking enlightenment",
@@ -289,7 +325,13 @@ export default [
       {
         id: "outlander",
         name: "Outlander",
-        pitch: "You grew up in the wilds, far from civilization and the comforts of town and technology. You've witnessed the migration of herds larger than forests, survived weather more extreme than any city-dweller could comprehend, and enjoyed the solitude of being the only thinking creature for miles in any direction.",
+        pitch: `You grew up in the wilds, far from civilization 
+        and the comforts of town and technology. 
+        You've witnessed the migration of herds larger than forests, 
+        survived weather more extreme than any 
+        city-dweller could comprehend, and 
+        enjoyed the solitude of being the only thinking creature 
+        for miles in any direction.`,
         personality: "I was, in fact, raised by wolves",
         ideals: "The strongest are meant to rule",
         bonds: "I am the last of my tribe",
@@ -308,7 +350,7 @@ export default [
         _tools: {
           musical: true
         }
-      },
+      }
     ]
   ],
   [
@@ -317,7 +359,12 @@ export default [
       {
         id: "folk",
         name: "Folk Hero",
-        pitch: "You come from a humble social rank, but you are destined for so much more. Already the people of your home village regard you as their champion, and your destiny calls you to stand against the tyrants and monsters that threaten the common folk everywhere.",
+        pitch: `You come from a humble social rank, 
+        but you are destined for so much more. 
+        Already the people of your home village regard you 
+        as their champion, and your destiny calls you to 
+        stand against the tyrants and monsters that threaten 
+        the common folk everywhere.`,
         personality: "I judge people by their actions",
         ideals: "People deserve dignity and respect",
         bonds: "I protect those who cannot protect themselves",
@@ -340,7 +387,8 @@ export default [
       {
         id: "legendary",
         name: "Legendary Lineage",
-        pitch: "You have heroes in your family background and the story of your ancestors is known far and wide.",
+        pitch: `You have heroes in your family background and 
+        the story of your ancestors is known far and wide.`,
         personality: "I like those that fawn over me",
         ideals: "I will uphold my family name",
         bonds: "I wield my ancestor's weapon",
@@ -363,7 +411,11 @@ export default [
       {
         id: "retired",
         name: "Retired Adventurer",
-        pitch: "You have lived a life of adventure already and retired to something quieter. You thought you were done and to that end may have given away all your old gear and spent all your treasure. Little did you know something would pull you back into your old life.",
+        pitch: `You have lived a life of adventure already 
+        and retired to something quieter. You thought you were done 
+        and to that end may have given away all your old gear 
+        and spent all your treasure. Little did you know 
+        something would pull you back into your old life.`,
         personality: "Younger ones need my advice",
         ideals: "We don't need to kill each other",
         bonds: "I never found that item that I wanted",
@@ -385,7 +437,9 @@ export default [
       {
         id: "urchin",
         name: "Urchin",
-        pitch: "You grew up on the streets alone, orphaned, and poor. You had no one to watch over you or to provide for you, so you learned to provide for yourself.",
+        pitch: `You grew up on the streets alone, orphaned, and poor. 
+        You had no one to watch over you or to provide for you, 
+        so you learned to provide for yourself.`,
         personality: "I hide scraps of food in my pockets",
         ideals: "The rich need to suffer",
         bonds: "I sponsor an orphanage that helped me",
@@ -407,5 +461,5 @@ export default [
       }
     ]
   ]
-]
+];
 

@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { resetScore, incrementScore, decrementScore, toggleDescription, lockScore } from '../actions';
+import {
+  incrementScore, decrementScore, toggleDescription,
+  resetScore, lockScore
+} from '../actions';
 import AbilityScores from '../components/AbilityScores.jsx';
 
 const mapStateToProps = (state) => {
@@ -18,22 +21,22 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     scorePlus: (ability) => {
-      dispatch(incrementScore(ability))
+      dispatch(incrementScore(ability));
     },
     scoreMinus: (ability) => {
-      dispatch(decrementScore(ability))
+      dispatch(decrementScore(ability));
     },
     toggleText: (ability) => {
-      dispatch(toggleDescription(ability))
+      dispatch(toggleDescription(ability));
     },
     resetBtn: () => {
-      dispatch(resetScore())
+      dispatch(resetScore());
     },
     lockScore: (chosen) => {
-      dispatch(lockScore(chosen))
+      dispatch(lockScore(chosen));
     }
-  }
-}
+  };
+};
 
 const UpdateScores = withRouter(connect(
   mapStateToProps,

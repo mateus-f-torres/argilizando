@@ -18,19 +18,19 @@ class AbilityScores extends React.Component {
 
   handleClick(e) {
     e.preventDefault();
-    let type = e.target.name; 
+    let type = e.target.name;
     let h5 = e.target.parentNode.childNodes[1];
     let ability = h5.attributes.name.value;
-    switch(type) {
-      case "+":
-        this.props.scorePlus(ability);
-        break;
-      case "-":
-        this.props.scoreMinus(ability);
-        break;
-      case "?":
-        this.props.toggleText(ability);
-        break;
+    switch (type) {
+    case "+":
+      this.props.scorePlus(ability);
+      break;
+    case "-":
+      this.props.scoreMinus(ability);
+      break;
+    case "?":
+      this.props.toggleText(ability);
+      break;
     }
   }
 
@@ -40,18 +40,17 @@ class AbilityScores extends React.Component {
 
   lockScore() {
     let score = {
-    str: [this.props.str[0], this.props.str[1]],
-    dex: [this.props.dex[0], this.props.dex[1]],
-    con: [this.props.con[0], this.props.con[1]],
-    int: [this.props.int[0], this.props.int[1]],
-    wis: [this.props.wis[0], this.props.wis[1]],
-    cha: [this.props.cha[0], this.props.cha[1]]
-    }
+      str: [this.props.str[0], this.props.str[1]],
+      dex: [this.props.dex[0], this.props.dex[1]],
+      con: [this.props.con[0], this.props.con[1]],
+      int: [this.props.int[0], this.props.int[1]],
+      wis: [this.props.wis[0], this.props.wis[1]],
+      cha: [this.props.cha[0], this.props.cha[1]]
+    };
     this.props.lockScore(score);
   }
 
   render() {
-
     return (
       <section id="SCORE">
         <h2>Ability Scores</h2>
@@ -76,8 +75,7 @@ class AbilityScores extends React.Component {
                 cost={cost}
                 show={show}
                 handleClick={this.handleClick}
-              />)
-
+              />);
             })
           }
         </ul>
@@ -88,7 +86,7 @@ class AbilityScores extends React.Component {
             <button onClick={this.lockScore}>Lock</button>
           </Link>
         </div>
-    </section>
+      </section>
     );
   }
 };

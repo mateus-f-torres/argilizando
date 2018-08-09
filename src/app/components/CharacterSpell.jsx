@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 const CharacterSpell = (props) => {
-
   return (
     <figure className="card">
       <h3>Spellcasting</h3>
@@ -69,15 +68,15 @@ const CharacterSpell = (props) => {
         </li>
         {
           props.ritual
-          ? <li>
-            <cite>* Ritual Casting</cite>
-            <p className="note">
+            ? <li>
+              <cite>* Ritual Casting</cite>
+              <p className="note">
               10min to cast.
-              <br />
+                <br />
               doesn't expend a spell slot.
-            </p>
+              </p>
             </li>
-          : null
+            : null
         }
         <li>
           <cite>* Spell Focus</cite>
@@ -89,7 +88,7 @@ const CharacterSpell = (props) => {
         </li>
       </ul>
     </figure>
-  )
-}
+  );
+};
 
 export default CharacterSpell;

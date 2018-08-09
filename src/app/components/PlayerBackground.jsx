@@ -34,46 +34,46 @@ class PlayerBackground extends React.Component {
                 <h2>Player Background</h2>
                 <div className="horizontal-line no-bottom" />
               </div>
-            {
-              BACKGROUNDS.map((category, i) => {
-                let [type, options] = [...category];
+              {
+                BACKGROUNDS.map((category, i) => {
+                  let [type, options] = [...category];
 
-                return (
-                  <div key={i}>
-                    <h3>{type}</h3>
-                    <div className="horizontal-line no-bottom" />
-                    <ul>
-                    {
-                      options.map((back) => (
-                        <li key={back.id}>
-                          <Link to={this.props.match.url + "/" + back.id}>
-                            <button name={back.id} onClick={this.showBack}
-                              id={
-                                back.id === "polymorphed"
-                                  ? "long"
-                                  : null
-                              }>
-                              {back.id}
-                            </button>
-                          </Link>
-                        </li>
-                      ))
-                    }
-                    </ul>
-                  </div>
-                )
-              })
-            }
+                  return (
+                    <div key={i}>
+                      <h3>{type}</h3>
+                      <div className="horizontal-line no-bottom" />
+                      <ul>
+                        {
+                          options.map((back) => (
+                            <li key={back.id}>
+                              <Link to={this.props.match.url + "/" + back.id}>
+                                <button name={back.id} onClick={this.showBack}
+                                  id={
+                                    back.id === "polymorphed"
+                                      ? "long"
+                                      : null
+                                  }>
+                                  {back.id}
+                                </button>
+                              </Link>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  );
+                })
+              }
             </ul>
           }/>
-          
+
           <Route path={this.props.match.url + "/"}
             render={()=>
               <Background lockBack={this.lockBack} {...this.props.chosen}/>
             }/>
         </Switch>
       </section>
-    )
+    );
   }
 }
 

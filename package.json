@@ -1,20 +1,20 @@
 {
   "name": "boneco-de-argila",
-  "version": "0.9.13",
-  "description": "helper for my homebrew dnd 5e games",
+  "version": "0.9.15",
+  "description": "React Redux SPA with React-Router for homebrew DnD 5e character creation",
   "author": "mateus-f-torres",
   "license": "MIT",
   "private": true,
   "scripts": {
     "predev": "NODE_ENV=development && yarn run babel dev_server.js -o server.js",
     "dev": "webpack --progress --config webpack.development.config.js",
-    "prestart": "NODE_ENV=development",
+    "prestart": "NODE_ENV=development && yarn lint && yarn test",
     "start": "webpack-dev-server --config  webpack.development.config.js --hot --open",
-    "prebuild": "NODE_ENV=production && yarn run babel prod_server.js -o server.js",
+    "prebuild": "NODE_ENV=production && yarn lint && yarn test && yarn run babel prod_server.js -o server.js",
     "build": "webpack --progress --config webpack.production.config.js",
     "serve": "node server.js",
     "eject": "",
-    "lint": "eslint src/",
+    "lint": "eslint src/ --ext .js",
     "test": "jest"
   },
   "dependencies": {

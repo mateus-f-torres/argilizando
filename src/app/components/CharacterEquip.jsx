@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 const CharacterEquip = (props) => {
-
   return (
     <figure className="card">
       <h3>Equipment</h3>
@@ -18,51 +17,7 @@ const CharacterEquip = (props) => {
           ))
         }
       </ul>
-      {
-        /*
-      
-      <h4>Weapons:</h4>
-      <ul className="stats">
-        {
-          props.weapons.map((item, i) => {
-            let [name, toHit, dmgDie, prof, dmgType] = [...item];
-            let extra = typeof item[5] === "object"
-              ? item[5]
-              : false;
 
-            return (
-            <li key={i}>
-              <p className="weapon">
-                <span>{name}.</span>
-                <br />
-                <span className="weapon-bonus">
-                  +{toHit}
-                </span>
-                <span>
-                  {`${dmgDie} + ${prof} ${dmgType}`}
-                </span>
-              </p>
-            </li>
-            )
-          })
-        }
-      </ul>
-      <h4>Armor:</h4>
-      <ul className="stats">
-        {
-          props.armor.map((item, i) => (
-            <li key={i}>
-              <p style={{marginTop: "0.3em", marginBottom: 0}}>
-                <span>{item[0]}</span>
-                <span className="close">{item[1]}</span>
-              </p>
-            </li>
-          ))
-        }
-      </ul>
-
-        */
-      }
       <h4>Money:</h4>
       <ul className="stats">
         <li>
@@ -104,7 +59,7 @@ const CharacterEquip = (props) => {
               : <li key={i}>
                 {
                   item.map((sub, j) => <span key={j}>{sub}<br/></span>)
-                }</li>
+                }</li>;
           })
         }
       </ul>
@@ -125,23 +80,28 @@ const CharacterEquip = (props) => {
         </li>
         <li>
           <cite>* Ammunition</cite>
-          <p className="note">after combat you can recover up to half your expended ammo.</p>
+          <p className="note">
+            after combat you can recover up to half your expended ammo.</p>
         </li>
         <li>
           <cite>* Finesse</cite>
-          <p className="note">chose between Strength or Dexterity on attack rolls.</p>
+          <p className="note">
+            chose between Strength or Dexterity on attack rolls.</p>
         </li>
         <li>
           <cite>* Heavy</cite>
-          <p className="note">small creature attack at disadvantage with this weapon.</p>
+          <p className="note">
+            small creature attack at disadvantage with this weapon.</p>
         </li>
         <li>
           <cite>* Light</cite>
-          <p className="note">two-weapon fighting is available with this weapon.</p>
+          <p className="note">
+            two-weapon fighting is available with this weapon.</p>
         </li>
         <li>
           <cite>* Loading</cite>
-          <p className="note">fire once per type of action, even with extra attack.</p>
+          <p className="note">
+            fire once per type of action, even with extra attack.</p>
         </li>
         <li>
           <cite>* Range</cite>
@@ -159,7 +119,8 @@ const CharacterEquip = (props) => {
         </li>
         <li>
           <cite>* Thrown</cite>
-          <p className="note">use same ability modifier as in melee attacks.</p>
+          <p className="note">
+            use same ability modifier as in melee attacks.</p>
         </li>
         <li>
           <cite>* Two-Handed</cite>
@@ -171,7 +132,7 @@ const CharacterEquip = (props) => {
         </li>
       </ul>
     </figure>
-  )
-}
+  );
+};
 
 export default CharacterEquip;

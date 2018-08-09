@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { showMain, showEquip, showSpell, showTrait, showBody, showPast } from '../actions';
+import {
+  showMain, showEquip, showSpell,
+  showTrait, showBody, showPast
+} from '../actions';
 import FinalCharacter from '../components/FinalCharacter.jsx';
 
 const mapStateToProps = (state) => {
@@ -13,22 +16,22 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     showMain: () => {
-      dispatch(showMain())
+      dispatch(showMain());
     },
     showEquip: () => {
-      dispatch(showEquip())
+      dispatch(showEquip());
     },
     showSpell: () => {
-      dispatch(showSpell())
+      dispatch(showSpell());
     },
     showTrait: () => {
-      dispatch(showTrait())
+      dispatch(showTrait());
     },
     showBody: () => {
-      dispatch(showBody())
+      dispatch(showBody());
     },
     showPast: () => {
-      dispatch(showPast())
+      dispatch(showPast());
     }
   };
 };

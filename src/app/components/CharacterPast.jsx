@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 const CharacterPast = (props) => {
-
   return (
     <figure className="card">
       <h3>Role Playing</h3>
@@ -15,19 +14,19 @@ const CharacterPast = (props) => {
       <p>{props.bonds}</p>
       <h4>Flaws:</h4>
       <p>{props.flaws}</p>
-        { props.extra &&
+      { props.extra &&
             <div>
               <h4>Extra Details:</h4>
               <ul className="dotted-list">
-                    {
-                      props.extra.map((desc, i) => (
-                        <li key={i}>{desc}</li>))
-                    }
+                {
+                  props.extra.map((desc, i) => (
+                    <li key={i}>{desc}</li>))
+                }
               </ul>
             </div>
-        }
+      }
     </figure>
-  )
-}
+  );
+};
 
 export default CharacterPast;

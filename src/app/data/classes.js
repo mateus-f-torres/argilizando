@@ -12,8 +12,9 @@ export default [
         versatile: 1,
         save: ["Strength", "Constitution"],
         skill: [
-          2, 
-          ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]
+          2,
+          ["Animal Handling", "Athletics",
+            "Intimidation", "Nature", "Perception", "Survival"]
         ],
         equip: [
           ["greataxe", "or 1 martial melee weapon"],
@@ -30,17 +31,24 @@ export default [
           [
             "Rage",
             "1st lvl",
-            "Enter a battle rage and gain advantage on Strength checks and saving throws, bonus damage with Strength based melee weapons and resistance to bludgeoning, piercing and slashing damage."
+            `Enter a battle rage and gain advantage on Strength checks 
+            and saving throws, bonus damage with 
+            Strength based melee weapons 
+            and resistance to bludgeoning, piercing and slashing damage.`
           ],
           [
             "Unarmored Defense",
             "1st lvl",
-            "When you are not wearing any armor your AC is 10 + Dexterity modifier + Constitution modifier."
+            `When you are not wearing any armor 
+            your AC is 10 + Dexterity modifier + Constitution modifier.`
           ],
           [
             "Reckless Attack",
             "2nd lvl",
-            "Throw aside all concern for defense and attack with fierce desperation to gain advantage on Strength based melee attack, but attack rolls against you also have advantage during that round."
+            `Throw aside all concern for defense and 
+            attack with fierce desperation to gain advantage 
+            on Strength based melee attack, but attack rolls against 
+            you also have advantage during that round.`
           ]
         ],
         _spell: false
@@ -56,7 +64,9 @@ export default [
         save: ["Strength", "Constitution"],
         skill: [
           2,
-          ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"]
+          ["Acrobatics", "Animal Handling",
+            "Athletics", "History", "Insight",
+            "Intimidation", "Perception", "Survival"]
         ],
         equip: [
           ["chain mail or", "leather, longbow + 20 arrows"],
@@ -74,17 +84,23 @@ export default [
           [
             "Fighting Style",
             "1st lvl",
-            "Adopt a particular style of fighting, for example: Archery for +2 bonus to ranged attack rolls, Great Weapon Fighting for the choice to reroll 1s and 2s when wielding a two-handed weapon or Two-Weapon Fighting for more damage when attacking with one weapon on each hand."
+            `Adopt a particular style of fighting, for example: 
+            Archery for +2 bonus to ranged attack rolls, 
+            Great Weapon Fighting for the choice to reroll 1s and 2s 
+            when wielding a two-handed weapon or 
+            Two-Weapon Fighting for more damage when attacking with 
+            one weapon on each hand.`
           ],
           [
             "Second Wind",
             "1st lvl",
-            "Catch you breath during combat and heal yourself for 1d10 + your lvl."
+            `Catch you breath during combat and heal yourself 
+            for 1d10 + your lvl.`
           ],
           [
             "Action Surge",
             "2nd lvl",
-            "Push yourself beyond your normal limit and gain an extra action."
+            `Push yourself beyond your normal limit and gain an extra action.`
           ]
         ],
         _spell: false
@@ -100,13 +116,14 @@ export default [
         save: ["Wisdom", "Charisma"],
         skill: [
           2,
-          ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]
+          ["Athletics", "Insight", "Intimidation",
+            "Medicine", "Persuasion", "Religion"]
         ],
         equip: [
           ["martial weapon + shield", "or 2 martial weapons"],
           ["5 javelins", "or 1 simple weapon"],
           ["chain mail + holy symbol"],
-          ["priest's pack", "or explorer's pack"],
+          ["priest's pack", "or explorer's pack"]
         ],
         _equip: [
           ["martial weapon + shield", "2 martial weapons"],
@@ -117,17 +134,24 @@ export default [
           [
             "Divine Smite",
             "2nd lvl",
-            "Expend spell slots to imbue your melee weapon attack with divine power to deal extra damage to the target, starting at 2d8."
+            `Expend spell slots to imbue your melee weapon attack 
+            with divine power to deal extra damage to the target, 
+            starting at 2d8.`
           ],
           [
             "Channel Divinity",
             "3rd lvl",
-            "Channel divine energy to fuel magical effects that change with each oath. From turning fiends and undeads to ensnaring a foe with spectral vines or maybe getting a +10 bonus to hit."
+            `Channel divine energy to fuel magical effects that 
+            changes with each oath. From turning fiends and undeads 
+            to ensnaring a foe with spectral vines or 
+            getting a +10 bonus to hit.`
           ],
           [
             "Auras",
             "6th lvl",
-            "Your mere presence around your allies is enough to give bonuses and advantage on saving throws or certain conditions. With each oath providing more types of auras."
+            `Your mere presence around your allies is enough to 
+            give bonuses and advantage on saving throws or certain conditions. 
+            With each oath providing more types of auras.`
           ]
         ],
         _spell: {
@@ -163,7 +187,7 @@ export default [
           ["scale mail", "or leather armor", "or chain mail"],
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["medium shield + holy symbol"],
-          ["priest's pack", "or explorer's pack"],
+          ["priest's pack", "or explorer's pack"]
         ],
         _equip: [
           ["mace", "warhammer"],
@@ -175,17 +199,20 @@ export default [
           [
             "Divine Domain",
             "1st lvl",
-            "Choose one domain related to your deity and gain a trait related to that domain. Knowledge, Life, Light, Nature, Tempest, Trickery, War, Forge and Grave are the available domains."
+            `Choose one domain related to your deity and gain a trait 
+            related to that domain. Knowledge, Life, Light, Nature, 
+            Tempest, Trickery, War, Forge and Grave are the available domains.`
           ],
           [
             "Domain Spells",
             "1st lvl",
-            "With each domain comes a different set of know spells."
+            `With each domain comes a different set of know spells.`
           ],
           [
             "Channel Divinity",
             "2nd lvl",
-            "Serve as a lighting rod for your deity on this plane and gain acess to unique magical powers for a brief amount of time."
+            `Serve as a lighting rod for your deity on this plane and 
+            gain acess to unique magical powers for a brief amount of time.`
           ]
         ],
         _spell: {
@@ -215,7 +242,7 @@ export default [
           ["rapier", "or longsword", "or 1 simple weapon"],
           ["1 musical instrument"],
           ["leather armor + dagger"],
-          ["diplomat's pack", "or entertainer's pack"],
+          ["diplomat's pack", "or entertainer's pack"]
         ],
         _equip: [
           ["rapier", "longsword", "1 simple weapon"]
@@ -225,17 +252,20 @@ export default [
           [
             "Bardic Inspiration",
             "1st lvl",
-            "Inspire others through stirring words or music and give a creature a d6 to use during rolls."
+            `Inspire others through stirring words or music and 
+            give a creature a d6 to use during rolls.`
           ],
           [
             "Jack of All Trades",
             "2nd lvl",
-            "Add half your proficiency bonus, rounded down, to any ability check that you are not proficient with."
+            `Add half your proficiency bonus, rounded down, to any 
+            ability check that you are not proficient with.`
           ],
           [
             "Song of Rest",
             "2nd lvl",
-            "Help wounded allies recover during a short rest by giving +1d6 hp to them."
+            `Help wounded allies recover during a short rest 
+            by giving +1d6 hp to them.`
           ]
         ],
         _spell: {
@@ -263,28 +293,34 @@ export default [
         save: ["Strength", "Dexterity"],
         skill: [
           3,
-          ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]
+          ["Acrobatics", "Athletics", "History",
+            "Insight", "Religion", "Stealth"]
         ],
         equip: [
           ["2 simple weapons + 10 darts"],
-          ["dungeoneer's pack", "or explorer's pack"],
+          ["dungeoneer's pack", "or explorer's pack"]
         ],
         _pack: ["dungeoneer", "explorer"],
         special: [
           [
             "Unarmored Defense",
             "1st lvl",
-            "While you are wearing no armor and not wielding a shield your AC is 10 + Dexterity modifier + Wisdom modifier."
+            `While you are wearing no armor and not wielding a shield 
+            your AC is 10 + Dexterity modifier + Wisdom modifier.`
           ],
           [
             "Martial Arts",
             "1st lvl",
-            "When attacking with an unarmed strike or monk weapons you can use Dexterity instead of Strength, roll a d4 instead of the normal damage die and make an unarmed strike as a bonus action."
+            `When attacking with an unarmed strike or monk weapons 
+            you can use Dexterity instead of Strength, 
+            roll a d4 instead of the normal damage die and 
+            make an unarmed strike as a bonus action.`
           ],
           [
             "Ki",
             "2nd lvl",
-            "Harness the mystic energy of ki and gain acess to special actions like Flurry of Blows, Patient Defense and Step of the Wind."
+            `Harness the mystic energy of ki and gain acess to special actions 
+            like Flurry of Blows, Patient Defense and Step of the Wind.`
           ]
         ],
         _spell: false
@@ -300,13 +336,14 @@ export default [
         save: ["Strength", "Dexterity"],
         skill: [
           3,
-          ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]
+          ["Animal Handling", "Athletics", "Insight",
+            "Investigation", "Nature", "Perception", "Stealth", "Survival"]
         ],
         equip: [
           ["scale mail", "or leather armor"],
           ["2 shortswords", "or 2 simple weapons"],
           ["longbow + 20 arrows"],
-          ["dungeoneer's pack", "or explorer's pack"],
+          ["dungeoneer's pack", "or explorer's pack"]
         ],
         _equip: [
           ["scale mail", "leather armor"],
@@ -317,17 +354,22 @@ export default [
           [
             "Favored Enemy",
             "1st lvl",
-            "Choose a type of creature to gain significant experience studying, tracking, hunting and even talking the same language as them."
+            `Choose a type of creature to gain significant experience 
+            studying, tracking, hunting and even talking 
+            the same language as them.`
           ],
           [
             "Natural Explorer",
             "1st lvl",
-            "Become familiar with a type of natural environment and adept at traveling, surviving and hunting in such environment."
+            `Become familiar with a type of natural environment and 
+            adept at traveling, surviving and hunting in such environment.`
           ],
           [
             "Primeval Awareness",
             "3rd lvl",
-            "Expend spell slots to magically sense if a certain type of creature is near you and your group even if the creature is hidden by magic."
+            `Expend spell slots to magically sense if a certain type 
+            of creature is near you and your group even if the creature 
+            is hidden by magic.`
           ]
         ],
         _spell: {
@@ -351,7 +393,10 @@ export default [
         save: ["Dexterity", "Intelligence"],
         skill: [
           4,
-          ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"]
+          ["Acrobatics", "Athletics", "Deception",
+            "Insight", "Intimidation", "Investigation",
+            "Perception", "Performance", "Persuasion",
+            "Sleight of Hand", "Stealth"]
         ],
         tool: ["Thieves' tools"],
         equip: [
@@ -359,7 +404,7 @@ export default [
           ["shortbow + 20 arrows", "or shortsword"],
           ["leather armor"],
           ["2 daggers + thieves' tools"],
-          ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"],
+          ["burglar's pack", "or dungeoneer's pack", "or explorer's pack"]
         ],
         _equip: [
           ["rapier", "shortsword"],
@@ -370,17 +415,18 @@ export default [
           [
             "Sneak Attack",
             "1st lvl",
-            "Exploit a foe's distraction and deal extra damage."
+            `Exploit a foe's distraction and deal extra damage.`
           ],
           [
             "Cunning Action",
             "2nd lvl",
-            "Quick thinking and agility allows you move and act quickly to take Dash, Disengage and Hide as bonus actions instead of actions."
+            `Quick thinking and agility allows you move and act quickly to 
+            take Dash, Disengage and Hide as bonus actions instead of actions.`
           ],
           [
             "Uncanny Dodge",
             "5th lvl",
-            "Use your reaction to halve an enemy attack's damage against you"
+            `Use your reaction to halve an enemy attack's damage against you`
           ]
         ],
         _spell: false
@@ -396,14 +442,15 @@ export default [
         save: ["Wisdom", "Charisma"],
         skill: [
           2,
-          ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]
+          ["Arcana", "Deception", "History",
+            "Intimidation", "Investigation", "Nature", "Religion"]
         ],
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
           ["leather armor"],
           ["1 simple weapon + 2 daggers"],
-          ["scholar's pack", "or dungeoneer's pack"],
+          ["scholar's pack", "or dungeoneer's pack"]
         ],
         _equip: [
           ["light crossbow + 20 bolts", "1 simple weapon"],
@@ -414,17 +461,20 @@ export default [
           [
             "Otherworldly Patron",
             "1st lvl",
-            "You have struck a bargain with an otherwordly being of your choice: the Archfey, the Fiend, the Great Old One, the Celestial, the Hexbalde are among some of them."
+            `You have struck a bargain with an otherwordly being 
+            of your choice: the Archfey, the Fiend, the Great Old One, 
+            the Celestial, the Hexblade are among some of them.`
           ],
           [
             "Pact Magic",
             "1st lvl",
-            "Gain magic bestowed on you by your chosen patron."
+            `Gain magic bestowed on you by your chosen patron.`
           ],
           [
             "Eldritch Invocations",
             "2nd lvl",
-            "In your study of occult lore, you have unearthed fragments of forbidden knowledge and gained access to special magical traits."
+            `In your study of occult lore, you have unearthed fragments of 
+            forbidden knowledge and gained access to special magical traits.`
           ]
         ],
         _spell: {
@@ -452,14 +502,15 @@ export default [
         save: ["Intelligence", "Wisdom"],
         skill: [
           2,
-          ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]
+          ["Arcana", "Animal Handling", "Insight",
+            "Medicine", "Nature", "Perception", "Religion", "Survival"]
         ],
         tool: ["Herbalism kit"],
         equip: [
           ["wooden shield", "or 1 simple weapon"],
           ["scimitar", "or 1 simple weapon"],
           ["leather armor + druidic focus"],
-          ["explorer's pack"],
+          ["explorer's pack"]
         ],
         _equip: [
           ["wooden shield", "1 simple weapon"],
@@ -470,17 +521,22 @@ export default [
           [
             "Wild Shape",
             "2nd lvl",
-            "Magically assume the shape of a beast that you have seen before to replace your statistics with that of the beast while retaining your mental faculties."
+            `Magically assume the shape of a beast that you have seen before 
+            to replace your statistics with that of the beast while 
+            retaining your mental faculties.`
           ],
           [
             "Druidic Magic",
             "1st lvl",
-            "Drawing on the essence of nature itself, you cast spells that shape that essence to your will."
+            `Drawing on the essence of nature itself, 
+            you cast spells that shape that essence to your will.`
           ],
           [
             "Druid Circles",
             "2nd lvl",
-            "Identify with a circle of druids like, for example, the Circle of the Land, the Circle of the Moon, the Circle of Dreams and the Circle of the Shepherd are among them."
+            `Identify with a circle of druids like, for example, 
+            the Circle of the Land, the Circle of the Moon, 
+            the Circle of Dreams or the Circle of the Shepherd.`
           ]
         ],
         _spell: {
@@ -503,13 +559,14 @@ export default [
         save: ["Constitution", "Charisma"],
         skill: [
           2,
-          ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]
+          ["Arcana", "Deception", "Insight",
+            "Intimidation", "Persuasion", "Religion"]
         ],
         equip: [
           ["light crossbow + 20 bolts", "or 1 simple weapon"],
           ["component pouch", "or arcane focus"],
           ["2 daggers"],
-          ["dungeoneer's pack", "or explorer's pack"],
+          ["dungeoneer's pack", "or explorer's pack"]
         ],
         _equip: [
           ["light crossbow + 20 bolts", "1 simple weapon"],
@@ -520,17 +577,21 @@ export default [
           [
             "Sorcerous Origin",
             "1st lvl",
-            "Choose a sorcerous origin that descries the source of your innate magical power: Draconic Bloodline, Wild Magic, Divine Soul, Shadow Magic and Storm Sorcery."
+            `Choose a sorcerous origin that describes the source of your 
+            innate magical power: Draconic Bloodline, Wild Magic, Divine Soul, 
+            Shadow Magic and Storm Sorcery.`
           ],
           [
             "Sorcery Points",
             "2nd lvl",
-            "Tap into a deep wellspring of magic within yourself to create a variety of magical effects."
+            `Tap into a deep wellspring of magic within yourself 
+            to create a variety of magical effects.`
           ],
           [
             "Metamagic",
             "3rd lvl",
-            "You gain the ability to twist and change your spells to suit your needs."
+            `You gain the ability to twist and change your spells 
+            to suit your needs.`
           ]
         ],
         _spell: {
@@ -553,13 +614,14 @@ export default [
         save: ["Intelligence", "Wisdom"],
         skill: [
           2,
-          ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]
+          ["Arcana", "History", "Insight",
+            "Investigation", "Medicine", "Religion"]
         ],
         equip: [
           ["quarterstaff", "or 1 dagger"],
           ["component pouch", "or arcane focus"],
           ["spellbook"],
-          ["scholar's pack", "or explorer's pack"],
+          ["scholar's pack", "or explorer's pack"]
         ],
         _equip: [
           ["quarterstaff", "1 dagger"],
@@ -570,17 +632,22 @@ export default [
           [
             "Spellbook",
             "1st lvl",
-            "Special tome that reflects the arcane research and spells you have learned, copied... maybe even created."
+            `Special tome that reflects the arcane research and 
+            spells you have learned, copied... maybe even created.`
           ],
           [
             "Arcane Recovery",
             "1st lvl",
-            "Study your spellbook for some time during a short rest and regain some of your magical energy."
+            `Study your spellbook for some time during a short rest 
+            and regain some of your magical energy.`
           ],
           [
             "Arcane Tradition",
             "2nd lvl",
-            "Choose an arcane tradition, shaping your practice of magic through one of the eight schools of magic: Abjuration, Conjuration, Divination, Enchantment, Evocation, Illusion and Necromancy."
+            `Choose an arcane tradition, shaping your practice of 
+            magic through one of the eight schools of magic: 
+            Abjuration, Conjuration, Divination, Enchantment, 
+            Evocation, Illusion and Necromancy.`
           ]
         ],
         _spell: {

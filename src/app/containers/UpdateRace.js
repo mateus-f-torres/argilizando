@@ -12,13 +12,13 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getRace: (race) => {
-      dispatch(displayRace(race))
+      dispatch(displayRace(race));
     },
     lockRace: (race) => {
-      dispatch(lockRace(race))
+      dispatch(lockRace(race));
     }
-  }
-}
+  };
+};
 
 const UpdateRace = withRouter(connect(
   mapStateToProps,

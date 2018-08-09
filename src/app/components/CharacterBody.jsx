@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 const CharacterBody = (props) => {
-
   return (
     <figure className="card">
       <h3>Appearance</h3>
@@ -19,19 +18,19 @@ const CharacterBody = (props) => {
       <p>{props.skin}</p>
       <h4>Hair:</h4>
       <p>{props.hair}</p>
-        { props.extra &&
+      { props.extra &&
             <div>
               <h4>Extra Details:</h4>
               <ul className="dotted-list">
-                    {
-                      props.extra.map((desc, i) => (
-                        <li key={i}>{desc}</li>))
-                    }
+                {
+                  props.extra.map((desc, i) => (
+                    <li key={i}>{desc}</li>))
+                }
               </ul>
             </div>
-        }
+      }
     </figure>
-  )
-}
+  );
+};
 
 export default CharacterBody;

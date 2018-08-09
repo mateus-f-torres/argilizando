@@ -34,48 +34,51 @@ class PlayerClass extends React.Component {
                 <h2>Player Class</h2>
                 <div className="horizontal-line no-bottom" />
               </div>
-            {
-              CLASSES.map((category, i) => {
-                let [type, options] = [...category];
+              {
+                CLASSES.map((category, i) => {
+                  let [type, options] = [...category];
 
-                let odd = type === "Defenders" || type === "Controllers"
-                let two = type === "Leaders";
+                  let odd = type === "Defenders" || type === "Controllers";
+                  let two = type === "Leaders";
 
-                return (
-                  <div key={i}>
-                    <h3>{type}</h3>
-                    <div className="horizontal-line no-bottom"/>
-                    <ul id={two ? "two-cell" : null} className={odd ? "odd-number" : null}>
-                    {
-                      options.map((item) => (
-                      <li key={item.id}>
-                        <Link to={this.props.match.url + "/" + item.id}> 
-                          <button name={item.id} onClick={this.getClass}
-                            className={item.id === "wizard"|| item.id === "paladin"
-                              ? "double-size-btn"
-                              : null
-                            }>
-                            {item.id}
-                          </button>
-                        </Link>
-                      </li>
-                      ))
-                    }
-                    </ul>
-                  </div>
-                )
-              })
-            }
+                  return (
+                    <div key={i}>
+                      <h3>{type}</h3>
+                      <div className="horizontal-line no-bottom"/>
+                      <ul
+                        id={two ? "two-cell" : null}
+                        className={odd ? "odd-number" : null}>
+                        {
+                          options.map((item) => (
+                            <li key={item.id}>
+                              <Link to={this.props.match.url + "/" + item.id}>
+                                <button name={item.id} onClick={this.getClass}
+                                  className={
+                                    item.id === "wizard"
+                                    || item.id === "paladin"
+                                      ? "double-size-btn"
+                                      : null}>
+                                  {item.id}
+                                </button>
+                              </Link>
+                            </li>
+                          ))
+                        }
+                      </ul>
+                    </div>
+                  );
+                })
+              }
             </ul>
           }/>
 
-        <Route path={this.props.match.url + "/"}
-          render={()=>
-            <GameClass lockClass={this.lockClass} {...this.props.chosen}/>
-          }/>
+          <Route path={this.props.match.url + "/"}
+            render={()=>
+              <GameClass lockClass={this.lockClass} {...this.props.chosen}/>
+            }/>
         </Switch>
       </section>
-    )
+    );
   }
 };
 

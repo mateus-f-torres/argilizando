@@ -15,7 +15,7 @@ const Background = (props: Props) => (
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
     </ul>
 
-    { 
+    {
       props.tool &&
         <ul id="tools" className="multi">
           <h4>Tool Proficiency</h4>
@@ -23,7 +23,7 @@ const Background = (props: Props) => (
         </ul>
     }
 
-    { 
+    {
       props.lang &&
         <ul id="langs" className="multi">
           <h4>Languages</h4>

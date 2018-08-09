@@ -1,6 +1,11 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { getCharacter, changeName, changeSkill, changeLang, changeTool, changePack, changeGear, changeBody, changePast, lockCharacter } from '../actions';
+import {
+  getCharacter, changeName, changeSkill,
+  changeLang, changeTool, changePack,
+  changeGear, changeBody, changePast,
+  lockCharacter
+} from '../actions';
 import PlayerCharacter from '../components/PlayerCharacter.jsx';
 
 const mapStateToProps = (state) => {
@@ -16,37 +21,37 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getCharacter: (character) => {
-      dispatch(getCharacter(character))
+      dispatch(getCharacter(character));
     },
     changeBody: (pair) => {
-      dispatch(changeBody(pair))
+      dispatch(changeBody(pair));
     },
     changePast: (pair) => {
-      dispatch(changePast(pair))
+      dispatch(changePast(pair));
     },
     changeSkill: (pair) => {
-      dispatch(changeSkill(pair))
+      dispatch(changeSkill(pair));
     },
     changeLang: (pair) => {
-      dispatch(changeLang(pair))
+      dispatch(changeLang(pair));
     },
     changeTool: (pair) => {
-      dispatch(changeTool(pair))
+      dispatch(changeTool(pair));
     },
     changePack: (pack) => {
-      dispatch(changePack(pack))
+      dispatch(changePack(pack));
     },
     changeGear: (gear) => {
-      dispatch(changeGear(gear))
+      dispatch(changeGear(gear));
     },
     changeName: (name) => {
-      dispatch(changeName(name))
+      dispatch(changeName(name));
     },
     lockCharacter: (character) => {
-      dispatch(lockCharacter(character))
+      dispatch(lockCharacter(character));
     }
-  }
-}
+  };
+};
 
 const UpdateCharacter = withRouter(connect(
   mapStateToProps,

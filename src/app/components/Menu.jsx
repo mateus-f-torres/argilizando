@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 import 'Styles/Menu.scss';
 
 const Menu = (props) => {
-
   let all =
     props.done.race && props.done._class
     && props.done.score && props.done.back
-    ? true
-    : false;
+      ? true
+      : false;
 
   let final = props.done.char.name ? true : false;
 
@@ -56,7 +55,7 @@ const Menu = (props) => {
         </Link>
       </ul>
     </section>
-  )
+  );
 };
 
 export default Menu;
