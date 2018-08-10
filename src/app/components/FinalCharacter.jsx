@@ -1,4 +1,6 @@
 import * as React from 'react';
+import {NavLink, Route, Switch} from 'react-router-dom';
+
 import CharacterMain from './CharacterMain.jsx';
 import CharacterEquip from './CharacterEquip.jsx';
 import CharacterSpell from './CharacterSpell.jsx';
@@ -8,102 +10,66 @@ import CharacterPast from './CharacterPast.jsx';
 
 import 'Styles/FinalCharacter.scss';
 
-class FinalCharacter extends React.Component {
-  constructor(props) {
-    super(props);
-    this.showMain = this.showMain.bind(this);
-    this.showEquip = this.showEquip.bind(this);
-    this.showSpell = this.showSpell.bind(this);
-    this.showTrait = this.showTrait.bind(this);
-    this.showBody = this.showBody.bind(this);
-    this.showPast = this.showPast.bind(this);
-  }
+const FinalCharacter = (props) => (
+  <section id="FINAL">
+    <h2>{props.char.name}</h2>
+    <ul className="selection">
+      <ul>
+        <li>
+          <NavLink to="/play">
+            <button>Main</button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/play/traits">
+            <button>Traits</button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/play/equip">
+            <button>Equip</button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/play/spells">
+            <button disabled={!props.char.spell}>Spells</button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/play/appearance">
+            <button className="long">Appearance</button>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/play/background">
+            <button className="long">Background</button>
+          </NavLink>
+        </li>
+      </ul>
+    </ul>
+    <div className="horizontal-line no-bottom" />
 
-  showMain() {
-    this.props.showMain();
-  }
-
-  showEquip() {
-    this.props.showEquip();
-  }
-
-  showSpell() {
-    this.props.showSpell();
-  }
-
-  showTrait() {
-    this.props.showTrait();
-  }
-
-  showBody() {
-    this.props.showBody();
-  }
-
-  showPast() {
-    this.props.showPast();
-  }
-
-  render() {
-    return (
-      <section id="FINAL">
-        <h2>{this.props.char.name}</h2>
-        <ul className="selection">
-          <ul>
-            <li>
-              <button onClick={this.showMain}>Main</button>
-            </li>
-            <li>
-              <button onClick={this.showTrait}>Traits</button>
-            </li>
-            <li>
-              <button onClick={this.showEquip}>Equips</button>
-            </li>
-            <li>
-              <button
-                disabled={!this.props.char.spell}
-                onClick={this.showSpell}>Spells</button>
-            </li>
-            <li>
-              <button id="long" onClick={this.showBody}>Appearance</button>
-            </li>
-            <li>
-              <button onClick={this.showPast}>Behavior</button>
-            </li>
-          </ul>
-        </ul>
-        <div className="horizontal-line no-bottom" />
-
-        {
-          this.props.show.main &&
-          <CharacterMain {...this.props.char.main}/>
-        }
-        {
-          this.props.show.equip &&
-            <CharacterEquip
-              prof={this.props.char.main.prof}
-              score={this.props.char.main.score}
-              {...this.props.char.equip}/>
-        }
-        {
-          this.props.show.spell &&
-          <CharacterSpell {...this.props.char.spell}/>
-        }
-        {
-          this.props.show.trait &&
-          <CharacterTrait traits={this.props.char.traits}/>
-        }
-        {
-          this.props.show.body &&
-          <CharacterBody {...this.props.char.body}/>
-        }
-        {
-          this.props.show.past &&
-          <CharacterPast {...this.props.char.past}/>
-        }
-
-      </section>
-    );
-  }
-}
+    <Switch>
+      <Route exact path="/play" render={()=>
+        <CharacterMain {...props.char.main}/>
+      }/>
+      <Route path="/play/traits" render={()=>
+        <CharacterTrait traits={props.char.traits}/>
+      }/>
+      <Route path="/play/equip" render={()=>
+        <CharacterEquip {...props.char.equip}/>
+      }/>
+      <Route path="/play/spells" render={()=>
+        <CharacterSpell {...props.char.spell}/>
+      }/>
+      <Route path="/play/appearance" render={()=>
+        <CharacterBody {...props.char.body}/>
+      }/>
+      <Route path="/play/background" render={()=>
+        <CharacterPast {...props.char.past}/>
+      }/>
+    </Switch>
+  </section>
+);
 
 export default FinalCharacter;

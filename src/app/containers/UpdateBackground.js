@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {displayBackground, lockBackground} from '../actions';
-import PlayerBack from '../components/PlayerBack.jsx';
+import MenuBack from '../components/MenuBack.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,6 +23,6 @@ const mapDispatchToProps = (dispatch) => {
 const UpdateBackground = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerBack));
+)(MenuBack));
 
 export default UpdateBackground;

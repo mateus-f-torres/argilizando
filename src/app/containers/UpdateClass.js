@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {displayClass, lockClass} from '../actions';
-import PlayerClass from '../components/PlayerClass.jsx';
+import MenuClass from '../components/MenuClass.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,6 +23,6 @@ const mapDispatchToProps = (dispatch) => {
 const UpdateClass = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerClass));
+)(MenuClass));
 
 export default UpdateClass;

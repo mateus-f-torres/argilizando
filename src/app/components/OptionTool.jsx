@@ -7,7 +7,7 @@ const OptionTool = (props) => {
       {
         Object.entries(props.allTools).map((type, i) => {
         // unique tools are not selectable bt default
-          if (type[0] === "unique") return null;
+          if (type[0] === 'unique') return null;
 
           // dont render tools user cant select, from background
           else if (props.backTools[type[0]] === undefined) return null;
@@ -18,8 +18,8 @@ const OptionTool = (props) => {
               {
                 type[1].map((item, j) => {
                   // dont render race tool proficiency
-                  if (props.raceID === "gnome"
-                    && item[0] === "Tinker's tools") {
+                  if (props.raceID === 'gnome'
+                    && item[0] === 'Tinker\'s tools') {
                     return null;
                   }
 

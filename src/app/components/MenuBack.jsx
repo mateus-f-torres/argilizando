@@ -1,14 +1,14 @@
 //@flow
 import * as React from 'react';
-import { Link, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import CardBack from './CardBack.jsx';
 import BACKGROUNDS from '../data/backgrounds.js';
 
-import 'Styles/PlayerBackground.scss';
+import 'Styles/MenuBack.scss';
 
 type Props = {};
 
-class PlayerBack extends React.Component {
+class MenuBack extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.showBack = this.showBack.bind(this);
@@ -46,11 +46,11 @@ class PlayerBack extends React.Component {
                         {
                           options.map((back) => (
                             <li key={back.id}>
-                              <Link to={this.props.match.url + "/" + back.id}>
+                              <Link to={this.props.match.url + '/' + back.id}>
                                 <button name={back.id} onClick={this.showBack}
                                   id={
-                                    back.id === "polymorphed"
-                                      ? "long"
+                                    back.id === 'polymorphed'
+                                      ? 'long'
                                       : null
                                   }>
                                   {back.id}
@@ -67,7 +67,7 @@ class PlayerBack extends React.Component {
             </ul>
           }/>
 
-          <Route path={this.props.match.url + "/"}
+          <Route path={this.props.match.url + '/'}
             render={()=>
               <CardBack lockBack={this.lockBack} {...this.props.chosen}/>
             }/>
@@ -77,4 +77,4 @@ class PlayerBack extends React.Component {
   }
 }
 
-export default PlayerBack;
+export default MenuBack;

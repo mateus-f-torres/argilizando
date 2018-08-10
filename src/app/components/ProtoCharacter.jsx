@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import OptionSkill from './OptionSkill.jsx';
 import OptionLang from './OptionLang.jsx';
 import OptionTool from './OptionTool.jsx';
@@ -7,9 +7,9 @@ import OptionEquip from './OptionEquip.jsx';
 import OptionBody from './OptionBody.jsx';
 import OptionPast from './OptionPast.jsx';
 
-import 'Styles/PlayerCharacter.scss';
+import 'Styles/ProtoCharacter.scss';
 
-class PlayerCharacter extends React.Component {
+class ProtoCharacter extends React.Component {
   constructor(props) {
     super(props);
     this.handleChangeName = this.handleChangeName.bind(this);
@@ -28,7 +28,7 @@ class PlayerCharacter extends React.Component {
       race: this.props.race,
       _class: this.props._class,
       score: this.props.score,
-      back: this.props.back
+      back: this.props.back,
     };
     this.props.getCharacter(character);
   }
@@ -45,7 +45,7 @@ class PlayerCharacter extends React.Component {
 
   handleChangeSkill(e) {
     let max = this.props._class.skill[0];
-    if (this.props.race.id === "human") max++;
+    if (this.props.race.id === 'human') max++;
     this.props.changeSkill([e.target.name, max]);
   }
 
@@ -86,7 +86,7 @@ class PlayerCharacter extends React.Component {
   render() {
     // display correct number of Skills user can chose
     // with extra 1 for human and adding 2 from background
-    let maxSkills = this.props.race.id === "human"
+    let maxSkills = this.props.race.id === 'human'
       ? this.props._class.skill[0] + 1 + 2
       : this.props._class.skill[0] + 2;
 
@@ -96,16 +96,16 @@ class PlayerCharacter extends React.Component {
       ? this.props.back.lang[0]
       : 0;
     maxLangs += this.props.race.lang.length;
-    if (this.props._class.id === "rogue"
-    || this.props._class.id === "druid") {
+    if (this.props._class.id === 'rogue'
+    || this.props._class.id === 'druid') {
       maxLangs++;
     }
 
     // only show language selection if char has choice
     let langChoice = false;
     if (this.props.back.lang
-    || this.props.race.id === "human"
-    || this.props.race.id === "tabaxi") {
+    || this.props.race.id === 'human'
+    || this.props.race.id === 'tabaxi') {
       langChoice = true;
     }
 
@@ -163,21 +163,21 @@ class PlayerCharacter extends React.Component {
               <td>
                 {
                   this.props.score.str[1] > 0
-                    ? "+" + this.props.score.str[1]
+                    ? '+' + this.props.score.str[1]
                     : this.props.score.str[1]
                 }
               </td>
               <td>
                 {
                   this.props.score.dex[1] > 0
-                    ? "+" + this.props.score.dex[1]
+                    ? '+' + this.props.score.dex[1]
                     : this.props.score.dex[1]
                 }
               </td>
               <td>
                 {
                   this.props.score.con[1] > 0
-                    ? "+" + this.props.score.con[1]
+                    ? '+' + this.props.score.con[1]
                     : this.props.score.con[1]
                 }
               </td>
@@ -202,21 +202,21 @@ class PlayerCharacter extends React.Component {
               <td>
                 {
                   this.props.score.int[1] > 0
-                    ? "+" + this.props.score.int[1]
+                    ? '+' + this.props.score.int[1]
                     : this.props.score.int[1]
                 }
               </td>
               <td>
                 {
                   this.props.score.wis[1] > 0
-                    ? "+" + this.props.score.wis[1]
+                    ? '+' + this.props.score.wis[1]
                     : this.props.score.wis[1]
                 }
               </td>
               <td>
                 {
                   this.props.score.cha[1] > 0
-                    ? "+" + this.props.score.cha[1]
+                    ? '+' + this.props.score.cha[1]
                     : this.props.score.cha[1]
                 }
               </td>
@@ -292,4 +292,4 @@ class PlayerCharacter extends React.Component {
 }
 
 
-export default PlayerCharacter;
+export default ProtoCharacter;

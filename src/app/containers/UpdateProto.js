@@ -6,7 +6,7 @@ import {
   changeGear, changeBody, changePast,
   lockCharacter,
 } from '../actions';
-import PlayerCharacter from '../components/PlayerCharacter.jsx';
+import ProtoCharacter from '../components/ProtoCharacter.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -53,9 +53,9 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const UpdateCharacter = withRouter(connect(
+const UpdateProto = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerCharacter));
+)(ProtoCharacter));
 
-export default UpdateCharacter;
+export default UpdateProto;

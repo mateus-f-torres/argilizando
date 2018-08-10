@@ -2,13 +2,13 @@ import * as React from 'react';
 
 const OptionBody = (props) => {
   let labels = {
-    gender: "Male | Female | Others",
+    gender: 'Male | Female | Others',
     age: [...props.race.age],
     height: props.race.height,
     weight: props.race.weight,
     eyes: props.race.eyes,
     skin: props.race.skin,
-    hair: props.race.hair
+    hair: props.race.hair,
   };
 
   return (
@@ -16,9 +16,9 @@ const OptionBody = (props) => {
       <h3>Appearance</h3>
       {
         Object.entries(props.body).map((item, i) => {
-          if (item[0] === "race" || item[0] === "size") return;
+          if (item[0] === 'race' || item[0] === 'size') return;
 
-          if (item[0] === "age") {
+          if (item[0] === 'age') {
             const [ageMin, ageMax] = [...labels.age];
             return (
               <label className="text-label" key={i}>Age:
@@ -38,7 +38,7 @@ const OptionBody = (props) => {
 
           let info = labels[item[0]];
 
-          if (item[0] === "height" || item[0] === "weight") {
+          if (item[0] === 'height' || item[0] === 'weight') {
             info = `average ${info}`;
           }
 

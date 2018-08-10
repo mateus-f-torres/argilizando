@@ -1,7 +1,4 @@
 [ignore]
-# ignore all modules that dont start with r or d
-# to allow flow to resolve react and d3 modules on app require
-<PROJECT_ROOT>/node_modules/[abcefghijklmnopqstuvxwyz].*
 <PROJECT_ROOT>/__test__/.*
 
 [include]
@@ -11,5 +8,6 @@
 [lints]
 
 [options]
-module.name_mapper='^Styles' -> '<PROJECT_ROOT>/src/assets/stylesheets'
+# add module wrappers for webpack alias and scss imports
+module.name_mapper='.*\(.scss\)' -> 'empty/object'
 module.name_mapper='^Images' -> '<PROJECT_ROOT>/src/assets/images'

@@ -21,25 +21,25 @@ const CharacterEquip = (props) => {
       <h4>Money:</h4>
       <ul className="stats">
         <li>
-          <p style={{marginTop: "0.3em", marginBottom: 0}}>
+          <p style={{marginTop: '0.3em', marginBottom: 0}}>
             <span>Copper (CP)</span>
             <span className="close">{props.money.cp}</span>
           </p>
         </li>
         <li>
-          <p style={{marginTop: "0.3em", marginBottom: 0}}>
+          <p style={{marginTop: '0.3em', marginBottom: 0}}>
             <span>Silver (SP)</span>
             <span className="close">{props.money.sp}</span>
           </p>
         </li>
         <li>
-          <p style={{marginTop: "0.3em", marginBottom: 0}}>
+          <p style={{marginTop: '0.3em', marginBottom: 0}}>
             <span>Gold (GP)</span>
             <span className="close">{props.money.gp}</span>
           </p>
         </li>
         <li>
-          <p style={{marginTop: "0.3em", marginBottom: 0}}>
+          <p style={{marginTop: '0.3em', marginBottom: 0}}>
             <span>Platinum (PP)</span>
             <span className="close">{props.money.pp}</span>
           </p>

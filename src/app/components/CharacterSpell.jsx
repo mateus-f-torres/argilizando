@@ -31,10 +31,10 @@ const CharacterSpell = (props) => {
           <span className="close">{props.slots}</span>
         </p></li>
         <li><p><b>Ritual Casting</b>
-          <span className="close">{props.ritual ? "Yes" : "No"}</span>
+          <span className="close">{props.ritual ? 'Yes' : 'No'}</span>
         </p></li>
         <li><p><b>Spell Focus</b>
-          <span className="close">{props.focus ? props.focus : "No"}</span>
+          <span className="close">{props.focus ? props.focus : 'No'}</span>
         </p></li>
       </ul>
 

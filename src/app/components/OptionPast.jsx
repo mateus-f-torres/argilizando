@@ -5,7 +5,7 @@ const OptionPast = (props) => {
     personality: props.back.personality,
     ideals: props.back.ideals,
     bonds: props.back.bonds,
-    flaws: props.back.flaws
+    flaws: props.back.flaws,
   };
 
   return (
@@ -13,7 +13,7 @@ const OptionPast = (props) => {
       <h3>Role Playing</h3>
       {
         Object.entries(props.past).map((item, i) => {
-          if (item[0] === "background") return;
+          if (item[0] === 'background') return;
 
           return (
             <label className="text-label" key={i}>{item[0]}:

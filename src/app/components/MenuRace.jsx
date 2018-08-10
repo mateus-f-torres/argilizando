@@ -1,14 +1,14 @@
 //@flow
 import * as React from 'react';
-import { Link, Route, Switch} from 'react-router-dom';
+import {Link, Route, Switch} from 'react-router-dom';
 import CardRace from './CardRace.jsx';
 import RACES from '../data/races.js';
 
-import 'Styles/PlayerRace.scss';
+import 'Styles/MenuRace.scss';
 
 type Props = {};
 
-class PlayerRace extends React.Component {
+class MenuRace extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.showRace = this.showRace.bind(this);
@@ -46,7 +46,7 @@ class PlayerRace extends React.Component {
                         {
                           options.map((item) => (
                             <li key={item.id}>
-                              <Link to={this.props.match.url + "/" + item.id}>
+                              <Link to={this.props.match.url + '/' + item.id}>
                                 <button name={item.id} onClick={this.showRace}>
                                   {item.id}
                                 </button>
@@ -62,7 +62,7 @@ class PlayerRace extends React.Component {
             </ul>
           }/>
 
-          <Route path={this.props.match.url + "/"}
+          <Route path={this.props.match.url + '/'}
             render={()=>
               <CardRace lockRace={this.lockRace} {...this.props.race} />
             }/>
@@ -72,4 +72,4 @@ class PlayerRace extends React.Component {
   }
 }
 
-export default PlayerRace;
+export default MenuRace;

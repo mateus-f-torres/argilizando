@@ -1,10 +1,10 @@
 //@flow
 import * as React from 'react';
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import CardScore from './CardScore.jsx';
 import ABILITIES from '../data/scores.js';
 
-import 'Styles/AbilityScores.scss';
+import 'Styles/MenuScore.scss';
 
 type Props = {
   total: number,
@@ -28,7 +28,7 @@ type Props = {
   }) => void
 };
 
-class PlayerScore extends React.Component<Props> {
+class MenuScore extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
@@ -42,13 +42,13 @@ class PlayerScore extends React.Component<Props> {
     let h5 = e.target.parentNode.childNodes[1];
     let ability = h5.attributes.name.value;
     switch (type) {
-    case "+":
+    case '+':
       this.props.scorePlus(ability);
       break;
-    case "-":
+    case '-':
       this.props.scoreMinus(ability);
       break;
-    case "?":
+    case '?':
       this.props.toggleText(ability);
       break;
     }
@@ -65,7 +65,7 @@ class PlayerScore extends React.Component<Props> {
       con: [this.props.con[0], this.props.con[1]],
       int: [this.props.int[0], this.props.int[1]],
       wis: [this.props.wis[0], this.props.wis[1]],
-      cha: [this.props.cha[0], this.props.cha[1]]
+      cha: [this.props.cha[0], this.props.cha[1]],
     };
     this.props.lockScore(score);
   }
@@ -109,6 +109,6 @@ class PlayerScore extends React.Component<Props> {
       </section>
     );
   }
-};
+}
 
-export default PlayerScore;
+export default MenuScore;

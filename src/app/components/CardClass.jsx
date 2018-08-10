@@ -1,20 +1,20 @@
 //@flow
 import * as React from 'react';
-import { Link } from 'react-router-dom';
-import { select } from 'd3-selection';
+import {Link} from 'react-router-dom';
+import {select} from 'd3-selection';
 
-import barbarian from "Images/barbarian.svg";
-import bard from "Images/bard.svg";
-import cleric from "Images/cleric.svg";
-import druid from "Images/druid.svg";
-import fighter from "Images/fighter.svg";
-import monk from "Images/monk.svg";
-import paladin from "Images/paladin.svg";
-import ranger from "Images/ranger.svg";
-import rogue from "Images/rogue.svg";
-import sorcerer from "Images/sorcerer.svg";
-import warlock from "Images/warlock.svg";
-import wizard from "Images/wizard.svg";
+import barbarian from 'Images/barbarian.svg';
+import bard from 'Images/bard.svg';
+import cleric from 'Images/cleric.svg';
+import druid from 'Images/druid.svg';
+import fighter from 'Images/fighter.svg';
+import monk from 'Images/monk.svg';
+import paladin from 'Images/paladin.svg';
+import ranger from 'Images/ranger.svg';
+import rogue from 'Images/rogue.svg';
+import sorcerer from 'Images/sorcerer.svg';
+import warlock from 'Images/warlock.svg';
+import wizard from 'Images/wizard.svg';
 
 type Props = {
   id: string,
@@ -42,43 +42,43 @@ class CardClass extends React.Component<Props> {
 
     const stats = [
       this.hp, this.armor, this.weapon,
-      this.magic, this.versatile
+      this.magic, this.versatile,
     ];
 
     for (const node of stats) {
       let name = node.attributes.name.value;
       select(node)
-        .selectAll("rect")
+        .selectAll('rect')
         .data(dataset)
         .enter()
-        .append("rect")
-        .attr("x", (d, i) => i * 20)
-        .attr("y", (d, i) => 30 - d * 6)
-        .attr("width", 15)
-        .attr("height", (d, i) => d * 6)
-        .attr("fill", (d) => d > this.props[name] ? "gray" : "#723337");
+        .append('rect')
+        .attr('x', (d, i) => i * 20)
+        .attr('y', (d, i) => 30 - d * 6)
+        .attr('width', 15)
+        .attr('height', (d, i) => d * 6)
+        .attr('fill', (d) => d > this.props[name] ? 'gray' : '#723337');
     }
   }
 
   render() {
-    let img = "";
+    let img = '';
     switch (this.props.id) {
-    case "barbarian": img = barbarian; break;
-    case "bard": img = bard; break;
-    case "cleric": img = cleric; break;
-    case "druid": img = druid; break;
-    case "fighter": img = fighter; break;
-    case "monk": img = monk; break;
-    case "paladin": img = paladin; break;
-    case "ranger": img = ranger; break;
-    case "rogue": img = rogue; break;
-    case "sorcerer": img = sorcerer; break;
-    case "warlock": img = warlock; break;
-    case "wizard": img = wizard; break;
+    case 'barbarian': img = barbarian; break;
+    case 'bard': img = bard; break;
+    case 'cleric': img = cleric; break;
+    case 'druid': img = druid; break;
+    case 'fighter': img = fighter; break;
+    case 'monk': img = monk; break;
+    case 'paladin': img = paladin; break;
+    case 'ranger': img = ranger; break;
+    case 'rogue': img = rogue; break;
+    case 'sorcerer': img = sorcerer; break;
+    case 'warlock': img = warlock; break;
+    case 'wizard': img = wizard; break;
     }
 
-    let stats = ["hp", "armor", "weapon", "magic", "versatile"];
-    let labels = ["Heath", "Armor", "Weapons", "Magic", "Versatility"];
+    let stats = ['hp', 'armor', 'weapon', 'magic', 'versatile'];
+    let labels = ['Heath', 'Armor', 'Weapons', 'Magic', 'Versatility'];
     let w = 100;
     let h = 30;
 
@@ -127,7 +127,7 @@ class CardClass extends React.Component<Props> {
               <span id="skill-number">(max: {this.props.skill[0]})</span>
             </h4>
             <ul
-              className={this.props.id==="rogue" ? "multi larger" : "multi"}>
+              className={this.props.id==='rogue' ? 'multi larger' : 'multi'}>
               {
                 this.props.skill[1].map((sk, i) =>
                   (<li key={i}>{sk}</li>))
@@ -187,6 +187,6 @@ class CardClass extends React.Component<Props> {
       </figure>
     );
   }
-};
+}
 
 export default CardClass;

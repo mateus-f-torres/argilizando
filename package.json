@@ -1,6 +1,6 @@
 {
   "name": "boneco-de-argila",
-  "version": "0.9.15",
+  "version": "0.9.13",
   "description": "React Redux SPA with React-Router for homebrew DnD 5e character creation",
   "author": "mateus-f-torres",
   "license": "MIT",
@@ -42,6 +42,7 @@
     "clean-webpack-plugin": "^0.1.19",
     "css-hot-loader": "^1.4.0",
     "css-loader": "^0.28.11",
+    "empty": "^0.10.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.0.1",

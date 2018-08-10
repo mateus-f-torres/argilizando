@@ -1,7 +1,7 @@
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {displayRace, lockRace} from '../actions';
-import PlayerRace from '../components/PlayerRace.jsx';
+import MenuRace from '../components/MenuRace.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -23,6 +23,6 @@ const mapDispatchToProps = (dispatch) => {
 const UpdateRace = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerRace));
+)(MenuRace));
 
 export default UpdateRace;

@@ -4,7 +4,7 @@ import {
   incrementScore, decrementScore, toggleDescription,
   resetScore, lockScore,
 } from '../actions';
-import PlayerScore from '../components/PlayerScore.jsx';
+import MenuScore from '../components/MenuScore.jsx';
 
 const mapStateToProps = (state) => {
   return {
@@ -41,6 +41,6 @@ const mapDispatchToProps = (dispatch) => {
 const UpdateScores = withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(PlayerScore));
+)(MenuScore));
 
 export default UpdateScores;

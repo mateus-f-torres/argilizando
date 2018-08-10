@@ -5,7 +5,6 @@
 3. Ability Score actions
 4. Player Background actions
 5. Character Create actions
-6. Final Character screen actions
 
 */
 // RACE
@@ -120,30 +119,4 @@ export const changeName = (name) => ({
 export const lockCharacter = (lock) => ({
   type: 'LOCK_CHARACTER',
   lock,
-});
-
-// FINAL
-
-export const showMain = () => ({
-  type: 'SHOW_MAIN_ELEMENTS',
-});
-
-export const showEquip = () => ({
-  type: 'SHOW_EQUIP_ELEMENTS',
-});
-
-export const showSpell = () => ({
-  type: 'SHOW_SPELL_ELEMENTS',
-});
-
-export const showTrait = () => ({
-  type: 'SHOW_TRAIT_ELEMENTS',
-});
-
-export const showBody = () => ({
-  type: 'SHOW_BODY_ELEMENTS',
-});
-
-export const showPast = () => ({
-  type: 'SHOW_PAST_ELEMENTS',
 });

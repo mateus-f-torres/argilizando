@@ -34,7 +34,7 @@ const OptionSkill = (props) => {
             // dont even render not in background ,_class or same category
             // with added control for bard's "Any" skill
             if (!locked && !open && !exception
-            && props.classID !== "bard") return null;
+            && props.classID !== 'bard') return null;
 
 
             return (

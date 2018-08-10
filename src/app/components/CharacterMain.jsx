@@ -16,7 +16,7 @@ const CharacterMain = (props) => {
           <tr>
             <td>{props.armorClass}</td>
             <td>
-              {props.init >= 0 ? "+" + props.init : props.init}
+              {props.init >= 0 ? '+' + props.init : props.init}
             </td>
             <td>{props.speed}ft</td>
           </tr>
@@ -50,21 +50,21 @@ const CharacterMain = (props) => {
             <td>
               {
                 props.score.str[1] > 0
-                  ? "+" + props.score.str[1]
+                  ? '+' + props.score.str[1]
                   : props.score.str[1]
               }
             </td>
             <td>
               {
                 props.score.dex[1] > 0
-                  ? "+" + props.score.dex[1]
+                  ? '+' + props.score.dex[1]
                   : props.score.dex[1]
               }
             </td>
             <td>
               {
                 props.score.con[1] > 0
-                  ? "+" + props.score.con[1]
+                  ? '+' + props.score.con[1]
                   : props.score.con[1]
               }
             </td>
@@ -89,21 +89,21 @@ const CharacterMain = (props) => {
             <td>
               {
                 props.score.int[1] > 0
-                  ? "+" + props.score.int[1]
+                  ? '+' + props.score.int[1]
                   : props.score.int[1]
               }
             </td>
             <td>
               {
                 props.score.wis[1] > 0
-                  ? "+" + props.score.wis[1]
+                  ? '+' + props.score.wis[1]
                   : props.score.wis[1]
               }
             </td>
             <td>
               {
                 props.score.cha[1] > 0
-                  ? "+" + props.score.cha[1]
+                  ? '+' + props.score.cha[1]
                   : props.score.cha[1]
               }
             </td>
@@ -127,9 +127,9 @@ const CharacterMain = (props) => {
             return (
               <li key={i} className="prof-item">
                 <span className="prof-blob">
-                  <span className={prof ? "prof" : "not-prof" }/>
+                  <span className={prof ? 'prof' : 'not-prof' }/>
                   <span className="prof-mod">
-                    {mod >= 0 ? "+" + mod : mod}
+                    {mod >= 0 ? '+' + mod : mod}
                   </span>
                 </span>
                 <span>{save}</span>
@@ -150,9 +150,9 @@ const CharacterMain = (props) => {
             return (
               <li key={i} className="prof-item">
                 <span className="prof-blob">
-                  <span className={prof ? "prof" : "not-prof" }/>
+                  <span className={prof ? 'prof' : 'not-prof' }/>
                   <span className="prof-mod">
-                    {mod >= 0 ? "+" + mod : mod}
+                    {mod >= 0 ? '+' + mod : mod}
                   </span>
                 </span>
                 <span>{skill}</span>

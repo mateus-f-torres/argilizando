@@ -6,7 +6,6 @@ import score from './score.js';
 import background from './backgrounds.js';
 import character from './character.js';
 import done from './done.js';
-import final from './final.js';
 
 export default combineReducers({
   race,
@@ -15,5 +14,4 @@ export default combineReducers({
   background,
   character,
   done,
-  final,
 });
