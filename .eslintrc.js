@@ -7,7 +7,11 @@ module.exports = {
     "jquery": true,
     "jest": true
   },
-  "extends": ["eslint:recommended","google", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "google", 
+    "plugin:react/recommended"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 8,

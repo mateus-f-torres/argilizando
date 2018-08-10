@@ -1,5 +1,6 @@
 [ignore]
-<PROJECT_ROOT>/__test__/.*
+# intensionally broken json will trigger flow error
+<PROJECT_ROOT>/node_modules/config-chain/test/broken.json
 
 [include]
 
