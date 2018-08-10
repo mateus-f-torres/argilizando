@@ -1,4 +1,4 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 
 import race from './races.js';
 import gameClass from './classes.js';
@@ -15,5 +15,5 @@ export default combineReducers({
   background,
   character,
   done,
-  final
+  final,
 });

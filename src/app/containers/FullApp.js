@@ -1,10 +1,10 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
 import App from '../components/App.jsx';
 
 const mapStateToProps = (state) => {
   return {
-    done: state.done
+    done: state.done,
   };
 };
 

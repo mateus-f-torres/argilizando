@@ -43,67 +43,66 @@ class FinalCharacter extends React.Component {
     this.props.showPast();
   }
 
-  render () {
-
+  render() {
     return (
       <section id="FINAL">
         <h2>{this.props.char.name}</h2>
         <ul className="selection">
           <ul>
-          <li>
-            <button onClick={this.showMain}>Main</button>
-          </li>
-          <li>
-            <button onClick={this.showTrait}>Traits</button>
-          </li>
-          <li>
-            <button onClick={this.showEquip}>Equips</button>
-          </li>
-          <li>
-            <button
-              disabled={!this.props.char.spell}
-              onClick={this.showSpell}>Spells</button>
-          </li>
-          <li>
-            <button id="long" onClick={this.showBody}>Appearance</button>
-          </li>
-          <li>
-            <button onClick={this.showPast}>Behavior</button>
-          </li>
+            <li>
+              <button onClick={this.showMain}>Main</button>
+            </li>
+            <li>
+              <button onClick={this.showTrait}>Traits</button>
+            </li>
+            <li>
+              <button onClick={this.showEquip}>Equips</button>
+            </li>
+            <li>
+              <button
+                disabled={!this.props.char.spell}
+                onClick={this.showSpell}>Spells</button>
+            </li>
+            <li>
+              <button id="long" onClick={this.showBody}>Appearance</button>
+            </li>
+            <li>
+              <button onClick={this.showPast}>Behavior</button>
+            </li>
           </ul>
         </ul>
         <div className="horizontal-line no-bottom" />
 
         {
-          this.props.show.main && 
+          this.props.show.main &&
           <CharacterMain {...this.props.char.main}/>
         }
         {
-          this.props.show.equip && 
-            <CharacterEquip 
+          this.props.show.equip &&
+            <CharacterEquip
               prof={this.props.char.main.prof}
               score={this.props.char.main.score}
               {...this.props.char.equip}/>
         }
         {
-          this.props.show.spell && 
+          this.props.show.spell &&
           <CharacterSpell {...this.props.char.spell}/>
         }
         {
-          this.props.show.trait && 
+          this.props.show.trait &&
           <CharacterTrait traits={this.props.char.traits}/>
         }
         {
-          this.props.show.body && 
+          this.props.show.body &&
           <CharacterBody {...this.props.char.body}/>
         }
         {
-          this.props.show.past && 
+          this.props.show.past &&
           <CharacterPast {...this.props.char.past}/>
         }
 
       </section>
-    )
+    );
   }
 }
 

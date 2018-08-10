@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 const CharacterTrait = (props) => {
-
   return (
     <figure className="card">
       <h3>Features &amp; Traits</h3>
@@ -16,7 +15,7 @@ const CharacterTrait = (props) => {
         }
       </ul>
     </figure>
-  )
-}
+  );
+};
 
 export default CharacterTrait;

@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 const OptionBody = (props) => {
-
   let labels = {
     gender: "Male | Female | Others",
     age: [...props.race.age],
@@ -13,50 +12,50 @@ const OptionBody = (props) => {
   };
 
   return (
-  <div>
-    <h3>Appearance</h3>
-    {
-      Object.entries(props.body).map((item, i) => {
-        if(item[0] === "race" || item[0] === "size") return;
+    <div>
+      <h3>Appearance</h3>
+      {
+        Object.entries(props.body).map((item, i) => {
+          if (item[0] === "race" || item[0] === "size") return;
 
-        if(item[0] === "age") {
-          const [ageMin, ageMax] = [...labels.age];
+          if (item[0] === "age") {
+            const [ageMin, ageMax] = [...labels.age];
+            return (
+              <label className="text-label" key={i}>Age:
+                <input
+                  className="text-input"
+                  type="number"
+                  min={ageMin}
+                  max={ageMax}
+                  name={item[0]}
+                  value={item[1]}
+                  placeholder={`between ${ageMin} and ${ageMax}`}
+                  required
+                  onChange={props.change} />
+              </label>
+            );
+          }
+
+          let info = labels[item[0]];
+
+          if (item[0] === "height" || item[0] === "weight") {
+            info = `average ${info}`;
+          }
+
           return (
-            <label className="text-label" key={i}>Age:
+            <label className="text-label" key={i}>{item[0]}:
               <input
                 className="text-input"
-                type="number"
-                min={ageMin}
-                max={ageMax}
                 name={item[0]}
                 value={item[1]}
-                placeholder={`between ${ageMin} and ${ageMax}`}
-                required
+                placeholder={info}
                 onChange={props.change} />
             </label>
-          )
-        }
-
-        let info = labels[item[0]];
-
-        if(item[0] === "height" || item[0] === "weight") {
-          info = `average ${info}`
-        }
-        
-        return (
-        <label className="text-label" key={i}>{item[0]}:
-          <input
-            className="text-input"
-            name={item[0]}
-            value={item[1]}
-            placeholder={info}
-            onChange={props.change} />
-        </label>
-        )
-      })
-    }
-  </div>
-  )
+          );
+        })
+      }
+    </div>
+  );
 };
 
 export default OptionBody;

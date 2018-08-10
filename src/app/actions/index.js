@@ -12,138 +12,138 @@
 
 export const displayRace = (choice) => ({
   type: 'DISPLAY_CHOSEN_RACE',
-  choice
-})
+  choice,
+});
 
 export const lockRace = (lock) => ({
   type: 'LOCK_RACE',
-  lock
-})
+  lock,
+});
 
 // CLASS
 
 export const displayClass = (choice) => ({
   type: 'DISPLAY_CHOSEN_CLASS',
-  choice
-})
+  choice,
+});
 
 export const lockClass = (lock) => ({
   type: 'LOCK_CLASS',
-  lock
-})
+  lock,
+});
 
 // ABILITY SCORE
 
 export const incrementScore = (ability) => ({
   type: 'INCREMENT_ABILITY_SCORE',
-  ability
-})
+  ability,
+});
 
 export const decrementScore = (ability) => ({
   type: 'DECREMENT_ABILITY_SCORE',
-  ability
-})
+  ability,
+});
 
 export const toggleDescription = (ability) => ({
   type: 'TOGGLE_ABILITY_SCORE_DESCRIPTION',
-  ability
-})
+  ability,
+});
 
 export const resetScore = () => ({
-  type: 'RESET_ALL_ABILITY_SCORES'
-}) 
+  type: 'RESET_ALL_ABILITY_SCORES',
+});
 
 export const lockScore = (lock) => ({
   type: 'LOCK_SCORE',
-  lock
-})
+  lock,
+});
 
 // BACKGROUND
 
 export const displayBackground = (choice) => ({
   type: 'DISPLAY_CHOSEN_BACKGROUND',
-  choice
-})
+  choice,
+});
 
 export const lockBackground = (lock) => ({
   type: 'LOCK_BACKGROUND',
-  lock
-})
+  lock,
+});
 
 // CHARACTER
 
 export const getCharacter = (char) => ({
   type: 'DISPLAY_CHARACTER',
-  char
-})
+  char,
+});
 
 export const changeBody = (pair) => ({
   type: 'CHANGE_CHARACTER_BODY',
-  pair
-})
+  pair,
+});
 
 export const changePast = (pair) => ({
   type: 'CHANGE_CHARACTER_PAST',
-  pair
-})
+  pair,
+});
 
 export const changeSkill = (pair) => ({
   type: 'CHANGE_CHARACTER_SKILL',
-  pair
-})
+  pair,
+});
 
 export const changeLang = (pair) => ({
   type: 'CHANGE_CHARACTER_LANG',
-  pair
-})
+  pair,
+});
 
 export const changeTool = (pair) => ({
   type: 'CHANGE_CHARACTER_TOOL',
-  pair
-})
+  pair,
+});
 
 export const changePack = (pack) => ({
   type: 'CHANGE_CHARACTER_PACK',
-  pack
-})
+  pack,
+});
 
 export const changeGear = (gear) => ({
   type: 'CHANGE_CHARACTER_GEAR',
-  gear
-})
+  gear,
+});
 
 export const changeName = (name) => ({
   type: 'CHANGE_CHARACTER_NAME',
-  name
-})
+  name,
+});
 
 export const lockCharacter = (lock) => ({
   type: 'LOCK_CHARACTER',
-  lock
-})
+  lock,
+});
 
 // FINAL
 
 export const showMain = () => ({
-  type: 'SHOW_MAIN_ELEMENTS'
-})
+  type: 'SHOW_MAIN_ELEMENTS',
+});
 
 export const showEquip = () => ({
-  type: 'SHOW_EQUIP_ELEMENTS'
-})
+  type: 'SHOW_EQUIP_ELEMENTS',
+});
 
 export const showSpell = () => ({
-  type: 'SHOW_SPELL_ELEMENTS'
-})
+  type: 'SHOW_SPELL_ELEMENTS',
+});
 
 export const showTrait = () => ({
-  type: 'SHOW_TRAIT_ELEMENTS'
-})
+  type: 'SHOW_TRAIT_ELEMENTS',
+});
 
 export const showBody = () => ({
-  type: 'SHOW_BODY_ELEMENTS'
-})
+  type: 'SHOW_BODY_ELEMENTS',
+});
 
 export const showPast = () => ({
-  type: 'SHOW_PAST_ELEMENTS'
-})
+  type: 'SHOW_PAST_ELEMENTS',
+});

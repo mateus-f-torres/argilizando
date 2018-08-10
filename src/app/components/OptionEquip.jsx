@@ -1,16 +1,13 @@
 import * as React from 'react';
 
 const OptionEquip = (props) => {
-
-
   return (
-  <div>
-    <h3>Equipment</h3>
-    { props.classOptions && <h4>Weapons &amp; Armor</h4>}
-    {
-      props.classOptions &&
+    <div>
+      <h3>Equipment</h3>
+      { props.classOptions && <h4>Weapons &amp; Armor</h4>}
+      {
+        props.classOptions &&
       props.classOptions.map((group, i) => {
-
         return (
           <fieldset className="tool-selection" key={i}>
             {
@@ -26,11 +23,11 @@ const OptionEquip = (props) => {
               ))
             }
           </fieldset>
-        )
+        );
       })
-    }
-    {
-      props.classPack.length > 1 &&
+      }
+      {
+        props.classPack.length > 1 &&
         <div>
           <h4>Pack</h4>
           <fieldset className="tool-selection">
@@ -55,10 +52,10 @@ const OptionEquip = (props) => {
             }
           </ul>
         </div>
-    }
-  </div>
-  )
-}
+      }
+    </div>
+  );
+};
 
-export default OptionEquip
+export default OptionEquip;
 

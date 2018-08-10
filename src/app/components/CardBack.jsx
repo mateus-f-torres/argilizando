@@ -2,9 +2,17 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-type Props = {};
+type Props = {
+  name: string,
+  pitch: string,
+  skill: Array<string>,
+  tool?: Array<string>,
+  lang?: Array<number | string>,
+  equip: Array<Array<string>>,
+  lockBack: () => void
+};
 
-const Background = (props: Props) => (
+const CardBack = (props: Props) => (
   <figure className="card">
     <h2>{props.name}</h2>
     <p>{props.pitch}</p>
@@ -15,7 +23,7 @@ const Background = (props: Props) => (
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
     </ul>
 
-    { 
+    {
       props.tool &&
         <ul id="tools" className="multi">
           <h4>Tool Proficiency</h4>
@@ -23,7 +31,7 @@ const Background = (props: Props) => (
         </ul>
     }
 
-    { 
+    {
       props.lang &&
         <ul id="langs" className="multi">
           <h4>Languages</h4>
@@ -53,4 +61,4 @@ const Background = (props: Props) => (
   </figure>
 );
 
-export default Background;
+export default CardBack;

@@ -1,39 +1,36 @@
 import CLASSES from '../data/classes.js';
 
 const defaultClass = {
-  chosen: "none"
+  chosen: 'none',
 };
 
 const classReducer = (state = defaultClass, action) => {
-  switch(action.type) {
+  switch (action.type) {
+  case 'DISPLAY_CHOSEN_CLASS':
 
-    case 'DISPLAY_CHOSEN_CLASS':
+    // loop through each category inside classes data
 
-      // loop through each category inside classes data 
+    for (let category of CLASSES) {
+      let options = category[1];
 
-      for(let category of CLASSES) {
-        let options = category[1];
+      // loop through each item inside said category options
 
-        // loop through each item inside said category options
+      for (let item of options) {
+        // find the one that matches user choice
 
-        for(let item of options) {
+        if (item.id == action.choice) {
+          // return new copy of gameClass state
+          // with the chosen class data
 
-          // find the one that matches user choice
-
-          if(item.id == action.choice) {
-
-            // return new copy of gameClass state
-            // with the chosen class data
-            
-            return Object.assign({}, state, { chosen: item })
-          }
+          return Object.assign({}, state, {chosen: item});
         }
       }
-      break;
+    }
+    break;
 
-    default:
-      return state;
+  default:
+    return state;
   }
-}
+};
 
 export default classReducer;
