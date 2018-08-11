@@ -1,6 +1,16 @@
+//@flow
 import * as React from 'react';
 
-const CharacterPast = (props) => {
+type Props = {
+  background: string,
+  personality: string,
+  ideals: string,
+  bonds: string,
+  flaws: string,
+  extra: Array<string>,
+};
+
+const CharacterPast = (props: Props) => {
   return (
     <figure className="card">
       <h3>Role Playing</h3>

@@ -6,7 +6,14 @@ import RACES from '../data/races.js';
 
 import 'Styles/MenuRace.scss';
 
-type Props = {};
+type Props = {
+  getRace: (string) => void,
+  lockRace: ({}) => void,
+  race: {},
+  match: {
+    url: string,
+  },
+};
 
 class MenuRace extends React.Component<Props> {
   constructor(props: Props) {

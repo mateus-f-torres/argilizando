@@ -1,6 +1,18 @@
+//@flow
 import * as React from 'react';
 
-const OptionPast = (props) => {
+type Props = {
+  back: {
+    personality: string,
+    ideals: string,
+    bonds: string,
+    flaws: string,
+  },
+  past: {},
+  change: () => void,
+};
+
+const OptionPast = (props: Props) => {
   let labels = {
     personality: props.back.personality,
     ideals: props.back.ideals,

@@ -1,5 +1,7 @@
+//@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
+import AbilityTable from './AbilityTable.jsx';
 import OptionSkill from './OptionSkill.jsx';
 import OptionLang from './OptionLang.jsx';
 import OptionTool from './OptionTool.jsx';
@@ -9,8 +11,60 @@ import OptionPast from './OptionPast.jsx';
 
 import 'Styles/ProtoCharacter.scss';
 
-class ProtoCharacter extends React.Component {
-  constructor(props) {
+type Props = {
+  race: {
+    id: string,
+    lang: Array<string>,
+    _placeholder: {},
+  },
+  _class: {
+    id: string,
+    skill: Array<number | string>,
+    _equip: {},
+    _pack: Array<string>
+  },
+  score: {},
+  back: {
+    id: string,
+    skill: Array<string>,
+    lang: Array<string>,
+    _tools: {
+      artisan: Array<string>,
+      musical: Array<string>,
+      gaming: Array<string>,
+    },
+  },
+  char: {
+    name: string,
+    equip: {
+      pack: {
+        fromPack: Array<string>
+      }
+    },
+    main: {
+      skills: Array<string | number>,
+      langs: {},
+      tools: {
+        all: Array<Array<boolean | string>>,
+      },
+    },
+    body: {},
+    past: {},
+  },
+  getCharacter: ({}) => void,
+  changeName: () => void,
+  changeBody: () => void,
+  changePast: () => void,
+  changeSkill: () => void,
+  changeLang: () => void,
+  changeTool: () => void,
+  changeGear: () => void,
+  changePack: () => void,
+  lockCharacter: ({}) => void,
+};
+
+class ProtoCharacter extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
     this.handleChangeName = this.handleChangeName.bind(this);
     this.handleChangeSkill = this.handleChangeSkill.bind(this);
@@ -150,86 +204,10 @@ class ProtoCharacter extends React.Component {
           </tbody>
         </table>
 
-        <table>
-          <thead>
-            <tr>
-              <th>Str</th>
-              <th>Dex</th>
-              <th>Con</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                {
-                  this.props.score.str[1] > 0
-                    ? '+' + this.props.score.str[1]
-                    : this.props.score.str[1]
-                }
-              </td>
-              <td>
-                {
-                  this.props.score.dex[1] > 0
-                    ? '+' + this.props.score.dex[1]
-                    : this.props.score.dex[1]
-                }
-              </td>
-              <td>
-                {
-                  this.props.score.con[1] > 0
-                    ? '+' + this.props.score.con[1]
-                    : this.props.score.con[1]
-                }
-              </td>
-            </tr>
-            <tr>
-              <td>{this.props.score.str[0]}</td>
-              <td>{this.props.score.dex[0]}</td>
-              <td>{this.props.score.con[0]}</td>
-            </tr>
-          </tbody>
-        </table>
-        <table>
-          <thead>
-            <tr>
-              <th>Int</th>
-              <th>Wis</th>
-              <th>Cha</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                {
-                  this.props.score.int[1] > 0
-                    ? '+' + this.props.score.int[1]
-                    : this.props.score.int[1]
-                }
-              </td>
-              <td>
-                {
-                  this.props.score.wis[1] > 0
-                    ? '+' + this.props.score.wis[1]
-                    : this.props.score.wis[1]
-                }
-              </td>
-              <td>
-                {
-                  this.props.score.cha[1] > 0
-                    ? '+' + this.props.score.cha[1]
-                    : this.props.score.cha[1]
-                }
-              </td>
-            </tr>
-            <tr>
-              <td>{this.props.score.int[0]}</td>
-              <td>{this.props.score.wis[0]}</td>
-              <td>{this.props.score.cha[0]}</td>
-            </tr>
-          </tbody>
-        </table>
+        <AbilityTable {...this.props.score} />
 
         <div className="horizontal-line no-bottom" />
+
         <form onSubmit={this.lockChar}>
 
           <OptionSkill

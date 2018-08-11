@@ -1,3 +1,4 @@
+//@flow
 import * as React from 'react';
 import {NavLink, Route, Switch} from 'react-router-dom';
 
@@ -10,7 +11,19 @@ import CharacterPast from './CharacterPast.jsx';
 
 import 'Styles/FinalCharacter.scss';
 
-const FinalCharacter = (props) => (
+type Props = {
+  char: {
+    name: string,
+    spell: {},
+    main: {},
+    traits: {},
+    equip: {},
+    body: {},
+    past: {},
+  },
+};
+
+const FinalCharacter = (props: Props) => (
   <section id="FINAL">
     <h2>{props.char.name}</h2>
     <ul className="selection">

@@ -1,6 +1,20 @@
+//@flow
 import * as React from 'react';
 
-const CharacterBody = (props) => {
+type Props = {
+  race: string,
+  gender: string,
+  size: string,
+  age: string,
+  height: string,
+  weight: string,
+  eyes: string,
+  skin: string,
+  hair: string,
+  extra: Array<string>,
+};
+
+const CharacterBody = (props: Props) => {
   return (
     <figure className="card">
       <h3>Appearance</h3>

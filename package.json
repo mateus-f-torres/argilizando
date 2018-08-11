@@ -14,7 +14,7 @@
     "build": "webpack --progress --config webpack.production.config.js",
     "serve": "node server.js",
     "eject": "",
-    "lint": "eslint ./ --ext .js",
+    "lint": "eslint ./ --ext .js --ext .jsx",
     "test": "jest"
   },
   "dependencies": {
@@ -47,6 +47,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^5.0.1",
     "eslint-config-google": "^0.9.1",
+    "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-react": "^7.10.0",
     "file-loader": "^1.1.11",
     "flow-bin": "^0.75.0",

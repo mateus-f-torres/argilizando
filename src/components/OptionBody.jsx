@@ -1,6 +1,20 @@
+//@flow
 import * as React from 'react';
 
-const OptionBody = (props) => {
+type Props = {
+  race: {
+    age: Array<number>,
+    height: string,
+    weight: string,
+    eyes: string,
+    skin: string,
+    hair: string,
+  },
+  body: {},
+  change: () => void,
+};
+
+const OptionBody = (props: Props) => {
   let labels = {
     gender: 'Male | Female | Others',
     age: [...props.race.age],
@@ -16,8 +30,10 @@ const OptionBody = (props) => {
       <h3>Appearance</h3>
       {
         Object.entries(props.body).map((item, i) => {
+          // dont render unchangeable options
           if (item[0] === 'race' || item[0] === 'size') return;
 
+          // age option's label is different
           if (item[0] === 'age') {
             const [ageMin, ageMax] = [...labels.age];
             return (

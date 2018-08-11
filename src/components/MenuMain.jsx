@@ -1,9 +1,23 @@
+//@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
 
+type Props = {
+  done: {
+    race: boolean | {},
+    _class: boolean | {},
+    score: boolean | {},
+    back: boolean | {},
+    char: boolean | {
+      name: string
+    },
+  },
+  handleClick: () => void,
+};
+
 import 'Styles/MenuMain.scss';
 
-const MenuMain = (props) => {
+const MenuMain = (props: Props) => {
   let all =
     props.done.race && props.done._class
     && props.done.score && props.done.back

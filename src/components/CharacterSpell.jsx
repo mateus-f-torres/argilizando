@@ -1,6 +1,21 @@
+//@flow
 import * as React from 'react';
 
-const CharacterSpell = (props) => {
+type Props = {
+  notYet: boolean,
+  _class: string,
+  ability: string,
+  save: number,
+  toHit: number,
+  cantrips: number,
+  known: number,
+  prepared: number,
+  slots: number,
+  ritual: boolean,
+  focus: string,
+};
+
+const CharacterSpell = (props: Props) => {
   return (
     <figure className="card">
       <h3>Spellcasting</h3>
@@ -61,7 +76,7 @@ const CharacterSpell = (props) => {
           {
             props.prepared === 0
               ? <p className="note">all known spells are prepared.</p>
-              : props.spellClass !== 'paladin'
+              : props._class !== 'paladin'
                 ? <p className="note">ability modifier + lvl.</p>
                 : <p className="note">ability modifier + lvl/2.</p>
           }
@@ -73,7 +88,7 @@ const CharacterSpell = (props) => {
               <p className="note">
               10min to cast.
                 <br />
-              doesn't expend a spell slot.
+              doesn&apos;t expend a spell slot.
               </p>
             </li>
             : null

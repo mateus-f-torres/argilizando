@@ -1,6 +1,22 @@
+//@flow
 import * as React from 'react';
 
-const CharacterEquip = (props) => {
+type Props = {
+  gear: Array<Array<number | string>>,
+  pack: {
+    fromClass: Array<string>,
+    fromPack: Array<string>,
+    fromBack: Array<string | Array<string>>,
+  },
+  money: {
+    cp: number,
+    sp: number,
+    gp: number,
+    pp: number,
+  },
+};
+
+const CharacterEquip = (props: Props) => {
   return (
     <figure className="card">
       <h3>Equipment</h3>

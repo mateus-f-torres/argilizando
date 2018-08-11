@@ -1,6 +1,14 @@
+//@flow
 import * as React from 'react';
 
-const OptionLang = (props) => {
+type Props = {
+  max: number,
+  allLangs: Array<Array<string | boolean>>,
+  raceLangs: Array<string>,
+  toggleLang: () => void,
+};
+
+const OptionLang = (props: Props) => {
   return (
     <div>
       <h3>Languages<span id="skill-number">(max: {props.max})</span></h3>

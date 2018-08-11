@@ -1,6 +1,16 @@
+//@flow
 import * as React from 'react';
 
-const OptionSkill = (props) => {
+type Props = {
+  max: number,
+  classID: string,
+  backSkills: Array<string>,
+  classSkills: Array<string>,
+  skills: Array<Array<string>>,
+  toggleSkill: () => void,
+};
+
+const OptionSkill = (props: Props) => {
   // logic to open up a whole ability skills category
   // when your background is already proficient in some class skill
   let sameSkills = [];
@@ -22,7 +32,7 @@ const OptionSkill = (props) => {
             // ignore item[2], skill modifier
             let [ability, skill, , prof] = [...item];
 
-            // control for unchangeable skill proficiency, from background
+            // control for unchangeable skills, from background
             let locked = props.backSkills.includes(skill);
 
             // control for selectable skills, from _class skill list
@@ -31,7 +41,7 @@ const OptionSkill = (props) => {
             // control for when to open a whole ability category
             let exception = sameSkills.includes(ability);
 
-            // dont even render not in background ,_class or same category
+            // dont render not in background ,_class or same category
             // with added control for bard's "Any" skill
             if (!locked && !open && !exception
             && props.classID !== 'bard') return null;

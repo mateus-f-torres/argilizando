@@ -1,6 +1,32 @@
+//@flow
 import * as React from 'react';
+import AbilityTable from './AbilityTable.jsx';
 
-const CharacterMain = (props) => {
+type Props = {
+  armorClass: number,
+  init: number,
+  speed: number,
+  hitPoints: number,
+  hitDice: string,
+  prof: number,
+  score: {
+    str: Array<number>,
+    dex: Array<number>,
+    con: Array<number>,
+    int: Array<number>,
+    wis: Array<number>,
+    cha: Array<number>,
+  },
+  saves: Array<Array<string | number>>,
+  skills: Array<Array<string | number>>,
+  pp: number,
+  langs: Array<Array<string | boolean>>,
+  tools: {
+    prof: Array<string>
+  },
+};
+
+const CharacterMain = (props: Props) => {
   return (
     <figure className="card">
 
@@ -37,84 +63,7 @@ const CharacterMain = (props) => {
 
       <div className="horizontal-line"/>
       <h3>Ability Scores</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Str</th>
-            <th>Dex</th>
-            <th>Con</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              {
-                props.score.str[1] > 0
-                  ? '+' + props.score.str[1]
-                  : props.score.str[1]
-              }
-            </td>
-            <td>
-              {
-                props.score.dex[1] > 0
-                  ? '+' + props.score.dex[1]
-                  : props.score.dex[1]
-              }
-            </td>
-            <td>
-              {
-                props.score.con[1] > 0
-                  ? '+' + props.score.con[1]
-                  : props.score.con[1]
-              }
-            </td>
-          </tr>
-          <tr>
-            <td>{props.score.str[0]}</td>
-            <td>{props.score.dex[0]}</td>
-            <td>{props.score.con[0]}</td>
-          </tr>
-        </tbody>
-      </table>
-      <table>
-        <thead>
-          <tr>
-            <th>Int</th>
-            <th>Wis</th>
-            <th>Cha</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              {
-                props.score.int[1] > 0
-                  ? '+' + props.score.int[1]
-                  : props.score.int[1]
-              }
-            </td>
-            <td>
-              {
-                props.score.wis[1] > 0
-                  ? '+' + props.score.wis[1]
-                  : props.score.wis[1]
-              }
-            </td>
-            <td>
-              {
-                props.score.cha[1] > 0
-                  ? '+' + props.score.cha[1]
-                  : props.score.cha[1]
-              }
-            </td>
-          </tr>
-          <tr>
-            <td>{props.score.int[0]}</td>
-            <td>{props.score.wis[0]}</td>
-            <td>{props.score.cha[0]}</td>
-          </tr>
-        </tbody>
-      </table>
+      <AbilityTable {...props.score} />
 
       <div className="horizontal-line" />
       <h3>Saving Throws</h3>

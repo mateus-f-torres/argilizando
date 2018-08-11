@@ -6,7 +6,14 @@ import CLASSES from '../data/classes.js';
 
 import 'Styles/MenuClass.scss';
 
-type Props = {};
+type Props = {
+  getClass: (string) => void,
+  lockClass: ({}) => void,
+  chosen: {},
+  match: {
+    url: string,
+  },
+};
 
 class MenuClass extends React.Component<Props> {
   constructor(props: Props) {

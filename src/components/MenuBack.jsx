@@ -6,7 +6,14 @@ import BACKGROUNDS from '../data/backgrounds.js';
 
 import 'Styles/MenuBack.scss';
 
-type Props = {};
+type Props = {
+  getBack: (string) => void,
+  lockBack: ({}) => void,
+  chosen: {},
+  match: {
+    url: string,
+  },
+};
 
 class MenuBack extends React.Component<Props> {
   constructor(props: Props) {

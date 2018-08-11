@@ -1,6 +1,11 @@
+//@flow
 import * as React from 'react';
 
-const CharacterTrait = (props) => {
+type Props = {
+  traits: Array<string>,
+};
+
+const CharacterTrait = (props: Props) => {
   return (
     <figure className="card">
       <h3>Features &amp; Traits</h3>

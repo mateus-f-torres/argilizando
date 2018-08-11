@@ -1,6 +1,14 @@
+//@flow
 import * as React from 'react';
 
-const OptionEquip = (props) => {
+type Props = {
+  classOptions?: Array<Array<string>>,
+  classPack: Array<string>,
+  showPack: Array<string>,
+  togglePack: () => void,
+};
+
+const OptionEquip = (props: Props) => {
   return (
     <div>
       <h3>Equipment</h3>
@@ -34,7 +42,7 @@ const OptionEquip = (props) => {
             {
               props.classPack.map((type, i) => (
                 <div key={i}>
-                  <label>{type}'s pack</label>
+                  <label>{`${type}'s pack`}</label>
                   <input
                     type="radio"
                     name="pack"
