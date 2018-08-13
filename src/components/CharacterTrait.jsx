@@ -1,8 +1,9 @@
 //@flow
 import * as React from 'react';
+import type {CharTraits} from '../types/index.js';
 
 type Props = {
-  traits: Array<string>,
+  traits: CharTraits,
 };
 
 const CharacterTrait = (props: Props) => {

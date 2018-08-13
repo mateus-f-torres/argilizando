@@ -2,12 +2,12 @@
 import * as React from 'react';
 
 type Props = {
-  str: Array<number>,
-  dex: Array<number>,
-  con: Array<number>,
-  int: Array<number>,
-  wis: Array<number>,
-  cha: Array<number>,
+  str: [number, number],
+  dex: [number, number],
+  con: [number, number],
+  int: [number, number],
+  wis: [number, number],
+  cha: [number, number],
 };
 
 const AbilityTable = (props: Props) => (

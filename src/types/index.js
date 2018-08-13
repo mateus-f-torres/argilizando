@@ -4,7 +4,7 @@
 export type Race = {
   id: string,
   name: string,
-  age: Array<number>,
+  age: [number, number],
   size: string,
   height: string,
   weight: string,
@@ -13,8 +13,8 @@ export type Race = {
   hair: string,
   _placeholder: string,
   speed: number,
-  lang: Array<string>,
-  special: Array<Array<string>>,
+  lang: [string, string],
+  special: Array<[string, string]>,
 };
 
 export type _Class = {
@@ -25,14 +25,14 @@ export type _Class = {
   weapon: number,
   magic: number,
   versatile: number,
-  save: Array<string>,
-  skill: Array<number | Array<string>>,
+  save: [string, string],
+  skill: [number, Array<string>],
   tool?: Array<string>,
   equip: Array<Array<string>>,
   _equip: Array<Array<string>>,
   _pack: Array<string>,
-  special: Array<Array<string>>,
-  _speall: boolean | {
+  special: Array<[string, string, string]>,
+  _spell: boolean | {
     ability: string,
     cantrips: number,
     known: number,
@@ -60,9 +60,9 @@ export type Background = {
   ideals: string,
   bonds: string,
   flaws: string,
-  skill: Array<string>,
+  skill: [string, string],
   tool?: Array<string>,
-  lang?: Array<number | string>,
+  lang?: [number, string],
   equip: Array<Array<string>>,
   _gold: number,
   _tools?: {
@@ -83,46 +83,79 @@ export type CharMain = {
   init: number,
   prof: number,
   score: {
-    str: Array<number>,
-    dex: Array<number>,
-    con: Array<number>,
-    int: Array<number>,
-    wis: Array<number>,
-    cha: Array<number>,
+    str: [number, number],
+    dex: [number, number],
+    con: [number, number],
+    int: [number, number],
+    wis: [number, number],
+    cha: [number, number],
   },
-  saves: Array<Array<string | number>>,
-  skills: Array<Array<string | number>>,
+  saves: Array<[string, string, number, ?boolean]>,
+  skills: Array<[string, string, number, ?boolean]>,
   pp: number,
-  langs: Array<Array<boolean | string>>,
+  langs: Array<[boolean, string, boolean, ?boolean]>,
   tools: {
     prof: Array<string>,
     all: {
-      artisan: Array<string | ?boolean>,
-      gaming: Array<string | ?boolean>,
-      musical: Array<string | ?boolean>,
-      unique: Array<string | ?boolean>,
+      artisan: Array<[string, ?boolean]>,
+      gaming: Array<[string, ?boolean]>,
+      musical: Array<[string, ?boolean]>,
+      unique: Array<[string, ?boolean]>,
     },
   },
 };
 
-export type CharTraits = {
-
-};
+export type CharTraits = Array<Array<string>>;
 
 export type CharEquip = {
-
+  gear: Array<[number, string]>,
+  pack: {
+    fromClass: Array<string>,
+    fromPack: Array<string>,
+    fromBack: Array<Array<string>>,
+  },
+  money: {
+    cp: number,
+    sp: number,
+    gp: number,
+    pp: number,
+  },
 };
 
 export type CharSpell = {
-
+  _class: string,
+  ability: string,
+  save: number,
+  toHit: number,
+  cantrips: number,
+  known: number,
+  prepared: number,
+  slots: number,
+  ritual: boolean,
+  focus: boolean | string,
+  notYet?: boolean,
 };
 
 export type CharBody = {
-
+  race: string,
+  size: string,
+  gender: string,
+  age: string,
+  height: string,
+  weight: string,
+  eyes: string,
+  skin: string,
+  hair: string,
+  extra?: Array<string>,
 };
 
 export type CharPast = {
-
+  background: string,
+  personality: string,
+  ideals: string,
+  bonds: string,
+  flaws: string,
+  extra?: Array<string>,
 };
 
 export type Character = {

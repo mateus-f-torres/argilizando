@@ -3,7 +3,7 @@ import * as React from 'react';
 import type {Score} from '../types/index.js';
 
 type Props = Score & {
-  handleClick: () => void,
+  handleClick: (SyntheticEvent<HTMLButtonElement>) => void,
 };
 
 const btn = 'score-btn waves-effect waves-light';

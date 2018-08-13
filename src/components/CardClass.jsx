@@ -18,13 +18,20 @@ import warlock from 'Images/warlock.svg';
 import wizard from 'Images/wizard.svg';
 
 type Props = _Class & {
-  lockClass: () => void
+  lockClass: (SyntheticEvent<HTMLButtonElement>) => void
 };
 
 class CardClass extends React.Component<Props> {
+  // defining ref types
+  hp: ?SVGMatrix & {attributes: {name: {value: string}}};
+  armor: ?SVGMatrix & {attributes: {name: {value: string}}};
+  weapon: ?SVGMatrix & {attributes: {name: {value: string}}};
+  magic: ?SVGMatrix & {attributes: {name: {value: string}}};
+  versatile: ?SVGMatrix & {attributes: {name: {value: string}}};
+
   constructor(props: Props) {
     super(props);
-    this.createBarChart = this.createBarChart.bind(this);
+    (this: any).createBarChart = this.createBarChart.bind(this);
   }
 
   componentDidMount() {
@@ -88,7 +95,10 @@ class CardClass extends React.Component<Props> {
               <li key={i}><p>
                 <b>{labels[i]}</b>
                 <svg
-                  ref={(node) => this[stat] = node}
+                  ref={
+                    // $FlowFixMe
+                    (node) => this[stat] = node
+                  }
                   name={stat}
                   width={w}
                   height={h} />

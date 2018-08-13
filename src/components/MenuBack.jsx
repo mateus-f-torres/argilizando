@@ -19,12 +19,12 @@ type Props = {
 class MenuBack extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.showBack = this.showBack.bind(this);
-    this.lockBack = this.lockBack.bind(this);
+    (this: any).showBack = this.showBack.bind(this);
+    (this: any).lockBack = this.lockBack.bind(this);
   }
 
-  showBack(e) {
-    this.props.getBack(e.target.name);
+  showBack(e: SyntheticEvent<HTMLButtonElement>) {
+    this.props.getBack(e.currentTarget.name);
   }
 
   lockBack() {

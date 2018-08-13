@@ -1,20 +1,8 @@
 //@flow
 import * as React from 'react';
+import type {CharEquip} from '../types/index.js';
 
-type Props = {
-  gear: Array<Array<number | string>>,
-  pack: {
-    fromClass: Array<string>,
-    fromPack: Array<string>,
-    fromBack: Array<string | Array<string>>,
-  },
-  money: {
-    cp: number,
-    sp: number,
-    gp: number,
-    pp: number,
-  },
-};
+type Props = CharEquip;
 
 const CharacterEquip = (props: Props) => {
   return (

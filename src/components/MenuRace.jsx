@@ -19,12 +19,12 @@ type Props = {
 class MenuRace extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.showRace = this.showRace.bind(this);
-    this.lockRace = this.lockRace.bind(this);
+    (this: any).showRace = this.showRace.bind(this);
+    (this: any).lockRace = this.lockRace.bind(this);
   }
 
-  showRace(e) {
-    this.props.getRace(e.target.name);
+  showRace(e: SyntheticEvent<HTMLButtonElement>) {
+    this.props.getRace(e.currentTarget.name);
   }
 
   lockRace() {

@@ -3,9 +3,9 @@ import * as React from 'react';
 
 type Props = {
   max: number,
-  allLangs: Array<Array<string | boolean>>,
-  raceLangs: Array<string>,
-  toggleLang: () => void,
+  allLangs: Array<[boolean, string, boolean, ?boolean]>,
+  raceLangs: [string, string],
+  toggleLang: (SyntheticEvent<HTMLInputElement>) => void,
 };
 
 const OptionLang = (props: Props) => {

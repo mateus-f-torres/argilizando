@@ -2,20 +2,20 @@
 import * as React from 'react';
 
 type Props = {
+  raceID: string,
   allTools: {
-    artisan: Array<string>,
-    gaming: Array<string>,
-    musical: Array<string>,
-    unique: Array<string>,
+    artisan: Array<[string, ?boolean]>,
+    gaming: Array<[string, ?boolean]>,
+    musical: Array<[string, ?boolean]>,
+    unique: Array<[string, ?boolean]>,
   },
-  backTools: {
+  backTools?: {
     artisan?: boolean,
     gaming?: boolean,
     musical?: boolean,
     unique?: Array<string>,
   },
-  raceID: string,
-  toggleTool: () => void,
+  toggleTool: (SyntheticEvent<HTMLInputElement>) => void,
 };
 
 const OptionTool = (props: Props) => {
@@ -28,11 +28,14 @@ const OptionTool = (props: Props) => {
           if (type[0] === 'unique') return null;
 
           // dont render tools user cant select, from background
+          // mixed type in Object.entries will trigger errors
+          // $FlowFixMe static entries(object: any): Array<[string, mixed]>;
           else if (props.backTools[type[0]] === undefined) return null;
 
           return (
             <fieldset className="tool-selection" key={i}>
               {
+                // $FlowFixMe
                 type[1].map((item, j) => {
                   // dont render race tool proficiency
                   if (props.raceID === 'gnome'

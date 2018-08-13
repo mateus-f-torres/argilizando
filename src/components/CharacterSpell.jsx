@@ -1,19 +1,8 @@
 //@flow
 import * as React from 'react';
+import type {CharSpell} from '../types/index.js';
 
-type Props = {
-  notYet: boolean,
-  _class: string,
-  ability: string,
-  save: number,
-  toHit: number,
-  cantrips: number,
-  known: number,
-  prepared: number,
-  slots: number,
-  ritual: boolean,
-  focus: string,
-};
+type Props = CharSpell;
 
 const CharacterSpell = (props: Props) => {
   return (

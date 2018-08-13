@@ -1,14 +1,8 @@
 //@flow
 import * as React from 'react';
+import type {CharPast} from '../types/index.js';
 
-type Props = {
-  background: string,
-  personality: string,
-  ideals: string,
-  bonds: string,
-  flaws: string,
-  extra: Array<string>,
-};
+type Props = CharPast;
 
 const CharacterPast = (props: Props) => {
   return (
@@ -24,7 +18,7 @@ const CharacterPast = (props: Props) => {
       <p>{props.bonds}</p>
       <h4>Flaws:</h4>
       <p>{props.flaws}</p>
-      { props.extra &&
+      { props.extra && Array.isArray(props.extra) &&
             <div>
               <h4>Extra Details:</h4>
               <ul className="dotted-list">

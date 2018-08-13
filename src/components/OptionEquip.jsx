@@ -5,7 +5,8 @@ type Props = {
   classOptions?: Array<Array<string>>,
   classPack: Array<string>,
   showPack: Array<string>,
-  togglePack: () => void,
+  togglePack: (SyntheticEvent<HTMLInputElement>) => void,
+  toggleGear: (SyntheticEvent<HTMLInputElement>) => void,
 };
 
 const OptionEquip = (props: Props) => {

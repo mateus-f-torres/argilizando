@@ -1,15 +1,11 @@
 //@flow
 import * as React from 'react';
+import type {Background, CharPast} from '../types/index.js';
 
 type Props = {
-  back: {
-    personality: string,
-    ideals: string,
-    bonds: string,
-    flaws: string,
-  },
-  past: {},
-  change: () => void,
+  back: Background,
+  past: CharPast,
+  change: (SyntheticEvent<HTMLInputElement>) => void,
 };
 
 const OptionPast = (props: Props) => {

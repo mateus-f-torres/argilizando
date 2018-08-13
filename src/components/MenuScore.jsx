@@ -20,38 +20,41 @@ type Props = {
   toggleText: (string) => void,
   resetBtn: () => void,
   lockScore: (score: {
-    str: Array<mixed>,
-    dex: Array<mixed>,
-    con: Array<mixed>,
-    int: Array<mixed>,
-    wis: Array<mixed>,
-    cha: Array<mixed>
+    str: [number, number],
+    dex: [number, number],
+    con: [number, number],
+    int: [number, number],
+    wis: [number, number],
+    cha: [number, number],
   }) => void
 };
 
 class MenuScore extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
-    this.resetBtn = this.resetBtn.bind(this);
-    this.lockScore = this.lockScore.bind(this);
+    (this: any).handleClick = this.handleClick.bind(this);
+    (this: any).resetBtn = this.resetBtn.bind(this);
+    (this: any).lockScore = this.lockScore.bind(this);
   }
 
-  handleClick(e) {
+  handleClick(e: SyntheticEvent<HTMLButtonElement>) {
     e.preventDefault();
-    let type = e.target.name;
-    let h5 = e.target.parentNode.childNodes[1];
-    let ability = h5.attributes.name.value;
-    switch (type) {
-    case '+':
-      this.props.scorePlus(ability);
-      break;
-    case '-':
-      this.props.scoreMinus(ability);
-      break;
-    case '?':
-      this.props.toggleText(ability);
-      break;
+    let type = e.currentTarget.name;
+    if (e.currentTarget.parentNode && e.currentTarget.parentNode.childNodes) {
+      let h5 = e.currentTarget.parentNode.childNodes[1];
+      // $FlowFixMe
+      let ability = h5.attributes.name.value;
+      switch (type) {
+      case '+':
+        this.props.scorePlus(ability);
+        break;
+      case '-':
+        this.props.scoreMinus(ability);
+        break;
+      case '?':
+        this.props.toggleText(ability);
+        break;
+      }
     }
   }
 

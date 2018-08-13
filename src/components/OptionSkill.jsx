@@ -4,10 +4,10 @@ import * as React from 'react';
 type Props = {
   max: number,
   classID: string,
-  backSkills: Array<string>,
+  backSkills: [string, string],
   classSkills: Array<string>,
-  skills: Array<Array<string>>,
-  toggleSkill: () => void,
+  skills: Array<[string, string, number, ?boolean]>,
+  toggleSkill: (SyntheticEvent<HTMLInputElement>) => void,
 };
 
 const OptionSkill = (props: Props) => {

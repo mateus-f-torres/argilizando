@@ -1,17 +1,11 @@
 //@flow
 import * as React from 'react';
+import type {Race, CharBody} from '../types/index.js';
 
 type Props = {
-  race: {
-    age: Array<number>,
-    height: string,
-    weight: string,
-    eyes: string,
-    skin: string,
-    hair: string,
-  },
-  body: {},
-  change: () => void,
+  race: Race,
+  body: CharBody,
+  change: (SyntheticEvent<HTMLInputElement>) => void,
 };
 
 const OptionBody = (props: Props) => {

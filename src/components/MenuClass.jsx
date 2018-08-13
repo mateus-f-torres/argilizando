@@ -19,12 +19,12 @@ type Props = {
 class MenuClass extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.getClass = this.getClass.bind(this);
-    this.lockClass = this.lockClass.bind(this);
+    (this: any).getClass = this.getClass.bind(this);
+    (this: any).lockClass = this.lockClass.bind(this);
   }
 
-  getClass(e) {
-    this.props.getClass(e.target.name);
+  getClass(e: SyntheticEvent<HTMLButtonElement>) {
+    this.props.getClass(e.currentTarget.name);
   }
 
   lockClass() {

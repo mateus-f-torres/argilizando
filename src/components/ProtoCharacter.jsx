@@ -1,6 +1,9 @@
 //@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
+import type {Race, _Class, Background, Character} from '../types/index.js';
+
+
 import AbilityTable from './AbilityTable.jsx';
 import OptionSkill from './OptionSkill.jsx';
 import OptionLang from './OptionLang.jsx';
@@ -12,69 +15,42 @@ import OptionPast from './OptionPast.jsx';
 import 'Styles/ProtoCharacter.scss';
 
 type Props = {
-  race: {
-    id: string,
-    lang: Array<string>,
-    _placeholder: {},
+  race: Race,
+  _class: _Class,
+  score: {
+    str: [number, number],
+    dex: [number, number],
+    con: [number, number],
+    int: [number, number],
+    wis: [number, number],
+    cha: [number, number],
   },
-  _class: {
-    id: string,
-    skill: Array<number | string>,
-    _equip: {},
-    _pack: Array<string>
-  },
-  score: {},
-  back: {
-    id: string,
-    skill: Array<string>,
-    lang: Array<string>,
-    _tools: {
-      artisan: Array<string>,
-      musical: Array<string>,
-      gaming: Array<string>,
-    },
-  },
-  char: {
-    name: string,
-    equip: {
-      pack: {
-        fromPack: Array<string>
-      }
-    },
-    main: {
-      skills: Array<string | number>,
-      langs: {},
-      tools: {
-        all: Array<Array<boolean | string>>,
-      },
-    },
-    body: {},
-    past: {},
-  },
+  back: Background,
+  char: Character,
   getCharacter: ({}) => void,
-  changeName: () => void,
-  changeBody: () => void,
-  changePast: () => void,
-  changeSkill: () => void,
-  changeLang: () => void,
-  changeTool: () => void,
-  changeGear: () => void,
-  changePack: () => void,
+  changeName: (string) => void,
+  changeBody: ([string, string]) => void,
+  changePast: ([string, string]) => void,
+  changeSkill: ([string, number]) => void,
+  changeLang: ([string, number]) => void,
+  changeTool: ([string, string]) => void,
+  changeGear: ([string, string]) => void,
+  changePack: (string) => void,
   lockCharacter: ({}) => void,
 };
 
 class ProtoCharacter extends React.Component<Props> {
   constructor(props: Props) {
     super(props);
-    this.handleChangeName = this.handleChangeName.bind(this);
-    this.handleChangeSkill = this.handleChangeSkill.bind(this);
-    this.handleChangeLang = this.handleChangeLang.bind(this);
-    this.handleChangeTool = this.handleChangeTool.bind(this);
-    this.handleChangePack = this.handleChangePack.bind(this);
-    this.handleChangeGear = this.handleChangeGear.bind(this);
-    this.handleChangeBody = this.handleChangeBody.bind(this);
-    this.handleChangePast = this.handleChangePast.bind(this);
-    this.lockChar = this.lockChar.bind(this);
+    (this: any).handleChangeName = this.handleChangeName.bind(this);
+    (this: any).handleChangeSkill = this.handleChangeSkill.bind(this);
+    (this: any).handleChangeLang = this.handleChangeLang.bind(this);
+    (this: any).handleChangeTool = this.handleChangeTool.bind(this);
+    (this: any).handleChangePack = this.handleChangePack.bind(this);
+    (this: any).handleChangeGear = this.handleChangeGear.bind(this);
+    (this: any).handleChangeBody = this.handleChangeBody.bind(this);
+    (this: any).handleChangePast = this.handleChangePast.bind(this);
+    (this: any).lockChar = this.lockChar.bind(this);
   }
 
   componentDidMount() {
@@ -87,48 +63,48 @@ class ProtoCharacter extends React.Component<Props> {
     this.props.getCharacter(character);
   }
 
-  handleChangeBody(e) {
+  handleChangeBody(e: SyntheticEvent<HTMLInputElement>) {
     e.preventDefault();
-    this.props.changeBody([e.target.name, e.target.value]);
+    this.props.changeBody([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangePast(e) {
+  handleChangePast(e: SyntheticEvent<HTMLInputElement>) {
     e.preventDefault();
-    this.props.changePast([e.target.name, e.target.value]);
+    this.props.changePast([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangeSkill(e) {
+  handleChangeSkill(e: SyntheticEvent<HTMLInputElement>) {
     let max = this.props._class.skill[0];
-    if (this.props.race.id === 'human') max++;
-    this.props.changeSkill([e.target.name, max]);
+    if (this.props.race.id === 'human' && typeof max === 'number') max++;
+    this.props.changeSkill([e.currentTarget.name, max]);
   }
 
-  handleChangeLang(e) {
+  handleChangeLang(e: SyntheticEvent<HTMLInputElement>) {
     let max = this.props.back.lang
       ? this.props.back.lang[0]
       : 0;
     max += this.props.race.lang.length;
-    this.props.changeLang([e.target.name, max]);
+    this.props.changeLang([e.currentTarget.name, max]);
   }
 
-  handleChangeTool(e) {
-    this.props.changeTool([e.target.name, e.target.value]);
+  handleChangeTool(e: SyntheticEvent<HTMLInputElement>) {
+    this.props.changeTool([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangePack(e) {
-    this.props.changePack(e.target.value);
+  handleChangePack(e: SyntheticEvent<HTMLInputElement>) {
+    this.props.changePack(e.currentTarget.value);
   }
 
-  handleChangeGear(e) {
-    this.props.changeGear([e.target.name, e.target.value]);
+  handleChangeGear(e: SyntheticEvent<HTMLInputElement>) {
+    this.props.changeGear([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangeName(e) {
+  handleChangeName(e: SyntheticEvent<HTMLInputElement>) {
     e.preventDefault();
-    this.props.changeName(e.target.value);
+    this.props.changeName(e.currentTarget.value);
   }
 
-  lockChar(e) {
+  lockChar(e: SyntheticEvent<HTMLButtonElement>) {
     // char must at least have a name to play
     if (!this.props.char.name.trim()) {
       e.preventDefault();

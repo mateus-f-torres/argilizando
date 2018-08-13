@@ -1,18 +1,8 @@
 //@flow
 import * as React from 'react';
+import type {CharBody} from '../types/index.js';
 
-type Props = {
-  race: string,
-  gender: string,
-  size: string,
-  age: string,
-  height: string,
-  weight: string,
-  eyes: string,
-  skin: string,
-  hair: string,
-  extra: Array<string>,
-};
+type Props = CharBody;
 
 const CharacterBody = (props: Props) => {
   return (
@@ -32,7 +22,7 @@ const CharacterBody = (props: Props) => {
       <p>{props.skin}</p>
       <h4>Hair:</h4>
       <p>{props.hair}</p>
-      { props.extra &&
+      { props.extra && Array.isArray(props.extra) &&
             <div>
               <h4>Extra Details:</h4>
               <ul className="dotted-list">
