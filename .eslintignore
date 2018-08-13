@@ -7,3 +7,4 @@ server.js
 # in case of root linting
 postcss.*.js
 webpack.*.js
+jest.config.js

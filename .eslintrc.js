@@ -7,7 +7,12 @@ module.exports = {
     "jquery": true,
     "jest": true
   },
-  "extends": ["eslint:recommended","google", "plugin:react/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "google", 
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 8,
@@ -19,7 +24,8 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "react"
+    "react",
+    "flowtype"
   ],
   "rules": {
     "no-console": [
