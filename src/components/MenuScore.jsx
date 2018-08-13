@@ -3,17 +3,18 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import CardScore from './CardScore.jsx';
 import ABILITIES from '../data/scores.js';
+import type {Score} from '../types/index.js';
 
 import 'Styles/MenuScore.scss';
 
 type Props = {
   total: number,
-  str: Array<mixed>,
-  dex: Array<mixed>,
-  con: Array<mixed>,
-  int: Array<mixed>,
-  wis: Array<mixed>,
-  cha: Array<mixed>,
+  str: Score,
+  dex: Score,
+  con: Score,
+  int: Score,
+  wis: Score,
+  cha: Score,
   scorePlus: (string) => void,
   scoreMinus: (string) => void,
   toggleText: (string) => void,
@@ -83,8 +84,7 @@ class MenuScore extends React.Component<Props> {
             // create a single score component for each
             // getting the correct score and modifier
             ABILITIES.map((name) => {
-              let arr = this.props[name[0]];
-              let [score, mod, cost, show] = arr;
+              let [score, mod, cost, show] = [...this.props[name[0]]];
 
               return (<CardScore
                 key={name[0]}

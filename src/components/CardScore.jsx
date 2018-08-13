@@ -1,14 +1,9 @@
 //@flow
 import * as React from 'react';
+import type {Score} from '../types/index.js';
 
-type Props = {
-  long: string,
-  short: string,
-  score: number,
-  mod: number,
-  cost: number,
+type Props = Score & {
   handleClick: () => void,
-  show: string
 };
 
 const btn = 'score-btn waves-effect waves-light';

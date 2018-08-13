@@ -1,15 +1,10 @@
 //@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
+import type {Background} from '../types/index.js';
 
-type Props = {
-  name: string,
-  pitch: string,
-  skill: Array<string>,
-  tool?: Array<string>,
-  lang?: Array<number | string>,
-  equip: Array<Array<string>>,
-  lockBack: () => void
+type Props = Background & {
+  lockBack: () => void,
 };
 
 const CardBack = (props: Props) => (

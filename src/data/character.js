@@ -2,8 +2,6 @@ import packs from './packs.js';
 
 export const blankCharacter = {
   name: '',
-  body: {},
-  past: {},
   main: {
     _class: '',
     level: 1, // 1st lvl character blank template
@@ -23,6 +21,7 @@ export const blankCharacter = {
       all: {},
     },
   },
+  traits: [],
   equip: {
     gear: [],
     pack: {
@@ -38,7 +37,8 @@ export const blankCharacter = {
     },
   },
   spell: {},
-  traits: [],
+  body: {},
+  past: {},
 };
 
 const getCharMain = ({race, _class, score, back}) => {

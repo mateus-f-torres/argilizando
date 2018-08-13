@@ -2,6 +2,7 @@
 import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {select} from 'd3-selection';
+import type {_Class} from '../types/index.js';
 
 import barbarian from 'Images/barbarian.svg';
 import bard from 'Images/bard.svg';
@@ -16,14 +17,7 @@ import sorcerer from 'Images/sorcerer.svg';
 import warlock from 'Images/warlock.svg';
 import wizard from 'Images/wizard.svg';
 
-type Props = {
-  id: string,
-  primary: string,
-  save: Array<string>,
-  skill: Array<mixed>,
-  tool?: Array<string>,
-  equip: Array<Array<string>>,
-  special: Array<Array<string>>,
+type Props = _Class & {
   lockClass: () => void
 };
 
@@ -129,6 +123,7 @@ class CardClass extends React.Component<Props> {
             <ul
               className={this.props.id==='rogue' ? 'multi larger' : 'multi'}>
               {
+                Array.isArray(this.props.skill[1]) &&
                 this.props.skill[1].map((sk, i) =>
                   (<li key={i}>{sk}</li>))
               }

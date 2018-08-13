@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
 import {NavLink, Route, Switch} from 'react-router-dom';
+import type {Character} from '../types/index.js';
 
 import CharacterMain from './CharacterMain.jsx';
 import CharacterEquip from './CharacterEquip.jsx';
@@ -12,15 +13,7 @@ import CharacterPast from './CharacterPast.jsx';
 import 'Styles/FinalCharacter.scss';
 
 type Props = {
-  char: {
-    name: string,
-    spell: {},
-    main: {},
-    traits: {},
-    equip: {},
-    body: {},
-    past: {},
-  },
+  char: Character,
 };
 
 const FinalCharacter = (props: Props) => (

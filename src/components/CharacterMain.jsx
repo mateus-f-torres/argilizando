@@ -1,30 +1,9 @@
 //@flow
 import * as React from 'react';
 import AbilityTable from './AbilityTable.jsx';
+import type {CharMain} from '../types/index.js';
 
-type Props = {
-  armorClass: number,
-  init: number,
-  speed: number,
-  hitPoints: number,
-  hitDice: string,
-  prof: number,
-  score: {
-    str: Array<number>,
-    dex: Array<number>,
-    con: Array<number>,
-    int: Array<number>,
-    wis: Array<number>,
-    cha: Array<number>,
-  },
-  saves: Array<Array<string | number>>,
-  skills: Array<Array<string | number>>,
-  pp: number,
-  langs: Array<Array<string | boolean>>,
-  tools: {
-    prof: Array<string>
-  },
-};
+type Props = CharMain;
 
 const CharacterMain = (props: Props) => {
   return (
@@ -78,7 +57,7 @@ const CharacterMain = (props: Props) => {
                 <span className="prof-blob">
                   <span className={prof ? 'prof' : 'not-prof' }/>
                   <span className="prof-mod">
-                    {mod >= 0 ? '+' + mod : mod}
+                    {typeof mod === 'number' && mod >= 0 ? '+' + mod : mod}
                   </span>
                 </span>
                 <span>{save}</span>
@@ -101,7 +80,7 @@ const CharacterMain = (props: Props) => {
                 <span className="prof-blob">
                   <span className={prof ? 'prof' : 'not-prof' }/>
                   <span className="prof-mod">
-                    {mod >= 0 ? '+' + mod : mod}
+                    {typeof mod === 'number' && mod >= 0 ? '+' + mod : mod}
                   </span>
                 </span>
                 <span>{skill}</span>

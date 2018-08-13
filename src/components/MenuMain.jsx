@@ -1,18 +1,12 @@
 //@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
+import type {Done} from '../types/index.js';
+
 
 type Props = {
-  done: {
-    race: boolean | {},
-    _class: boolean | {},
-    score: boolean | {},
-    back: boolean | {},
-    char: boolean | {
-      name: string
-    },
-  },
-  handleClick: () => void,
+  done: Done,
+  handleClick: (SyntheticEvent<HTMLButtonElement>) => void,
 };
 
 import 'Styles/MenuMain.scss';

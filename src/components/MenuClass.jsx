@@ -3,13 +3,14 @@ import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardClass from './CardClass.jsx';
 import CLASSES from '../data/classes.js';
+import type {_Class} from '../types/index.js';
 
 import 'Styles/MenuClass.scss';
 
 type Props = {
   getClass: (string) => void,
   lockClass: ({}) => void,
-  chosen: {},
+  chosen: _Class,
   match: {
     url: string,
   },

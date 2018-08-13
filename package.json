@@ -15,6 +15,8 @@
     "serve": "node server.js",
     "eject": "",
     "lint": "eslint ./ --ext .js --ext .jsx",
+    "status": "yarn run flow status",
+    "stop": "yarn run flow stop",
     "test": "jest"
   },
   "dependencies": {

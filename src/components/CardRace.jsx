@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
+import type {Race} from '../types/index.js';
 
 import human from 'Images/human.png';
 import halfling from 'Images/halfling.png';
@@ -21,16 +22,7 @@ import hobgoblin from 'Images/hobgoblin.png';
 import kobold from 'Images/kobold.png';
 import yuanti from 'Images/yuanti.png';
 
-type Props = {
-  id: string,
-  name: string,
-  height: string,
-  weight: string,
-  age: Array<number>,
-  size: string,
-  speed: number,
-  lang: Array<string>,
-  special: Array<string[]>,
+type Props = Race & {
   lockRace: () => void
 };
 

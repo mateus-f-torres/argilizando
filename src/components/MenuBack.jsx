@@ -3,13 +3,14 @@ import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardBack from './CardBack.jsx';
 import BACKGROUNDS from '../data/backgrounds.js';
+import type {Background} from '../types/index.js';
 
 import 'Styles/MenuBack.scss';
 
 type Props = {
   getBack: (string) => void,
   lockBack: ({}) => void,
-  chosen: {},
+  chosen: Background,
   match: {
     url: string,
   },

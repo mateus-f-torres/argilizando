@@ -1,6 +1,7 @@
 //@flow
 import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
+import type {Done} from '../types/index.js';
 
 import MenuMain from './MenuMain.jsx';
 import UpdateRace from '../containers/UpdateRace.js';
@@ -15,13 +16,7 @@ import logo from 'Images/logo.svg'; // import using webpack resolve.alias
 import developer from 'Images/mateus-f-torres.svg';
 
 type Props = {
-  done: {
-    race: boolean | {},
-    _class: boolean | {},
-    score: boolean | {},
-    back: boolean | {},
-    char: boolean | {}
-  }
+  done: Done,
 };
 
 

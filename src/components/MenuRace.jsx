@@ -3,13 +3,14 @@ import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardRace from './CardRace.jsx';
 import RACES from '../data/races.js';
+import type {Race} from '../types/index.js';
 
 import 'Styles/MenuRace.scss';
 
 type Props = {
   getRace: (string) => void,
   lockRace: ({}) => void,
-  race: {},
+  race: Race,
   match: {
     url: string,
   },
