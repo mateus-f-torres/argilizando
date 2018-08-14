@@ -1,8 +1,8 @@
 //@flow
 import * as React from 'react';
-import type {Score} from '../types/index.js';
+import type {LongScore} from '../types/props.js';
 
-type Props = Score & {
+type Props = LongScore & {
   handleClick: (SyntheticEvent<HTMLButtonElement>) => void,
 };
 

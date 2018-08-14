@@ -3,14 +3,14 @@ import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardClass from './CardClass.jsx';
 import CLASSES from '../data/classes.js';
-import type {_Class} from '../types/index.js';
+import type {_Class} from '../types/props.js';
 
 import 'Styles/MenuClass.scss';
 
 type Props = {
   getClass: (string) => void,
   lockClass: ({}) => void,
-  chosen: _Class,
+  _class: _Class,
   match: {
     url: string,
   },
@@ -28,7 +28,7 @@ class MenuClass extends React.Component<Props> {
   }
 
   lockClass() {
-    this.props.lockClass(this.props.chosen);
+    this.props.lockClass(this.props._class);
   }
 
   render() {
@@ -82,7 +82,7 @@ class MenuClass extends React.Component<Props> {
 
           <Route path={this.props.match.url + '/'}
             render={()=>
-              <CardClass lockClass={this.lockClass} {...this.props.chosen}/>
+              <CardClass lockClass={this.lockClass} {...this.props._class}/>
             }/>
         </Switch>
       </section>

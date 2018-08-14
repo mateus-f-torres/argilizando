@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import {NavLink, Route, Switch} from 'react-router-dom';
-import type {Character} from '../types/index.js';
+import type {Character} from '../types/props.js';
 
 import CharacterMain from './CharacterMain.jsx';
 import CharacterEquip from './CharacterEquip.jsx';

@@ -1,9 +1,9 @@
+//@flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
-import rootReducer from './reducers/index.js';
+import store from './store/configureStore.js';
 
 import {BrowserRouter} from 'react-router-dom';
 import FullApp from './containers/FullApp.js';
@@ -11,13 +11,12 @@ import FullApp from './containers/FullApp.js';
 // 1st stylesheet called, resets here
 import './index.scss';
 
-const store = createStore(rootReducer);
-
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store()}>
     <BrowserRouter>
       <FullApp />
     </BrowserRouter>
   </Provider>,
+  // $FlowFixMe
   document.getElementById('root')
 );

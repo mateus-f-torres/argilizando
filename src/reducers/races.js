@@ -1,10 +1,11 @@
+//@flow
 import RACES from '../data/races.js';
+import type {Race} from '../types/props.js';
+import type {RaceAction} from '../types/actions.js';
 
-const defaultRace = {
-  chosen: 'none',
-};
+type State = {} | Race;
 
-const raceReducer = (state = defaultRace, action) => {
+const raceReducer = (state: State = {}, action: RaceAction) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_RACE':
 
@@ -18,11 +19,11 @@ const raceReducer = (state = defaultRace, action) => {
       for (let item of options) {
         // find the one that matches user choice
 
-        if (item.id == action.choice) {
+        if (item.id === action.payload) {
           // return new copy of race state
           // with the chosen race data
 
-          return Object.assign({}, state, {chosen: item});
+          return Object.assign({}, state, item);
         }
       }
     }

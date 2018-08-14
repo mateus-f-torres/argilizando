@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import AbilityTable from './AbilityTable.jsx';
-import type {CharMain} from '../types/index.js';
+import type {CharMain} from '../types/props.js';
 
 type Props = CharMain;
 

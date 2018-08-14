@@ -1,7 +1,7 @@
 //@flow
 import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
-import type {Done} from '../types/index.js';
+import type {Done} from '../types/props.js';
 
 import MenuMain from './MenuMain.jsx';
 import UpdateRace from '../containers/UpdateRace.js';

@@ -1,7 +1,9 @@
 //@flow
 import * as React from 'react';
 import {Link} from 'react-router-dom';
-import type {Race, _Class, Background, Character} from '../types/index.js';
+import type {
+  Race, _Class, ShortScore, Background, Character,
+} from '../types/props.js';
 
 
 import AbilityTable from './AbilityTable.jsx';
@@ -17,14 +19,7 @@ import 'Styles/ProtoCharacter.scss';
 type Props = {
   race: Race,
   _class: _Class,
-  score: {
-    str: [number, number],
-    dex: [number, number],
-    con: [number, number],
-    int: [number, number],
-    wis: [number, number],
-    cha: [number, number],
-  },
+  score: ShortScore,
   back: Background,
   char: Character,
   getCharacter: ({}) => void,

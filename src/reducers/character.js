@@ -1,45 +1,50 @@
+//@flow
 import packs from '../data/packs.js';
-import {blankCharacter} from '../data/character.js';
+import type {Character} from '../types/props.js';
+import type {CharAction} from '../types/actions.js';
+import {blankCharacter as blank} from '../data/character.js';
 import {getChar} from '../data/character.js';
 
-const characterReducer = (state = blankCharacter, action) => {
+type State = Character;
+
+const characterReducer = (state: State = blank, action: CharAction) => {
   let key; let value;
   let change; let max;
 
   switch (action.type) {
   case 'DISPLAY_CHARACTER':
-    return Object.assign({}, state, getChar(action.char));
+    return Object.assign({}, state, getChar(action.payload));
 
   case 'CHANGE_CHARACTER_BODY':
-    [key, value] = [...action.pair];
+    [key, value] = [...action.payload];
     return Object.assign({},
       state,
       {body: changeBody(state.body, key, value)}
     );
 
   case 'CHANGE_CHARACTER_PAST':
-    [key, value] = [...action.pair];
+    [key, value] = [...action.payload];
     return Object.assign({},
       state,
       {past: changePast(state.past, key, value)}
     );
 
   case 'CHANGE_CHARACTER_SKILL':
-    [change, max] = [...action.pair];
+    [change, max] = [...action.payload];
     return Object.assign({},
       state,
       {main: toggleSkill(state.main, change, max)}
     );
 
   case 'CHANGE_CHARACTER_LANG':
-    [change, max] = [...action.pair];
+    [change, max] = [...action.payload];
     return Object.assign({},
       state,
       {main: toggleLang(state.main, change, max)}
     );
 
   case 'CHANGE_CHARACTER_TOOL':
-    [key, value] = [...action.pair];
+    [key, value] = [...action.payload];
     return Object.assign({},
       state,
       {main: toggleTool(state.main, key, value)}
@@ -48,17 +53,17 @@ const characterReducer = (state = blankCharacter, action) => {
   case 'CHANGE_CHARACTER_PACK':
     return Object.assign({},
       state,
-      {equip: changePack(state.equip, action.pack)}
+      {equip: changePack(state.equip, action.payload)}
     );
 
   case 'CHANGE_CHARACTER_GEAR':
     return Object.assign({},
       state,
-      {equip: changeGear(state.equip, [...action.gear])}
+      {equip: changeGear(state.equip, [...action.payload])}
     );
 
   case 'CHANGE_CHARACTER_NAME':
-    return Object.assign({}, state, {name: action.name});
+    return Object.assign({}, state, {name: action.payload});
 
   default:
     return state;
@@ -91,7 +96,7 @@ const toggleSkill = (main, change, max) => {
     return prof
 
       // if skill had prof (was checked), just uncheck it
-      ? [ability, skill, mod - main.prof]
+      ? [ability, skill, mod - main.prof, false]
 
       // else check if we reached max number of checked skills
       // add 2 to account for initial background proficient skills
@@ -119,7 +124,7 @@ const toggleLang = (main, change, max) => {
   let num = 0;
   for (const item of main.langs) {
     // control for special druidic and thieves's cant languages
-    if (item[3] !== undefined) continue;
+    if (item[1] === 'Thieves\' Cant' || item[1] === 'Druidic') continue;
     item[2] && num++;
   }
 
@@ -133,7 +138,7 @@ const toggleLang = (main, change, max) => {
     return known
 
       // if language was known (was checked), just uncheck it
-      ? [selectable, lang, false]
+      ? [selectable, lang, false, false]
 
       // else check if we reached max number of checked languages
       : num >= max
@@ -142,7 +147,7 @@ const toggleLang = (main, change, max) => {
         ? item
 
         // else check lang
-        : [selectable, lang, true];
+        : [selectable, lang, true, false];
   });
 
   return main;
@@ -177,15 +182,16 @@ const changePack = (equip, name) => {
 
 const changeGear = (equip, choice) => {
   let [num, name] = [...choice];
+  let index = Number.parseInt(num, 10);
 
-  if (equip.gear[num]) {
+  if (equip.gear[index]) {
     equip.gear = equip.gear.map((item) => {
       return item[0] === num
         ? [num, name]
         : item;
     });
   } else {
-    equip.gear[num] = [num, name];
+    equip.gear[index] = [num, name];
   }
 
   return equip;
