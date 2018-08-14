@@ -1,10 +1,11 @@
+//@flow
 import CLASSES from '../data/classes.js';
+import type {_Class} from '../types/props.js';
+import type {ClassAction} from '../types/actions.js';
 
-const defaultClass = {
-  chosen: 'none',
-};
+type State = {} | _Class;
 
-const classReducer = (state = defaultClass, action) => {
+const classReducer = (state: State = {}, action: ClassAction) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_CLASS':
 
@@ -18,11 +19,11 @@ const classReducer = (state = defaultClass, action) => {
       for (let item of options) {
         // find the one that matches user choice
 
-        if (item.id == action.choice) {
+        if (item.id == action.payload) {
           // return new copy of gameClass state
           // with the chosen class data
 
-          return Object.assign({}, state, {chosen: item});
+          return Object.assign({}, state, item);
         }
       }
     }

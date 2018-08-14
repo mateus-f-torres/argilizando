@@ -1,3 +1,4 @@
+//@flow
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {
@@ -5,8 +6,9 @@ import {
   resetScore, lockScore,
 } from '../actions';
 import MenuScore from '../components/MenuScore.jsx';
+import type {State} from '../types/state.js';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state: State) => {
   return {
     total: state.score.total,
     str: state.score.str,
@@ -18,7 +20,7 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = (dispatch: *) => {
   return {
     scorePlus: (ability) => {
       dispatch(incrementScore(ability));
@@ -32,8 +34,8 @@ const mapDispatchToProps = (dispatch) => {
     resetBtn: () => {
       dispatch(resetScore());
     },
-    lockScore: (chosen) => {
-      dispatch(lockScore(chosen));
+    lockScore: (score) => {
+      dispatch(lockScore(score));
     },
   };
 };

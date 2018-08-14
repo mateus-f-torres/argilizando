@@ -1,4 +1,6 @@
+//@flow
 import DESCRIPTION from '../data/modifiers.js';
+import type {ScoreAction} from '../types/actions.js';
 
 // constants for ability score functions
 const MAX_TOTAL = 55;
@@ -24,8 +26,19 @@ const defaultScores = {
   cha: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
 };
 
-const scoreReducer = (state = defaultScores, action) => {
-  let ability = action.ability;
+type State = {
+  total: number,
+  str: [number, number, number, boolean | string],
+  dex: [number, number, number, boolean | string],
+  con: [number, number, number, boolean | string],
+  int: [number, number, number, boolean | string],
+  wis: [number, number, number, boolean | string],
+  cha: [number, number, number, boolean | string],
+};
+
+const scoreReducer = (state: State = defaultScores, action: ScoreAction) => {
+  // $FlowFixMe
+  let ability = action.payload;
   let score; let mod; let cost; let show;
 
   switch (action.type) {

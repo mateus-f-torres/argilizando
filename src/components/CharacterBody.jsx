@@ -1,6 +1,6 @@
 //@flow
 import * as React from 'react';
-import type {CharBody} from '../types/index.js';
+import type {CharBody} from '../types/props.js';
 
 type Props = CharBody;
 

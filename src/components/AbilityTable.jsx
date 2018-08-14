@@ -1,14 +1,8 @@
 //@flow
 import * as React from 'react';
+import type {ShortScore} from '../types/props.js';
 
-type Props = {
-  str: [number, number],
-  dex: [number, number],
-  con: [number, number],
-  int: [number, number],
-  wis: [number, number],
-  cha: [number, number],
-};
+type Props = ShortScore;
 
 const AbilityTable = (props: Props) => (
   <div>

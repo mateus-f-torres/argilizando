@@ -3,14 +3,14 @@ import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardBack from './CardBack.jsx';
 import BACKGROUNDS from '../data/backgrounds.js';
-import type {Background} from '../types/index.js';
+import type {Background} from '../types/props.js';
 
 import 'Styles/MenuBack.scss';
 
 type Props = {
   getBack: (string) => void,
   lockBack: ({}) => void,
-  chosen: Background,
+  back: Background,
   match: {
     url: string,
   },
@@ -28,7 +28,7 @@ class MenuBack extends React.Component<Props> {
   }
 
   lockBack() {
-    this.props.lockBack(this.props.chosen);
+    this.props.lockBack(this.props.back);
   }
 
   render() {
@@ -77,7 +77,7 @@ class MenuBack extends React.Component<Props> {
 
           <Route path={this.props.match.url + '/'}
             render={()=>
-              <CardBack lockBack={this.lockBack} {...this.props.chosen}/>
+              <CardBack lockBack={this.lockBack} {...this.props.back}/>
             }/>
         </Switch>
       </section>

@@ -2,7 +2,7 @@
 import * as React from 'react';
 import {Link} from 'react-router-dom';
 import {select} from 'd3-selection';
-import type {_Class} from '../types/index.js';
+import type {_Class} from '../types/props.js';
 
 import barbarian from 'Images/barbarian.svg';
 import bard from 'Images/bard.svg';

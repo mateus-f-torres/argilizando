@@ -1,6 +1,6 @@
 //@flow
 import * as React from 'react';
-import type {CharSpell} from '../types/index.js';
+import type {CharSpell} from '../types/props.js';
 
 type Props = CharSpell;
 

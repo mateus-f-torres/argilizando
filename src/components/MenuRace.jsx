@@ -3,7 +3,7 @@ import * as React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardRace from './CardRace.jsx';
 import RACES from '../data/races.js';
-import type {Race} from '../types/index.js';
+import type {Race} from '../types/props.js';
 
 import 'Styles/MenuRace.scss';
 

@@ -1,122 +1,131 @@
-/*
+//@flow
+import type {
+  Race, _Class, ShortScore, Background, Character,
+} from '../types/props.js';
+import type {
+  RaceAction, ClassAction, ScoreAction,
+  BackAction, CharAction, DoneAction,
+} from '../types/actions.js';
 
-1. Player Race actions
-2. Player Class actions
-3. Ability Score actions
-4. Player Background actions
-5. Character Create actions
-
-*/
 // RACE
 
-export const displayRace = (choice) => ({
+export const displayRace = (race: string): RaceAction => ({
   type: 'DISPLAY_CHOSEN_RACE',
-  choice,
-});
-
-export const lockRace = (lock) => ({
-  type: 'LOCK_RACE',
-  lock,
+  payload: race,
 });
 
 // CLASS
 
-export const displayClass = (choice) => ({
+export const displayClass = (_class: string): ClassAction => ({
   type: 'DISPLAY_CHOSEN_CLASS',
-  choice,
+  payload: _class,
 });
 
-export const lockClass = (lock) => ({
-  type: 'LOCK_CLASS',
-  lock,
-});
+// SCORE
 
-// ABILITY SCORE
-
-export const incrementScore = (ability) => ({
+export const incrementScore = (ability: string): ScoreAction => ({
   type: 'INCREMENT_ABILITY_SCORE',
-  ability,
+  payload: ability,
 });
 
-export const decrementScore = (ability) => ({
+export const decrementScore = (ability: string): ScoreAction => ({
   type: 'DECREMENT_ABILITY_SCORE',
-  ability,
+  payload: ability,
 });
 
-export const toggleDescription = (ability) => ({
+export const toggleDescription = (ability: string): ScoreAction => ({
   type: 'TOGGLE_ABILITY_SCORE_DESCRIPTION',
-  ability,
+  payload: ability,
 });
 
-export const resetScore = () => ({
+export const resetScore = (): ScoreAction=> ({
   type: 'RESET_ALL_ABILITY_SCORES',
-});
-
-export const lockScore = (lock) => ({
-  type: 'LOCK_SCORE',
-  lock,
 });
 
 // BACKGROUND
 
-export const displayBackground = (choice) => ({
+export const displayBackground = (choice: string): BackAction => ({
   type: 'DISPLAY_CHOSEN_BACKGROUND',
-  choice,
-});
-
-export const lockBackground = (lock) => ({
-  type: 'LOCK_BACKGROUND',
-  lock,
+  payload: choice,
 });
 
 // CHARACTER
 
-export const getCharacter = (char) => ({
+type halfChar = {
+  race: Race,
+  _class: _Class,
+  score: ShortScore,
+  back: Background
+};
+
+export const getCharacter = (char: halfChar): CharAction => ({
   type: 'DISPLAY_CHARACTER',
-  char,
+  payload: char,
 });
 
-export const changeBody = (pair) => ({
+export const changeBody = (pair: [string, string]): CharAction => ({
   type: 'CHANGE_CHARACTER_BODY',
-  pair,
+  payload: pair,
 });
 
-export const changePast = (pair) => ({
+export const changePast = (pair: [string, string]): CharAction => ({
   type: 'CHANGE_CHARACTER_PAST',
-  pair,
+  payload: pair,
 });
 
-export const changeSkill = (pair) => ({
+export const changeSkill = (pair: [string, number]): CharAction => ({
   type: 'CHANGE_CHARACTER_SKILL',
-  pair,
+  payload: pair,
 });
 
-export const changeLang = (pair) => ({
+export const changeLang = (pair: [string, number]): CharAction => ({
   type: 'CHANGE_CHARACTER_LANG',
-  pair,
+  payload: pair,
 });
 
-export const changeTool = (pair) => ({
+export const changeTool = (pair: [string, string]): CharAction => ({
   type: 'CHANGE_CHARACTER_TOOL',
-  pair,
+  payload: pair,
 });
 
-export const changePack = (pack) => ({
+export const changePack = (pack: string): CharAction => ({
   type: 'CHANGE_CHARACTER_PACK',
-  pack,
+  payload: pack,
 });
 
-export const changeGear = (gear) => ({
+export const changeGear = (gear: [string, string]): CharAction => ({
   type: 'CHANGE_CHARACTER_GEAR',
-  gear,
+  payload: gear,
 });
 
-export const changeName = (name) => ({
+export const changeName = (name: string): CharAction => ({
   type: 'CHANGE_CHARACTER_NAME',
-  name,
+  payload: name,
 });
 
-export const lockCharacter = (lock) => ({
+// DONE
+
+export const lockRace = (race: Race): DoneAction => ({
+  type: 'LOCK_RACE',
+  payload: race,
+});
+
+export const lockClass = (_class: _Class): DoneAction => ({
+  type: 'LOCK_CLASS',
+  payload: _class,
+});
+
+export const lockScore = (lock: ShortScore): DoneAction => ({
+  type: 'LOCK_SCORE',
+  payload: lock,
+});
+
+export const lockBackground = (lock: Background): DoneAction => ({
+  type: 'LOCK_BACKGROUND',
+  payload: lock,
+});
+
+export const lockCharacter = (lock: Character): DoneAction => ({
   type: 'LOCK_CHARACTER',
-  lock,
+  payload: lock,
 });

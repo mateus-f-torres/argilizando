@@ -1,6 +1,6 @@
 //@flow
 import * as React from 'react';
-import type {Background, CharPast} from '../types/index.js';
+import type {Background, CharPast} from '../types/props.js';
 
 type Props = {
   back: Background,

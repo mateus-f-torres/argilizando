@@ -1,10 +1,11 @@
+//@flow
 import BACKGROUNDS from '../data/backgrounds.js';
+import type {Background} from '../types/props.js';
+import type {BackAction} from '../types/actions.js';
 
-const defaultBack = {
-  chosen: 'none',
-};
+type State = {} | Background;
 
-const backgroundReducer = (state = defaultBack, action) => {
+const backgroundReducer = (state: State = {}, action: BackAction) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_BACKGROUND':
 
@@ -18,11 +19,11 @@ const backgroundReducer = (state = defaultBack, action) => {
       for (let item of options) {
         // find the one that matches user choice
 
-        if (item.id == action.choice) {
+        if (item.id == action.payload) {
           // return new copy of background state
           // with the chosen background data
 
-          return Object.assign({}, state, {chosen: item});
+          return Object.assign({}, state, item);
         }
       }
     }

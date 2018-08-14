@@ -1,17 +1,22 @@
+//@flow
 import {combineReducers} from 'redux';
 
 import race from './races.js';
-import gameClass from './classes.js';
+import _class from './classes.js';
 import score from './score.js';
 import background from './backgrounds.js';
 import character from './character.js';
 import done from './done.js';
 
-export default combineReducers({
+const reducers = {
   race,
-  gameClass,
+  _class,
   score,
   background,
   character,
   done,
-});
+};
+
+export type Reducers = typeof reducers;
+
+export default combineReducers(reducers);

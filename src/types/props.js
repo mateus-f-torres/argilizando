@@ -1,5 +1,4 @@
 //@flow
-// Centralized Flow Type definitions
 
 export type Race = {
   id: string,
@@ -43,13 +42,22 @@ export type _Class = {
   },
 };
 
-export type Score = {
+export type LongScore = {
   short: string,
   long: string,
   score: number,
   mod: number,
   cost: number,
   show: boolean | string,
+};
+
+export type ShortScore = {
+  str: [number, number],
+  dex: [number, number],
+  con: [number, number],
+  int: [number, number],
+  wis: [number, number],
+  cha: [number, number],
 };
 
 export type Background = {
@@ -82,14 +90,7 @@ export type CharMain = {
   speed: number,
   init: number,
   prof: number,
-  score: {
-    str: [number, number],
-    dex: [number, number],
-    con: [number, number],
-    int: [number, number],
-    wis: [number, number],
-    cha: [number, number],
-  },
+  score: ShortScore,
   saves: Array<[string, string, number, ?boolean]>,
   skills: Array<[string, string, number, ?boolean]>,
   pp: number,
@@ -108,7 +109,7 @@ export type CharMain = {
 export type CharTraits = Array<Array<string>>;
 
 export type CharEquip = {
-  gear: Array<[number, string]>,
+  gear: Array<[string, string]>,
   pack: {
     fromClass: Array<string>,
     fromPack: Array<string>,
@@ -182,3 +183,4 @@ export type Done = {
   back: boolean | Background,
   char: boolean | Character,
 };
+
