@@ -15,9 +15,10 @@
     "serve": "node server.js",
     "eject": "",
     "lint": "eslint ./ --ext .js --ext .jsx",
-    "status": "yarn run flow status",
-    "stop": "yarn run flow stop",
-    "test": "jest"
+    "flow:status": "yarn run flow status",
+    "flow:stop": "yarn run flow stop",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "d3": "^5.5.0",
@@ -35,6 +36,7 @@
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.4",
+    "babel-plugin-react-remove-properties": "^0.2.5",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
     "babel-preset-env": "^1.7.0",
