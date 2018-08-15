@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardRace /> Snapshot Test displays correct human race card 1`] = `
+<figure
+  className="card"
+>
+  <h2
+    data-test="race-name"
+  >
+    Human
+  </h2>
+  <img
+    className="race-img"
+    src="/test-file-stub"
+  />
+  <div
+    className="horizontal-line"
+  />
+  <ul
+    className="stats"
+    id="race-stats"
+  >
+    <h3>
+      Race Stats
+    </h3>
+    <li>
+      <p
+        data-test="race-height"
+      >
+        <b>
+          Height:
+        </b>
+        6ft (1,7m)
+        .
+      </p>
+    </li>
+    <li>
+      <p
+        data-test="race-weight"
+      >
+        <b>
+          Weight:
+        </b>
+        180lb (80kg)
+        .
+      </p>
+    </li>
+    <li>
+      <p
+        data-test="race-adulthood"
+      >
+        <b>
+          Adulthood:
+        </b>
+        20
+         years.
+      </p>
+    </li>
+    <li>
+      <p
+        data-test="race-lifespan"
+      >
+        <b>
+          Lifespan:
+        </b>
+        80
+         years.
+      </p>
+    </li>
+    <li>
+      <p
+        data-test="race-size"
+      >
+        <b>
+          Size:
+        </b>
+        Medium
+        .
+      </p>
+    </li>
+    <li>
+      <p
+        data-test="race-speed"
+      >
+        <b>
+          Speed:
+        </b>
+        30
+        ft.
+      </p>
+    </li>
+    <li>
+      <p
+        data-test="race-langs"
+      >
+        <b>
+          Speaks:
+        </b>
+        Common & ...
+      </p>
+    </li>
+  </ul>
+  <div
+    className="horizontal-line"
+  />
+  <ul
+    data-test="race-traits"
+    id="race-traits"
+  >
+    <h3>
+      Race Traits
+    </h3>
+    <li
+      key="0"
+    >
+      <h4>
+        Bonus Skill
+         :
+      </h4>
+      <p>
+        You gain proficiency in one additional skill 
+            from your class skill list.
+      </p>
+    </li>
+    <li
+      key="1"
+    >
+      <h4>
+        Magical Affinity
+         :
+      </h4>
+      <p>
+        Whenever you are 5ft from a magical item you can sense 
+            its magic through one of your senses. 
+            Once per short rest you can increase the range of this feature 
+            to 30ft for 1min, after that you lose this feature and 
+            must finish a short rest to regain its passive effect. 
+            Using this feature only tells you if something is magical or not, 
+            nothing more than that.
+      </p>
+    </li>
+    <li
+      key="2"
+    >
+      <h4>
+        Grit
+         :
+      </h4>
+      <p>
+        You can use your reaction to gain advantage on a 
+            saving throw against a spell. 
+            You must roll a 5 or 6 on a d6 to use this feature again.
+      </p>
+    </li>
+  </ul>
+  <div
+    className="horizontal-line no-bottom"
+  />
+  <div
+    className="lock-box"
+  >
+    <Link
+      replace={false}
+      to="/race"
+    >
+      <button>
+        Back
+      </button>
+    </Link>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <button>
+        Lock
+      </button>
+    </Link>
+  </div>
+</figure>
+`;

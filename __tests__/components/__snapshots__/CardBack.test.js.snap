@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardBack /> Snapshot Test displays correct noble background card 1`] = `
+<figure
+  className="card"
+>
+  <h2
+    data-test="back-name"
+  >
+    Noble
+  </h2>
+  <p
+    data-test="back-pitch"
+  >
+    You understand wealth, power, and privilege. 
+        You carry a noble title, and your family owns land,
+        collects taxes, and wields significant political influence.
+  </p>
+  <div
+    className="horizontal-line"
+    id="hide"
+  />
+  <h3>
+    Background Features
+  </h3>
+  <ul
+    className="multi"
+    data-test="back-skill"
+    id="skills"
+  >
+    <h4>
+      Skill Proficiency
+    </h4>
+    <li
+      key="0"
+    >
+      History
+    </li>
+    <li
+      key="1"
+    >
+      Persuasion
+    </li>
+  </ul>
+  <ul
+    className="multi"
+    data-test="back-tool"
+    id="tools"
+  >
+    <h4>
+      Tool Proficiency
+    </h4>
+    <li
+      key="0"
+    >
+      One gaming set
+    </li>
+  </ul>
+  <ul
+    className="multi"
+    data-test="back-lang"
+    id="langs"
+  >
+    <h4>
+      Languages
+    </h4>
+    <li>
+      One of your choice
+    </li>
+  </ul>
+  <ul
+    className="dotted-list"
+    data-test="back-equip"
+    id="equip"
+  >
+    <h4>
+      Equipment
+    </h4>
+    <li
+      key="0"
+    >
+      <span
+        key="0"
+      >
+        set of fine clothes
+        <br />
+      </span>
+    </li>
+    <li
+      key="1"
+    >
+      <span
+        key="0"
+      >
+        signet ring
+        <br />
+      </span>
+    </li>
+    <li
+      key="2"
+    >
+      <span
+        key="0"
+      >
+        scroll of pedigree
+        <br />
+      </span>
+    </li>
+    <li
+      key="3"
+    >
+      <span
+        key="0"
+      >
+        purse containing 25gp
+        <br />
+      </span>
+    </li>
+  </ul>
+  <div
+    className="horizontal-line no-bottom"
+  />
+  <div
+    className="lock-box"
+  >
+    <Link
+      replace={false}
+      to="/background"
+    >
+      <button>
+        Back
+      </button>
+    </Link>
+    <Link
+      replace={false}
+      to="/"
+    >
+      <button>
+        Lock
+      </button>
+    </Link>
+  </div>
+</figure>
+`;
