@@ -1,6 +1,7 @@
 # Dont lint compiled code
 dist/*
 lib/*
+coverage/
 server.js
 
 # Dont lint other config files
@@ -8,3 +9,4 @@ server.js
 postcss.*.js
 webpack.*.js
 jest.config.js
+postcss.config.js

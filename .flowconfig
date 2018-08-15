@@ -1,5 +1,8 @@
 [ignore]
-<PROJECT_ROOT>/node_modules/config-chain/test/broken.json
+# d => d3
+# e => empty
+# r => react*
+<PROJECT_ROOT>/node_modules/[^der]
 
 [include]
 
@@ -8,6 +11,8 @@
 [lints]
 
 [options]
+# ignore next line flow error
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
 # add module wrappers for webpack alias and scss imports
 module.name_mapper='.*\(.scss\)' -> 'empty/object'
 module.name_mapper='^Images' -> '<PROJECT_ROOT>/src/assets/images'

@@ -51,27 +51,35 @@ const CardRace = (props: Props) => {
 
   return (
     <figure className="card">
-      <h2>{props.name}</h2>
+      <h2 data-test="race-name">{props.name}</h2>
       <img className="race-img" src={`/${img}`} />
       <div className="horizontal-line" />
       <ul id="race-stats" className="stats">
         <h3>Race Stats</h3>
-        <li><p><b>Height:</b>{props.height}.</p></li>
-        <li><p><b>Weight:</b>{props.weight}.</p></li>
-        <li><p><b>Adulthood:</b>{props.age[0]} years.</p></li>
-        <li><p><b>Lifespan:</b>{props.age[1]} years.</p></li>
-        <li><p><b>Size:</b>{props.size}.</p></li>
-        <li><p><b>Speed:</b>{props.speed}ft.</p></li>
-        <li><p><b>Speaks:</b>{props.lang[0]}
-          {
-            props.lang[1]
-              ? ` & ${props.lang[1]}.`
-              : '.'
-          }
+        <li><p data-test="race-height">
+          <b>Height:</b>{props.height}.
+        </p></li>
+        <li><p data-test="race-weight">
+          <b>Weight:</b>{props.weight}.
+        </p></li>
+        <li><p data-test="race-adulthood">
+          <b>Adulthood:</b>{props.age[0]} years.
+        </p></li>
+        <li><p data-test="race-lifespan">
+          <b>Lifespan:</b>{props.age[1]} years.
+        </p></li>
+        <li><p data-test="race-size">
+          <b>Size:</b>{props.size}.
+        </p></li>
+        <li><p data-test="race-speed">
+          <b>Speed:</b>{props.speed}ft.
+        </p></li>
+        <li><p data-test="race-langs">
+          <b>Speaks:</b>{`${props.lang[0]} & ${props.lang[1]}.`}
         </p></li>
       </ul>
       <div className="horizontal-line" />
-      <ul id="race-traits">
+      <ul data-test="race-traits" id="race-traits">
         <h3>Race Traits</h3>
         {
           props.special.map((trait, i) => (
