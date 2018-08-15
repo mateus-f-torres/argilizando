@@ -9,18 +9,18 @@ type Props = Background & {
 
 const CardBack = (props: Props) => (
   <figure className="card">
-    <h2>{props.name}</h2>
-    <p>{props.pitch}</p>
+    <h2 data-test="back-name">{props.name}</h2>
+    <p data-test="back-pitch">{props.pitch}</p>
     <div id="hide" className="horizontal-line" />
     <h3>Background Features</h3>
-    <ul id="skills" className="multi">
+    <ul data-test="back-skill" id="skills" className="multi">
       <h4>Skill Proficiency</h4>
       {props.skill.map((sk, i) => <li key={i}>{sk}</li>)}
     </ul>
 
     {
       props.tool &&
-        <ul id="tools" className="multi">
+        <ul data-test="back-tool" id="tools" className="multi">
           <h4>Tool Proficiency</h4>
           {props.tool.map((item, i) => <li key={i}>{item}</li>)}
         </ul>
@@ -28,13 +28,13 @@ const CardBack = (props: Props) => (
 
     {
       props.lang &&
-        <ul id="langs" className="multi">
+        <ul data-test="back-lang" id="langs" className="multi">
           <h4>Languages</h4>
           <li>{props.lang[1]}</li>
         </ul>
     }
 
-    <ul id="equip" className="dotted-list">
+    <ul data-test="back-equip" id="equip" className="dotted-list">
       <h4>Equipment</h4>
       {
         props.equip.map((list, i) => (
