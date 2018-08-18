@@ -27,7 +27,8 @@ const raceReducer = (state: State = {}, action: RaceAction) => {
         }
       }
     }
-    break;
+    // unknown race id
+    return state;
 
   default:
     return state;

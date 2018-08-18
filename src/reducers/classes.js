@@ -27,7 +27,8 @@ const classReducer = (state: State = {}, action: ClassAction) => {
         }
       }
     }
-    break;
+    // unknown _class id
+    return state;
 
   default:
     return state;

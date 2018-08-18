@@ -27,7 +27,8 @@ const backgroundReducer = (state: State = {}, action: BackAction) => {
         }
       }
     }
-    break;
+    // unknown background id
+    return state;
 
   default:
     return state;

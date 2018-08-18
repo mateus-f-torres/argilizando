@@ -7,6 +7,9 @@
 	      "stage-3",
         "flow",
       ],
+      "plugins": [
+        "syntax-dynamic-import",
+      ],
     },
     "production": {
       "presets": [
@@ -16,6 +19,7 @@
         "flow",
       ],
       "plugins": [
+        "syntax-dynamic-import",
         ["react-remove-properties", {"properties": ["data-test"]}],
         "transform-react-constant-elements",
         "transform-react-remove-prop-types",
@@ -27,6 +31,9 @@
         "react",
         "stage-3",
         "flow",
+      ],
+      "plugins": [
+        "syntax-dynamic-import",
       ],
     },
   },

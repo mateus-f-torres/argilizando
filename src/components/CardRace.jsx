@@ -96,7 +96,7 @@ const CardRace = (props: Props) => {
           <button>Back</button>
         </Link>
         <Link to="/">
-          <button onClick={props.lockRace}>Lock</button>
+          <button data-test="race-lock" onClick={props.lockRace}>Lock</button>
         </Link>
       </div>
     </figure>
