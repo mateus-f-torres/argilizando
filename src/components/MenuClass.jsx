@@ -80,7 +80,7 @@ class MenuClass extends React.Component<Props> {
             </ul>
           }/>
 
-          <Route path={this.props.match.url + '/'}
+          <Route path={this.props.match.url + '/:classID'}
             render={()=>
               <CardClass lockClass={this.lockClass} {...this.props._class}/>
             }/>

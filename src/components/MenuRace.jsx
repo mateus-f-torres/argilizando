@@ -70,7 +70,7 @@ class MenuRace extends React.Component<Props> {
             </ul>
           }/>
 
-          <Route path={this.props.match.url + '/'}
+          <Route path={this.props.match.url + '/:raceID'}
             render={()=>
               <CardRace lockRace={this.lockRace} {...this.props.race} />
             }/>

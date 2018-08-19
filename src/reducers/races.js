@@ -22,12 +22,15 @@ const raceReducer = (state: State = {}, action: RaceAction) => {
         if (item.id === action.payload) {
           // return new copy of race state
           // with the chosen race data
+          // ! MUST DISCARD STATE !
+          // or risk merging 'maybe-there' props
 
-          return Object.assign({}, state, item);
+          return Object.assign({}, item);
         }
       }
     }
-    break;
+    // unknown race id
+    return state;
 
   default:
     return state;

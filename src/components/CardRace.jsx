@@ -51,35 +51,35 @@ const CardRace = (props: Props) => {
 
   return (
     <figure className="card">
-      <h2 data-test="race-name">{props.name}</h2>
+      <h2>{props.name}</h2>
       <img className="race-img" src={`/${img}`} />
       <div className="horizontal-line" />
       <ul id="race-stats" className="stats">
         <h3>Race Stats</h3>
-        <li><p data-test="race-height">
+        <li><p>
           <b>Height:</b>{props.height}.
         </p></li>
-        <li><p data-test="race-weight">
+        <li><p>
           <b>Weight:</b>{props.weight}.
         </p></li>
-        <li><p data-test="race-adulthood">
+        <li><p>
           <b>Adulthood:</b>{props.age[0]} years.
         </p></li>
-        <li><p data-test="race-lifespan">
+        <li><p>
           <b>Lifespan:</b>{props.age[1]} years.
         </p></li>
-        <li><p data-test="race-size">
+        <li><p>
           <b>Size:</b>{props.size}.
         </p></li>
-        <li><p data-test="race-speed">
+        <li><p>
           <b>Speed:</b>{props.speed}ft.
         </p></li>
-        <li><p data-test="race-langs">
+        <li><p>
           <b>Speaks:</b>{`${props.lang[0]} & ${props.lang[1]}.`}
         </p></li>
       </ul>
       <div className="horizontal-line" />
-      <ul data-test="race-traits" id="race-traits">
+      <ul id="race-traits">
         <h3>Race Traits</h3>
         {
           props.special.map((trait, i) => (
@@ -96,7 +96,7 @@ const CardRace = (props: Props) => {
           <button>Back</button>
         </Link>
         <Link to="/">
-          <button onClick={props.lockRace}>Lock</button>
+          <button data-test="race-lock" onClick={props.lockRace}>Lock</button>
         </Link>
       </div>
     </figure>

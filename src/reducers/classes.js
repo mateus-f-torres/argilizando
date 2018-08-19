@@ -22,12 +22,15 @@ const classReducer = (state: State = {}, action: ClassAction) => {
         if (item.id == action.payload) {
           // return new copy of gameClass state
           // with the chosen class data
+          // ! MUST DISCARD STATE !
+          // or risk merging 'maybe-there' props
 
-          return Object.assign({}, state, item);
+          return Object.assign({}, item);
         }
       }
     }
-    break;
+    // unknown _class id
+    return state;
 
   default:
     return state;

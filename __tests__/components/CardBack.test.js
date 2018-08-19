@@ -1,151 +1,104 @@
 import React from 'react';
-import {shallow} from 'enzyme';
-import CardBack from '../../src/components/CardBack.jsx';
+import {mount} from 'enzyme';
+import {MemoryRouter} from 'react-router-dom';
+
+import CardBack from 'Components/CardBack.jsx';
+import BACKGROUNDS from 'DATA/backgrounds.js';
+import {getAsset} from '../setup/helpers.js';
 
 describe('<CardBack />', () => {
-  describe('Background with Tools and Languages', () => {
-    let back = {
-      name: 'Noble',
-      pitch: `You understand wealth, power, and privilege.`,
-      skill: ['History', 'Persuasion'],
-      tool: ['One gaming set'],
-      lang: [1, 'One of your choice'],
-      equip: [
-        ['set of fine clothes'],
-        ['signet ring'],
-        ['scroll of pedigree'],
-        ['purse containing 25gp'],
-      ],
-    };
+  test('call lockBack when lock button clicked', () => {
+    const mockOnClick = jest.fn();
 
-    it('displays correct background name', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
+    const mockBack = getAsset('acolyte', BACKGROUNDS);
 
-      expect(wrapper.find('[data-test="back-name"]')
-        .text()).toMatch(/Noble/);
-    });
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/acolyte', key: 'testKey'}]}>
+        <CardBack lockBack={mockOnClick} {...mockBack} />
+      </MemoryRouter>
+    );
 
-    it('displays correct background pitch', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-
-      expect(wrapper.find('[data-test="back-pitch"]')
-        .text()).toMatch(new RegExp(back.pitch));
-    });
-
-    it('displays correct background skills list', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-
-      expect(wrapper.find('[data-test="back-skill"]')
-        // 2 skills (li tags) + 1 header (h4 tag)
-        .children().length).toBe(3);
-    });
-
-    it('displays correct background tools list', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-
-      expect(wrapper.find('[data-test="back-tool"]')
-        // 1 tool (li tag) + 1 header (h4 tag)
-        .children().length).toBe(2);
-    });
-
-    it('displays correct background extra language text', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-
-      expect(wrapper.find('[data-test="back-lang"]')
-        // how many langs text (li tag) + 1 header (h4 tag)
-        .children().length).toBe(2);
-
-      expect(wrapper.find('[data-test="back-lang"]')
-        .childAt(1).text()).toMatch(/One/);
-    });
-
-    it('displays correct equipment list', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-      expect(wrapper.find('[data-test="back-equip"]')
-        // 3 traits (li tags) + 1 header (h3 tag)
-        .children().length).toEqual(5);
-    });
+    wrapper.find('[data-test="back-lock"]').simulate('click');
+    expect(mockOnClick.mock.calls.length).toBe(1);
   });
 
-  describe('Background without Tools', () => {
-    let back = {
-      name: 'Acolyte',
-      pitch: `You understand wealth, power, and privilege.`,
-      skill: ['History', 'Persuasion'],
-      lang: [2, 'Two of your choice'],
-      equip: [
-        ['holy symbol'],
-        ['prayer book', 'or prayer wheel'],
-        ['5 sticks of incense'],
-        ['vestments'],
-        ['set of common clothes'],
-        ['belt pouch containing 15gp'],
-      ],
-    };
+  test('if (props.tool) render tools', () => {
+    const mockBack = getAsset('charlatan', BACKGROUNDS);
 
-    it('displays correct background name', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/charlatan', key: 'testKey'}]}>
+        <CardBack {...mockBack} />
+      </MemoryRouter>
+    );
 
-      expect(wrapper.find('[data-test="back-name"]')
-        .text()).toMatch(/Acolyte/);
-    });
-
-    it('tools list not shown', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-
-      expect(wrapper.find('[data-test="back-tool"]')
-        .exists()).toBe(false);
-    });
-
-    it('displays correct background extra language text', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
-
-      expect(wrapper.find('[data-test="back-lang"]')
-        // how many langs text (li tag) + 1 header (h4 tag)
-        .children().length).toBe(2);
-
-      expect(wrapper.find('[data-test="back-lang"]')
-        .childAt(1).text()).toMatch(/Two/);
-    });
+    expect(wrapper.find('[data-test="back-tools"]').exists()).toBe(true);
   });
 
-  describe('Background without Languages', () => {
-    let back = {
-      name: 'Charlatan',
-      pitch: `You have always had a way with people.`,
-      skill: ['Deception', 'Sleight of Hand'],
-      tool: ['Disguise kit', 'Forgery kit'],
-      equip: [
-        ['set of fine clothes'],
-        ['diguise kit'],
-        ['10 bottles with colored liquid',
-          'or set of weighted dice',
-          'or deck of marked cards',
-          'or ring of an imaginary duke'],
-        ['belt pouch containing 15g'],
-      ],
-    };
+  test('if (!props.tool) dont render tools', () => {
+    const mockBack = getAsset('heretic', BACKGROUNDS);
 
-    it('displays correct background name', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/heretic', key: 'testKey'}]}>
+        <CardBack {...mockBack} />
+      </MemoryRouter>
+    );
 
-      expect(wrapper.find('[data-test="back-name"]')
-        .text()).toMatch(/Charlatan/);
-    });
+    expect(wrapper.find('[data-test="back-tools"]').exists()).toBe(false);
+  });
 
-    it('language text not shown', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
+  test('if (props.lang) render langs', () => {
+    const mockBack = getAsset('acolyte', BACKGROUNDS);
 
-      expect(wrapper.find('[data-test="back-lang"]')
-        .exists()).toBe(false);
-    });
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/acolyte', key: 'testKey'}]}>
+        <CardBack {...mockBack} />
+      </MemoryRouter>
+    );
 
-    it('displays correct background tools list', () => {
-      const wrapper = shallow(<CardBack {...back}/>);
+    expect(wrapper.find('[data-test="back-langs"]').exists()).toBe(true);
+  });
 
-      expect(wrapper.find('[data-test="back-tool"]')
-        // 2 tools (li tags) + 1 header (h4 tag)
-        .children().length).toBe(3);
-    });
+  test('if (!props.tool) dont render langs', () => {
+    const mockBack = getAsset('sailor', BACKGROUNDS);
+
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/sailor', key: 'testKey'}]}>
+        <CardBack {...mockBack} />
+      </MemoryRouter>
+    );
+
+    expect(wrapper.find('[data-test="back-langs"]').exists()).toBe(false);
+  });
+
+  test('if (props.tool && props.lang) render both', () => {
+    const mockBack = getAsset('noble', BACKGROUNDS);
+
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/noble', key: 'testKey'}]}>
+        <CardBack {...mockBack} />
+      </MemoryRouter>
+    );
+
+    expect(wrapper.find('[data-test="back-tools"]').exists()).toBe(true);
+    expect(wrapper.find('[data-test="back-langs"]').exists()).toBe(true);
+  });
+
+  test('match current production CardBack', () => {
+    const mockBack = getAsset('acolyte', BACKGROUNDS);
+
+    const wrapper = mount(
+      <MemoryRouter initialEntries={
+        [{pathname: '/background/acolyte', key: 'testKey'}]}>
+        <CardBack {...mockBack} />
+      </MemoryRouter>
+    );
+
+    expect(wrapper).toMatchSnapshot();
   });
 });

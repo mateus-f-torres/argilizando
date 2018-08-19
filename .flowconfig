@@ -9,6 +9,10 @@
 [libs]
 
 [lints]
+# all=off by default
+sketchy-null=warn
+untyped-import=warn
+unclear-type=warn
 
 [options]
 # ignore next line flow error
