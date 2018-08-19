@@ -28,8 +28,6 @@ describe('UpdateRace', () => {
     </Provider>
   );
 
-  const component = container.find('MenuRace');
-
   // TODO check lockRace dispatch
 
   describe('Unit Test', () => {
@@ -38,10 +36,14 @@ describe('UpdateRace', () => {
     });
 
     test('receive store.race', () => {
+      const component = container.find('MenuRace');
+
       expect(component.prop('race')).toEqual(mockState.race);
     });
 
     test('dispatch getRace', () => {
+      const component = container.find('MenuRace');
+
       const humanBtn = component.find('button').filter('[name="human"]');
 
       const expectedActions = [

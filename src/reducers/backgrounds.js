@@ -22,8 +22,10 @@ const backgroundReducer = (state: State = {}, action: BackAction) => {
         if (item.id == action.payload) {
           // return new copy of background state
           // with the chosen background data
+          // ! MUST DISCARD STATE !
+          // or risk merging 'maybe-there' props
 
-          return Object.assign({}, state, item);
+          return Object.assign({}, item);
         }
       }
     }

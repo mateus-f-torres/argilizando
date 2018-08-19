@@ -1,5 +1,6 @@
 import raceReducer from 'Reducers/races.js';
-import {mockHuman, mockOrc} from 'Mock/race.js';
+import {getAsset} from '../setup/helpers.js';
+import RACES from 'DATA/races.js';
 
 describe('Races Reducer', () => {
   const defaultState = {};
@@ -19,26 +20,32 @@ describe('Races Reducer', () => {
         payload: 'human',
       };
 
-      expect(raceReducer(undefined, action)).toEqual(mockHuman);
+      const mockRace = getAsset('human', RACES);
+
+      expect(raceReducer(undefined, action)).toEqual(mockRace);
     });
 
     test('overwrite previous race object when called again', () => {
       const actionA = {
         type: 'DISPLAY_CHOSEN_RACE',
-        payload: 'human',
+        payload: 'gnome',
       };
 
-      const humanState = raceReducer(undefined, actionA);
+      const gnomeState = raceReducer(undefined, actionA);
+
+      const mockGnome = getAsset('gnome', RACES);
 
       const actionB = {
         type: 'DISPLAY_CHOSEN_RACE',
-        payload: 'orc',
+        payload: 'human',
       };
 
-      const orcState = raceReducer(humanState, actionB);
+      const humanState = raceReducer(gnomeState, actionB);
 
-      expect(orcState).not.toEqual(mockHuman);
-      expect(orcState).toEqual(mockOrc);
+      const mockHuman = getAsset('human', RACES);
+
+      expect(humanState).not.toEqual(mockGnome);
+      expect(humanState).toEqual(mockHuman);
     });
 
     test('keep current race object when called with dummy', () => {

@@ -1,0 +1,520 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter
+    initialEntries={
+      Array [
+        Object {
+          "key": "testKey",
+          "pathname": "/class",
+        },
+      ]
+    }
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "testKey",
+              "pathname": "/class",
+              "search": "",
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/class",
+            "search": "",
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <withRouter(Connect(MenuClass))>
+        <Route>
+          <Connect(MenuClass)
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "canGo": [Function],
+                "createHref": [Function],
+                "entries": Array [
+                  Object {
+                    "hash": "",
+                    "key": "testKey",
+                    "pathname": "/class",
+                    "search": "",
+                  },
+                ],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "index": 0,
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "key": "testKey",
+                  "pathname": "/class",
+                  "search": "",
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "key": "testKey",
+                "pathname": "/class",
+                "search": "",
+              }
+            }
+            match={
+              Object {
+                "isExact": false,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+          >
+            <MenuClass
+              _class={Object {}}
+              getClass={[Function]}
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "canGo": [Function],
+                  "createHref": [Function],
+                  "entries": Array [
+                    Object {
+                      "hash": "",
+                      "key": "testKey",
+                      "pathname": "/class",
+                      "search": "",
+                    },
+                  ],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "index": 0,
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "testKey",
+                    "pathname": "/class",
+                    "search": "",
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              location={
+                Object {
+                  "hash": "",
+                  "key": "testKey",
+                  "pathname": "/class",
+                  "search": "",
+                }
+              }
+              lockClass={[Function]}
+              match={
+                Object {
+                  "isExact": false,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+            >
+              <section
+                id="CLASS"
+              >
+                <Switch>
+                  <Route
+                    computedMatch={
+                      Object {
+                        "isExact": true,
+                        "params": Object {},
+                        "path": "/class",
+                        "url": "/class",
+                      }
+                    }
+                    exact={true}
+                    location={
+                      Object {
+                        "hash": "",
+                        "key": "testKey",
+                        "pathname": "/class",
+                        "search": "",
+                      }
+                    }
+                    path="/class"
+                    render={[Function]}
+                  >
+                    <ul
+                      className="selection"
+                    >
+                      <div
+                        id="title-box"
+                      >
+                        <h2>
+                          Player Class
+                        </h2>
+                        <div
+                          className="horizontal-line no-bottom"
+                        />
+                      </div>
+                      <div
+                        key="0"
+                      >
+                        <h3>
+                          Defenders
+                        </h3>
+                        <div
+                          className="horizontal-line no-bottom"
+                        />
+                        <ul
+                          className="odd-number"
+                          id={null}
+                        >
+                          <li
+                            key="barbarian"
+                          >
+                            <Link
+                              replace={false}
+                              to="//barbarian"
+                            >
+                              <a
+                                href="//barbarian"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="barbarian"
+                                  onClick={[Function]}
+                                >
+                                  barbarian
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="fighter"
+                          >
+                            <Link
+                              replace={false}
+                              to="//fighter"
+                            >
+                              <a
+                                href="//fighter"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="fighter"
+                                  onClick={[Function]}
+                                >
+                                  fighter
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="paladin"
+                          >
+                            <Link
+                              replace={false}
+                              to="//paladin"
+                            >
+                              <a
+                                href="//paladin"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="double-size-btn"
+                                  name="paladin"
+                                  onClick={[Function]}
+                                >
+                                  paladin
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                      <div
+                        key="1"
+                      >
+                        <h3>
+                          Leaders
+                        </h3>
+                        <div
+                          className="horizontal-line no-bottom"
+                        />
+                        <ul
+                          className={null}
+                          id="two-cell"
+                        >
+                          <li
+                            key="cleric"
+                          >
+                            <Link
+                              replace={false}
+                              to="//cleric"
+                            >
+                              <a
+                                href="//cleric"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="cleric"
+                                  onClick={[Function]}
+                                >
+                                  cleric
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="bard"
+                          >
+                            <Link
+                              replace={false}
+                              to="//bard"
+                            >
+                              <a
+                                href="//bard"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="bard"
+                                  onClick={[Function]}
+                                >
+                                  bard
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                      <div
+                        key="2"
+                      >
+                        <h3>
+                          Strikers
+                        </h3>
+                        <div
+                          className="horizontal-line no-bottom"
+                        />
+                        <ul
+                          className={null}
+                          id={null}
+                        >
+                          <li
+                            key="monk"
+                          >
+                            <Link
+                              replace={false}
+                              to="//monk"
+                            >
+                              <a
+                                href="//monk"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="monk"
+                                  onClick={[Function]}
+                                >
+                                  monk
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="ranger"
+                          >
+                            <Link
+                              replace={false}
+                              to="//ranger"
+                            >
+                              <a
+                                href="//ranger"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="ranger"
+                                  onClick={[Function]}
+                                >
+                                  ranger
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="rogue"
+                          >
+                            <Link
+                              replace={false}
+                              to="//rogue"
+                            >
+                              <a
+                                href="//rogue"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="rogue"
+                                  onClick={[Function]}
+                                >
+                                  rogue
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="warlock"
+                          >
+                            <Link
+                              replace={false}
+                              to="//warlock"
+                            >
+                              <a
+                                href="//warlock"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="warlock"
+                                  onClick={[Function]}
+                                >
+                                  warlock
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                      <div
+                        key="3"
+                      >
+                        <h3>
+                          Controllers
+                        </h3>
+                        <div
+                          className="horizontal-line no-bottom"
+                        />
+                        <ul
+                          className="odd-number"
+                          id={null}
+                        >
+                          <li
+                            key="druid"
+                          >
+                            <Link
+                              replace={false}
+                              to="//druid"
+                            >
+                              <a
+                                href="//druid"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="druid"
+                                  onClick={[Function]}
+                                >
+                                  druid
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="sorcerer"
+                          >
+                            <Link
+                              replace={false}
+                              to="//sorcerer"
+                            >
+                              <a
+                                href="//sorcerer"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className={null}
+                                  name="sorcerer"
+                                  onClick={[Function]}
+                                >
+                                  sorcerer
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                          <li
+                            key="wizard"
+                          >
+                            <Link
+                              replace={false}
+                              to="//wizard"
+                            >
+                              <a
+                                href="//wizard"
+                                onClick={[Function]}
+                              >
+                                <button
+                                  className="double-size-btn"
+                                  name="wizard"
+                                  onClick={[Function]}
+                                >
+                                  wizard
+                                </button>
+                              </a>
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
+                    </ul>
+                  </Route>
+                </Switch>
+              </section>
+            </MenuClass>
+          </Connect(MenuClass)>
+        </Route>
+      </withRouter(Connect(MenuClass))>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;

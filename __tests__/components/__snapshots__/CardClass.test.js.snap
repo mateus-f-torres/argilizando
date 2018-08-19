@@ -1,0 +1,483 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<CardClass /> match current production CardClass 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/class/barbarian",
+      },
+    ]
+  }
+>
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/class/barbarian",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/class/barbarian",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
+  >
+    <CardClass
+      _equip={
+        Array [
+          Array [
+            "greateaxe",
+            "1 martial melee weapon",
+          ],
+          Array [
+            "2 handaxes",
+            "1 simple weapon",
+          ],
+        ]
+      }
+      _pack={
+        Array [
+          "explorer",
+        ]
+      }
+      _spell={false}
+      armor={3}
+      equip={
+        Array [
+          Array [
+            "greataxe",
+            "or 1 martial melee weapon",
+          ],
+          Array [
+            "2 handaxes",
+            "or 1 simple weapon",
+          ],
+          Array [
+            "4 javelins",
+          ],
+          Array [
+            "explorer's pack",
+          ],
+        ]
+      }
+      hp={5}
+      id="barbarian"
+      magic={1}
+      primary="Strength"
+      save={
+        Array [
+          "Strength",
+          "Constitution",
+        ]
+      }
+      skill={
+        Array [
+          2,
+          Array [
+            "Animal Handling",
+            "Athletics",
+            "Intimidation",
+            "Nature",
+            "Perception",
+            "Survival",
+          ],
+        ]
+      }
+      special={
+        Array [
+          Array [
+            "Rage",
+            "1st lvl",
+            "Enter a battle rage and gain advantage on Strength checks 
+            and saving throws, bonus damage with 
+            Strength based melee weapons 
+            and resistance to bludgeoning, piercing and slashing damage.",
+          ],
+          Array [
+            "Unarmored Defense",
+            "1st lvl",
+            "When you are not wearing any armor 
+            your AC is 10 + Dexterity modifier + Constitution modifier.",
+          ],
+          Array [
+            "Reckless Attack",
+            "2nd lvl",
+            "Throw aside all concern for defense and 
+            attack with fierce desperation to gain advantage 
+            on Strength based melee attack, but attack rolls against 
+            you also have advantage during that round.",
+          ],
+        ]
+      }
+      versatile={1}
+      weapon={3}
+    >
+      <figure
+        className="card"
+      >
+        <h2>
+          barbarian
+        </h2>
+        <img
+          className="class-img"
+          src="/test-file-stub"
+        />
+        <ul
+          className="stats"
+          id="class-stats"
+        >
+          <h3>
+            Class Stats
+          </h3>
+          <li
+            key="0"
+          >
+            <p>
+              <b>
+                Heath
+              </b>
+              <svg
+                height={30}
+                name="hp"
+                width={100}
+              />
+            </p>
+          </li>
+          <li
+            key="1"
+          >
+            <p>
+              <b>
+                Armor
+              </b>
+              <svg
+                height={30}
+                name="armor"
+                width={100}
+              />
+            </p>
+          </li>
+          <li
+            key="2"
+          >
+            <p>
+              <b>
+                Weapons
+              </b>
+              <svg
+                height={30}
+                name="weapon"
+                width={100}
+              />
+            </p>
+          </li>
+          <li
+            key="3"
+          >
+            <p>
+              <b>
+                Magic
+              </b>
+              <svg
+                height={30}
+                name="magic"
+                width={100}
+              />
+            </p>
+          </li>
+          <li
+            key="4"
+          >
+            <p>
+              <b>
+                Versatility
+              </b>
+              <svg
+                height={30}
+                name="versatile"
+                width={100}
+              />
+            </p>
+          </li>
+        </ul>
+        <div
+          className="horizontal-line"
+        />
+        <ul
+          id="class-features"
+        >
+          <h3>
+            Class Features
+          </h3>
+          <div
+            id="ability"
+          >
+            <h4>
+              Primary Ability
+            </h4>
+            <p>
+              Strength
+            </p>
+          </div>
+          <div
+            id="save"
+          >
+            <h4>
+              Saving Throws
+            </h4>
+            <ul
+              className="multi"
+            >
+              <li
+                key="0"
+              >
+                Strength
+              </li>
+              <li
+                key="1"
+              >
+                Constitution
+              </li>
+            </ul>
+          </div>
+          <div
+            id="skill"
+          >
+            <h4>
+              Skill Proficiency
+              <span
+                id="skill-number"
+              >
+                (max: 
+                2
+                )
+              </span>
+            </h4>
+            <ul
+              className="multi"
+            >
+              <li
+                key="0"
+              >
+                Animal Handling
+              </li>
+              <li
+                key="1"
+              >
+                Athletics
+              </li>
+              <li
+                key="2"
+              >
+                Intimidation
+              </li>
+              <li
+                key="3"
+              >
+                Nature
+              </li>
+              <li
+                key="4"
+              >
+                Perception
+              </li>
+              <li
+                key="5"
+              >
+                Survival
+              </li>
+            </ul>
+          </div>
+          <div
+            id="equip"
+          >
+            <h4>
+              Starting Equipment
+            </h4>
+            <ul
+              className="dotted-list"
+            >
+              <li
+                key="0"
+              >
+                <span
+                  key="0"
+                >
+                  greataxe
+                  <br />
+                </span>
+                <span
+                  key="1"
+                >
+                  or 1 martial melee weapon
+                  <br />
+                </span>
+              </li>
+              <li
+                key="1"
+              >
+                <span
+                  key="0"
+                >
+                  2 handaxes
+                  <br />
+                </span>
+                <span
+                  key="1"
+                >
+                  or 1 simple weapon
+                  <br />
+                </span>
+              </li>
+              <li
+                key="2"
+              >
+                <span
+                  key="0"
+                >
+                  4 javelins
+                  <br />
+                </span>
+              </li>
+              <li
+                key="3"
+              >
+                <span
+                  key="0"
+                >
+                  explorer's pack
+                  <br />
+                </span>
+              </li>
+            </ul>
+          </div>
+        </ul>
+        <div
+          className="horizontal-line"
+        />
+        <ul
+          id="class-traits"
+        >
+          <h3>
+            Class Traits
+          </h3>
+          <li
+            key="0"
+          >
+            <h4>
+              Rage
+              :
+            </h4>
+            <p
+              className="lvl"
+            >
+              1st lvl
+              .
+            </p>
+            <p>
+              Enter a battle rage and gain advantage on Strength checks 
+            and saving throws, bonus damage with 
+            Strength based melee weapons 
+            and resistance to bludgeoning, piercing and slashing damage.
+            </p>
+          </li>
+          <li
+            key="1"
+          >
+            <h4>
+              Unarmored Defense
+              :
+            </h4>
+            <p
+              className="lvl"
+            >
+              1st lvl
+              .
+            </p>
+            <p>
+              When you are not wearing any armor 
+            your AC is 10 + Dexterity modifier + Constitution modifier.
+            </p>
+          </li>
+          <li
+            key="2"
+          >
+            <h4>
+              Reckless Attack
+              :
+            </h4>
+            <p
+              className="lvl"
+            >
+              2nd lvl
+              .
+            </p>
+            <p>
+              Throw aside all concern for defense and 
+            attack with fierce desperation to gain advantage 
+            on Strength based melee attack, but attack rolls against 
+            you also have advantage during that round.
+            </p>
+          </li>
+        </ul>
+        <div
+          className="horizontal-line no-bottom"
+        />
+        <div
+          className="lock-box"
+        >
+          <Link
+            replace={false}
+            to="/class"
+          >
+            <a
+              href="/class"
+              onClick={[Function]}
+            >
+              <button>
+                Back
+              </button>
+            </a>
+          </Link>
+          <Link
+            replace={false}
+            to="/"
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              <button
+                data-test="class-lock"
+              >
+                Lock
+              </button>
+            </a>
+          </Link>
+        </div>
+      </figure>
+    </CardClass>
+  </Router>
+</MemoryRouter>
+`;

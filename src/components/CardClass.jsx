@@ -141,7 +141,7 @@ class CardClass extends React.Component<Props> {
           </div>
           {
             this.props.tool &&
-            <div id="tools">
+            <div data-test="class-tools" id="tools">
               <h4>Tools Proficiency</h4>
               <ul className="multi">
                 {
@@ -186,7 +186,9 @@ class CardClass extends React.Component<Props> {
             <button>Back</button>
           </Link>
           <Link to="/">
-            <button onClick={this.props.lockClass}>Lock</button>
+            <button data-test="class-lock" onClick={this.props.lockClass}>
+              Lock
+            </button>
           </Link>
         </div>
       </figure>

@@ -1,35 +1,35 @@
 import React from 'react';
 import {mount} from 'enzyme';
 import {MemoryRouter} from 'react-router-dom';
+
 import CardRace from 'Components/CardRace.jsx';
-import {mockHuman} from 'Mock/race.js';
+import RACES from 'DATA/races.js';
+import {getAsset} from '../setup/helpers.js';
 
 describe('<CardRace />', () => {
   test('call lockRace when lock button clicked', () => {
     const mockOnClick = jest.fn();
+
+    const mockRace = getAsset('human', RACES);
+
     const wrapper = mount(
       <MemoryRouter initialEntries={
-        [
-          {pathname: '/race/human', key: 'testKey'},
-        ]
-      }>
-        <CardRace lockRace={mockOnClick} {...mockHuman} />
+        [{pathname: '/race/human', key: 'testKey'}]}>
+        <CardRace lockRace={mockOnClick} {...mockRace} />
       </MemoryRouter>
     );
 
     wrapper.find('[data-test="race-lock"]').simulate('click');
-
     expect(mockOnClick.mock.calls.length).toBe(1);
   });
 
-  test('CardRace snapshot matches current production CardRace', () => {
+  test('match current production CardRace', () => {
+    const mockRace = getAsset('human', RACES);
+
     const wrapper = mount(
       <MemoryRouter initialEntries={
-        [
-          {pathname: '/race/human', key: 'testKey'},
-        ]
-      }>
-        <CardRace {...mockHuman} />
+        [{pathname: '/race/human', key: 'testKey'}]}>
+        <CardRace {...mockRace} />
       </MemoryRouter>
     );
 

@@ -1,144 +1,258 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<CardBack /> Snapshot Test displays correct noble background card 1`] = `
-<figure
-  className="card"
+exports[`<CardBack /> match current production CardBack 1`] = `
+<MemoryRouter
+  initialEntries={
+    Array [
+      Object {
+        "key": "testKey",
+        "pathname": "/background/acolyte",
+      },
+    ]
+  }
 >
-  <h2
-    data-test="back-name"
+  <Router
+    history={
+      Object {
+        "action": "POP",
+        "block": [Function],
+        "canGo": [Function],
+        "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/background/acolyte",
+            "search": "",
+          },
+        ],
+        "go": [Function],
+        "goBack": [Function],
+        "goForward": [Function],
+        "index": 0,
+        "length": 1,
+        "listen": [Function],
+        "location": Object {
+          "hash": "",
+          "key": "testKey",
+          "pathname": "/background/acolyte",
+          "search": "",
+        },
+        "push": [Function],
+        "replace": [Function],
+      }
+    }
   >
-    Noble
-  </h2>
-  <p
-    data-test="back-pitch"
-  >
-    You understand wealth, power, and privilege. 
-        You carry a noble title, and your family owns land,
-        collects taxes, and wields significant political influence.
-  </p>
-  <div
-    className="horizontal-line"
-    id="hide"
-  />
-  <h3>
-    Background Features
-  </h3>
-  <ul
-    className="multi"
-    data-test="back-skill"
-    id="skills"
-  >
-    <h4>
-      Skill Proficiency
-    </h4>
-    <li
-      key="0"
+    <CardBack
+      _gold={15}
+      bonds="I will protect my faiths' temples"
+      equip={
+        Array [
+          Array [
+            "holy symbol",
+          ],
+          Array [
+            "prayer book",
+            "or prayer wheel",
+          ],
+          Array [
+            "5 sticks of incense",
+          ],
+          Array [
+            "vestments",
+          ],
+          Array [
+            "set of common clothes",
+          ],
+          Array [
+            "belt pouch containing 15gp",
+          ],
+        ]
+      }
+      flaws="I am inflexible in my thinking"
+      id="acolyte"
+      ideals="I always try to help those in need"
+      lang={
+        Array [
+          2,
+          "Two of your choice",
+        ]
+      }
+      name="Acolyte"
+      personality="I quote sacred texts"
+      pitch="You have spent your life in the service 
+        of a temple to a specific god or pantheon of gods. 
+        You act as an intermediary between the realm of the holy 
+        and the mortal world, performing sacred rites and offering sacrifices
+        in order to conduct worshipers into the presence of the divine."
+      skill={
+        Array [
+          "Insight",
+          "Religion",
+        ]
+      }
     >
-      History
-    </li>
-    <li
-      key="1"
-    >
-      Persuasion
-    </li>
-  </ul>
-  <ul
-    className="multi"
-    data-test="back-tool"
-    id="tools"
-  >
-    <h4>
-      Tool Proficiency
-    </h4>
-    <li
-      key="0"
-    >
-      One gaming set
-    </li>
-  </ul>
-  <ul
-    className="multi"
-    data-test="back-lang"
-    id="langs"
-  >
-    <h4>
-      Languages
-    </h4>
-    <li>
-      One of your choice
-    </li>
-  </ul>
-  <ul
-    className="dotted-list"
-    data-test="back-equip"
-    id="equip"
-  >
-    <h4>
-      Equipment
-    </h4>
-    <li
-      key="0"
-    >
-      <span
-        key="0"
+      <figure
+        className="card"
       >
-        set of fine clothes
-        <br />
-      </span>
-    </li>
-    <li
-      key="1"
-    >
-      <span
-        key="0"
-      >
-        signet ring
-        <br />
-      </span>
-    </li>
-    <li
-      key="2"
-    >
-      <span
-        key="0"
-      >
-        scroll of pedigree
-        <br />
-      </span>
-    </li>
-    <li
-      key="3"
-    >
-      <span
-        key="0"
-      >
-        purse containing 25gp
-        <br />
-      </span>
-    </li>
-  </ul>
-  <div
-    className="horizontal-line no-bottom"
-  />
-  <div
-    className="lock-box"
-  >
-    <Link
-      replace={false}
-      to="/background"
-    >
-      <button>
-        Back
-      </button>
-    </Link>
-    <Link
-      replace={false}
-      to="/"
-    >
-      <button>
-        Lock
-      </button>
-    </Link>
-  </div>
-</figure>
+        <h2>
+          Acolyte
+        </h2>
+        <p>
+          You have spent your life in the service 
+        of a temple to a specific god or pantheon of gods. 
+        You act as an intermediary between the realm of the holy 
+        and the mortal world, performing sacred rites and offering sacrifices
+        in order to conduct worshipers into the presence of the divine.
+        </p>
+        <div
+          className="horizontal-line"
+          id="hide"
+        />
+        <h3>
+          Background Features
+        </h3>
+        <ul
+          className="multi"
+          id="skills"
+        >
+          <h4>
+            Skill Proficiency
+          </h4>
+          <li
+            key="0"
+          >
+            Insight
+          </li>
+          <li
+            key="1"
+          >
+            Religion
+          </li>
+        </ul>
+        <ul
+          className="multi"
+          data-test="back-langs"
+          id="langs"
+        >
+          <h4>
+            Languages
+          </h4>
+          <li>
+            Two of your choice
+          </li>
+        </ul>
+        <ul
+          className="dotted-list"
+          id="equip"
+        >
+          <h4>
+            Equipment
+          </h4>
+          <li
+            key="0"
+          >
+            <span
+              key="0"
+            >
+              holy symbol
+              <br />
+            </span>
+          </li>
+          <li
+            key="1"
+          >
+            <span
+              key="0"
+            >
+              prayer book
+              <br />
+            </span>
+            <span
+              key="1"
+            >
+              or prayer wheel
+              <br />
+            </span>
+          </li>
+          <li
+            key="2"
+          >
+            <span
+              key="0"
+            >
+              5 sticks of incense
+              <br />
+            </span>
+          </li>
+          <li
+            key="3"
+          >
+            <span
+              key="0"
+            >
+              vestments
+              <br />
+            </span>
+          </li>
+          <li
+            key="4"
+          >
+            <span
+              key="0"
+            >
+              set of common clothes
+              <br />
+            </span>
+          </li>
+          <li
+            key="5"
+          >
+            <span
+              key="0"
+            >
+              belt pouch containing 15gp
+              <br />
+            </span>
+          </li>
+        </ul>
+        <div
+          className="horizontal-line no-bottom"
+        />
+        <div
+          className="lock-box"
+        >
+          <Link
+            replace={false}
+            to="/background"
+          >
+            <a
+              href="/background"
+              onClick={[Function]}
+            >
+              <button>
+                Back
+              </button>
+            </a>
+          </Link>
+          <Link
+            replace={false}
+            to="/"
+          >
+            <a
+              href="/"
+              onClick={[Function]}
+            >
+              <button
+                data-test="back-lock"
+              >
+                Lock
+              </button>
+            </a>
+          </Link>
+        </div>
+      </figure>
+    </CardBack>
+  </Router>
+</MemoryRouter>
 `;

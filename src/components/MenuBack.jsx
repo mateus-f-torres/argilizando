@@ -75,7 +75,7 @@ class MenuBack extends React.Component<Props> {
             </ul>
           }/>
 
-          <Route path={this.props.match.url + '/'}
+          <Route path={this.props.match.url + '/:backgroundID'}
             render={()=>
               <CardBack lockBack={this.lockBack} {...this.props.back}/>
             }/>
