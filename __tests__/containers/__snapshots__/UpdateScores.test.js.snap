@@ -1,0 +1,624 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MemoryRouter
+    initialEntries={
+      Array [
+        Object {
+          "key": "testKey",
+          "pathname": "/score",
+        },
+      ]
+    }
+  >
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "canGo": [Function],
+          "createHref": [Function],
+          "entries": Array [
+            Object {
+              "hash": "",
+              "key": "testKey",
+              "pathname": "/score",
+              "search": "",
+            },
+          ],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "index": 0,
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "key": "testKey",
+            "pathname": "/score",
+            "search": "",
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <withRouter(Connect(MenuScore))>
+        <Route>
+          <Connect(MenuScore)
+            history={
+              Object {
+                "action": "POP",
+                "block": [Function],
+                "canGo": [Function],
+                "createHref": [Function],
+                "entries": Array [
+                  Object {
+                    "hash": "",
+                    "key": "testKey",
+                    "pathname": "/score",
+                    "search": "",
+                  },
+                ],
+                "go": [Function],
+                "goBack": [Function],
+                "goForward": [Function],
+                "index": 0,
+                "length": 1,
+                "listen": [Function],
+                "location": Object {
+                  "hash": "",
+                  "key": "testKey",
+                  "pathname": "/score",
+                  "search": "",
+                },
+                "push": [Function],
+                "replace": [Function],
+              }
+            }
+            location={
+              Object {
+                "hash": "",
+                "key": "testKey",
+                "pathname": "/score",
+                "search": "",
+              }
+            }
+            match={
+              Object {
+                "isExact": false,
+                "params": Object {},
+                "path": "/",
+                "url": "/",
+              }
+            }
+          >
+            <MenuScore
+              cha={
+                Array [
+                  8,
+                  -1,
+                  1,
+                  false,
+                ]
+              }
+              con={
+                Array [
+                  8,
+                  -1,
+                  1,
+                  false,
+                ]
+              }
+              dex={
+                Array [
+                  8,
+                  -1,
+                  1,
+                  false,
+                ]
+              }
+              history={
+                Object {
+                  "action": "POP",
+                  "block": [Function],
+                  "canGo": [Function],
+                  "createHref": [Function],
+                  "entries": Array [
+                    Object {
+                      "hash": "",
+                      "key": "testKey",
+                      "pathname": "/score",
+                      "search": "",
+                    },
+                  ],
+                  "go": [Function],
+                  "goBack": [Function],
+                  "goForward": [Function],
+                  "index": 0,
+                  "length": 1,
+                  "listen": [Function],
+                  "location": Object {
+                    "hash": "",
+                    "key": "testKey",
+                    "pathname": "/score",
+                    "search": "",
+                  },
+                  "push": [Function],
+                  "replace": [Function],
+                }
+              }
+              int={
+                Array [
+                  8,
+                  -1,
+                  1,
+                  false,
+                ]
+              }
+              location={
+                Object {
+                  "hash": "",
+                  "key": "testKey",
+                  "pathname": "/score",
+                  "search": "",
+                }
+              }
+              lockScore={[Function]}
+              match={
+                Object {
+                  "isExact": false,
+                  "params": Object {},
+                  "path": "/",
+                  "url": "/",
+                }
+              }
+              resetBtn={[Function]}
+              scoreMinus={[Function]}
+              scorePlus={[Function]}
+              str={
+                Array [
+                  8,
+                  -1,
+                  1,
+                  false,
+                ]
+              }
+              toggleText={[Function]}
+              total={45}
+              wis={
+                Array [
+                  8,
+                  -1,
+                  1,
+                  false,
+                ]
+              }
+            >
+              <section
+                id="SCORE"
+              >
+                <h2>
+                  Ability Scores
+                </h2>
+                <h3>
+                  45
+                   points left to spend
+                </h3>
+                <div
+                  className="horizontal-line"
+                />
+                <ul
+                  id="score-list"
+                >
+                  <CardScore
+                    cost={1}
+                    handleClick={[Function]}
+                    key="str"
+                    long="Strength"
+                    mod={-1}
+                    score={8}
+                    short="str"
+                    show={false}
+                  >
+                    <li>
+                      <h4>
+                        Strength
+                      </h4>
+                      <h5
+                        name="str"
+                      >
+                        <span
+                          className="score"
+                        >
+                          8
+                        </span>
+                        <span
+                          className="mod"
+                        >
+                          -1
+                        </span>
+                        Next lvl cost : 
+                        <span
+                          className="cost"
+                        >
+                          1
+                        </span>
+                      </h5>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-plus"
+                        name="+"
+                        onClick={[Function]}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-minus"
+                        name="-"
+                        onClick={[Function]}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-show"
+                        name="?"
+                        onClick={[Function]}
+                      >
+                        ?
+                      </button>
+                    </li>
+                  </CardScore>
+                  <CardScore
+                    cost={1}
+                    handleClick={[Function]}
+                    key="dex"
+                    long="Dexterity"
+                    mod={-1}
+                    score={8}
+                    short="dex"
+                    show={false}
+                  >
+                    <li>
+                      <h4>
+                        Dexterity
+                      </h4>
+                      <h5
+                        name="dex"
+                      >
+                        <span
+                          className="score"
+                        >
+                          8
+                        </span>
+                        <span
+                          className="mod"
+                        >
+                          -1
+                        </span>
+                        Next lvl cost : 
+                        <span
+                          className="cost"
+                        >
+                          1
+                        </span>
+                      </h5>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-plus"
+                        name="+"
+                        onClick={[Function]}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-minus"
+                        name="-"
+                        onClick={[Function]}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-show"
+                        name="?"
+                        onClick={[Function]}
+                      >
+                        ?
+                      </button>
+                    </li>
+                  </CardScore>
+                  <CardScore
+                    cost={1}
+                    handleClick={[Function]}
+                    key="con"
+                    long="Constitution"
+                    mod={-1}
+                    score={8}
+                    short="con"
+                    show={false}
+                  >
+                    <li>
+                      <h4>
+                        Constitution
+                      </h4>
+                      <h5
+                        name="con"
+                      >
+                        <span
+                          className="score"
+                        >
+                          8
+                        </span>
+                        <span
+                          className="mod"
+                        >
+                          -1
+                        </span>
+                        Next lvl cost : 
+                        <span
+                          className="cost"
+                        >
+                          1
+                        </span>
+                      </h5>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-plus"
+                        name="+"
+                        onClick={[Function]}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-minus"
+                        name="-"
+                        onClick={[Function]}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-show"
+                        name="?"
+                        onClick={[Function]}
+                      >
+                        ?
+                      </button>
+                    </li>
+                  </CardScore>
+                  <CardScore
+                    cost={1}
+                    handleClick={[Function]}
+                    key="int"
+                    long="Intelligence"
+                    mod={-1}
+                    score={8}
+                    short="int"
+                    show={false}
+                  >
+                    <li>
+                      <h4>
+                        Intelligence
+                      </h4>
+                      <h5
+                        name="int"
+                      >
+                        <span
+                          className="score"
+                        >
+                          8
+                        </span>
+                        <span
+                          className="mod"
+                        >
+                          -1
+                        </span>
+                        Next lvl cost : 
+                        <span
+                          className="cost"
+                        >
+                          1
+                        </span>
+                      </h5>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-plus"
+                        name="+"
+                        onClick={[Function]}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-minus"
+                        name="-"
+                        onClick={[Function]}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-show"
+                        name="?"
+                        onClick={[Function]}
+                      >
+                        ?
+                      </button>
+                    </li>
+                  </CardScore>
+                  <CardScore
+                    cost={1}
+                    handleClick={[Function]}
+                    key="wis"
+                    long="Wisdom"
+                    mod={-1}
+                    score={8}
+                    short="wis"
+                    show={false}
+                  >
+                    <li>
+                      <h4>
+                        Wisdom
+                      </h4>
+                      <h5
+                        name="wis"
+                      >
+                        <span
+                          className="score"
+                        >
+                          8
+                        </span>
+                        <span
+                          className="mod"
+                        >
+                          -1
+                        </span>
+                        Next lvl cost : 
+                        <span
+                          className="cost"
+                        >
+                          1
+                        </span>
+                      </h5>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-plus"
+                        name="+"
+                        onClick={[Function]}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-minus"
+                        name="-"
+                        onClick={[Function]}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-show"
+                        name="?"
+                        onClick={[Function]}
+                      >
+                        ?
+                      </button>
+                    </li>
+                  </CardScore>
+                  <CardScore
+                    cost={1}
+                    handleClick={[Function]}
+                    key="cha"
+                    long="Charisma"
+                    mod={-1}
+                    score={8}
+                    short="cha"
+                    show={false}
+                  >
+                    <li>
+                      <h4>
+                        Charisma
+                      </h4>
+                      <h5
+                        name="cha"
+                      >
+                        <span
+                          className="score"
+                        >
+                          8
+                        </span>
+                        <span
+                          className="mod"
+                        >
+                          -1
+                        </span>
+                        Next lvl cost : 
+                        <span
+                          className="cost"
+                        >
+                          1
+                        </span>
+                      </h5>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-plus"
+                        name="+"
+                        onClick={[Function]}
+                      >
+                        +
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-minus"
+                        name="-"
+                        onClick={[Function]}
+                      >
+                        -
+                      </button>
+                      <button
+                        className="score-btn waves-effect waves-light"
+                        data-test="score-show"
+                        name="?"
+                        onClick={[Function]}
+                      >
+                        ?
+                      </button>
+                    </li>
+                  </CardScore>
+                </ul>
+                <div
+                  className="horizontal-line no-bottom"
+                />
+                <div
+                  className="lock-box"
+                >
+                  <button
+                    data-test="score-reset"
+                    onClick={[Function]}
+                  >
+                    Reset
+                  </button>
+                  <Link
+                    replace={false}
+                    to="/"
+                  >
+                    <a
+                      href="/"
+                      onClick={[Function]}
+                    >
+                      <button
+                        data-test="score-lock"
+                        onClick={[Function]}
+                      >
+                        Lock
+                      </button>
+                    </a>
+                  </Link>
+                </div>
+              </section>
+            </MenuScore>
+          </Connect(MenuScore)>
+        </Route>
+      </withRouter(Connect(MenuScore))>
+    </Router>
+  </MemoryRouter>
+</Provider>
+`;
