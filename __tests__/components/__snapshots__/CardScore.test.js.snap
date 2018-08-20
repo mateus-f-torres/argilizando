@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+<li>
+  <h4>
+    Wisdom
+  </h4>
+  <h5
+    name="wis"
+  >
+    <span
+      className="score"
+    >
+      10
+    </span>
+    <span
+      className="mod"
+    >
+      0
+    </span>
+    Next lvl cost : 
+    <span
+      className="cost"
+    >
+      1
+    </span>
+  </h5>
+  <button
+    className="score-btn waves-effect waves-light"
+    data-test="score-plus"
+    name="+"
+  >
+    +
+  </button>
+  <button
+    className="score-btn waves-effect waves-light"
+    data-test="score-minus"
+    name="-"
+  >
+    -
+  </button>
+  <button
+    className="score-btn waves-effect waves-light"
+    data-test="score-show"
+    name="?"
+  >
+    ?
+  </button>
+  <p
+    data-test="score-text"
+  >
+    mock text
+  </p>
+</li>
+`;

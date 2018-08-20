@@ -97,9 +97,13 @@ class MenuScore extends React.Component<Props> {
         </ul>
         <div className="horizontal-line no-bottom" />
         <div className="lock-box">
-          <button onClick={this.resetBtn}>Reset</button>
+          <button
+            data-test="score-reset"
+            onClick={this.resetBtn}>Reset</button>
           <Link to="/">
-            <button onClick={this.lockScore}>Lock</button>
+            <button
+              data-test="score-lock"
+              onClick={this.lockScore}>Lock</button>
           </Link>
         </div>
       </section>

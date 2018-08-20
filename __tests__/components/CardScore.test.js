@@ -3,8 +3,8 @@ import {shallow} from 'enzyme';
 import CardScore from '../../src/components/CardScore.jsx';
 
 describe('<CardScore />', () => {
-  describe('No text and negative modifier (default)', () => {
-    let score = {
+  describe('test handleClick', () => {
+    const mockScore = {
       long: 'Strength',
       score: 8,
       mod: -1,
@@ -12,86 +12,91 @@ describe('<CardScore />', () => {
       show: false,
     };
 
-    it('displays correct score name', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
+    test('call handleClick with "+"', () => {
+      const mockHandleClick = jest.fn();
 
-      expect(wrapper.find('[data-test="score-name"]')
-        .text()).toMatch(/Strength/);
+      const wrapper = shallow(
+        <CardScore handleClick={mockHandleClick} {...mockScore}/>);
+
+      wrapper.find('[data-test="score-plus"]').simulate('click');
+      expect(mockHandleClick.mock.calls.length).toBe(1);
     });
 
-    it('displays correct score number', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
+    test('call handleClick with "-"', () => {
+      const mockHandleClick = jest.fn();
 
-      expect(wrapper.find('[data-test="score-number"]')
-        .text()).toMatch(/8/);
+      const wrapper = shallow(
+        <CardScore handleClick={mockHandleClick} {...mockScore}/>);
+
+      wrapper.find('[data-test="score-minus"]').simulate('click');
+      expect(mockHandleClick.mock.calls.length).toBe(1);
     });
 
-    it('displays correct score modifier, when negative', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
+    test('call handleClick with "?"', () => {
+      const mockHandleClick = jest.fn();
 
-      expect(wrapper.find('[data-test="score-mod"]')
-        .text()).toMatch(/-1/);
+      const wrapper = shallow(
+        <CardScore handleClick={mockHandleClick} {...mockScore}/>);
+
+      wrapper.find('[data-test="score-show"]').simulate('click');
+      expect(mockHandleClick.mock.calls.length).toBe(1);
+    });
+  });
+
+  describe('"maybe-there" props tests', () => {
+    const mockScoreA = {
+      long: 'Dexterity',
+      score: 12,
+      mod: 1,
+      cost: 2,
+      show: false,
+    };
+    const mockScoreB = {
+      long: 'Charisma',
+      score: 6,
+      mod: -2,
+      cost: 1,
+      show: 'mock text',
+    };
+
+    test('concat "+" with above than 0 scores', () => {
+      const wrapper = shallow(<CardScore {...mockScoreA}/>);
+
+      expect(wrapper.find('.mod').text()).toMatch(/^\+1$/);
     });
 
-    it('displays correct score cost', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
+    test('dont concat "+" with 0 or lower scores', () => {
+      const wrapper = shallow(<CardScore {...mockScoreB}/>);
 
-      expect(wrapper.find('[data-test="score-cost"]')
-        .text()).toMatch(/1/);
+      expect(wrapper.find('.mod').text()).toMatch(/^-2$/);
     });
 
-    it('score description not shown', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
+    test('if (props.show) render text', () => {
+      const wrapper = shallow(<CardScore {...mockScoreB}/>);
+
+      expect(wrapper.find('[data-test="score-text"]')
+        .exists()).toBe(true);
+    });
+    test('if (!props.show) dont render text', () => {
+      const wrapper = shallow(<CardScore {...mockScoreA}/>);
 
       expect(wrapper.find('[data-test="score-text"]')
         .exists()).toBe(false);
     });
   });
 
-  describe('With text and positive modifier', () => {
-    let score = {
-      long: 'Constitution',
-      score: 20,
-      mod: 5,
-      cost: 6,
-      show: 'score description',
+  describe('Snapshot test', () => {
+    const mockScore = {
+      long: 'Wisdom',
+      short: 'wis',
+      score: 10,
+      mod: 0,
+      cost: 1,
+      show: 'mock text',
     };
 
-    it('displays correct score name', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
+    const wrapper = shallow(<CardScore {...mockScore} />);
 
-      expect(wrapper.find('[data-test="score-name"]')
-        .text()).toMatch(/Constitution/);
-    });
-
-    it('displays correct score number', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
-
-      expect(wrapper.find('[data-test="score-number"]')
-        .text()).toMatch(/20/);
-    });
-
-    it('displays correct score modifier, when positive', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
-
-      expect(wrapper.find('[data-test="score-mod"]')
-        .text()).toMatch(/\+5/);
-    });
-
-    it('displays correct score cost', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
-
-      expect(wrapper.find('[data-test="score-cost"]')
-        .text()).toMatch(/6/);
-    });
-
-    it('score description shown', () => {
-      const wrapper = shallow(<CardScore {...score}/>);
-
-      expect(wrapper.find('[data-test="score-text"]')
-        .exists()).toBe(true);
-      expect(wrapper.find('[data-test="score-text"]')
-        .text()).toMatch(/score\sdescription/);
-    });
+    expect(wrapper).toMatchSnapshot();
   });
 });
