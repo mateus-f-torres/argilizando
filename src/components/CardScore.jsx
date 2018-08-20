@@ -10,21 +10,30 @@ const btn = 'score-btn waves-effect waves-light';
 
 const CardScore = (props: Props) => (
   <li>
-    <h4 data-test="score-name">{props.long}</h4>
+    <h4>{props.long}</h4>
     <h5 name={props.short}>
-      <span data-test="score-number" className="score">
+      <span className="score">
         {props.score}
       </span>
-      <span data-test="score-mod" className="mod">
+      <span className="mod">
         {props.mod > 0 ? '+' + props.mod : props.mod}
       </span>
-      Next lvl cost : <span data-test="score-cost" className="cost">
+      Next lvl cost : <span className="cost">
         {props.cost}
       </span>
     </h5>
-    <button onClick={props.handleClick} className={btn} name="+">+</button>
-    <button onClick={props.handleClick} className={btn} name="-">-</button>
-    <button onClick={props.handleClick} className={btn} name="?">?</button>
+    <button
+      data-test="score-plus"
+      onClick={props.handleClick}
+      className={btn} name="+">+</button>
+    <button
+      data-test="score-minus"
+      onClick={props.handleClick}
+      className={btn} name="-">-</button>
+    <button
+      data-test="score-show"
+      onClick={props.handleClick}
+      className={btn} name="?">?</button>
     {props.show && <p data-test="score-text">{props.show}</p>}
   </li>
 );
