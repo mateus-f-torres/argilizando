@@ -20,7 +20,7 @@
       ],
       "plugins": [
         "syntax-dynamic-import",
-        ["react-remove-properties", {"properties": ["data-test"]}],
+        "remove-test-ids",
         "transform-react-constant-elements",
         "transform-react-remove-prop-types",
       ],

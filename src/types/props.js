@@ -93,6 +93,7 @@ export type CharMain = {
   score: ShortScore,
   saves: Array<[string, string, number, ?boolean]>,
   skills: Array<[string, string, number, ?boolean]>,
+  _openUp: Array<string>,
   pp: number,
   langs: Array<[boolean, string, boolean, ?boolean]>,
   tools: {

@@ -151,6 +151,22 @@ const getCharMain = ({race, _class, score, back}) => {
     for (const item of main.skills) {
       if (item[1] === 'Perception') main.pp = 10 + item[2];
     }
+
+    // logic to open up a whole skills category
+    // when your background skills match some class skills
+    let _openUp = [];
+
+    for (const item of back.skill) {
+      if (_class.skill[1].includes(item)) _openUp.push(item);
+    }
+    if (_openUp.length) {
+      _openUp = main.skills
+        .filter((item) => _openUp.includes(item[1]))
+        .map((item) => item[0]);
+    }
+    _class.id !== 'bard'
+      ? main._openUp = _openUp
+      : main._openUp = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
   }
 
   // Character Spoken Languages

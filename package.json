@@ -42,7 +42,7 @@
     "babel-eslint": "^8.2.5",
     "babel-jest": "^23.2.0",
     "babel-loader": "^7.1.4",
-    "babel-plugin-react-remove-properties": "^0.2.5",
+    "babel-plugin-remove-test-ids": "^1.1.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-transform-react-constant-elements": "^6.23.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.13",
