@@ -8,9 +8,8 @@ If you are looking for a complete online tool, please try out https://www.dndbey
 
 ## Installing
 ```
-git clone https://github.com/mateus-f-torres/boneco-de-argila.git
-mv boneco-de-argila/ any_name_you_like/
-cd any_name_you_like/
+git clone https://github.com/mateus-f-torres/argilizando.git
+cd argilizando/
 yarn install
 ```
 The main scripts are:
