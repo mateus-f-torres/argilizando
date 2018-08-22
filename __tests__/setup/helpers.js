@@ -1,6 +1,16 @@
+/* Get an item from either RACES, CLASSES or BACKGROUNDS
+ * Params:
+ *   assetID: string, id from desired item,
+ *   database: object, which database to search throught
+ * Returns:
+ *   item: object, copy of desired item from database
+ */
 export const getAsset = (assetID, database) => {
+  // all databases have categories that divide the items
   for (const category of database) {
+    // category === ['categoryName', optionsArray]
     for (const item of category[1]) {
+      // find matching item.id
       if (item.id === assetID) return Object.assign({}, item);
     }
   }

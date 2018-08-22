@@ -183,11 +183,11 @@ class ProtoCharacter extends React.Component<Props> {
 
           <OptionSkill
             max={maxSkills}
+            openUp={this.props.char.main._openUp}
             skills={this.props.char.main.skills}
             toggleSkill={this.handleChangeSkill}
             classSkills={this.props._class.skill[1]}
-            backSkills={this.props.back.skill}
-            classID={this.props._class.id}/>
+            backSkills={this.props.back.skill}/>
 
           <OptionEquip
             classOptions={this.props._class._equip}

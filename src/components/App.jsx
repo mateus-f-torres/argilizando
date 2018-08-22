@@ -54,7 +54,8 @@ class App extends React.Component<Props> {
           <div id="outside-links">
             <a href="https://github.com/mateus-f-torres/boneco-de-argila">SOURCE</a>
             <a href="https://github.com/mateus-f-torres/boneco-de-argila">
-              <img src={developer} />
+              <img id="dev-logo" src={developer} />
+              <span id="copyright">&copy;</span>
             </a>
           </div>
         </header>
