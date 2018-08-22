@@ -52,8 +52,8 @@ class App extends React.Component<Props> {
               MENU
           </Link>
           <div id="outside-links">
-            <a href="https://github.com/mateus-f-torres/boneco-de-argila">SOURCE</a>
-            <a href="https://github.com/mateus-f-torres/boneco-de-argila">
+            <a href="https://github.com/mateus-f-torres/argilizando">SOURCE</a>
+            <a href="https://github.com/mateus-f-torres/argilizando">
               <img id="dev-logo" src={developer} />
               <span id="copyright">&copy;</span>
             </a>
