@@ -1,6 +1,6 @@
 # Argilizando ![TravisCI build status](https://travis-ci.com/mateus-f-torres/boneco-de-argila.svg?branch=master)
 
-Argilizando is a helper for my DnD games.  
+[Argilizando](https://argilizando.herokuapp.com/) is a helper for my DnD games.  
 It provides me, my players and anyone else that uses it with my idea of a more streamlined approach to the character creation process. Allowing players to quickly make a rough draft of a character.  
 In using this software it is implied that the user already owns or has access to the books needed to actually play the game.
 
@@ -21,6 +21,7 @@ The main scripts are:
 All of them will run ESLint, Flow and Jest before bundling.
 
 ## Usage
+Access  https://argilizando.herokuapp.com/ and create your character draft.  
 Argilizando will only truly enforce two rules:
 1. To access the Create section you must lock your Race, Class, Ability Scores, and Background choices.
 2. To access the Play! section your character must have at least a name.
