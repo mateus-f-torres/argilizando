@@ -5,7 +5,6 @@ import type {
   Race, _Class, ShortScore, Background, Character,
 } from '../types/props.js';
 
-
 import AbilityTable from './AbilityTable.jsx';
 import OptionSkill from './OptionSkill.jsx';
 import OptionLang from './OptionLang.jsx';
@@ -35,19 +34,6 @@ type Props = {
 };
 
 class ProtoCharacter extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-    (this: any).handleChangeName = this.handleChangeName.bind(this);
-    (this: any).handleChangeSkill = this.handleChangeSkill.bind(this);
-    (this: any).handleChangeLang = this.handleChangeLang.bind(this);
-    (this: any).handleChangeTool = this.handleChangeTool.bind(this);
-    (this: any).handleChangePack = this.handleChangePack.bind(this);
-    (this: any).handleChangeGear = this.handleChangeGear.bind(this);
-    (this: any).handleChangeBody = this.handleChangeBody.bind(this);
-    (this: any).handleChangePast = this.handleChangePast.bind(this);
-    (this: any).lockChar = this.lockChar.bind(this);
-  }
-
   componentDidMount() {
     let character = {
       race: this.props.race,
@@ -58,23 +44,23 @@ class ProtoCharacter extends React.Component<Props> {
     this.props.getCharacter(character);
   }
 
-  handleChangeBody(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangeBody = (e: SyntheticEvent<HTMLInputElement>) => {
     e.preventDefault();
     this.props.changeBody([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangePast(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangePast = (e: SyntheticEvent<HTMLInputElement>) => {
     e.preventDefault();
     this.props.changePast([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangeSkill(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangeSkill = (e: SyntheticEvent<HTMLInputElement>) => {
     let max = this.props._class.skill[0];
     if (this.props.race.id === 'human' && typeof max === 'number') max++;
     this.props.changeSkill([e.currentTarget.name, max]);
   }
 
-  handleChangeLang(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangeLang = (e: SyntheticEvent<HTMLInputElement>) => {
     let max = this.props.back.lang
       ? this.props.back.lang[0]
       : 0;
@@ -82,24 +68,24 @@ class ProtoCharacter extends React.Component<Props> {
     this.props.changeLang([e.currentTarget.name, max]);
   }
 
-  handleChangeTool(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangeTool = (e: SyntheticEvent<HTMLInputElement>) => {
     this.props.changeTool([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangePack(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangePack = (e: SyntheticEvent<HTMLInputElement>) => {
     this.props.changePack(e.currentTarget.value);
   }
 
-  handleChangeGear(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangeGear = (e: SyntheticEvent<HTMLInputElement>) => {
     this.props.changeGear([e.currentTarget.name, e.currentTarget.value]);
   }
 
-  handleChangeName(e: SyntheticEvent<HTMLInputElement>) {
+  handleChangeName = (e: SyntheticEvent<HTMLInputElement>) => {
     e.preventDefault();
     this.props.changeName(e.currentTarget.value);
   }
 
-  lockChar(e: SyntheticEvent<HTMLButtonElement>) {
+  lockChar = (e: SyntheticEvent<HTMLButtonElement>) => {
     // char must at least have a name to play
     if (!this.props.char.name.trim()) {
       e.preventDefault();

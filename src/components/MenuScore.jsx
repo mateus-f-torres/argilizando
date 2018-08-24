@@ -23,14 +23,7 @@ type Props = {
 };
 
 class MenuScore extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-    (this: any).handleClick = this.handleClick.bind(this);
-    (this: any).resetBtn = this.resetBtn.bind(this);
-    (this: any).lockScore = this.lockScore.bind(this);
-  }
-
-  handleClick(e: SyntheticEvent<HTMLButtonElement>) {
+  handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     let type = e.currentTarget.name;
     if (e.currentTarget.parentNode && e.currentTarget.parentNode.childNodes) {
@@ -51,11 +44,11 @@ class MenuScore extends React.Component<Props> {
     }
   }
 
-  resetBtn() {
+  resetBtn = () => {
     this.props.resetBtn();
   }
 
-  lockScore() {
+  lockScore = () => {
     let score = {
       str: [this.props.str[0], this.props.str[1]],
       dex: [this.props.dex[0], this.props.dex[1]],
