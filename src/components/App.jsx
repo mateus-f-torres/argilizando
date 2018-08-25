@@ -21,12 +21,7 @@ type Props = {
 
 
 class App extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-    (this: any).handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(e: SyntheticEvent<HTMLButtonElement>) {
+  handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
     switch (e.currentTarget.name) {
     case 'create':
       // control if user should be able view creator page

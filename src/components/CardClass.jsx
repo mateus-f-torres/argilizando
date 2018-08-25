@@ -29,16 +29,11 @@ class CardClass extends React.Component<Props> {
   magic: ?SVGMatrix & {attributes: {name: {value: string}}};
   versatile: ?SVGMatrix & {attributes: {name: {value: string}}};
 
-  constructor(props: Props) {
-    super(props);
-    (this: any).createBarChart = this.createBarChart.bind(this);
-  }
-
   componentDidMount() {
     this.createBarChart();
   }
 
-  createBarChart() {
+  createBarChart = () => {
     let dataset = [1, 2, 3, 4, 5];
 
     const stats = [

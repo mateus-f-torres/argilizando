@@ -4,10 +4,11 @@
       "presets": [
         "env",
         "react",
-	      "stage-3",
         "flow",
       ],
       "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
         "syntax-dynamic-import",
       ],
     },
@@ -15,24 +16,24 @@
       "presets": [
         "env",
         "react",
-        "stage-3",
         "flow",
       ],
       "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
         "syntax-dynamic-import",
-        "remove-test-ids",
         "transform-react-constant-elements",
-        "transform-react-remove-prop-types",
       ],
     },
     "test": {
       "presets": [
         "env",
         "react",
-        "stage-3",
         "flow",
       ],
       "plugins": [
+        "transform-class-properties",
+        "transform-object-rest-spread",
         "syntax-dynamic-import",
       ],
     },
