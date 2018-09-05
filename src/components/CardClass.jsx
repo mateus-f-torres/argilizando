@@ -4,8 +4,7 @@ import {Link} from 'react-router-dom';
 import {select} from 'd3-selection';
 import type {_Class} from '../types/props.js';
 
-// $FlowFixMe
-require.context('Images/', false, /.\.svg/);
+import '../data/classImages.js';
 
 type Props = _Class & {
   lockClass: (SyntheticEvent<HTMLButtonElement>) => void

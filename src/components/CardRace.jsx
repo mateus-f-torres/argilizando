@@ -3,8 +3,7 @@ import * as React from 'react';
 import {Link} from 'react-router-dom';
 import type {Race} from '../types/props.js';
 
-// $FlowFixMe
-require.context('Images/', false, /.\.png$/);
+import '../data/raceImages.js';
 
 type Props = Race & {
   lockRace: () => void
