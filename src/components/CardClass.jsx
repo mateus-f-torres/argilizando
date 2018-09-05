@@ -4,18 +4,8 @@ import {Link} from 'react-router-dom';
 import {select} from 'd3-selection';
 import type {_Class} from '../types/props.js';
 
-import barbarian from 'Images/barbarian.svg';
-import bard from 'Images/bard.svg';
-import cleric from 'Images/cleric.svg';
-import druid from 'Images/druid.svg';
-import fighter from 'Images/fighter.svg';
-import monk from 'Images/monk.svg';
-import paladin from 'Images/paladin.svg';
-import ranger from 'Images/ranger.svg';
-import rogue from 'Images/rogue.svg';
-import sorcerer from 'Images/sorcerer.svg';
-import warlock from 'Images/warlock.svg';
-import wizard from 'Images/wizard.svg';
+// $FlowFixMe
+require.context('Images/', false, /.\.svg/);
 
 type Props = _Class & {
   lockClass: (SyntheticEvent<HTMLButtonElement>) => void
@@ -57,22 +47,6 @@ class CardClass extends React.Component<Props> {
   }
 
   render() {
-    let img = '';
-    switch (this.props.id) {
-    case 'barbarian': img = barbarian; break;
-    case 'bard': img = bard; break;
-    case 'cleric': img = cleric; break;
-    case 'druid': img = druid; break;
-    case 'fighter': img = fighter; break;
-    case 'monk': img = monk; break;
-    case 'paladin': img = paladin; break;
-    case 'ranger': img = ranger; break;
-    case 'rogue': img = rogue; break;
-    case 'sorcerer': img = sorcerer; break;
-    case 'warlock': img = warlock; break;
-    case 'wizard': img = wizard; break;
-    }
-
     let stats = ['hp', 'armor', 'weapon', 'magic', 'versatile'];
     let labels = ['Heath', 'Armor', 'Weapons', 'Magic', 'Versatility'];
     let w = 100;
@@ -81,8 +55,7 @@ class CardClass extends React.Component<Props> {
     return (
       <figure className="card">
         <h2>{this.props.id}</h2>
-        <img className="class-img" src={`/${img}`} />
-
+        <img className="class-img" src={`./../images/${this.props.id}.svg`} />
         <ul id="class-stats" className="stats">
           <h3>Class Stats</h3>
           {

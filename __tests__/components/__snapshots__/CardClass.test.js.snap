@@ -141,7 +141,7 @@ exports[`<CardClass /> match current production CardClass 1`] = `
         </h2>
         <img
           className="class-img"
-          src="/test-file-stub"
+          src="./../images/barbarian.svg"
         />
         <ul
           className="stats"
