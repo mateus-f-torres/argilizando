@@ -12,7 +12,11 @@ module.exports = {
     '^Reducers/(.*)$': "<rootDir>/src/reducers/$1",
     '^Containers/(.*)$': "<rootDir>/src/containers/$1",
     '^Components/(.*)$': "<rootDir>/src/components/$1",
+    // mock require.context
+    '^\.\./data/(race|class)Images.js$': "<rootDir>/__mocks__/contextLoader.js",
+    // mock images
     '\\.(jpg|jpeg|png|gif|svg)$': '<rootDir>/__mocks__/fileMock.js',
+    // mock stylesheets
     '\\.(css|sass|scss|less)$': 'identity-obj-proxy',
   },
 };

@@ -100,7 +100,7 @@ exports[`<CardRace /> match current production CardRace 1`] = `
         </h2>
         <img
           className="race-img"
-          src="/test-file-stub"
+          src="./../images/human.png"
         />
         <div
           className="horizontal-line"

@@ -15,7 +15,8 @@ const optimizeCss =
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const cssPlugin =
   new MiniCssExtractPlugin({
-    filename: "styles.css"  
+    filename: "styles.[hash].css",
+    chunckFilename: "[id].[hash].css",
 });
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -51,7 +52,8 @@ module.exports = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.[hash].js',
+    chunkFilename: '[name].bundle.js',
   },
   resolve: {
     alias: {
@@ -62,8 +64,8 @@ module.exports = {
   optimization: {
     minimizer: [
       uglyJs,
-      optimizeCss
-    ]
+      optimizeCss,
+    ],
   },
   module: {
     rules: [ 
