@@ -1,12 +1,12 @@
 # Dont lint compiled code
-dist/*
-lib/*
-coverage/
-server.js
+/dist/
+/coverage/
+/server.js
 
 # Dont lint other config files
 # in case of root linting
-postcss.*.js
-webpack.*.js
-jest.config.js
-postcss.config.js
+/webpack.*.js
+/jest.config.js
+
+# Dont lint flow-typed
+/flow-typed/

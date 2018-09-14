@@ -1,7 +1,9 @@
 language: node_js
 cache: yarn
 node_js:
-  - "10.9.0"
+  - "8.11.4"
 install:
   - yarn install
-script: yarn run test
+  - yarn add --dev codecov
+script:
+  -  yarn run test:coverage && codecov

@@ -1,8 +1,5 @@
 [ignore]
-# d => d3
-# e => empty
-# r => react*
-<PROJECT_ROOT>/node_modules/[^der]
+# <PROJECT_ROOT>/node_modules/{module}
 
 [include]
 
@@ -17,8 +14,14 @@ unclear-type=warn
 [options]
 # ignore next line flow error
 suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
-# add module wrappers for webpack alias and scss imports
-module.name_mapper='.*\(.scss\)' -> 'empty/object'
-module.name_mapper='^Images' -> '<PROJECT_ROOT>/src/assets/images'
+# add module wrappers for webpack alias
+module.name_mapper='^Store/\(.*\)$' -> '<PROJECT_ROOT>/src/store/\1'
+module.name_mapper='^Components/\(.*\)$' -> '<PROJECT_ROOT>/src/components/\1'
+module.name_mapper='^Images/\(.*\)$' -> '<PROJECT_ROOT>/src/assets/images/\1'
+module.name_mapper='^Context/\(.*\)$' -> '<PROJECT_ROOT>/src/data/\1'
+module.name_mapper='^Routes/\(.*\)$' -> '<PROJECT_ROOT>/src/routes/\1'
+module.name_mapper='^DATA/\(.*\)$' -> '<PROJECT_ROOT>/src/data/\1'
+module.name_mapper='^Types/\(.*\)$' -> '<PROJECT_ROOT>/types/\1'
+module.name_mapper='^Mocks/\(.*\)$' -> '<PROJECT_ROOT>/__mocks__/\1'
 
 [strict]
