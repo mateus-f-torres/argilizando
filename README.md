@@ -1,4 +1,4 @@
-# Argilizando ![TravisCI build status](https://travis-ci.com/mateus-f-torres/boneco-de-argila.svg?branch=master)
+# Argilizando ![TravisCI build status](https://travis-ci.com/mateus-f-torres/argilizando.svg?branch=master)
 
 [Argilizando](https://argilizando.herokuapp.com/) is a helper for my DnD games.  
 It provides me, my players and anyone else that uses it with my idea of a more streamlined approach to the character creation process. Allowing players to quickly make a rough draft of a character.  
