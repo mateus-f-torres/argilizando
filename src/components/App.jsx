@@ -1,7 +1,5 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
-import type {Done} from '../types/props.js';
 
 import MenuMain from './MenuMain.jsx';
 import UpdateRace from '../containers/UpdateRace.js';
@@ -15,13 +13,8 @@ import 'Styles/App.scss'; // last stylesheet called, main layout
 import logo from 'Images/logo.svg'; // import using webpack resolve.alias
 import developer from 'Images/mateus-f-torres.svg';
 
-type Props = {
-  done: Done,
-};
-
-
-class App extends React.Component<Props> {
-  handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+class App extends React.Component {
+  handleClick = (e) => {
     switch (e.currentTarget.name) {
     case 'create':
       // control if user should be able view creator page
@@ -71,6 +64,5 @@ class App extends React.Component<Props> {
     );
   }
 }
-
 
 export default App;

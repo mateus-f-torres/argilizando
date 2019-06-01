@@ -1,17 +1,3 @@
-//@flow
-import type {
-  Race, _Class, ShortScore, Background, Character,
-} from '../types/props.js';
-import type {DoneAction} from '../types/actions.js';
-
-type State = {
-  race: false | Race,
-  _class: false | _Class,
-  score: false | ShortScore,
-  back: false | Background,
-  char: false | Character,
-};
-
 const defaultState = {
   race: false,
   _class: false,
@@ -20,7 +6,7 @@ const defaultState = {
   char: false,
 };
 
-const doneListReducer = (state: State = defaultState, action: DoneAction) => {
+const doneListReducer = (state = defaultState, action) => {
   switch (action.type) {
   case 'LOCK_RACE':
     return Object.assign({}, state, {race: action.payload});

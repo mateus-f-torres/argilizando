@@ -1,7 +1,7 @@
 language: node_js
 cache: yarn
 node_js:
-  - "10.9.0"
+  - "10.13.0"
 install:
   - yarn install
 script: yarn run test

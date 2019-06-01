@@ -1,23 +1,11 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import {select} from 'd3-selection';
-import type {_Class} from '../types/props.js';
 
 import '../data/classImages.js';
 
-type Props = _Class & {
-  lockClass: (SyntheticEvent<HTMLButtonElement>) => void
-};
 
-class CardClass extends React.Component<Props> {
-  // defining ref types
-  hp: ?SVGMatrix & {attributes: {name: {value: string}}};
-  armor: ?SVGMatrix & {attributes: {name: {value: string}}};
-  weapon: ?SVGMatrix & {attributes: {name: {value: string}}};
-  magic: ?SVGMatrix & {attributes: {name: {value: string}}};
-  versatile: ?SVGMatrix & {attributes: {name: {value: string}}};
-
+class CardClass extends React.Component {
   componentDidMount() {
     this.createBarChart();
   }
@@ -62,10 +50,7 @@ class CardClass extends React.Component<Props> {
               <li key={i}><p>
                 <b>{labels[i]}</b>
                 <svg
-                  ref={
-                    // $FlowFixMe
-                    (node) => this[stat] = node
-                  }
+                  ref={(node) => this[stat] = node}
                   name={stat}
                   width={w}
                   height={h} />

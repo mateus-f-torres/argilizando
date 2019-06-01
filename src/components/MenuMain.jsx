@@ -1,17 +1,10 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-import type {Done} from '../types/props.js';
 
-
-type Props = {
-  done: Done,
-  handleClick: (SyntheticEvent<HTMLButtonElement>) => void,
-};
 
 import 'Styles/MenuMain.scss';
 
-const MenuMain = (props: Props) => {
+const MenuMain = (props) => {
   let all =
     props.done.race && props.done._class
     && props.done.score && props.done.back

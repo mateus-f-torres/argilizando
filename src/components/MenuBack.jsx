@@ -1,23 +1,12 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardBack from './CardBack.jsx';
 import BACKGROUNDS from '../data/backgrounds.js';
-import type {Background} from '../types/props.js';
 
 import 'Styles/MenuBack.scss';
 
-type Props = {
-  getBack: (string) => void,
-  lockBack: ({}) => void,
-  back: Background,
-  match: {
-    url: string,
-  },
-};
-
-class MenuBack extends React.Component<Props> {
-  showBack = (e: SyntheticEvent<HTMLButtonElement>) => {
+class MenuBack extends React.Component {
+  showBack = (e) => {
     this.props.getBack(e.currentTarget.name);
   }
 

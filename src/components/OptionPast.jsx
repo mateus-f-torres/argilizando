@@ -1,14 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {Background, CharPast} from '../types/props.js';
+import React from 'react';
 
-type Props = {
-  back: Background,
-  past: CharPast,
-  change: (SyntheticEvent<HTMLInputElement>) => void,
-};
-
-const OptionPast = (props: Props) => {
+const OptionPast = (props) => {
   let labels = {
     personality: props.back.personality,
     ideals: props.back.ideals,

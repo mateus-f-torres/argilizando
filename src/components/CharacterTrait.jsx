@@ -1,12 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {CharTraits} from '../types/props.js';
+import React from 'react';
 
-type Props = {
-  traits: CharTraits,
-};
-
-const CharacterTrait = (props: Props) => {
+const CharacterTrait = (props) => {
   return (
     <figure className="card">
       <h3>Features &amp; Traits</h3>

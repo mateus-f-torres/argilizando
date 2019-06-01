@@ -1,23 +1,12 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardClass from './CardClass.jsx';
 import CLASSES from '../data/classes.js';
-import type {_Class} from '../types/props.js';
 
 import 'Styles/MenuClass.scss';
 
-type Props = {
-  getClass: (string) => void,
-  lockClass: ({}) => void,
-  _class: _Class,
-  match: {
-    url: string,
-  },
-};
-
-class MenuClass extends React.Component<Props> {
-  getClass = (e: SyntheticEvent<HTMLButtonElement>) => {
+class MenuClass extends React.Component {
+  getClass = (e) => {
     this.props.getClass(e.currentTarget.name);
   }
 

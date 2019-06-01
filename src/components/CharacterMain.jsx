@@ -1,11 +1,7 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import AbilityTable from './AbilityTable.jsx';
-import type {CharMain} from '../types/props.js';
 
-type Props = CharMain;
-
-const CharacterMain = (props: Props) => {
+const CharacterMain = (props) => {
   return (
     <figure className="card">
 

@@ -1,10 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {CharBody} from '../types/props.js';
+import React from 'react';
 
-type Props = CharBody;
-
-const CharacterBody = (props: Props) => {
+const CharacterBody = (props) => {
   return (
     <figure className="card">
       <h3>Appearance</h3>

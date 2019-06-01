@@ -1,23 +1,12 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link, Route, Switch} from 'react-router-dom';
 import CardRace from './CardRace.jsx';
 import RACES from '../data/races.js';
-import type {Race} from '../types/props.js';
 
 import 'Styles/MenuRace.scss';
 
-type Props = {
-  getRace: (string) => void,
-  lockRace: ({}) => void,
-  race: Race,
-  match: {
-    url: string,
-  },
-};
-
-class MenuRace extends React.Component<Props> {
-  showRace = (e: SyntheticEvent<HTMLButtonElement>) => {
+class MenuRace extends React.Component {
+  showRace = (e) => {
     this.props.getRace(e.currentTarget.name);
   }
 

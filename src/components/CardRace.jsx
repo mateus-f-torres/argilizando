@@ -1,15 +1,9 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-import type {Race} from '../types/props.js';
 
 import '../data/raceImages.js';
 
-type Props = Race & {
-  lockRace: () => void
-};
-
-const CardRace = (props: Props) => {
+const CardRace = (props) => {
   return (
     <figure className="card">
       <h2>{props.name}</h2>

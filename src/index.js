@@ -1,4 +1,3 @@
-//@flow
 import React from 'react';
 import ReactDOM from 'react-dom';
 
@@ -17,6 +16,5 @@ ReactDOM.render(
       <FullApp />
     </BrowserRouter>
   </Provider>,
-  // $FlowFixMe
   document.getElementById('root')
 );

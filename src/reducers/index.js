@@ -1,4 +1,3 @@
-//@flow
 import {combineReducers} from 'redux';
 
 import race from './races.js';
@@ -16,7 +15,5 @@ const reducers = {
   character,
   done,
 };
-
-export type Reducers = typeof reducers;
 
 export default combineReducers(reducers);

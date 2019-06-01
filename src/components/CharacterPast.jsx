@@ -1,10 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {CharPast} from '../types/props.js';
+import React from 'react';
 
-type Props = CharPast;
-
-const CharacterPast = (props: Props) => {
+const CharacterPast = (props) => {
   return (
     <figure className="card">
       <h3>Role Playing</h3>

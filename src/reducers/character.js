@@ -1,13 +1,8 @@
-//@flow
 import packs from '../data/packs.js';
-import type {Character} from '../types/props.js';
-import type {CharAction} from '../types/actions.js';
 import {blankCharacter as blank} from '../data/character.js';
 import {getChar} from '../data/character.js';
 
-type State = Character;
-
-const characterReducer = (state: State = blank, action: CharAction) => {
+const characterReducer = (state = blank, action) => {
   let key; let value;
   let change; let max;
 

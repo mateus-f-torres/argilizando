@@ -1,34 +1,16 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
 import CardScore from './CardScore.jsx';
 import ABILITIES from '../data/scores.js';
-import type {LongScore, ShortScore} from '../types/props.js';
 
 import 'Styles/MenuScore.scss';
 
-type Props = {
-  total: number,
-  str: LongScore,
-  dex: LongScore,
-  con: LongScore,
-  int: LongScore,
-  wis: LongScore,
-  cha: LongScore,
-  scorePlus: (string) => void,
-  scoreMinus: (string) => void,
-  toggleText: (string) => void,
-  resetBtn: () => void,
-  lockScore: (score: ShortScore) => void
-};
-
-class MenuScore extends React.Component<Props> {
-  handleClick = (e: SyntheticEvent<HTMLButtonElement>) => {
+class MenuScore extends React.Component {
+  handleClick = (e) => {
     e.preventDefault();
     let type = e.currentTarget.name;
     if (e.currentTarget.parentNode && e.currentTarget.parentNode.childNodes) {
       let h5 = e.currentTarget.parentNode.childNodes[1];
-      // $FlowFixMe
       let ability = h5.attributes.name.value;
       switch (type) {
       case '+':

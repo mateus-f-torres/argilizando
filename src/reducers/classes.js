@@ -1,11 +1,6 @@
-//@flow
 import CLASSES from '../data/classes.js';
-import type {_Class} from '../types/props.js';
-import type {ClassAction} from '../types/actions.js';
 
-type State = {} | _Class;
-
-const classReducer = (state: State = {}, action: ClassAction) => {
+const classReducer = (state = {}, action) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_CLASS':
 

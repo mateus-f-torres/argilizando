@@ -1,17 +1,15 @@
-//@flow
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {displayBackground, lockBackground} from '../actions';
 import MenuBack from '../components/MenuBack.jsx';
-import type {State} from '../types/state.js';
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state) => {
   return {
     back: state.background,
   };
 };
 
-const mapDispatchToProps = (dispatch: *) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getBack: (background) => {
       dispatch(displayBackground(background));

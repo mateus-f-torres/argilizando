@@ -1,10 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {CharSpell} from '../types/props.js';
+import React from 'react';
 
-type Props = CharSpell;
-
-const CharacterSpell = (props: Props) => {
+const CharacterSpell = (props) => {
   return (
     <figure className="card">
       <h3>Spellcasting</h3>

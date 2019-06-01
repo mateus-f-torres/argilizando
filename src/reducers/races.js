@@ -1,11 +1,6 @@
-//@flow
 import RACES from '../data/races.js';
-import type {Race} from '../types/props.js';
-import type {RaceAction} from '../types/actions.js';
 
-type State = {} | Race;
-
-const raceReducer = (state: State = {}, action: RaceAction) => {
+const raceReducer = (state = {}, action) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_RACE':
 

@@ -1,7 +1,5 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {NavLink, Route, Switch} from 'react-router-dom';
-import type {Character} from '../types/props.js';
 
 import CharacterMain from './CharacterMain.jsx';
 import CharacterEquip from './CharacterEquip.jsx';
@@ -12,11 +10,7 @@ import CharacterPast from './CharacterPast.jsx';
 
 import 'Styles/FinalCharacter.scss';
 
-type Props = {
-  char: Character,
-};
-
-const FinalCharacter = (props: Props) => (
+const FinalCharacter = (props) => (
   <section id="FINAL">
     <h2>{props.char.name}</h2>
     <ul className="selection">

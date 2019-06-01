@@ -1,6 +1,4 @@
-//@flow
 import DESCRIPTION from '../data/modifiers.js';
-import type {ScoreAction} from '../types/actions.js';
 
 // constants for ability score functions
 const MAX_TOTAL = 55;
@@ -26,18 +24,7 @@ const defaultScores = {
   cha: [DEFAULT_SCORE, DEFAULT_MOD, DEFAULT_COST, DEFAULT_SHOW],
 };
 
-type State = {
-  total: number,
-  str: [number, number, number, boolean | string],
-  dex: [number, number, number, boolean | string],
-  con: [number, number, number, boolean | string],
-  int: [number, number, number, boolean | string],
-  wis: [number, number, number, boolean | string],
-  cha: [number, number, number, boolean | string],
-};
-
-const scoreReducer = (state: State = defaultScores, action: ScoreAction) => {
-  // $FlowFixMe, 'maybe there' since reset has no payload
+const scoreReducer = (state = defaultScores, action) => {
   let ability = action.payload;
   let score; let mod; let cost; let show;
 
@@ -233,7 +220,7 @@ function soldOut(state, points, ability, value) {
  *  desc[1]: string, description matching given ability modifier
  */
 function getDescription(ability, mod) {
-  // find what ability score should we retrive text
+  // find what ability score should we retrieve text
   // i.e. str, dex, con, int, wis or cha
   for (let key in DESCRIPTION) {
     if (key == ability) {
@@ -248,7 +235,7 @@ function getDescription(ability, mod) {
   }
 }
 
-/* Get abiliy score modifier matching ability score value
+/* Get ability score modifier matching ability score value
  * Params:
  *  num: number, current ability score value
  * Returns:

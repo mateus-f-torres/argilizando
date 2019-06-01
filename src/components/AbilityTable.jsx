@@ -1,10 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {ShortScore} from '../types/props.js';
+import React from 'react';
 
-type Props = ShortScore;
-
-const AbilityTable = (props: Props) => (
+const AbilityTable = (props) => (
   <div>
     <table>
       <thead>

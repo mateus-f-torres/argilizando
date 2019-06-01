@@ -1,68 +1,60 @@
 module.exports = {
-  "env": {
-    "browser": true,
-    "node": true,
-    "commonjs": true,
-    "es6": true,
-    "jquery": true,
-    "jest": true
-  },
-  "settings": {
-    "react": {
-      "pragma": "React",
-      "version": "16.4.1",
-      "flowVersion": "0.75",
+  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 2019,
+    sourceType: 'module',
+    ecmaFeatures: {
+      impliedStrict: true,
+      jsx: true,
     },
   },
-  "extends": [
-    "eslint:recommended",
-    "google", 
-    "plugin:react/recommended",
-    "plugin:flowtype/recommended"
-  ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 8,
-    "ecmaFeatures": {
-        "impliedStrict": true,
-        "experimentalObjectRestSpread": true,
-        "jsx": true
-    },
-    "sourceType": "module"
+  env: {
+    browser: true,
+    commonjs: true,
+    es6: true,
+    node: true,
+    jest: true,
   },
-  "plugins": [
-    "babel",
-    "react",
-    "flowtype"
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['assets', './src/assets/'],
+          ['components', './src/components/'],
+          ['containers', './src/containers/'],
+          ['ducks', './src/ducks/'],
+          ['tests', './src/tests/'],
+          ['utils', './src/utils/'],
+        ],
+      },
+    },
+    react: {
+      pragma: 'React',
+      version: '16.8.3',
+    },
+  },
+  plugins: [
+    'react',
   ],
-  "rules": {
-    "no-console": [
-      "warn"
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+  ],
+  rules: {
+    'wrap-iife': [
+      'error', 'inside',
     ],
-    "no-debugger": [
-      "warn"
+    'eqeqeq': [
+      'off',
     ],
-    "indent": [
-      "error",
-      2
+    'object-curly-spacing': [
+      'error', 'never',
     ],
-    "react/jsx-uses-react": [
-      "warn"
+    'react/destructuring-assignment': [
+      'off',
     ],
-    "react/jsx-uses-vars": [
-      "warn"
+    'react/jsx-one-expression-per-line': [
+      'off',
     ],
-    "spaced-comment": [
-      "error", "always", { "exceptions": ["@flow"]}
-    ],
-    "require-jsdoc": [
-      "off"
-    ],
-    "babel/no-invalid-this": [
-      "error"
-    ],
-    "no-invalid-this": [
-      "off"
-    ]
-  }
-}
+  },
+};

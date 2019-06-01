@@ -1,16 +1,6 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 
-type Props = {
-  max: number,
-  openUp: Array<string>,
-  backSkills: [string, string],
-  classSkills: Array<string>,
-  skills: Array<[string, string, number, ?boolean]>,
-  toggleSkill: (SyntheticEvent<HTMLInputElement>) => void,
-};
-
-const OptionSkill = (props: Props) => (
+const OptionSkill = (props) => (
   <div>
     <h3>Skills<span id="skill-number">(max: {props.max})</span></h3>
     <ul className="skill-selection">

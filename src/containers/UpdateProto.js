@@ -1,4 +1,3 @@
-//@flow
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import {
@@ -8,9 +7,8 @@ import {
   lockCharacter,
 } from '../actions';
 import ProtoCharacter from '../components/ProtoCharacter.jsx';
-import type {State} from '../types/state.js';
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state) => {
   return {
     race: state.done.race,
     _class: state.done._class,
@@ -20,7 +18,7 @@ const mapStateToProps = (state: State) => {
   };
 };
 
-const mapDispatchToProps = (dispatch: *) => {
+const mapDispatchToProps = (dispatch) => {
   return {
     getCharacter: (character) => {
       dispatch(getCharacter(character));

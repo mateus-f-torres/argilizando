@@ -1,15 +1,6 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 
-type Props = {
-  classOptions?: Array<Array<string>>,
-  classPack: Array<string>,
-  showPack: Array<string>,
-  togglePack: (SyntheticEvent<HTMLInputElement>) => void,
-  toggleGear: (SyntheticEvent<HTMLInputElement>) => void,
-};
-
-const OptionEquip = (props: Props) => {
+const OptionEquip = (props) => {
   return (
     <div>
       <h3>Equipment</h3>

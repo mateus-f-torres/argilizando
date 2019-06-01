@@ -1,11 +1,6 @@
-//@flow
 import BACKGROUNDS from '../data/backgrounds.js';
-import type {Background} from '../types/props.js';
-import type {BackAction} from '../types/actions.js';
 
-type State = {} | Background;
-
-const backgroundReducer = (state: State = {}, action: BackAction) => {
+const backgroundReducer = (state = {}, action) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_BACKGROUND':
 

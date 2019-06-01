@@ -1,10 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {CharEquip} from '../types/props.js';
+import React from 'react';
 
-type Props = CharEquip;
-
-const CharacterEquip = (props: Props) => {
+const CharacterEquip = (props) => {
   return (
     <figure className="card">
       <h3>Equipment</h3>

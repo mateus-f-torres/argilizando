@@ -1,13 +1,7 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 import {Link} from 'react-router-dom';
-import type {Background} from '../types/props.js';
 
-type Props = Background & {
-  lockBack: () => void,
-};
-
-const CardBack = (props: Props) => (
+const CardBack = (props) => (
   <figure className="card">
     <h2>{props.name}</h2>
     <p>{props.pitch}</p>

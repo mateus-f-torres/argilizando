@@ -1,14 +1,6 @@
-//@flow
-import * as React from 'react';
-import type {Race, CharBody} from '../types/props.js';
+import React from 'react';
 
-type Props = {
-  race: Race,
-  body: CharBody,
-  change: (SyntheticEvent<HTMLInputElement>) => void,
-};
-
-const OptionBody = (props: Props) => {
+const OptionBody = (props) => {
   let labels = {
     gender: 'Male | Female | Others',
     age: [...props.race.age],

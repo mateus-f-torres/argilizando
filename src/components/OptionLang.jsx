@@ -1,14 +1,6 @@
-//@flow
-import * as React from 'react';
+import React from 'react';
 
-type Props = {
-  max: number,
-  allLangs: Array<[boolean, string, boolean, ?boolean]>,
-  raceLangs: [string, string],
-  toggleLang: (SyntheticEvent<HTMLInputElement>) => void,
-};
-
-const OptionLang = (props: Props) => {
+const OptionLang = (props) => {
   return (
     <div>
       <h3>Languages<span id="skill-number">(max: {props.max})</span></h3>

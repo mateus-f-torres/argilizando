@@ -1,14 +1,8 @@
-//@flow
-import * as React from 'react';
-import type {LongScore} from '../types/props.js';
-
-type Props = LongScore & {
-  handleClick: (SyntheticEvent<HTMLButtonElement>) => void,
-};
+import React from 'react';
 
 const btn = 'score-btn waves-effect waves-light';
 
-const CardScore = (props: Props) => (
+const CardScore = (props) => (
   <li>
     <h4>{props.long}</h4>
     <h5 name={props.short}>

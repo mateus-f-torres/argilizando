@@ -1,10 +1,8 @@
-//@flow
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import FinalCharacter from '../components/FinalCharacter.jsx';
-import type {State} from '../types/state.js';
 
-const mapStateToProps = (state: State) => {
+const mapStateToProps = (state) => {
   return {
     char: state.done.char,
   };
