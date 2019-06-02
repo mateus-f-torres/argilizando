@@ -223,7 +223,6 @@ exports[`<CardBack /> match current production CardBack 1`] = `
           className="lock-box"
         >
           <Link
-            replace={false}
             to="/background"
           >
             <a
@@ -236,7 +235,6 @@ exports[`<CardBack /> match current production CardBack 1`] = `
             </a>
           </Link>
           <Link
-            replace={false}
             to="/"
           >
             <a

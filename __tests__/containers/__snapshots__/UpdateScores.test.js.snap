@@ -597,7 +597,6 @@ exports[` 1`] = `
                     Reset
                   </button>
                   <Link
-                    replace={false}
                     to="/"
                   >
                     <a

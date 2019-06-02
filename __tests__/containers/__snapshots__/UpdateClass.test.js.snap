@@ -211,7 +211,6 @@ exports[` 1`] = `
                             key="barbarian"
                           >
                             <Link
-                              replace={false}
                               to="//barbarian"
                             >
                               <a
@@ -232,7 +231,6 @@ exports[` 1`] = `
                             key="fighter"
                           >
                             <Link
-                              replace={false}
                               to="//fighter"
                             >
                               <a
@@ -253,7 +251,6 @@ exports[` 1`] = `
                             key="paladin"
                           >
                             <Link
-                              replace={false}
                               to="//paladin"
                             >
                               <a
@@ -289,7 +286,6 @@ exports[` 1`] = `
                             key="cleric"
                           >
                             <Link
-                              replace={false}
                               to="//cleric"
                             >
                               <a
@@ -310,7 +306,6 @@ exports[` 1`] = `
                             key="bard"
                           >
                             <Link
-                              replace={false}
                               to="//bard"
                             >
                               <a
@@ -346,7 +341,6 @@ exports[` 1`] = `
                             key="monk"
                           >
                             <Link
-                              replace={false}
                               to="//monk"
                             >
                               <a
@@ -367,7 +361,6 @@ exports[` 1`] = `
                             key="ranger"
                           >
                             <Link
-                              replace={false}
                               to="//ranger"
                             >
                               <a
@@ -388,7 +381,6 @@ exports[` 1`] = `
                             key="rogue"
                           >
                             <Link
-                              replace={false}
                               to="//rogue"
                             >
                               <a
@@ -409,7 +401,6 @@ exports[` 1`] = `
                             key="warlock"
                           >
                             <Link
-                              replace={false}
                               to="//warlock"
                             >
                               <a
@@ -445,7 +436,6 @@ exports[` 1`] = `
                             key="druid"
                           >
                             <Link
-                              replace={false}
                               to="//druid"
                             >
                               <a
@@ -466,7 +456,6 @@ exports[` 1`] = `
                             key="sorcerer"
                           >
                             <Link
-                              replace={false}
                               to="//sorcerer"
                             >
                               <a
@@ -487,7 +476,6 @@ exports[` 1`] = `
                             key="wizard"
                           >
                             <Link
-                              replace={false}
                               to="//wizard"
                             >
                               <a

@@ -10,7 +10,6 @@ import UpdateProto from '../containers/UpdateProto.js';
 import UpdateFinal from '../containers/UpdateFinal.js';
 
 import 'Styles/App.scss'; // last stylesheet called, main layout
-import logo from 'Images/logo.svg'; // import using webpack resolve.alias
 import developer from 'Images/mateus-f-torres.svg';
 
 class App extends React.Component {
@@ -36,7 +35,6 @@ class App extends React.Component {
       <div>
         <header>
           <Link to="/">
-            <img src={logo} />
               MENU
           </Link>
           <div id="outside-links">

@@ -234,7 +234,6 @@ exports[`<CardRace /> match current production CardRace 1`] = `
           className="lock-box"
         >
           <Link
-            replace={false}
             to="/race"
           >
             <a
@@ -247,7 +246,6 @@ exports[`<CardRace /> match current production CardRace 1`] = `
             </a>
           </Link>
           <Link
-            replace={false}
             to="/"
           >
             <a
