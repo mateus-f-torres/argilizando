@@ -22,12 +22,8 @@ header {
     text-decoration-line: none;
     color: $link-color;
     font-family: $nav-font;
-    &:focus {
-      outline: none;
-    }
-    &:active {
-      color: $link-active;
-    }
+    &:focus { outline: none; }
+    &:active { color: $link-active; }
   }
   #outside-links {
     @extend a;
@@ -41,9 +37,7 @@ header {
       cursor: pointer;
     }
   }
-  #dev-logo {
-    padding-right: 0;
-  }
+  #dev-logo { padding-right: 0; }
   #copyright {
     align-self: flex-end;
     margin-bottom: 3px;
@@ -176,7 +170,7 @@ main {
 /* for-phone-only */
 @media (max-width: 320px) {}
   /* default, mobile 1st without grid */
-  
+
 /* for-tablet-portrait-up */
 @media only screen and (min-width: 600px) {
   .selection {
