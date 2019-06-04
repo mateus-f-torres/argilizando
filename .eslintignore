@@ -1,5 +1,5 @@
 # Dont lint compiled code
-dist/*
+dist
 
 # Dont lint other config files
 postcss.*.js
