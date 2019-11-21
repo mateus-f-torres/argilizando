@@ -2,76 +2,8 @@ export default [
   [
     'Common Races',
     [
-      {
-        name: 'Human',
-        id: 'human',
-        age: [20, 80],
-        size: 'Medium',
-        height: '6ft (1,7m)',
-        weight: '180lb (80kg)',
-        eyes: 'All human variations',
-        skin: 'All human variations',
-        hair: 'All human variations',
-        _placeholder: 'Salazar Marivaldi',
-        speed: 30,
-        lang: ['Common', '..'],
-        special: [
-          [
-            'Bonus Skill',
-            `You gain proficiency in one additional skill 
-            from your class skill list.`,
-          ],
-          [
-            'Magical Affinity',
-            `Whenever you are 5ft from a magical item you can sense 
-            its magic through one of your senses. 
-            Once per short rest you can increase the range of this feature 
-            to 30ft for 1min, after that you lose this feature and 
-            must finish a short rest to regain its passive effect. 
-            Using this feature only tells you if something is magical or not, 
-            nothing more than that.`,
-          ],
-          [
-            'Grit',
-            `You can use your reaction to gain advantage on a 
-            saving throw against a spell. 
-            You must roll a 5 or 6 on a d6 to use this feature again.`,
-          ],
-        ],
-      },
-      {
-        name: 'Halfling',
-        id: 'halfling',
-        age: [20, 150],
-        size: 'Medium',
-        height: '3ft (1m)',
-        weight: '40lb (20kg)',
-        eyes: 'Brown or hazel eyes',
-        skin: 'Tan to pale',
-        hair: 'Usually brown and wavy',
-        _placeholder: 'Merla Greenbottle',
-        speed: 25,
-        lang: ['Common', 'Halfling'],
-        special: [
-          [
-            'Lucky',
-            `When you roll a 1 on an attack roll, ability check 
-            or saving throw, you can reroll the die and must use the new roll. 
-            Once you use this feature you can't use it again until 
-            you finish a short rest.`,
-          ],
-          [
-            'Brave',
-            `You have advantage on saving throws against being frightened.`,
-          ],
-          [
-            'Second Chance',
-            `When a creature you can see hits you with an attack roll, 
-            you can use your reaction to force that creature to reroll. 
-            You can only use this feature once per combat.`,
-          ],
-        ],
-      },
+      {id: 'human'},
+      {id: 'halfling'},
       {
         name: 'Dwarf',
         id: 'dwarf',

@@ -3,33 +3,21 @@ import RACES from '../data/races.js';
 const raceReducer = (state = {}, action) => {
   switch (action.type) {
   case 'DISPLAY_CHOSEN_RACE':
-
-    // loop through each category inside races data
-
-    for (let category of RACES) {
-      let options = category[1];
-
-      // loop through each item inside said category options
-
-      for (let item of options) {
-        // find the one that matches user choice
-
-        if (item.id === action.payload) {
-          // return new copy of race state
-          // with the chosen race data
-          // ! MUST DISCARD STATE !
-          // or risk merging 'maybe-there' props
-
-          return Object.assign({}, item);
-        }
-      }
-    }
-    // unknown race id
-    return state;
+    return findChosenRace(state, action.payload);
 
   default:
     return state;
   }
 };
 
+// TODO: make race data memoized ???
+function findChosenRace(oldState, raceId) {
+  for (let category of RACES) {
+    let [, options] = category;
+
+    const choice = options.find(({id}) => id == raceId);
+
+    if (choice) return Object.assign({}, choice);
+  }
+}
 export default raceReducer;

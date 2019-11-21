@@ -1,0 +1,29 @@
+{
+  "name": "Halfling",
+  "description": "The comforts of home are the goals of most halflings' lives: a place to settle in peace and quiet, far from marauding monsters and clashing armies; a blazing fire and a generous meal; fine drink and fine conversation. Though some halflings live out their days in remote agricultural communities, others form nomadic bands that travel constantly, lured by the open road and the wide horizon to discover the wonders of new lands and peoples. But even these wanderers love peace, food, hearth, and home, though home might be a wagon jostling along an dirt road or a raft floating downriver.",
+  "id": "halfling",
+  "age": [20, 150],
+  "size": "Medium",
+  "height": "3ft (1m)",
+  "weight": "40lb (20kg)",
+  "eyes": "Brown or hazel eyes",
+  "skin": "Tan to pale",
+  "hair": "Usually brown and wavy",
+  "placeholder": "Merla Greenbottle",
+  "speed": 25,
+  "language": ["Common", "Halfling"],
+  "special_traits": [
+    [
+      "Lucky",
+      "When you roll a 1 on an attack roll, ability check or saving throw, you can reroll the die and must use the new roll. Once you use this feature you cant use it again until you finish a short rest."
+    ],
+    [
+      "Brave",
+      "You have advantage on saving throws against being frightened."
+    ],
+    [
+      "Second Chance",
+      "When a creature you can see hits you with an attack roll, you can use your reaction to force that creature to reroll. You can only use this feature once per combat."
+    ]
+  ]
+}

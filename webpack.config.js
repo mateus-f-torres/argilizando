@@ -59,7 +59,6 @@ const terser =
     sourceMap: true,
   });
 
-// TODO: compression with brotli
 const CompressionPlugin = require('compression-webpack-plugin');
 const gzipPlugin =
   new CompressionPlugin({

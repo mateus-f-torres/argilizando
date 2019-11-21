@@ -1,0 +1,8 @@
+{
+  "example": "olá mundo",
+  "race": {
+    "human": {
+      "age": "Entre 20 e 80 anos"
+    }
+  }
+}

@@ -1,23 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
+// import {Provider} from 'react-redux';
+// import {BrowserRouter} from 'react-router-dom';
 
-import store from './store/configureStore.js';
-import FullApp from './containers/FullApp.js';
+import './i18n'
+import './index.scss'
 
-// 1st stylesheet called, resets here
-import './index.scss';
+// import store from './store/configureStore.js';
+// import FullApp from './containers/FullApp.js';
+import App from "./App";
 
 const root = document.getElementById('app');
 
 if (root !== null) {
   ReactDOM.render(
-    <Provider store={store()}>
-      <BrowserRouter>
-        <FullApp />
-      </BrowserRouter>
-    </Provider>,
+    <App />,
     root
   );
 }

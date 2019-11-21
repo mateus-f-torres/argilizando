@@ -1,16 +1,19 @@
 import packs from './packs.js';
 
+// TODO: look at this blank character as the main model propotype
+// TODO: dont use nickname properties
+
 export const blankCharacter = {
   name: '',
   main: {
     _class: '',
-    level: 1, // 1st lvl character blank template
+    level: 1,
     hitPoints: 0,
     hitDice: '',
     armorClass: 0,
     speed: 0,
     init: 0,
-    prof: 2, // 1st lvl proficiency bonus
+    prof: 2,
     score: {},
     saves: [],
     skills: [],
