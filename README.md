@@ -1,3 +1,7 @@
+# DEPRECATED PROJECT
+Go to project [Aurora](https://github.com/mateus-f-torres/aurora)
+
+
 # Argilizando ![TravisCI build status](https://travis-ci.com/mateus-f-torres/argilizando.svg?branch=master)
 
 [Argilizando](https://argilizando.herokuapp.com/) is a helper for my DnD games.  
